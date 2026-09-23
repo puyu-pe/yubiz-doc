@@ -8,7 +8,6 @@ theme:
   language: es
   custom_dir: overrides
   features:
-    - navigation.sections
     - navigation.path
     - navigation.footer
     - navigation.instant
@@ -27,6 +26,8 @@ theme:
         name: Cambiar a modo claro
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/sidebar-accordion.js
 nav:
   - Inicio:
       - Introducción: index.md

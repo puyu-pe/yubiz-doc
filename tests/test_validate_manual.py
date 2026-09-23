@@ -339,6 +339,12 @@ class ValidateManualTests(unittest.TestCase):
         self.assertTrue(all((PROJECT_ROOT / "docs" / path).is_file() for path in expected_hubs))
         self.assertTrue(all((PROJECT_ROOT / "docs" / path).read_text(encoding="utf-8").count("](") >= 2 for path in expected_hubs))
         self.assertTrue({"navigation.path", "navigation.footer", "navigation.instant", "navigation.instant.progress"} <= set(config["theme"]["features"]))
+        self.assertNotIn("navigation.sections", config["theme"]["features"])
+        self.assertNotIn("navigation.expand", config["theme"]["features"])
+        self.assertEqual(["javascripts/sidebar-accordion.js"], config["extra_javascript"])
+        script = (PROJECT_ROOT / "docs" / "javascripts" / "sidebar-accordion.js").read_text(encoding="utf-8")
+        self.assertIn(".md-sidebar--primary .md-nav--primary", script)
+        self.assertIn("document$.subscribe(synchronize)", script)
         assert_unique_labels(config["nav"])
 
 
