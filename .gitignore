@@ -1,0 +1,6 @@
+.atl/
+.build/
+.codegraph/
+.playwright-mcp/
+__pycache__/
+*.py[cod]

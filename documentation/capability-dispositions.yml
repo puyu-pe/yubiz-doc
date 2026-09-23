@@ -1,0 +1,456 @@
+schema_version: 2
+capabilities:
+  - id: FND-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: foundation-sign-in
+  - id: FND-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: foundation-orient-in-yubiz
+  - id: FND-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: foundation-change-establishment
+  - id: FND-04
+    classification: core
+    disposition: documented
+    canonical_doc_id: foundation-profile-and-sign-out
+  - id: CON-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: contacts-manage-customers
+  - id: CON-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: contacts-manage-suppliers-and-bank-accounts
+  - id: CON-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: contacts-manage-carriers
+  - id: CON-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: contacts-manage-financial-institutions
+  - id: CAT-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: catalog-manage-products
+  - id: CAT-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: catalog-manage-product-details
+  - id: CAT-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: catalog-configure-sale-prices
+  - id: CAT-04
+    classification: core
+    disposition: documented
+    canonical_doc_id: catalog-complete-purchase-data-and-images
+  - id: CAT-05
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: catalog-manage-lots
+  - id: CAT-06
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: catalog-manage-series
+  - id: CAT-07
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: catalog-manage-lines-and-conversions
+  - id: CAT-08
+    classification: core
+    disposition: documented
+    canonical_doc_id: catalog-review-utility-and-export
+  - id: SAL-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-choose-establishment
+  - id: SAL-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-select-customer
+  - id: SAL-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-select-items-and-review-conditions
+  - id: SAL-04
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-register-cash-sale
+  - id: SAL-05
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-register-sale-with-pending-balance
+  - id: SAL-06
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-collect-later-and-check-balance
+  - id: SAL-07
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-manage-quotations
+  - id: SAL-08
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-search-filter-and-review-sales
+  - id: SAL-09
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-configure-document-data
+  - id: SAL-10
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: sales-register-multiple-payment-methods
+  - id: SAL-11
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: sales-view-print-and-communicate
+  - id: SAL-12
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: sales-void-sale
+  - id: SAL-13
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: sales-credit-notes-and-exchange
+  - id: SAL-14
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-review-reports
+  - id: SAL-15
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: sales-sellers-and-commissions
+  - id: INV-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-check-stock-by-warehouse
+  - id: INV-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-review-movements-and-kardex
+  - id: INV-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-register-adjustment
+  - id: INV-04
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-transfer-between-warehouses
+  - id: INV-05
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-register-inputs-and-outputs
+  - id: INV-06
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-manage-remission-guides
+  - id: INV-07
+    classification: core
+    disposition: documented
+    canonical_doc_id: inventory-export-stock-and-movements
+  - id: INV-08
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: inventory-manage-container-loads
+  - id: INV-09
+    classification: core
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: INV-10
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: inventory-assign-series-in-movements
+  - id: PUR-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: purchases-create-request
+  - id: PUR-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: purchases-manage-requests
+  - id: PUR-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: purchases-register-order
+  - id: PUR-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: purchases-create-order-from-request
+  - id: PUR-05
+    classification: core
+    disposition: documented
+    canonical_doc_id: purchases-manage-orders
+  - id: PUR-06
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: purchases-change-or-void-state
+  - id: PUR-07
+    classification: core
+    disposition: documented
+    canonical_doc_id: purchases-register-payments-and-balances
+  - id: PUR-08
+    classification: core
+    disposition: documented
+    canonical_doc_id: purchases-manage-supplier-documents
+  - id: PUR-09
+    classification: core
+    disposition: documented
+    canonical_doc_id: expenses-register-expense
+  - id: PUR-10
+    classification: core
+    disposition: documented
+    canonical_doc_id: expenses-manage-expenses
+  - id: PUR-11
+    classification: core
+    disposition: documented
+    canonical_doc_id: expenses-manage-categories-and-fixed-costs
+  - id: PUR-12
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: purchases-manage-budget
+  - id: PUR-13
+    classification: uncertain
+    disposition: coverage_gap
+  - id: FIN-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: cash-review-income-outcome-and-balance
+  - id: FIN-02
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: cash-register-opening-balance
+  - id: FIN-03
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: cash-register-manual-operation
+  - id: FIN-04
+    classification: core
+    disposition: documented
+    canonical_doc_id: reports-consult-sales-payments-and-debts
+  - id: FIN-05
+    classification: core
+    disposition: documented
+    canonical_doc_id: reports-export-payment-detail
+  - id: FIN-06
+    classification: core
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: FIN-07
+    classification: core
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PSD-01
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PSD-02
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PSD-03
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PSD-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: presale-create-order
+  - id: PSD-05
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: presale-list-and-edit
+  - id: PSD-06
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: presale-confirm-cancel-or-convert
+  - id: DST-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: distribution-create-load-order
+  - id: DST-02
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: distribution-manage-load-order-cycle
+  - id: DST-03
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: distribution-recharges-commitments-and-residuals
+  - id: DST-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: distribution-register-download-order-and-delivery-result
+  - id: ADM-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: administration-manage-users
+  - id: ADM-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: foundation-profile-and-sign-out
+  - id: ADM-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: administration-consult-roles
+  - id: ADM-04
+    classification: internal_not_public
+    disposition: internal_not_public
+    reason_category: internal_not_public
+  - id: ADM-05
+    classification: core
+    disposition: documented
+    canonical_doc_id: administration-assign-establishments-to-sellers
+  - id: CFG-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: configuration-review-general-parameters
+  - id: CFG-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: configuration-configure-company-logo
+  - id: CFG-03
+    classification: core
+    disposition: documented
+    canonical_doc_id: configuration-manage-document-series
+  - id: CFG-04
+    classification: core
+    disposition: documented
+    canonical_doc_id: configuration-manage-establishments-and-warehouses
+  - id: PRD-01
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PRD-02
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PRD-03
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: PRD-04
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: ACC-01
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: ACC-02
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: CRM-01
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: CRM-02
+    classification: conditional
+    disposition: owner_excluded_from_documentation
+    reason_category: owner_scope_exclusion
+  - id: MKT-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: loyalty-manage-discount-campaigns
+  - id: COM-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: specialist-reports-sales-commissions
+  - id: COM-02
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: specialist-reports-sales-by-user-and-customer
+  - id: SRV-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: services-manage-units-and-items
+  - id: SRV-02
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: services-register-internment
+  - id: SRV-03
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: services-manage-internment
+  - id: SRV-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: services-close-void-or-print-internment
+  - id: SRV-05
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: services-configure-internments
+  - id: CUS-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: stays-register
+  - id: CUS-02
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: stays-review-daily-list-and-detail
+  - id: CUS-03
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: stays-manage-subjects-and-related-people
+  - id: CUS-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: stays-manage-tariffs-relationships-and-discounts
+  - id: CUS-05
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: stays-convert-void-and-report
+  - id: QAL-01
+    classification: conditional
+    disposition: out_of_current_menu_scope
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-02
+    classification: conditional
+    disposition: out_of_current_menu_scope
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-03
+    classification: conditional
+    disposition: out_of_current_menu_scope
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-04
+    classification: conditional
+    disposition: out_of_current_menu_scope
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-05
+    classification: conditional
+    disposition: out_of_current_menu_scope
+    reason_category: legacy_menu_not_in_current_scope
+  - id: SPC-01
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: specialist-manage-partners-and-contributions
+  - id: SPC-02
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: specialist-consult-ple-and-academic-balance
+  - id: SPC-03
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: specialist-manage-products-and-external-reports
+  - id: SPC-04
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: specialist-consult-cylinders-debt-and-loads
+  - id: EXC-01
+    classification: internal_not_public
+    disposition: internal_not_public
+    reason_category: internal_not_public
+  - id: EXC-02
+    classification: internal_not_public
+    disposition: internal_not_public
+    reason_category: internal_not_public
+  - id: EXC-03
+    classification: uncertain
+    disposition: coverage_gap
+  - id: EXC-04
+    classification: internal_not_public
+    disposition: internal_not_public
+    reason_category: internal_not_public

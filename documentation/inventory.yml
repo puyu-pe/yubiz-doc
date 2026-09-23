@@ -1,0 +1,882 @@
+schema_version: 2
+documents:
+  - doc_id: stays-convert-void-and-report
+    path: estancias/convertir-o-anular-estancia.md
+    title: Convertir, anular y consultar reportes de estancias
+    group: estancias
+    capability_ids: [CUS-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: stays-manage-subjects-and-related-people
+    path: estancias/gestionar-personas-de-la-estancia.md
+    title: Gestionar sujetos y personas relacionadas
+    group: estancias
+    capability_ids: [CUS-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: stays-manage-tariffs-relationships-and-discounts
+    path: estancias/gestionar-tarifas-y-descuentos.md
+    title: Gestionar tarifas, relaciones y descuentos
+    group: estancias
+    capability_ids: [CUS-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: stays-register
+    path: estancias/registrar-estancia.md
+    title: Registrar una estancia
+    group: estancias
+    capability_ids: [CUS-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: stays-review-daily-list-and-detail
+    path: estancias/gestionar-estancias.md
+    title: Consultar las estancias del día, la lista y el detalle
+    group: estancias
+    capability_ids: [CUS-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: specialist-consult-cylinders-debt-and-loads
+    path: especializados/gestionar-cilindros-deuda-y-cargas.md
+    title: Consultar cilindros, deuda y cargas
+    group: especializados
+    capability_ids: [SPC-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: specialist-consult-ple-and-academic-balance
+    path: especializados/consultar-ple-y-balance-academico.md
+    title: Consultar PLE y balance académico
+    group: especializados
+    capability_ids: [SPC-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: specialist-manage-partners-and-contributions
+    path: especializados/gestionar-socios-y-aportes.md
+    title: Gestionar socios y aportes
+    group: especializados
+    capability_ids: [SPC-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: specialist-manage-products-and-external-reports
+    path: especializados/gestionar-productos-y-reportes-externos.md
+    title: Gestionar productos y reportes externos
+    group: especializados
+    capability_ids: [SPC-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: services-close-void-or-print-internment
+    path: servicios/cerrar-o-anular-internado.md
+    title: Convertir, anular o imprimir un internado
+    group: servicios
+    capability_ids: [SRV-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: services-configure-internments
+    path: servicios/configurar-internados.md
+    title: Configurar el módulo de internados
+    group: servicios
+    capability_ids: [SRV-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: services-manage-internment
+    path: servicios/gestionar-internado.md
+    title: Consultar un internado y agregar procedimientos
+    group: servicios
+    capability_ids: [SRV-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: services-manage-units-and-items
+    path: servicios/gestionar-unidades-e-items.md
+    title: Gestionar unidades e ítems de servicio
+    group: servicios
+    capability_ids: [SRV-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: services-register-internment
+    path: servicios/registrar-internado.md
+    title: Registrar una orden de servicio o internado
+    group: servicios
+    capability_ids: [SRV-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: cash-review-income-outcome-and-balance
+    path: caja/revisar-ingresos-y-egresos.md
+    title: Revisar ingresos, egresos y saldo de caja
+    group: caja
+    capability_ids: [FIN-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: cash-register-opening-balance
+    path: caja/registrar-saldo-inicial.md
+    title: Registrar el saldo inicial de caja
+    group: caja
+    capability_ids: [FIN-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: cash-register-manual-operation
+    path: caja/registrar-operacion-manual.md
+    title: Registrar una inyección o ajuste manual de caja
+    group: caja
+    capability_ids: [FIN-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: reports-consult-sales-payments-and-debts
+    path: reportes/consultar-pagos-y-deudas.md
+    title: Consultar pagos y deudas de ventas
+    group: reportes
+    capability_ids: [FIN-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: reports-export-payment-detail
+    path: reportes/exportar-detalle-de-pagos.md
+    title: Exportar el detalle de pagos
+    group: reportes
+    capability_ids: [FIN-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: presale-create-order
+    path: preventa/crear-pedido.md
+    title: Crear un pedido de preventa
+    group: preventa
+    capability_ids: [PSD-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: presale-list-and-edit
+    path: preventa/consultar-y-editar.md
+    title: Consultar y editar preventas
+    group: preventa
+    capability_ids: [PSD-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: presale-confirm-cancel-or-convert
+    path: preventa/confirmar-anular-convertir.md
+    title: Confirmar, anular o convertir una preventa en venta
+    group: preventa
+    capability_ids: [PSD-06]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: expenses-register-expense
+    path: gastos/registrar-gasto.md
+    title: Registrar un gasto
+    group: gastos
+    capability_ids: [PUR-09]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: expenses-manage-expenses
+    path: gastos/gestionar-gastos.md
+    title: Consultar, aprobar y exportar gastos
+    group: gastos
+    capability_ids: [PUR-10]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: expenses-manage-categories-and-fixed-costs
+    path: gastos/categorias-y-costos-fijos.md
+    title: Gestionar categorías de gasto y costos fijos
+    group: gastos
+    capability_ids: [PUR-11]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-manage-budget
+    path: compras/gestionar-presupuesto.md
+    title: Gestionar períodos, asignaciones y consumo de presupuesto
+    group: compras
+    capability_ids: [PUR-12]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-manage-orders
+    path: compras/gestionar-ordenes.md
+    title: Consultar, exportar y notificar órdenes de compra
+    group: compras
+    capability_ids: [PUR-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-change-or-void-state
+    path: compras/cambiar-estado-de-compra.md
+    title: Cambiar o anular el estado de una compra
+    group: compras
+    capability_ids: [PUR-06]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-register-payments-and-balances
+    path: compras/registrar-pagos-y-saldos.md
+    title: Registrar pagos de compras y consultar saldos
+    group: compras
+    capability_ids: [PUR-07]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-manage-supplier-documents
+    path: compras/gestionar-documentos.md
+    title: Registrar y relacionar documentos de compra
+    group: compras
+    capability_ids: [PUR-08]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-create-request
+    path: compras/crear-pedido.md
+    title: Crear un pedido de compra
+    group: compras
+    capability_ids: [PUR-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-manage-requests
+    path: compras/gestionar-pedidos.md
+    title: Consultar, editar y notificar pedidos de compra
+    group: compras
+    capability_ids: [PUR-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-register-order
+    path: compras/registrar-orden.md
+    title: Registrar una orden de compra
+    group: compras
+    capability_ids: [PUR-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: purchases-create-order-from-request
+    path: compras/crear-orden-desde-pedido.md
+    title: Crear una orden desde un pedido de compra
+    group: compras
+    capability_ids: [PUR-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-manage-remission-guides
+    path: inventario/gestionar-guias-de-remision.md
+    title: Crear y consultar guías de remisión
+    group: inventario
+    capability_ids: [INV-06]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-export-stock-and-movements
+    path: inventario/exportar-inventario-y-movimientos.md
+    title: Exportar inventario y movimientos
+    group: inventario
+    capability_ids: [INV-07]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-manage-container-loads
+    path: inventario/gestionar-cargas-de-contenedores.md
+    title: Registrar y consultar cargas de contenedores
+    group: inventario
+    capability_ids: [INV-08]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-assign-series-in-movements
+    path: inventario/asignar-series-en-movimientos.md
+    title: Asignar series en entradas, salidas y cargas
+    group: inventario
+    capability_ids: [INV-10]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-check-stock-by-warehouse
+    path: inventario/consultar-stock-por-almacen.md
+    title: Consultar stock por almacén
+    group: inventario
+    capability_ids: [INV-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-review-movements-and-kardex
+    path: inventario/revisar-movimientos-y-kardex.md
+    title: Revisar movimientos y kardex de un producto
+    group: inventario
+    capability_ids: [INV-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-register-adjustment
+    path: inventario/registrar-ajuste.md
+    title: Registrar un ajuste de inventario
+    group: inventario
+    capability_ids: [INV-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-transfer-between-warehouses
+    path: inventario/transferir-entre-almacenes.md
+    title: Transferir productos entre almacenes
+    group: inventario
+    capability_ids: [INV-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: inventory-register-inputs-and-outputs
+    path: inventario/registrar-ingresos-y-salidas.md
+    title: Registrar ingresos y salidas de almacén
+    group: inventario
+    capability_ids: [INV-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-manage-products
+    path: catalogo/gestionar-productos.md
+    title: Crear y editar productos del catálogo
+    group: catalogo
+    capability_ids: [CAT-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-manage-product-details
+    path: catalogo/gestionar-detalles-de-producto.md
+    title: Gestionar marcas, categorías, medidas y modelos
+    group: catalogo
+    capability_ids: [CAT-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-configure-sale-prices
+    path: catalogo/configurar-precios-de-venta.md
+    title: Configurar precios de venta por tipo y establecimiento
+    group: catalogo
+    capability_ids: [CAT-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-complete-purchase-data-and-images
+    path: catalogo/completar-datos-de-compra-e-imagenes.md
+    title: Registrar proveedores, costos e imágenes de un producto
+    group: catalogo
+    capability_ids: [CAT-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-manage-lots
+    path: catalogo/gestionar-lotes.md
+    title: Gestionar lotes de productos
+    group: catalogo
+    capability_ids: [CAT-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-manage-series
+    path: catalogo/gestionar-series.md
+    title: Gestionar series y trazabilidad de productos
+    group: catalogo
+    capability_ids: [CAT-06]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-manage-lines-and-conversions
+    path: catalogo/gestionar-lineas-y-conversiones.md
+    title: Gestionar líneas y conversiones de productos
+    group: catalogo
+    capability_ids: [CAT-07]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: catalog-review-utility-and-export
+    path: catalogo/consultar-utilidad-y-exportar.md
+    title: Consultar utilidad y exportar el catálogo
+    group: catalogo
+    capability_ids: [CAT-08]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: contacts-manage-customers
+    path: contactos/gestionar-clientes.md
+    title: Gestionar clientes
+    group: contactos
+    capability_ids: [CON-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: contacts-manage-suppliers-and-bank-accounts
+    path: contactos/gestionar-proveedores.md
+    title: Gestionar proveedores y sus cuentas bancarias
+    group: contactos
+    capability_ids: [CON-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: contacts-manage-carriers
+    path: contactos/gestionar-transportistas.md
+    title: Gestionar transportistas
+    group: contactos
+    capability_ids: [CON-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: contacts-manage-financial-institutions
+    path: contactos/gestionar-entidades-financieras.md
+    title: Gestionar entidades financieras
+    group: contactos
+    capability_ids: [CON-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: foundation-sign-in
+    path: inicio/iniciar-sesion.md
+    title: Iniciar sesión y elegir establecimiento
+    group: inicio
+    capability_ids: [FND-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: foundation-orient-in-yubiz
+    path: inicio/ubicarse-en-yubiz.md
+    title: Ubicarse en Yubiz y reconocer el menú disponible
+    group: inicio
+    capability_ids: [FND-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: foundation-change-establishment
+    path: inicio/cambiar-establecimiento.md
+    title: Cambiar de establecimiento durante la sesión
+    group: inicio
+    capability_ids: [FND-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: foundation-profile-and-sign-out
+    path: inicio/perfil-y-cierre-de-sesion.md
+    title: Revisar el perfil, editar datos y cerrar sesión
+    group: inicio
+    capability_ids: [FND-04, ADM-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-choose-establishment
+    path: ventas/elegir-establecimiento.md
+    title: Elegir establecimiento
+    group: ventas
+    capability_ids: [SAL-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-select-customer
+    path: ventas/seleccionar-cliente.md
+    title: Seleccionar cliente
+    group: ventas
+    capability_ids: [SAL-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-select-items-and-review-conditions
+    path: ventas/seleccionar-productos-y-revisar-condiciones.md
+    title: Seleccionar productos y revisar condiciones
+    group: ventas
+    capability_ids: [SAL-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-register-cash-sale
+    path: ventas/registrar-venta-al-contado.md
+    title: Registrar venta al contado
+    group: ventas
+    capability_ids: [SAL-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-register-sale-with-pending-balance
+    path: ventas/registrar-venta-con-saldo-pendiente.md
+    title: Registrar venta con saldo pendiente
+    group: ventas
+    capability_ids: [SAL-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-collect-later-and-check-balance
+    path: ventas/registrar-cobro-posterior-y-consultar-saldo.md
+    title: Registrar cobro posterior y consultar saldo
+    group: ventas
+    capability_ids: [SAL-06]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-manage-quotations
+    path: ventas/gestionar-cotizaciones.md
+    title: Crear y gestionar cotizaciones
+    group: ventas
+    capability_ids: [SAL-07]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-search-filter-and-review-sales
+    path: ventas/consultar-ventas.md
+    title: Buscar, filtrar y revisar el detalle de ventas
+    group: ventas
+    capability_ids: [SAL-08]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-configure-document-data
+    path: ventas/configurar-datos-del-documento.md
+    title: Elegir documento, serie, fecha y almacén de una venta
+    group: ventas
+    capability_ids: [SAL-09]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-register-multiple-payment-methods
+    path: ventas/registrar-multiples-medios-de-pago.md
+    title: Registrar pagos con uno o varios medios
+    group: ventas
+    capability_ids: [SAL-10]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-view-print-and-communicate
+    path: ventas/imprimir-y-comunicar-venta.md
+    title: Visualizar, imprimir y comunicar una venta
+    group: ventas
+    capability_ids: [SAL-11]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-void-sale
+    path: ventas/anular-venta.md
+    title: Anular una venta con cautela
+    group: ventas
+    capability_ids: [SAL-12]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-credit-notes-and-exchange
+    path: ventas/notas-de-credito-y-canje.md
+    title: Emitir una nota de crédito o canjear un documento
+    group: ventas
+    capability_ids: [SAL-13]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-review-reports
+    path: ventas/revisar-reportes-de-ventas.md
+    title: Consultar reportes consolidados y ventas por producto
+    group: ventas
+    capability_ids: [SAL-14]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: sales-sellers-and-commissions
+    path: ventas/vendedores-y-comisiones.md
+    title: Gestionar vendedores y consultar comisiones
+    group: ventas
+    capability_ids: [SAL-15]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: distribution-create-load-order
+    path: distribucion/crear-orden-de-carga.md
+    title: Crear una orden de carga
+    group: distribucion
+    capability_ids: [DST-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: distribution-manage-load-order-cycle
+    path: distribucion/gestionar-orden-de-carga.md
+    title: Consultar y gestionar el ciclo de una orden de carga
+    group: distribucion
+    capability_ids: [DST-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: distribution-recharges-commitments-and-residuals
+    path: distribucion/recargas-y-compromisos.md
+    title: Registrar recargas, compromisos y residuales
+    group: distribucion
+    capability_ids: [DST-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: distribution-register-download-order-and-delivery-result
+    path: distribucion/registrar-descarga-y-entrega.md
+    title: Registrar una orden de descarga y el resultado de entrega
+    group: distribucion
+    capability_ids: [DST-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: administration-manage-users
+    path: administracion/gestionar-usuarios.md
+    title: Gestionar usuarios
+    group: administracion
+    capability_ids: [ADM-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: administration-consult-roles
+    path: administracion/consultar-roles.md
+    title: Consultar roles disponibles
+    group: administracion
+    capability_ids: [ADM-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: administration-assign-establishments-to-sellers
+    path: administracion/asignar-establecimientos-a-vendedores.md
+    title: Asignar establecimientos a vendedores
+    group: administracion
+    capability_ids: [ADM-05]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: configuration-review-general-parameters
+    path: configuracion/revisar-parametros-generales.md
+    title: Revisar parámetros generales
+    group: configuracion
+    capability_ids: [CFG-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: configuration-configure-company-logo
+    path: configuracion/configurar-logo.md
+    title: Configurar logo de la empresa
+    group: configuracion
+    capability_ids: [CFG-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: configuration-manage-document-series
+    path: configuracion/gestionar-series-de-documentos.md
+    title: Gestionar documentos, series y correlativos
+    group: configuracion
+    capability_ids: [CFG-03]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: configuration-manage-establishments-and-warehouses
+    path: configuracion/gestionar-establecimientos-y-almacenes.md
+    title: Gestionar establecimientos y almacenes
+    group: configuracion
+    capability_ids: [CFG-04]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: loyalty-manage-discount-campaigns
+    path: fidelizacion/gestionar-campanas.md
+    title: Gestionar campañas de descuento
+    group: fidelizacion
+    capability_ids: [MKT-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: specialist-reports-sales-commissions
+    path: reportes-especializados/comisiones-de-ventas.md
+    title: Consultar comisiones de ventas por producto
+    group: reportes-especializados
+    capability_ids: [COM-01]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification
+  - doc_id: specialist-reports-sales-by-user-and-customer
+    path: reportes-especializados/ventas-por-usuario-y-cliente.md
+    title: Consultar ventas por usuario y cliente
+    group: reportes-especializados
+    capability_ids: [COM-02]
+    content_status: source_backed_enriched
+    source_review_status: source_reviewed_draft
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    runtime_status: pending_runtime_verification
+    deployed_parity_status: pending_runtime_verification

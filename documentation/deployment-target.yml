@@ -1,0 +1,14 @@
+schema: manual-publication-target/v1
+# Keep this file blocked until an operator has verified every value below.
+activation: blocked
+verification_state: unverified
+site_url: ""
+base_path: ""
+host: ""
+user: ""
+port: ""
+target_root: ""
+marker: ""
+marker_value: manual-publication-root/v1
+known_hosts_secret: PUBLISH_KNOWN_HOSTS
+key_secret: PUBLISH_SSH_PRIVATE_KEY

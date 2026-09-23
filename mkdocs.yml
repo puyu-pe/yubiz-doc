@@ -1,0 +1,167 @@
+site_name: Yubiz · Guías para tu negocio
+site_description: Guías operativas revisadas en código, con verificación en entorno pendiente.
+site_url: http://127.0.0.1:8765/manual/
+docs_dir: docs
+site_dir: .build/site
+theme:
+  name: material
+  language: es
+  custom_dir: overrides
+  features:
+    - navigation.sections
+    - navigation.path
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+extra_css:
+  - stylesheets/extra.css
+nav:
+  - Inicio:
+      - Introducción: index.md
+      - Guías de inicio: inicio/index.md
+      - Iniciar sesión: inicio/iniciar-sesion.md
+      - Reconocer el menú: inicio/ubicarse-en-yubiz.md
+      - Cambiar establecimiento: inicio/cambiar-establecimiento.md
+      - Perfil y cierre de sesión: inicio/perfil-y-cierre-de-sesion.md
+  - Ventas:
+      - Resumen: recorridos/ventas/index.md
+      - Ventas:
+          - Vista general: ventas/index.md
+          - Elegir establecimiento: ventas/elegir-establecimiento.md
+          - Seleccionar cliente: ventas/seleccionar-cliente.md
+          - Productos y condiciones: ventas/seleccionar-productos-y-revisar-condiciones.md
+          - Venta al contado: ventas/registrar-venta-al-contado.md
+          - Venta con saldo pendiente: ventas/registrar-venta-con-saldo-pendiente.md
+          - Cobro posterior y saldo: ventas/registrar-cobro-posterior-y-consultar-saldo.md
+          - Cotizaciones: ventas/gestionar-cotizaciones.md
+          - Consultar ventas: ventas/consultar-ventas.md
+          - Datos del documento: ventas/configurar-datos-del-documento.md
+          - Varios medios de pago: ventas/registrar-multiples-medios-de-pago.md
+          - Imprimir y comunicar: ventas/imprimir-y-comunicar-venta.md
+          - Anular venta: ventas/anular-venta.md
+          - Notas de crédito y canje: ventas/notas-de-credito-y-canje.md
+          - Reportes de ventas: ventas/revisar-reportes-de-ventas.md
+          - Vendedores y comisiones: ventas/vendedores-y-comisiones.md
+      - Reportes especializados:
+          - Vista general: reportes-especializados/index.md
+          - Comisiones por producto: reportes-especializados/comisiones-de-ventas.md
+          - Ventas por usuario y cliente: reportes-especializados/ventas-por-usuario-y-cliente.md
+  - Contactos y catálogo:
+      - Resumen: recorridos/contactos-catalogo/index.md
+      - Contactos:
+          - Vista general: contactos/index.md
+          - Clientes: contactos/gestionar-clientes.md
+          - Proveedores y cuentas bancarias: contactos/gestionar-proveedores.md
+          - Transportistas: contactos/gestionar-transportistas.md
+          - Entidades financieras: contactos/gestionar-entidades-financieras.md
+      - Catálogo:
+          - Vista general: catalogo/index.md
+          - Productos: catalogo/gestionar-productos.md
+          - Detalles de producto: catalogo/gestionar-detalles-de-producto.md
+          - Precios de venta: catalogo/configurar-precios-de-venta.md
+          - Datos de compra e imágenes: catalogo/completar-datos-de-compra-e-imagenes.md
+          - Lotes: catalogo/gestionar-lotes.md
+          - Series y trazabilidad: catalogo/gestionar-series.md
+          - Líneas y conversiones: catalogo/gestionar-lineas-y-conversiones.md
+          - Utilidad y exportación: catalogo/consultar-utilidad-y-exportar.md
+  - Inventario:
+      - Vista general: inventario/index.md
+      - Stock por almacén: inventario/consultar-stock-por-almacen.md
+      - Movimientos y kardex: inventario/revisar-movimientos-y-kardex.md
+      - Ajuste de inventario: inventario/registrar-ajuste.md
+      - Traslados: inventario/transferir-entre-almacenes.md
+      - Ingresos y salidas: inventario/registrar-ingresos-y-salidas.md
+      - Guías de remisión: inventario/gestionar-guias-de-remision.md
+      - Exportar inventario: inventario/exportar-inventario-y-movimientos.md
+      - Cargas de contenedores: inventario/gestionar-cargas-de-contenedores.md
+      - Series en movimientos: inventario/asignar-series-en-movimientos.md
+  - Servicios y estancias:
+      - Resumen: recorridos/servicios-estancias/index.md
+      - Servicios:
+          - Vista general: servicios/index.md
+          - Unidades e ítems: servicios/gestionar-unidades-e-items.md
+          - Registrar internado: servicios/registrar-internado.md
+          - Gestionar internado: servicios/gestionar-internado.md
+          - Cerrar o anular internado: servicios/cerrar-o-anular-internado.md
+          - Configurar internados: servicios/configurar-internados.md
+      - Estancias:
+          - Vista general: estancias/index.md
+          - Registrar estancia: estancias/registrar-estancia.md
+          - Gestionar estancias: estancias/gestionar-estancias.md
+          - Personas relacionadas: estancias/gestionar-personas-de-la-estancia.md
+          - Tarifas y descuentos: estancias/gestionar-tarifas-y-descuentos.md
+          - Convertir o anular estancia: estancias/convertir-o-anular-estancia.md
+      - Especializados:
+          - Vista general: especializados/index.md
+          - Socios y aportes: especializados/gestionar-socios-y-aportes.md
+          - PLE y balance académico: especializados/consultar-ple-y-balance-academico.md
+          - Productos y reportes externos: especializados/gestionar-productos-y-reportes-externos.md
+          - Cilindros, deuda y cargas: especializados/gestionar-cilindros-deuda-y-cargas.md
+  - Compras, gastos y caja:
+      - Resumen: recorridos/compras-finanzas/index.md
+      - Compras:
+          - Vista general: compras/index.md
+          - Crear pedido: compras/crear-pedido.md
+          - Gestionar pedidos: compras/gestionar-pedidos.md
+          - Registrar orden: compras/registrar-orden.md
+          - Orden desde pedido: compras/crear-orden-desde-pedido.md
+          - Gestionar órdenes: compras/gestionar-ordenes.md
+          - Estado de compra: compras/cambiar-estado-de-compra.md
+          - Pagos y saldos: compras/registrar-pagos-y-saldos.md
+          - Documentos de compra: compras/gestionar-documentos.md
+          - Presupuesto: compras/gestionar-presupuesto.md
+      - Gastos:
+          - Vista general: gastos/index.md
+          - Registrar gasto: gastos/registrar-gasto.md
+          - Gestionar gastos: gastos/gestionar-gastos.md
+          - Categorías y costos fijos: gastos/categorias-y-costos-fijos.md
+      - Caja:
+          - Vista general: caja/index.md
+          - Ingresos, egresos y saldo: caja/revisar-ingresos-y-egresos.md
+          - Saldo inicial: caja/registrar-saldo-inicial.md
+          - Operación manual: caja/registrar-operacion-manual.md
+      - Reportes financieros:
+          - Vista general: reportes/index.md
+          - Pagos y deudas: reportes/consultar-pagos-y-deudas.md
+          - Exportar pagos: reportes/exportar-detalle-de-pagos.md
+  - Operación comercial:
+      - Resumen: recorridos/operacion-comercial/index.md
+      - Preventa:
+          - Vista general: preventa/index.md
+          - Crear pedido: preventa/crear-pedido.md
+          - Consultar y editar: preventa/consultar-y-editar.md
+          - Confirmar, anular o convertir: preventa/confirmar-anular-convertir.md
+      - Distribución:
+          - Vista general: distribucion/index.md
+          - Crear orden de carga: distribucion/crear-orden-de-carga.md
+          - Gestionar orden de carga: distribucion/gestionar-orden-de-carga.md
+          - Recargas y compromisos: distribucion/recargas-y-compromisos.md
+          - Descarga y entrega: distribucion/registrar-descarga-y-entrega.md
+      - Fidelización:
+          - Vista general: fidelizacion/index.md
+          - Campañas de descuento: fidelizacion/gestionar-campanas.md
+  - Administración y configuración:
+      - Resumen: recorridos/administracion-configuracion/index.md
+      - Administración:
+          - Vista general: administracion/index.md
+          - Usuarios: administracion/gestionar-usuarios.md
+          - Roles: administracion/consultar-roles.md
+          - Establecimientos de vendedores: administracion/asignar-establecimientos-a-vendedores.md
+      - Configuración:
+          - Vista general: configuracion/index.md
+          - Parámetros generales: configuracion/revisar-parametros-generales.md
+          - Logo de la empresa: configuracion/configurar-logo.md
+          - Documentos, series y correlativos: configuracion/gestionar-series-de-documentos.md
+          - Establecimientos y almacenes: configuracion/gestionar-establecimientos-y-almacenes.md

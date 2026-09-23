@@ -1,0 +1,18 @@
+schema_version: 2
+documents:
+  - doc_id: sales-context
+    path: ventas/elegir-establecimiento.md
+    group: ventas
+    capability_ids: [CAP-01, CAP-02]
+    content_status: pending_enrichment
+    source_review_status: source_reviewed_draft
+    runtime_status: pending_runtime_verification
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+  - doc_id: sales-client
+    path: ventas/seleccionar-cliente.md
+    group: ventas
+    capability_ids: [CAP-03]
+    content_status: pending_enrichment
+    source_review_status: source_reviewed_draft
+    runtime_status: pending_runtime_verification
+    source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53

@@ -1,0 +1,189 @@
+source_repository: yubiz
+source_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+reviewed_on: 2026-09-20
+scope_state: scope_complete
+source_sync:
+  version: 1
+  source_branch: main
+  completed:
+    source_version: 3.103.5
+    source_commit: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    reviewed_at: '2026-09-20'
+  target:
+    source_version: 3.104.28
+    source_commit: 330857197e5e01c24147d03452f7c59909abc968
+    checked_at: '2026-09-22'
+  bootstrap:
+    base_commit: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    base_version: 3.103.5
+    reason: Scoped adoption of the existing reviewed manual; it is not a full historical source audit or a remote-freshness claim.
+  range_audit:
+    base_commit: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+    target_commit: 330857197e5e01c24147d03452f7c59909abc968
+    total_paths: 332
+    changes:
+      added: 163
+      modified: 161
+      deleted: 5
+      renamed: 3
+    groups:
+      - disposition: pending
+        count: 332
+        reason: The target range is recorded but has not received a documentation-impact review.
+  pending:
+    count: 332
+    reason: Do not advance completed, source_revision, or inventory pins until every changed path is resolved.
+  exclusion_handling:
+    existing_owner_scope: Existing checkpoint exclusions remain scoped to their declared opaque IDs and reasons.
+    safeguard: A path hint never excludes a whole changed file; mixed changes require normal classification.
+  context_limitations:
+    - The local branch head was checked without fetching or verifying remote freshness.
+    - Runtime behavior and deployed-version parity remain unverified.
+menu_scope_reconciliation:
+  scope_complete: true
+reviewed_capability_ids: [FND-01, FND-02, FND-03, FND-04, ADM-01, ADM-02, ADM-03, ADM-05, CFG-01, CFG-02, CFG-03, CFG-04, ACC-01, ACC-02, PRD-01, PRD-02, PRD-03, PRD-04, CON-01, CON-02, CON-03, CON-04, CAT-01, CAT-02, CAT-03, CAT-04, CAT-05, CAT-06, CAT-07, CAT-08, INV-01, INV-02, INV-03, INV-04, INV-05, INV-06, INV-07, INV-08, INV-09, INV-10, PUR-01, PUR-02, PUR-03, PUR-04, PUR-05, PUR-06, PUR-07, PUR-08, PUR-09, PUR-10, PUR-11, PUR-12, FIN-01, FIN-02, FIN-03, FIN-04, FIN-05, FIN-06, FIN-07, PSD-01, PSD-02, PSD-03, PSD-04, PSD-05, PSD-06, DST-01, DST-02, DST-03, DST-04, SAL-01, SAL-02, SAL-03, SAL-04, SAL-05, SAL-06, SAL-07, SAL-08, SAL-09, SAL-10, SAL-11, SAL-12, SAL-13, SAL-14, SAL-15, CRM-01, CRM-02, MKT-01, COM-01, COM-02, SRV-01, SRV-02, SRV-03, SRV-04, SRV-05, SPC-01, SPC-02, SPC-03, SPC-04]
+document_ids:
+  - administration-assign-establishments-to-sellers
+  - administration-consult-roles
+  - administration-manage-users
+  - cash-register-manual-operation
+  - cash-register-opening-balance
+  - cash-review-income-outcome-and-balance
+  - catalog-complete-purchase-data-and-images
+  - catalog-configure-sale-prices
+  - catalog-manage-lines-and-conversions
+  - catalog-manage-lots
+  - catalog-manage-product-details
+  - catalog-manage-products
+  - catalog-manage-series
+  - catalog-review-utility-and-export
+  - configuration-configure-company-logo
+  - configuration-manage-document-series
+  - configuration-manage-establishments-and-warehouses
+  - configuration-review-general-parameters
+  - contacts-manage-carriers
+  - contacts-manage-customers
+  - contacts-manage-financial-institutions
+  - contacts-manage-suppliers-and-bank-accounts
+  - distribution-create-load-order
+  - distribution-manage-load-order-cycle
+  - distribution-recharges-commitments-and-residuals
+  - distribution-register-download-order-and-delivery-result
+  - expenses-manage-categories-and-fixed-costs
+  - expenses-manage-expenses
+  - expenses-register-expense
+  - foundation-change-establishment
+  - foundation-orient-in-yubiz
+  - foundation-profile-and-sign-out
+  - foundation-sign-in
+  - inventory-assign-series-in-movements
+  - inventory-check-stock-by-warehouse
+  - inventory-export-stock-and-movements
+  - inventory-manage-container-loads
+  - inventory-manage-remission-guides
+  - inventory-register-adjustment
+  - inventory-register-inputs-and-outputs
+  - inventory-review-movements-and-kardex
+  - inventory-transfer-between-warehouses
+  - loyalty-manage-discount-campaigns
+  - presale-confirm-cancel-or-convert
+  - presale-create-order
+  - presale-list-and-edit
+  - purchases-change-or-void-state
+  - purchases-create-order-from-request
+  - purchases-create-request
+  - purchases-manage-budget
+  - purchases-manage-orders
+  - purchases-manage-requests
+  - purchases-manage-supplier-documents
+  - purchases-register-order
+  - purchases-register-payments-and-balances
+  - reports-consult-sales-payments-and-debts
+  - reports-export-payment-detail
+  - sales-choose-establishment
+  - sales-collect-later-and-check-balance
+  - sales-configure-document-data
+  - sales-credit-notes-and-exchange
+  - sales-manage-quotations
+  - sales-register-cash-sale
+  - sales-register-multiple-payment-methods
+  - sales-register-sale-with-pending-balance
+  - sales-review-reports
+  - sales-search-filter-and-review-sales
+  - sales-select-customer
+  - sales-select-items-and-review-conditions
+  - sales-sellers-and-commissions
+  - sales-view-print-and-communicate
+  - sales-void-sale
+  - services-close-void-or-print-internment
+  - services-configure-internments
+  - services-manage-internment
+  - services-manage-units-and-items
+  - services-register-internment
+  - specialist-consult-cylinders-debt-and-loads
+  - specialist-consult-ple-and-academic-balance
+  - specialist-manage-partners-and-contributions
+  - specialist-manage-products-and-external-reports
+  - specialist-reports-sales-by-user-and-customer
+  - specialist-reports-sales-commissions
+  - stays-convert-void-and-report
+  - stays-manage-subjects-and-related-people
+  - stays-manage-tariffs-relationships-and-discounts
+  - stays-register
+  - stays-review-daily-list-and-detail
+gaps:
+  - id: PUR-13
+    reason_category: browser_workflow_not_proven
+  - id: EXC-03
+    reason_category: browser_workflow_not_proven
+exclusions:
+  - id: FIN-06
+    reason_category: owner_scope_exclusion
+  - id: FIN-07
+    reason_category: owner_scope_exclusion
+  - id: INV-09
+    reason_category: owner_scope_exclusion
+  - id: PSD-01
+    reason_category: owner_scope_exclusion
+  - id: PSD-02
+    reason_category: owner_scope_exclusion
+  - id: PSD-03
+    reason_category: owner_scope_exclusion
+  - id: PRD-01
+    reason_category: owner_scope_exclusion
+  - id: PRD-02
+    reason_category: owner_scope_exclusion
+  - id: PRD-03
+    reason_category: owner_scope_exclusion
+  - id: PRD-04
+    reason_category: owner_scope_exclusion
+  - id: ACC-01
+    reason_category: owner_scope_exclusion
+  - id: ACC-02
+    reason_category: owner_scope_exclusion
+  - id: CRM-01
+    reason_category: owner_scope_exclusion
+  - id: CRM-02
+    reason_category: owner_scope_exclusion
+  - id: ADM-04
+    reason_category: internal_not_public
+  - id: EXC-01
+    reason_category: internal_not_public
+  - id: EXC-02
+    reason_category: internal_not_public
+  - id: EXC-04
+    reason_category: internal_not_public
+out_of_current_menu_scope:
+  - id: QAL-01
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-02
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-03
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-04
+    reason_category: legacy_menu_not_in_current_scope
+  - id: QAL-05
+    reason_category: legacy_menu_not_in_current_scope
+source_review_status: source_reviewed_draft
+runtime_status: pending_runtime_verification
+deployed_parity_status: pending_runtime_verification

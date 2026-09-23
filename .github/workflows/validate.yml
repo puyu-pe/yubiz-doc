@@ -1,0 +1,41 @@
+name: validate-manual
+
+on:
+  pull_request:
+  push:
+    branches: [main, "review/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install the Linux CPython 3.14 binary-only lock
+        run: "python -m pip install --require-hashes --only-binary=:all: -r requirements.txt"
+      - name: Validate source and builder
+        run: |
+          python --version
+          python -m pip check
+          python -m compileall -q scripts tests
+          python -c "import yaml; yaml.safe_load(open('mkdocs.yml', encoding='utf-8'))"
+          python -m unittest discover -s tests -p 'test_*.py'
+          python scripts/validate_manual.py --root .
+          python scripts/validate_manual.py --fixture tests/fixtures/manual/valid
+      - name: Prove reproducible release artifacts
+        run: |
+          export SOURCE_DATE_EPOCH=1700000000
+          python scripts/build_manual.py --root . --site-url https://docs.example.test/manual/ --output .build/ci/one --source-date-epoch "$SOURCE_DATE_EPOCH" --source-commit 0000000000000000000000000000000000000000
+          python scripts/build_manual.py --root . --site-url https://docs.example.test/manual/ --output .build/ci/two --source-date-epoch "$SOURCE_DATE_EPOCH" --source-commit 0000000000000000000000000000000000000000
+          cmp .build/ci/one/manifest.json .build/ci/two/manifest.json
+          cmp .build/ci/one/manual.tar.gz .build/ci/two/manual.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manual-build-and-manifest
+          path: .build/ci
+          if-no-files-found: error
