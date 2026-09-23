@@ -2,5 +2,7 @@
 .build/
 .codegraph/
 .playwright-mcp/
+.venv/
+site/
 __pycache__/
 *.py[cod]

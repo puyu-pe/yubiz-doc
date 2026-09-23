@@ -1,8 +1,8 @@
 site_name: Yubiz · Guías para tu negocio
 site_description: Guías operativas revisadas en código, con verificación en entorno pendiente.
-site_url: http://127.0.0.1:8765/manual/
+site_url: http://127.0.0.1:8000/
 docs_dir: docs
-site_dir: .build/site
+site_dir: site
 theme:
   name: material
   language: es

@@ -3,36 +3,57 @@
 This repository contains source-reviewed operational guidance. It is a draft:
 tenant behavior and deployed-version parity remain unverified.
 
-## Locked local validation
+## Daily workflow
 
-The lock targets **Linux CPython 3.14 x86_64** and contains hashes only for
-the wheels actually downloaded for that target. It is not a cross-platform
-lock. Python 3.14.7 was used to create the local proof; CI selects the supported
-`3.14` minor and records its resolved patch at runtime.
+Use a local `.venv`; activation is not required. Create it with an available
+Python 3.14 interpreter, then use its tools instead of a global `mkdocs`.
+
+### Install
 
 ```bash
-python3 -m venv .build/release-venv
-.build/release-venv/bin/python -m pip install --require-hashes --only-binary=:all: -r requirements.txt
-.build/release-venv/bin/python -m pip check
-.build/release-venv/bin/python -m unittest discover -s tests -p 'test_*.py'
-.build/release-venv/bin/python scripts/validate_manual.py --root .
-.build/release-venv/bin/python scripts/validate_manual.py --fixture tests/fixtures/manual/valid
+python3 -m venv .venv
+.venv/bin/python -m pip install --require-hashes --only-binary=:all: -r requirements.txt
+.venv/bin/python -m pip check
 ```
 
-## Reproducible release artifact
+The lock targets **Linux CPython 3.14 x86_64** and contains hashes only for
+the wheels downloaded for that target. It is not a cross-platform lock.
+Environments have absolute interpreter paths and are not portable: recreate
+them; never move them.
+
+### Preview
+
+```bash
+.venv/bin/mkdocs serve --dev-addr 127.0.0.1:8000
+```
+
+Open `http://127.0.0.1:8000/`. Stop the preview with `Ctrl+C`.
+
+### Validate and build
+
+```bash
+.venv/bin/python -m unittest discover -s tests -p 'test_*.py'
+.venv/bin/python scripts/validate_manual.py --root . --final
+.venv/bin/python scripts/validate_manual.py --fixture tests/fixtures/manual/valid
+.venv/bin/mkdocs build --strict --clean
+```
+
+The normal build is written to ignored `site/`.
+
+## Advanced release artifact
 
 Builds do not modify `mkdocs.yml`. Supply an approved URL and explicit epoch;
 the reserved URL below is only a local test target, not a production claim.
 
 ```bash
-.build/release-venv/bin/python scripts/build_manual.py --root . --site-url https://docs.example.test/manual/ --output .build/release --source-date-epoch 1700000000 --source-commit 0000000000000000000000000000000000000000
+.venv/bin/python scripts/build_manual.py --root . --site-url https://docs.example.test/manual/ --output .build/release --source-date-epoch 1700000000 --source-commit 0000000000000000000000000000000000000000
 ```
 
 The command writes a sorted manifest and normalized `manual.tar.gz` beneath
 `.build/`. It normalizes every gzip output, including `sitemap.xml.gz`, before
 hashing and archiving. The artifact's content hash is local identity only;
-publication requires the separate U8 full-SHA gate. The placeholder SHA is not
-publishable; use a reviewed full commit SHA only.
+publication requires a reviewed full documentation commit SHA. The placeholder
+SHA is not publishable.
 
 ## Publication readiness
 
@@ -43,21 +64,10 @@ publishable; use a reviewed full commit SHA only.
 See `documentation/production-publication-runbook.md`; it documents the required
 external inputs and explicitly does not claim live publication.
 
-## Local preview
-
-```bash
-.build/release-venv/bin/python -m pip install --require-hashes --only-binary=:all: -r requirements.txt
-.build/release-venv/bin/mkdocs serve --dev-addr 127.0.0.1:8000
-```
-
-## Local check
-
-```bash
-.build/release-venv/bin/python -m unittest discover -s tests -p 'test_*.py'
-.build/release-venv/bin/python scripts/validate_manual.py --root .
-.build/release-venv/bin/python scripts/validate_manual.py --fixture tests/fixtures/manual/valid
-.build/release-venv/bin/python -m mkdocs build --strict --clean
-```
+`scripts/preview_manual.py` is an optional base-path QA helper, not a daily
+preview command. Always give it an explicit compatible `--site-dir` artifact
+and a `--base-path` matching that build. It does not rewrite canonical or 404
+URLs; host, scheme, and HTTPS require deployment evidence.
 
 ## Authoring boundary
 
