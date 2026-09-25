@@ -1,10 +1,9 @@
-# Asignar establecimientos a vendedores
+<a id="asignar-establecimientos-a-vendedores"></a>
 
-## Estado
+# 8.3 Asignar establecimientos a vendedores
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,14 +39,16 @@ acción está habilitada.
 
 La pantalla presenta una tabla con selección por establecimiento, descripción,
 dirección y ubicación. Incluye selección total y conserva el estado de cada fila.
-La fuente evita duplicar la combinación de usuario, establecimiento y rol en el
-recorrido general. Los datos disponibles y validaciones finales requieren runtime.
+La interfaz evita duplicar la combinación de usuario, establecimiento y rol en el
+recorrido general. Los datos disponibles y validaciones finales pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-El navegador envía el conjunto de establecimientos marcados y muestra un resultado
-de actualización. La fuente crea, actualiza u omite asociaciones según los datos
-recibidos. Esto describe mecánica de código, no una aprobación ni un efecto de
+## Resultado esperado
+
+Al confirmar, se registran el conjunto de establecimientos marcados y muestra un resultado
+de actualización. La interfaz crea, actualiza u omite asociaciones según los datos
+recibidos. Esto describe mecánica del formulario, no una aprobación ni un efecto de
 acceso, ventas o permisos en producción.
 
 ## Advertencias y casos límite
@@ -62,12 +63,6 @@ fuera de los canales autorizados. Esta ficha no cubre asignación de módulos ni
 - Establecimiento o vendedor no identificable: deténgase antes de cambiar la selección.
 - Respuesta de error o resultado incierto: no reenvíe; vuelva a consultar el estado.
 - Solicitud de privilegios adicionales: escale a administración autorizada.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad del recorrido y quién puede guardar cambios.
-- Efecto de activar o desactivar una asociación.
-- Relación entre establecimiento, función de vendedor, permisos y sesiones activas.
 
 ## Enlaces relacionados
 

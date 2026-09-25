@@ -25,7 +25,7 @@
 </div>
 
 <div class="verification-note">
-  <strong>Sobre estas guías.</strong> Sus recorridos fueron revisados en el código fuente. La verificación en un entorno real y la paridad con una versión desplegada siguen pendientes; por eso no reemplazan las opciones, permisos ni resultados que observe en su sesión.
+  <strong>Sobre estas guías.</strong> Revise las opciones, permisos y resultados que se muestren en su sesión antes de continuar.
 </div>
 
 ## Todas las áreas

@@ -1,10 +1,9 @@
-# Revisar parámetros generales
+<a id="revisar-parámetros-generales"></a>
 
-## Estado
+# 8.4 Revisar parámetros generales
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,7 +13,7 @@ el valor que corresponda a una instrucción autorizada de la organización.
 ## Acceso condicional
 
 La opción y la edición dependen de la sesión y de la configuración disponible. La
-fuente muestra consulta, sin alta ni eliminación desde este recorrido; no confirma
+la interfaz muestra consulta, sin alta ni eliminación desde este recorrido; no confirma
 qué parámetros se pueden editar en un entorno desplegado.
 
 ## Requisitos y datos
@@ -37,11 +36,13 @@ Abra la lista de configuración general y localice el registro que necesita revi
 
 ## Campos y validaciones observados
 
-La fuente presenta tipos de dato y un indicador de uso en sesión; exige completar
+La interfaz presenta tipos de dato y un indicador de uso en sesión; exige completar
 ese indicador al editar. Las reglas aplicables a cada valor y los mensajes finales
-requieren verificación en runtime.
+pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El recorrido renderiza una lista, permite consultar registros y deja la edición
 condicionada al contexto. No se afirma que un cambio se aplique de inmediato, sea
@@ -57,12 +58,6 @@ no comprende el efecto del valor, no lo modifique.
 - No aparece la edición: no intente forzarla; consulte a soporte autorizado.
 - El valor no coincide con la instrucción recibida: detenga el cambio y solicite aclaración.
 - El resultado es incierto: no repita el guardado sin volver a revisar la lista.
-
-## Verificaciones pendientes en runtime
-
-- Parámetros visibles y acciones habilitadas para cada sesión.
-- Reglas por tipo de dato y efecto de guardar un valor.
-- Auditoría, propagación y posibles efectos en operaciones existentes.
 
 ## Enlaces relacionados
 

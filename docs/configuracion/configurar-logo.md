@@ -1,10 +1,9 @@
-# Configurar logo de la empresa
+<a id="configurar-logo-de-la-empresa"></a>
 
-## Estado
+# 8.5 Configurar logo de la empresa
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,9 +39,11 @@ El navegador acepta PNG, rechaza otro formato y valida dimensiones mínimas y m�
 El botón de guardar permanece deshabilitado hasta que exista una selección válida; las
 imágenes grandes pueden redimensionarse manteniendo proporciones según el texto visible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente muestra una vista previa, envía el archivo seleccionado y actualiza o limpia
+## Resultado esperado
+
+La interfaz puede mostrar una vista previa, envía el archivo seleccionado y actualiza o limpia
 esa vista tras una respuesta exitosa. No confirma la publicación del logo en documentos,
 impresiones o integraciones externas.
 
@@ -56,12 +57,6 @@ archivo fuera de esta guía y no cargue archivos distintos de una imagen PNG.
 - Formato o dimensiones rechazados: corrija el archivo antes de volver a seleccionarlo.
 - No se actualiza la vista previa: no repita la carga; confirme el resultado con soporte autorizado.
 - No aparece la opción: no suponga que la sesión tiene permiso para cambiarla.
-
-## Verificaciones pendientes en runtime
-
-- Tamaño final, redimensionamiento y almacenamiento de la imagen.
-- Permisos, mensajes y efecto de eliminar el logo.
-- Lugares donde el logo actualizado se muestra en el entorno desplegado.
 
 ## Enlaces relacionados
 

@@ -1,9 +1,9 @@
-# Consultar reportes consolidados y ventas por producto
+<a id="consultar-reportes-consolidados-y-ventas-por-producto"></a>
 
-## Estado
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+# 2.14 Consultar reportes consolidados y ventas por producto
+
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 Consultar los filtros y resultados disponibles en los reportes consolidados de ventas y de productos vendidos.
@@ -29,8 +29,10 @@ En un reporte de ventas disponible en el menú de reportes.
 ## Campos y validaciones observados
 Los reportes observados incluyen fechas, establecimiento y usuario; el consolidado también presenta vendedor. El navegador muestra secciones y tablas de resultados, y el reporte por producto ofrece controles de filtros, columnas y exportación.
 
-## Resultado revisado en fuente
-El navegador solicita datos para los filtros elegidos y presenta tablas o secciones de resumen. Los totales, alcance de los datos, exportaciones y su significado operativo requieren verificación en runtime.
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
+El navegador solicita datos para los filtros elegidos y presenta tablas o secciones de resumen. Los totales, alcance de los datos, exportaciones y su significado operativo pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 No use un total o un reporte exportado como conciliación definitiva sin contrastarlo con el periodo y los datos de origen. Un reporte no visible o un filtro sin resultados no prueba ausencia de operaciones.
@@ -39,11 +41,6 @@ No use un total o un reporte exportado como conciliación definitiva sin contras
 - Periodo o filtro incorrecto: corríjalo antes de interpretar resultados.
 - Resultado inesperado: revise filtros y datos de origen antes de escalar.
 - Exportación no disponible: no sustituya el control por un procedimiento no observado.
-
-## Verificaciones pendientes en runtime
-- Reportes, filtros, datos y columnas disponibles.
-- Totales, exportaciones y comportamiento desplegado.
-- Acceso según sesión y configuración.
 
 ## Enlaces relacionados
 - [Buscar, filtrar y revisar el detalle de ventas](consultar-ventas.md)

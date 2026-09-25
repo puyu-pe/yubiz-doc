@@ -1,10 +1,9 @@
-# Gestionar transportistas
+<a id="gestionar-transportistas"></a>
 
-## Estado
+# 3.3 Gestionar transportistas
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -49,7 +48,9 @@ obligatorios. RUC se trata con once dígitos y el documento con entre ocho y onc
 la comprobación observada relaciona la longitud con DNI o RUC. En un selector de
 transporte, la creación rápida solo trata una búsqueda de once caracteres.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El flujo guarda el transportista o devuelve el registro para su uso en un
 selector. La lista prioriza datos de identificación y vehículo. La acción de
@@ -68,12 +69,6 @@ no sustituye la revisión del formulario completo cuando falten datos requeridos
 - Selector sin resultado: confirme el documento y la disponibilidad del módulo.
 - Datos del vehículo o licencia incompletos: no continúe hasta completar lo que
   el formulario solicite.
-
-## Verificaciones pendientes en runtime
-
-- Acciones de creación, edición y retiro visibles para cada sesión.
-- Mensajes y reglas aplicadas al documento, RUC y selector.
-- Efecto operativo de retirar un transportista en registros existentes.
 
 ## Enlaces relacionados
 

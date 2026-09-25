@@ -1,9 +1,9 @@
-# Visualizar, imprimir y comunicar una venta
+<a id="visualizar-imprimir-y-comunicar-una-venta"></a>
 
-## Estado
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+# 2.11 Visualizar, imprimir y comunicar una venta
+
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 Revisar el detalle de una venta y usar las opciones disponibles para imprimirla o comunicarla.
@@ -27,10 +27,12 @@ En el detalle de una venta abierta desde la lista.
 5. Vuelva al detalle y revise el resultado mostrado antes de continuar con otra operación.
 
 ## Campos y validaciones observados
-El detalle muestra estado, emisión, documento, serie, correlativo, cliente, ítems y pagos. La fuente habilita o deshabilita acciones según tipo de documento, estado, deuda y situación de emisión.
+El detalle muestra estado, emisión, documento, serie, correlativo, cliente, ítems y pagos. La interfaz habilita o deshabilita acciones según tipo de documento, estado, deuda y situación de emisión.
 
-## Resultado revisado en fuente
-El navegador solicita la impresión en el formato elegido. La comunicación intenta informar el documento y luego solicitar su impresión. La entrega, aceptación y resultado definitivo requieren verificación en runtime.
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
+El navegador solicita la impresión en el formato elegido. La comunicación intenta informar el documento y luego solicitar su impresión. La entrega, aceptación y resultado definitivo pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 No interprete una opción visible, una ventana de impresión o un mensaje del navegador como constancia fiscal, de entrega o de comunicación aceptada. Si el estado no es claro, detenga el flujo y escale la revisión a la persona responsable de la operación.
@@ -39,11 +41,6 @@ No interprete una opción visible, una ventana de impresión o un mensaje del na
 - Acción deshabilitada: revise tipo, estado y emisión sin intentar sustituirla.
 - Detalle no coincide con la operación: deténgase y confirme documento, serie y correlativo.
 - Resultado de impresión o comunicación incierto: no ejecute operaciones posteriores basándose solo en la pantalla.
-
-## Verificaciones pendientes en runtime
-- Acciones, formatos y permisos disponibles.
-- Comunicación, impresión y resultado desplegado.
-- Estados y efectos posteriores de la operación.
 
 ## Enlaces relacionados
 - [Buscar, filtrar y revisar el detalle de ventas](consultar-ventas.md)

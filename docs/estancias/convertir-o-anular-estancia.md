@@ -1,10 +1,9 @@
-# Convertir, anular y consultar reportes de estancias
+<a id="convertir-anular-y-consultar-reportes-de-estancias"></a>
 
-## Estado
+# 5.10 Convertir, anular y consultar reportes de estancias
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -44,17 +43,19 @@ Identifique la estancia correcta y revise su detalle antes de iniciar una acció
 
 ## Campos y validaciones observados
 
-- La fuente obtiene información de tiempo y relaciones de recojo antes de
+- La pantalla presenta información de tiempo y relaciones de recojo antes de
   mostrar la confirmación de conversión.
 - Si una estancia no puede encontrarse o la operación de anulación no se
-  completa, la fuente informa un error; no se garantiza aquí qué estados son
+  completa, la interfaz informa un error; no se garantiza aquí qué estados son
   anulables en cada entorno.
-- El reporte carga una vista con establecimientos asociados al contexto de
-  sesión; filtros, columnas y resultados visibles quedan pendientes de runtime.
+- En el reporte, revise los establecimientos asociados al contexto de sesión y
+  confirme los filtros, columnas y resultados visibles antes de usarlos.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente contiene recorridos para preparar conversión, anular una estancia y
+## Resultado esperado
+
+El flujo incluye recorridos para preparar conversión, anular una estancia y
 consultar un reporte. La finalización, mensajes, documentos generados y efectos
 posteriores deben comprobarse en el entorno.
 
@@ -69,12 +70,6 @@ Conversión y anulación pueden cambiar el caso; confirme el detalle antes de co
   contexto para revisión; no repita acciones irreversibles a ciegas.
 - El reporte no muestra lo esperado: revise filtros y contexto antes de extraer
   conclusiones operativas.
-
-## Verificaciones pendientes en runtime
-
-- Estados que permiten convertir o anular y los mensajes que se muestran.
-- Resultado posterior de la conversión o anulación.
-- Filtros, columnas, exportaciones y datos del reporte.
 
 ## Enlaces relacionados
 

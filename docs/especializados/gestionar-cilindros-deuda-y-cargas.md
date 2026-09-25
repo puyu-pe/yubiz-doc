@@ -1,10 +1,9 @@
-# Consultar cilindros, deuda y cargas
+<a id="consultar-cilindros-deuda-y-cargas"></a>
 
-## Estado
+# 5.14 Consultar cilindros, deuda y cargas
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -33,11 +32,13 @@ Abra el reporte de cilindros o deuda disponible desde el módulo especializado.
 
 ## Campos y validaciones observados
 
-La fuente entrega listas y resúmenes para cilindros y deuda, además de detalles imprimibles. Los filtros, columnas, totales y formatos disponibles requieren verificación en entorno.
+La pantalla puede mostrar listas y resúmenes para cilindros y deuda, además de detalles imprimibles. Los filtros, columnas, totales y formatos disponibles deben revisarse antes de continuar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La consulta puede presentar un resumen o detalle de cilindros y deuda. La fuente también declara accesos a crear y listar cargas, cuyo procedimiento ya se documenta en la guía de Inventario.
+## Resultado esperado
+
+La consulta puede presentar un resumen o detalle de cilindros y deuda. La interfaz también declara accesos a crear y listar cargas, cuyo procedimiento ya se documenta en la guía de Inventario.
 
 ## Advertencias y casos límite
 
@@ -48,11 +49,6 @@ No use un resumen como confirmación de deuda o entrega. Evite exponer datos de 
 - No puede identificar el registro: no abra ni imprima el detalle.
 - Resultado sin contexto: revise filtros antes de comunicarlo.
 - Necesita registrar una carga: siga la guía de Inventario, no duplique el flujo.
-
-## Verificaciones pendientes en runtime
-
-- Filtros, columnas, detalles, impresión y mensajes de los reportes.
-- Datos reales de cilindros, deuda y disponibilidad de acciones de carga.
 
 ## Enlaces relacionados
 

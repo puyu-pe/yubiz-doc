@@ -1,10 +1,9 @@
-# Gestionar líneas y conversiones de productos
+<a id="gestionar-líneas-y-conversiones-de-productos"></a>
 
-## Estado
+# 3.11 Gestionar líneas y conversiones de productos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,7 +13,7 @@ formularios del entorno.
 
 ## Acceso condicional
 
-Esta capacidad depende de módulos, configuración y sesión. La fuente muestra una
+Esta capacidad depende de módulos, configuración y sesión. La interfaz puede mostrar una
 entrada de líneas en la navegación y una pantalla de conversión, pero no permite
 afirmar que ambas opciones estén habilitadas ni que tengan el mismo alcance en todos
 los entornos.
@@ -46,14 +45,16 @@ con el responsable operativo los productos, almacenes y cantidades que correspon
 
 La pantalla revisada presenta almacén, producto, cantidad y medida para origen y
 destino. Ambas cantidades tienen mínimo uno y las medidas se muestran como solo
-lectura. La fuente no aporta evidencia suficiente para documentar validaciones de
+lectura. La interfaz no aporta evidencia suficiente para documentar validaciones de
 compatibilidad, efectos contables o reglas de líneas como políticas universales.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La interfaz ofrece registrar una conversión con datos de origen y destino. El efecto
 sobre inventario, costos, documentos relacionados y disponibilidad posterior debe
-verificarse en runtime antes de ser afirmado.
+verificarse en el entorno de trabajo antes de ser afirmado.
 
 ## Advertencias y casos límite
 
@@ -67,12 +68,6 @@ la línea observada en otro formulario controle o valide esta operación.
 - Cantidad menor que uno: corrija el dato antes de registrar.
 - No puede explicar el efecto de la conversión: deténgase y solicite validación.
 - La opción de líneas o conversión no aparece: no use una ruta alternativa no revisada.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad real de líneas y conversiones por módulo y sesión.
-- Validaciones entre productos, almacenes, cantidades y medidas.
-- Resultado operativo, de stock y de costos después de registrar una conversión.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Convertir, anular o imprimir un internado
+<a id="convertir-anular-o-imprimir-un-internado"></a>
 
-## Estado
+# 5.4 Convertir, anular o imprimir un internado
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,7 +39,9 @@ El detalle deshabilita convertir y anular cuando la orden está anulada o ya fue
 convertida. La anulación solicita confirmación antes de enviar la acción; las
 salidas impresas usan el identificador de la orden.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La anulación actualiza el estado dentro de una transacción y la lista se recarga.
 La conversión abre el flujo de venta y la impresión solicita el documento; sus
@@ -56,11 +57,6 @@ la orden o si la interfaz marca la acción como no disponible.
 - Acción deshabilitada: respete el estado mostrado y no fuerce una alternativa.
 - Impresión sin resultado visible: no asuma que se generó el documento.
 - Duda sobre la orden: deténgase antes de confirmar la anulación.
-
-## Verificaciones pendientes en runtime
-
-- Estados visibles, confirmaciones, archivos de impresión y actualización de lista.
-- Resultado de conversión y efecto real de la anulación.
 
 ## Enlaces relacionados
 

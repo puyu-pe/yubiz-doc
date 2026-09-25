@@ -1,10 +1,9 @@
-# Seleccionar productos y revisar condiciones
+<a id="seleccionar-productos-y-revisar-condiciones"></a>
 
-## Estado
+# 2.3 Seleccionar productos y revisar condiciones
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -42,11 +41,13 @@ coincidencias. La tabla conserva cantidad, descripción, tipo de IGV, precio e
 importe; el formulario impide continuar si identifica productos eliminados en la
 tabla.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Cada selección agrega una fila de producto y dispara el recálculo de los totales
 del formulario. Las existencias y condiciones comerciales finales requieren
-verificación en runtime.
+revisión antes de continuar.
 
 ## Advertencias y casos límite
 
@@ -60,12 +61,6 @@ o cupón no se asumen disponibles.
 - Importe inesperado: detenga la venta antes de abrir el detalle de pago.
 - Producto no disponible: no sustituya ni cree un producto sin el procedimiento
   aplicable en su entorno.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad de catálogo, precios, stock y opciones de fila.
-- Ediciones permitidas y efectos de descuentos, recargos o cupones.
-- Resultados de la versión desplegada.
 
 ## Enlaces relacionados
 

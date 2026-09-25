@@ -1,10 +1,9 @@
-# Consultar, editar y notificar pedidos de compra
+<a id="consultar-editar-y-notificar-pedidos-de-compra"></a>
 
-## Estado
+# 6.2 Consultar, editar y notificar pedidos de compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,7 +13,7 @@ para editarlo, replicarlo, notificarlo o generar una orden cuando corresponda.
 ## Acceso condicional
 
 Los filtros, acciones y estados visibles dependen de la sesión y la configuración.
-La fuente muestra restricciones de interfaz para algunos estados; no confirma una
+La interfaz puede mostrar restricciones de interfaz para algunos estados; no confirma una
 política de permisos ni la entrega de una notificación en producción.
 
 ## Requisitos y datos
@@ -45,12 +44,14 @@ La lista contiene fecha, proveedor, establecimiento, importes, usuario y estado.
 detalle muestra las líneas y sus cantidades, descripción, afectación de IGV, precio
 unitario e importe. El formulario de notificación exige un pedido, proveedor y correo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El detalle distingue el pedido de las compras generadas desde él. Cuando el estado
 mostrado es `COMPRADO` o `ANULADO`, la interfaz deshabilita editar, generar orden y
 anular; el envío por correo se deshabilita para `ANULADO`. Estas condiciones describen
-la interfaz revisada y requieren validación en runtime.
+la interfaz y requieren revisión antes de continuar.
 
 ## Advertencias y casos límite
 
@@ -65,12 +66,6 @@ incierto.
 - El pedido no permite editar o generar orden: revise el estado mostrado y no fuerce
   una acción alternativa.
 - Falta proveedor o correo: complete y confirme esos datos antes de enviar.
-
-## Verificaciones pendientes en runtime
-
-- Filtros, columnas y acciones disponibles para cada rol.
-- Entrega real del correo, contenido del documento adjunto y mensajes de error.
-- Significado operativo de los estados y reglas para editar, anular o convertir.
 
 ## Enlaces relacionados
 

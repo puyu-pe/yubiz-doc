@@ -1,10 +1,9 @@
-# Gestionar períodos, asignaciones y consumo de presupuesto
+<a id="gestionar-períodos-asignaciones-y-consumo-de-presupuesto"></a>
 
-## Estado
+# 6.9 Gestionar períodos, asignaciones y consumo de presupuesto
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -51,18 +50,20 @@ asignación exige documento, serie, fecha, período, usuario, monto, moneda y po
 el monto debe ser numérico y mayor que cero. Las listas muestran estados, importes,
 usuario y referencias de origen según el recorrido revisado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El flujo guarda períodos inicialmente planificados y asignaciones inicialmente
 activas. El detalle reúne datos de la asignación, el período, consumos y ajustes. Un
 gasto puede seleccionar una asignación compatible y quedar registrado como consumo;
 esto no confirma presupuesto aprobado, autorización de negocio, moneda aplicable ni
-efectos financieros, fiscales, contables o de stock en runtime.
+efectos financieros, fiscales, contables o de stock en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
-Un período archivado no se reactiva en la fuente revisada. Al cerrar o archivar un
-período, la fuente revisa asignaciones activas; una asignación con política estricta
+Un período archivado no se reactiva en la interfaz. Al cerrar o archivar un
+período, la interfaz revisa asignaciones activas; una asignación con política estricta
 puede impedir el cierre o archivo si conserva monto disponible. Confirme los estados
 reales antes de cambiar cualquiera de ellos.
 
@@ -72,12 +73,6 @@ reales antes de cambiar cualquiera de ellos.
 - Monto, moneda o política incompletos: detenga la asignación y complete los datos.
 - Estado o acción no disponible: no fuerce el cambio; revise período, asignación y detalle.
 - Consumo o exportación inesperados: ajuste filtros y confirme el origen antes de continuar.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad del módulo, períodos, estados, políticas, usuarios y monedas.
-- Resultado de crear, modificar, ajustar, cambiar estados y exportar.
-- Alcance de permisos, efectos de consumo y reglas financieras, fiscales, contables o de stock.
 
 ## Enlaces relacionados
 

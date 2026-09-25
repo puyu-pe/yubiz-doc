@@ -1,10 +1,9 @@
-# Registrar una orden de compra
+<a id="registrar-una-orden-de-compra"></a>
 
-## Estado
+# 6.3 Registrar una orden de compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -48,11 +47,13 @@ interfaz incluye moneda, fecha tributable, categoría de egreso, productos, cant
 precios, impuestos, descuento, recargo, subtotal, IGV, total, pagado y deuda. El saldo
 se calcula a partir del total y el monto pagado ingresado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda una orden con su estado, detalle y, cuando existe un monto pagado,
+## Resultado esperado
+
+El flujo registra una orden con su estado, detalle y, cuando existe un monto pagado,
 un registro de pago inicial. También conserva el origen si lo hubiera. La presencia de
-ese flujo en fuente no confirma movimientos de caja, stock, contabilidad ni resultados
+ese flujo en la interfaz no confirma movimientos de caja, stock, contabilidad ni resultados
 en un entorno desplegado.
 
 ## Advertencias y casos límite
@@ -67,12 +68,6 @@ No reutilice una orden como si fuera el pedido original sin verificar su origen.
 - El producto o su seguimiento no está claro: detenga el registro y revise el detalle.
 - Total, pago o deuda inesperados: revise líneas, descuento, recargo e impuesto antes
   de confirmar.
-
-## Verificaciones pendientes en runtime
-
-- Campos visibles y obligatoriedad por configuración y rol.
-- Opciones de moneda, almacén, categoría, lote y serie.
-- Estado inicial, efectos de pago, stock y registros contables aplicables.
 
 ## Enlaces relacionados
 

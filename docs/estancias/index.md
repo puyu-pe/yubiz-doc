@@ -1,19 +1,12 @@
 # Estancias
 
-> **Estado del contenido**
->
-> - Revisión de fuente: revisada en código.
-> - Verificación en entorno: pendiente.
-> - Paridad con la versión desplegada: pendiente.
-
-Estas fichas describen recorridos observados en la fuente para el módulo de
-estancias. Los nombres visibles, datos disponibles y resultados pueden variar
-según la configuración del entorno.
+Los nombres visibles, datos disponibles y resultados pueden variar según la
+configuración del entorno.
 
 ## Fichas disponibles
 
-- [Registrar una estancia](registrar-estancia.md)
-- [Consultar las estancias del día, la lista y el detalle](gestionar-estancias.md)
-- [Gestionar sujetos y personas relacionadas](gestionar-personas-de-la-estancia.md)
-- [Gestionar tarifas, relaciones y descuentos](gestionar-tarifas-y-descuentos.md)
-- [Convertir, anular y consultar reportes de estancias](convertir-o-anular-estancia.md)
+- [5.6 Registrar una estancia](registrar-estancia.md)
+- [5.7 Consultar las estancias del día, la lista y el detalle](gestionar-estancias.md)
+- [5.8 Gestionar sujetos y personas relacionadas](gestionar-personas-de-la-estancia.md)
+- [5.9 Gestionar tarifas, relaciones y descuentos](gestionar-tarifas-y-descuentos.md)
+- [5.10 Convertir, anular y consultar reportes de estancias](convertir-o-anular-estancia.md)

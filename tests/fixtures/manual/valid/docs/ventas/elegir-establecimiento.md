@@ -1,12 +1,5 @@
 # Elegir establecimiento
 
-## Estado
-
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
-- Estado de contenido: pending_enrichment
-
 ## Objetivo
 
 Preparar el contexto de trabajo.
@@ -29,11 +22,11 @@ Ubicarse en la pantalla inicial.
 
 ## Campos y validaciones observados
 
-Los campos visibles requieren verificación en runtime.
+Revise los campos visibles antes de continuar.
 
-## Resultado revisado en fuente
+## Resultado esperado
 
-El flujo fue revisado en fuente.
+El resultado queda disponible en la pantalla.
 
 ## Advertencias y casos límite
 
@@ -42,10 +35,6 @@ No asumir permisos ni resultados no verificados.
 ## Problemas frecuentes y condiciones de detención
 
 Detenerse si la opción no está disponible.
-
-## Verificaciones pendientes en runtime
-
-Confirmar etiquetas y comportamiento en el tenant.
 
 ## Enlaces relacionados
 

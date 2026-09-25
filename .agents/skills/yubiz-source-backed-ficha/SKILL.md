@@ -1,6 +1,6 @@
 ---
 name: yubiz-source-backed-ficha
-description: "Trigger: Yubiz ficha, source-backed documentation, sales guide refresh. Review and maintain public-safe draft fichas."
+description: "Trigger: Yubiz ficha, source-backed documentation, sales guide refresh. Review and maintain public-safe operational fichas."
 license: Apache-2.0
 metadata:
   author: "puyu-pe"
@@ -17,7 +17,7 @@ Load when creating or refreshing a Yubiz source-backed operational ficha.
 - Admit a ficha only with a declared menu and a direct or indirect browser UI path.
 - Do not treat App APIs as UI authority unless the browser path invokes them.
 - Keep internal paths, ranges, and traces in private Engram evidence.
-- Preserve draft status until tenant and deployed-parity evidence exists.
+- Keep source, runtime, and deployed uncertainty in metadata and private Engram evidence; never expose it in a ficha.
 
 ## Decision Gates
 
@@ -25,15 +25,15 @@ Load when creating or refreshing a Yubiz source-backed operational ficha.
 |---|---|
 | Declared menu plus direct/indirect browser UI path | Write neutral Spanish guidance. |
 | Historical menu only or no declared UI path | Exclude it from this documentation scope without calling the feature disabled. |
-| Label, entitlement, or outcome is unobserved | Mark it pending runtime verification. |
+| Label, entitlement, or outcome is unobserved | Record the uncertainty in metadata and private evidence; keep reader guidance neutral. |
 | Source revision changes | Refresh inventory and checkpoint metadata. |
 
 ## Execution Steps
 
 1. Confirm the pinned source revision and inspect the declared browser-facing path.
 2. Record detailed trace and uncertainties in private Engram evidence.
-3. Write the ficha with status, objective, preconditions, steps, result, and runtime gate.
-4. Treat permissions, users, roles, and grants as neither an admission requirement nor an analysis step; record access variation only as a runtime-pending note. Update the v2 inventory, capability dispositions, and checkpoint together;
+3. Write the ficha with objective, preconditions, steps, result, and operational caveats only.
+4. Treat permissions, users, roles, and grants as neither an admission requirement nor an analysis step; record access variation in metadata and private evidence. Update the v2 inventory, capability dispositions, and checkpoint together;
    retain only opaque IDs in public capability metadata.
 5. Keep `scope_state: slice_pending` and source/runtime/deployed states independent
    until private evidence and final reconciliation authorize completion.
@@ -53,8 +53,8 @@ Load when creating or refreshing a Yubiz source-backed operational ficha.
 
 ## Output Contract
 
-Return the source revision, reviewed scope, public files changed, uncertainties,
-and strict-build result. State that runtime evidence is pending when unavailable.
+Return the source revision, reviewed scope, public files changed, metadata/private-evidence
+uncertainties, and strict-build result.
 
 ## References
 

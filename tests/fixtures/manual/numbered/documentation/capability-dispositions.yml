@@ -1,0 +1,14 @@
+schema_version: 2
+capabilities:
+  - id: CAP-01
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-context
+  - id: CAP-02
+    classification: core
+    disposition: documented
+    canonical_doc_id: sales-context
+  - id: CAP-03
+    classification: conditional
+    disposition: documented
+    canonical_doc_id: sales-client

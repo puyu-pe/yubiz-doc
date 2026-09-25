@@ -1,10 +1,9 @@
-# Registrar venta con saldo pendiente
+<a id="registrar-venta-con-saldo-pendiente"></a>
 
-## Estado
+# 2.5 Registrar venta con saldo pendiente
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -42,29 +41,25 @@ deuda es mayor que cero, muestra la fecha de vencimiento y exige que sea posteri
 a la fecha de emisión. Cada monto debe ser válido y mayor que cero; en pagos no
 efectivo únicos, el monto no puede superar el total.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El flujo incorpora la deuda y la fecha de vencimiento a los datos enviados para
 registrar la venta. La aceptación de cada combinación de pago y deuda debe
-verificarse en runtime.
+verificarse en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
 No use una fecha igual o anterior a la emisión cuando el formulario muestre deuda.
 No confirme un saldo pendiente sin contrastarlo con el acuerdo comercial; la
-fuente no prueba una política de crédito ni su aprobación en el entorno.
+la pantalla no prueba una política de crédito ni su aprobación en el entorno.
 
 ## Problemas frecuentes y condiciones de detención
 
 - Deuda diferente de la acordada: corrija montos antes de confirmar.
 - Fecha de vencimiento rechazada: use una fecha posterior a la emisión.
 - Método o documento no disponible: detenga la operación y valide la configuración.
-
-## Verificaciones pendientes en runtime
-
-- Admisión de pagos parciales y ventas con deuda.
-- Reglas de vencimiento, documentos y permisos por cuenta.
-- Confirmación final y comportamiento desplegado.
 
 ## Enlaces relacionados
 

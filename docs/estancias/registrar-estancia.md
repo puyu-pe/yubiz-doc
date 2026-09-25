@@ -1,10 +1,9 @@
-# Registrar una estancia
+<a id="registrar-una-estancia"></a>
 
-## Estado
+# 5.6 Registrar una estancia
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,15 +39,17 @@ Use un caso ficticio y confirme que el contexto mostrado corresponde a la tarea.
 
 ## Campos y validaciones observados
 
-- La fuente requiere datos de estancia válidos y al menos una tarifa activa.
+- La interfaz requiere datos de estancia válidos y al menos una tarifa activa.
 - Cada ítem debe tener cantidad y precio mayores que cero.
 - La suma de pagos no puede superar el total neto de la estancia.
 - Si la tarifa deja de estar activa o falta una serie, no continúe: revise la
   configuración del entorno antes de volver a intentar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente registra la estancia, sus ítems y pagos dentro de una transacción. La
+## Resultado esperado
+
+La interfaz registra la estancia, sus ítems y pagos dentro de una transacción. La
 numeración, los mensajes y la actualización visible de la lista requieren
 verificación en el entorno.
 
@@ -62,12 +63,6 @@ No use datos reales ni confirme un registro cuando el caso no esté completo.
 - El total no coincide con los ítems o pagos: revise los datos antes de guardar.
 - El sujeto no aparece: consulte la guía de sujetos y relaciones antes de crear
   un registro nuevo.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, orden de campos y mensajes mostrados por la interfaz.
-- Disponibilidad real de series, tarifas y medios de pago.
-- Efecto visible del registro en la lista diaria y el detalle.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Registrar un ajuste de inventario
+<a id="registrar-un-ajuste-de-inventario"></a>
 
-## Estado
+# 4.3 Registrar un ajuste de inventario
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -46,11 +45,13 @@ El formulario revisado contiene tipo de operación, stock actual de solo lectura
 cantidad y observación. La salida aparece deshabilitada cuando la cantidad actual no
 es positiva. Para seguimiento por lote o serie, la interfaz adapta la captura; en
 series distingue la entrada de la salida. La obligatoriedad, límites y mensajes
-visibles deben verificarse en runtime.
+visibles deben verificarse en el entorno de trabajo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente valida datos de seguimiento, registra el ajuste y su movimiento dentro de
+## Resultado esperado
+
+La interfaz valida datos de seguimiento, registra el ajuste y su movimiento dentro de
 una transacción, revierte ante un error y devuelve la cantidad del producto-almacén
 para actualizar la vista. El efecto final en existencias y registros relacionados
 debe comprobarse en el entorno.
@@ -67,12 +68,6 @@ motivo ni continúe si el movimiento no es trazable.
 - Salida no disponible: revise el stock y no fuerce una alternativa.
 - Lote o serie incompletos: complete datos válidos o detenga el registro.
 - Error al guardar: no reintente a ciegas; confirme si se creó un movimiento.
-
-## Verificaciones pendientes en runtime
-
-- Permisos, campos obligatorios, reglas de cantidad y mensajes de error.
-- Efecto real sobre el stock, lote, serie y tabla de movimientos.
-- Requisitos organizacionales de autorización, revisión y conservación de evidencia.
 
 ## Enlaces relacionados
 

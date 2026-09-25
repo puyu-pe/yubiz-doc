@@ -10,37 +10,33 @@ from pathlib import Path
 import yaml
 
 REQUIRED_SECTIONS = (
-    "Estado",
     "Objetivo",
     "Acceso condicional",
     "Requisitos y datos",
     "Punto de partida",
     "Pasos",
     "Campos y validaciones observados",
-    "Resultado revisado en fuente",
+    "Resultado esperado",
     "Advertencias y casos límite",
     "Problemas frecuentes y condiciones de detención",
-    "Verificaciones pendientes en runtime",
     "Enlaces relacionados",
 )
 RAW_READER_STATUS_TOKENS = (
     "source_reviewed_draft",
     "pending_runtime_verification",
 )
-READER_STATUS_ROWS = (
-    "Revisión de fuente: revisada en código",
-    "Verificación en entorno: pendiente",
-    "Paridad con la versión desplegada: pendiente",
+READER_PROCESS_PATTERNS = (
+    r"(?i)Borrador revisado en código · verificación en entorno pendiente",
+    r"(?i)Revisión de fuente: revisada en código",
+    r"(?i)Verificación en entorno: pendiente",
+    r"(?i)Paridad con la versión desplegada: pendiente",
+    r"(?i)\brevisad[oa] en (?:código|fuente)\b",
+    r"(?i)\b(?:requiere|requieren|quedan) (?:verificación en |pendientes? de )(?:runtime|entorno)\b",
+    r"(?i)\b(?:la fuente|en la fuente|fuente revisada|revisados en fuente|observados en la fuente)\b",
+    r"(?i)\b(?:verificación|validación) en runtime\b",
+    r"(?i)\bel navegador envía\b",
 )
 PENDING_ENRICHMENT = "pending_enrichment"
-LEGACY_REQUIRED_SECTIONS = (
-    "Objetivo",
-    "Antes de empezar",
-    "Pasos",
-    "Resultado esperado",
-    "Pendiente de verificar en entorno",
-)
-LEGACY_DRAFT_MARKER = "Borrador revisado en código · verificación en entorno pendiente"
 
 
 @dataclass(frozen=True)
@@ -66,13 +62,6 @@ def validate_manual(root: Path, *, final: bool = False) -> ValidationReport:
     documents = metadata.get("inventory", {}).get("documents", [])
     capabilities = metadata.get("catalog", {}).get("capabilities", [])
     checkpoint = metadata.get("checkpoint", {})
-    legacy_paths = {
-        document["path"]
-        for document in documents
-        if isinstance(document, dict)
-        and document.get("content_status") == PENDING_ENRICHMENT
-        and isinstance(document.get("path"), str)
-    }
     fichas: list[Path] = []
     for path in sorted(path for path in docs_root.rglob("*.md") if path.name != "index.md"):
         if is_within(path.resolve(), docs_root.resolve()):
@@ -82,17 +71,11 @@ def validate_manual(root: Path, *, final: bool = False) -> ValidationReport:
     for ficha in fichas:
         text = ficha.read_text(encoding="utf-8")
         label = ficha.relative_to(root).as_posix()
-        relative_path = ficha.relative_to(docs_root).as_posix()
-        is_legacy_pending = (
-            not final
-            and relative_path in legacy_paths
-            and LEGACY_DRAFT_MARKER in text
-        )
-        if not is_legacy_pending and not has_visible_status(text):
-            diagnostics.append(f"missing-status: {label} lacks required visible status")
+        if reader_process_marker(text):
+            diagnostics.append(f"reader-process-notice: {label} contains editorial process prose")
         if raw_status_tokens(text):
             diagnostics.append(f"raw-reader-status: {label} contains machine status tokens")
-        for section in (LEGACY_REQUIRED_SECTIONS if is_legacy_pending else REQUIRED_SECTIONS):
+        for section in REQUIRED_SECTIONS:
             if f"## {section}" not in text:
                 diagnostics.append(f"required-section: {label} lacks {section}")
         validate_links(text, ficha, docs_root, label, diagnostics)
@@ -179,6 +162,7 @@ def validate_metadata(
     nav_paths = {item for item in nav_leaves(nav.get("nav")) if not item.endswith("index.md")}
     if nav_paths != file_paths:
         diagnostics.append("nav-parity: navigation and ficha files differ")
+    validate_numbering(nav.get("nav"), docs_root, diagnostics)
     validate_indexes(docs_root, documents, diagnostics)
     catalog_ids: set[str] = set()
     catalog_inventory_ids: set[str] = set()
@@ -227,9 +211,74 @@ def add_unique(seen: set[str], value: str, predicate: str, diagnostics: list[str
     seen.add(value)
 
 
-def has_visible_status(text: str) -> bool:
-    """Require the complete reader-facing status banner."""
-    return all(row in text for row in READER_STATUS_ROWS)
+def reader_process_marker(text: str) -> bool:
+    """Keep editorial review and runtime notices out of reader-facing Markdown."""
+    visible_text = re.sub(r"<a\s+id=[\"'][^\"']+[\"']\s*></a>", "", text, flags=re.IGNORECASE)
+    return any(re.search(pattern, visible_text) for pattern in READER_PROCESS_PATTERNS)
+
+
+def validate_numbering(nav: object, docs_root: Path, diagnostics: list[str]) -> None:
+    """Keep chapter and ficha numbers derived from the ordered MkDocs navigation."""
+    if not isinstance(nav, list):
+        diagnostics.append("numbering-nav: navigation must be a list")
+        return
+    numbered_tree = any(
+        isinstance(entry, dict)
+        and len(entry) == 1
+        and isinstance(next(iter(entry)), str)
+        and re.match(r"^\d+\. ", next(iter(entry)))
+        for entry in nav
+    )
+    if not numbered_tree:
+        return
+    for chapter, entry in enumerate(nav, start=1):
+        if not isinstance(entry, dict) or len(entry) != 1:
+            diagnostics.append("numbering-nav: invalid chapter entry")
+            continue
+        chapter_label, items = next(iter(entry.items()))
+        if not isinstance(chapter_label, str):
+            diagnostics.append("numbering-chapter: chapter label is invalid")
+            continue
+        if not chapter_label.startswith(f"{chapter}. "):
+            diagnostics.append("numbering-chapter: chapter label does not match navigation order")
+        for ordinal, (label, path) in enumerate(numbered_nav_leaves(items), start=1):
+            expected = f"{chapter}.{ordinal} "
+            if not label.startswith(expected):
+                diagnostics.append("numbering-nav: ficha label does not match navigation order")
+            text_path = docs_root / path
+            if not text_path.is_file():
+                continue
+            text = text_path.read_text(encoding="utf-8")
+            heading = next((line for line in text.splitlines() if line.startswith("# ")), "")
+            if not heading.startswith(f"# {chapter}.{ordinal} "):
+                diagnostics.append("numbering-h1: ficha heading does not match navigation order")
+            index = text_path.parent / "index.md"
+            if not index.is_file():
+                diagnostics.append("numbering-index: owning index is missing")
+                continue
+            labels = {
+                target: index_label
+                for index_label, link in markdown_link_pairs(section_content(index.read_text(encoding="utf-8")))
+                for target in [resolve_target(index, docs_root, link)]
+                if target is not None
+            }
+            target = text_path.resolve()
+            if not labels.get(target, "").startswith(expected):
+                diagnostics.append("numbering-index: ficha label does not match navigation order")
+
+
+def numbered_nav_leaves(value: object) -> list[tuple[str, str]]:
+    if isinstance(value, list):
+        return [leaf for child in value for leaf in numbered_nav_leaves(child)]
+    if isinstance(value, dict):
+        leaves: list[tuple[str, str]] = []
+        for label, child in value.items():
+            if isinstance(child, str) and not child.endswith("index.md") and isinstance(label, str):
+                leaves.append((label, child))
+            else:
+                leaves.extend(numbered_nav_leaves(child))
+        return leaves
+    return []
 
 
 def raw_status_tokens(text: str) -> bool:
@@ -280,8 +329,16 @@ def validate_indexes(docs_root: Path, documents: list[object], diagnostics: list
 
 
 def section_links(text: str) -> list[str]:
+    return markdown_links(section_content(text))
+
+
+def section_content(text: str) -> str:
     match = re.search(r"^## Fichas disponibles\s*$([\s\S]*?)(?=^## |\Z)", text, re.MULTILINE)
-    return markdown_links(match.group(1)) if match else []
+    return match.group(1) if match else ""
+
+
+def markdown_link_pairs(text: str) -> list[tuple[str, str]]:
+    return [(match.group(1), match.group(2).split()[0]) for match in re.finditer(r"(?<!!)\[([^]]+)\]\(([^)]+)\)", text)]
 
 
 def validate_links(text: str, source: Path, docs_root: Path, label: str, diagnostics: list[str]) -> None:
@@ -293,8 +350,15 @@ def validate_links(text: str, source: Path, docs_root: Path, label: str, diagnos
         if candidate is None or not candidate.is_file():
             diagnostics.append(f"broken-link: {label}")
             continue
-        if anchor and slugify(anchor) not in {slugify(line[3:]) for line in candidate.read_text(encoding="utf-8").splitlines() if line.startswith("## ")}:
+        if anchor and anchor not in anchor_ids(candidate.read_text(encoding="utf-8")):
             diagnostics.append(f"broken-anchor: {label}")
+
+
+def anchor_ids(text: str) -> set[str]:
+    """Recognize Markdown heading anchors and deliberate legacy HTML aliases."""
+    headings = {slugify(match.group(1)) for match in re.finditer(r"^#{1,6}\s+(.+?)\s*$", text, re.MULTILINE)}
+    aliases = {match.group(1) for match in re.finditer(r"<a\s+id=[\"']([^\"']+)[\"']\s*></a>", text, re.IGNORECASE)}
+    return headings | aliases
 
 
 def markdown_links(text: str) -> list[str]:

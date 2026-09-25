@@ -1,10 +1,9 @@
-# Gestionar categorías de gasto y costos fijos
+<a id="gestionar-categorías-de-gasto-y-costos-fijos"></a>
 
-## Estado
+# 6.12 Gestionar categorías de gasto y costos fijos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -13,7 +12,7 @@ fijos disponibles en la sesión.
 
 ## Acceso condicional
 
-Estas opciones dependen de la navegación y sesión disponibles. La fuente muestra
+Estas opciones dependen de la navegación y sesión disponibles. La interfaz puede mostrar
 formularios de administración de datos; no confirma quién puede crear, editar o
 eliminar registros ni cómo se aplican después en cada operación.
 
@@ -47,10 +46,12 @@ descripción y costo, trata el costo como dato numérico y presenta una relació
 proveedor. La disponibilidad real de operaciones de edición o eliminación depende
 del entorno.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La interfaz administra registros de categorías y de costos fijos. Estos registros
-se presentan como datos separados del gasto registrado; la fuente revisada no
+se presentan como datos separados del gasto registrado; la interfaz no
 permite afirmar una regla universal de recurrencia, cálculo, impuestos o uso futuro.
 
 ## Advertencias y casos límite
@@ -63,12 +64,6 @@ no equivale por sí mismo a un gasto registrado ni garantiza un registro automá
 - Descripción ambigua o duplicada: detenga el alta y acuerde una denominación clara.
 - Costo no numérico o no revisado: corríjalo antes de guardar.
 - Proveedor o acciones no disponibles: no fuerce el flujo; confirme la configuración de su entorno.
-
-## Verificaciones pendientes en runtime
-
-- Opciones de alta, edición, eliminación y visibilidad disponibles para cada sesión.
-- Reglas de duplicidad, formato de costo y relación con proveedores.
-- Efecto de categorías y costos fijos en registros, reportes y políticas operativas.
 
 ## Enlaces relacionados
 

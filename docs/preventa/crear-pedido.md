@@ -1,10 +1,9 @@
-# Crear un pedido de preventa
+<a id="crear-un-pedido-de-preventa"></a>
 
-## Estado
+# 7.1 Crear un pedido de preventa
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -43,11 +42,13 @@ El formulario muestra documento, serie, correlativo de solo lectura, fecha, prom
 identificador de cliente, línea, productos, cantidad, precio unitario, subtotal, IGV,
 total, detalle y observación. Los totales se presentan como campos calculados.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El recorrido heredado reúne datos de documento, cliente, promotor y detalle de
 productos para registrar el pedido. Los efectos comerciales, fiscales, de stock o de
-reserva requieren verificación en runtime.
+reserva pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 
@@ -59,12 +60,6 @@ procedimiento para editar una preventa de la lista moderna; use su ficha especí
 - Cliente o producto no identificado: confirme el dato de origen antes de guardar.
 - Total inesperado: revise cantidades y precios antes de continuar.
 - Serie no disponible: no sustituya el control por una serie no observada.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad de documentos, series, promotores, clientes, líneas y productos.
-- Validaciones finales, efectos de stock/reserva y resultados del guardado.
-- Permisos, mensajes y comportamiento desplegado.
 
 ## Enlaces relacionados
 

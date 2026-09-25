@@ -1,10 +1,9 @@
-# Consultar y gestionar el ciclo de una orden de carga
+<a id="consultar-y-gestionar-el-ciclo-de-una-orden-de-carga"></a>
 
-## Estado
+# 7.5 Consultar y gestionar el ciclo de una orden de carga
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -13,7 +12,7 @@ Consultar una orden de carga y usar solo las acciones habilitadas por su estado.
 ## Acceso condicional
 
 El ciclo depende del módulo y de la sesión. Las etiquetas y transiciones se
-revisaron en fuente, pero su disponibilidad en un tenant requiere verificación.
+revisaron en la interfaz, pero su disponibilidad en un tenant requiere verificación.
 
 ## Requisitos y datos
 
@@ -40,11 +39,13 @@ productos y, cuando existen, compromisos y recargas. La interfaz distingue los
 estados programada, confirmada, cerrada, descargada, liquidada y cancelada. Las
 acciones visibles se restringen por estado y por la existencia de una descarga.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La confirmación cambia la orden de programada a confirmada. La descarga se
 habilita desde una orden cerrada sin descarga, y la liquidación desde una orden
-descargada con descarga asociada. Estos son mecanismos de fuente; no son una
+descargada con descarga asociada. Estos son mecanismos disponibles; no son una
 aprobación operativa, financiera ni de inventario en producción.
 
 ## Advertencias y casos límite
@@ -59,12 +60,6 @@ Una orden de carga de Distribución no reemplaza una carga de contenedores.
 - Estado inesperado tras una acción: detenga pasos posteriores y vuelva al detalle.
 - Compromisos o cantidades no entendidos: no liquide; revise el detalle y el contexto.
 - Error al confirmar, anular o liquidar: no repita sin comprobar la lista.
-
-## Verificaciones pendientes en runtime
-
-- Estados, permisos y acciones permitidas para la sesión.
-- Significado operativo de cerrar, descargar y liquidar.
-- Efectos sobre stock, ventas, caja, compromisos y documentos.
 
 ## Enlaces relacionados
 

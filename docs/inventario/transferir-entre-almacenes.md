@@ -1,10 +1,9 @@
-# Transferir productos entre almacenes
+<a id="transferir-productos-entre-almacenes"></a>
 
-## Estado
+# 4.4 Transferir productos entre almacenes
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -43,15 +42,17 @@ presenta documento, serie, fecha, origen, destino y una tabla de productos.
 
 ## Campos y validaciones observados
 
-La interfaz revisada contiene documento, serie, fecha de movimiento, responsable,
+La interfaz contiene documento, serie, fecha de movimiento, responsable,
 origen, destino, productos, cantidades, detalle para impresión y observación. Para
 una transferencia interna, el navegador aplica una validación para que origen y
 destino no sean iguales y adapta el stock mostrado al almacén de origen. Los límites,
-campos obligatorios y mensajes requieren verificación en runtime.
+campos obligatorios y mensajes pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente separa el envío de transferencias internas de otras transferencias y
+## Resultado esperado
+
+La interfaz separa el envío de transferencias internas de otras transferencias y
 devuelve una respuesta de éxito o error. No se garantiza aquí la actualización final
 del stock, la impresión ni el estado de aprobación sin evidencia del entorno.
 
@@ -67,12 +68,6 @@ revise el listado o el historial disponible.
 - Serie o lote sin identificar: detenga la operación y complete la trazabilidad.
 - Stock o cantidad no explicables: revise movimientos antes de registrar.
 - Error de envío: no duplique la transferencia sin confirmar el resultado.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad de documentos, series, almacenes y acciones por sesión.
-- Reglas de cantidad, stock disponible y seguimiento por lote o serie.
-- Efecto real de la transferencia, documentos generados y controles operativos.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Gestionar entidades financieras
+<a id="gestionar-entidades-financieras"></a>
 
-## Estado
+# 3.4 Gestionar entidades financieras
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -41,14 +40,16 @@ navegación de su sesión o desde el flujo autorizado de cuentas de proveedores.
 
 El formulario revisado contiene tipo, nombre, descripción y estado. Tipo y nombre
 son obligatorios. Los tipos observados incluyen banco, caja, cooperativa y otros;
-el estado se presenta como activo o inactivo. La fuente revisada no confirma que
+el estado se presenta como activo o inactivo. La interfaz no confirma que
 estas etiquetas ni opciones sean idénticas en todos los entornos.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La entidad queda disponible para relacionarse con cuentas de proveedores. Al
 retirarla de uso, el flujo revisado cambia su estado a inactivo. La actualización
-registra una fecha de modificación en la fuente, sin que esta ficha infiera una
+registra una fecha de modificación en la interfaz, sin que esta ficha infiera una
 política de auditoría o aprobación.
 
 ## Advertencias y casos límite
@@ -65,12 +66,6 @@ entidades desde un flujo alternativo.
 - No se puede confirmar el impacto de inactivarla: no continúe sin el
   procedimiento autorizado.
 - Opción ausente: confirme la habilitación del módulo y la sesión disponible.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad real de la capacidad condicional.
-- Etiquetas, opciones de tipo, mensajes y permisos por sesión.
-- Uso de entidades activas e inactivas en cuentas de proveedores desplegadas.
 
 ## Enlaces relacionados
 

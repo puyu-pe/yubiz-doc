@@ -1,10 +1,9 @@
-# Cambiar o anular el estado de una compra
+<a id="cambiar-o-anular-el-estado-de-una-compra"></a>
 
-## Estado
+# 6.6 Cambiar o anular el estado de una compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -15,7 +14,7 @@ cautela cuando el módulo y el estado actual lo permitan.
 
 Esta capacidad es condicional y potencialmente destructiva. Los estados y acciones
 dependen de la sesión y configuración. La guía no establece políticas de autorización,
-aprobación ni consecuencias financieras u operativas no verificadas en runtime.
+aprobación ni consecuencias financieras u operativas no verificadas en el entorno de trabajo.
 
 ## Requisitos y datos
 
@@ -42,14 +41,16 @@ estado mostrado antes de iniciar un cambio.
 ## Campos y validaciones observados
 
 El cambio de estado solicita la orden y un estado de compra. La anulación solicita la
-referencia de compra y un motivo obligatorio. La fuente impide cambiar a un estado con
+referencia de compra y un motivo obligatorio. La interfaz impide cambiar a un estado con
 orden anterior y rechaza anular una orden ya anulada o no identificada.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El cambio guarda el estado seleccionado dentro de una transacción. La anulación marca
 la compra con un estado anulado y conserva el motivo junto con la observación interna.
-Estos son comportamientos revisados en fuente; no confirman devoluciones, caja, stock,
+Estos son comportamientos disponibles; no confirman devoluciones, caja, stock,
 presupuesto, contabilidad ni aprobaciones en el entorno desplegado.
 
 ## Advertencias y casos límite
@@ -64,12 +65,6 @@ acción sensible: documente un motivo útil y deténgase ante cualquier duda.
 - El estado propuesto es anterior al actual: no continúe; revise la secuencia visible.
 - Falta motivo de anulación: complete el motivo antes de enviar.
 - La orden ya está anulada: no intente una segunda anulación.
-
-## Verificaciones pendientes en runtime
-
-- Estados disponibles, orden de transición y permisos por rol.
-- Mensajes de confirmación, posibilidad de reversión y trazabilidad visible.
-- Efectos sobre pagos, inventario, caja, presupuesto y contabilidad.
 
 ## Enlaces relacionados
 

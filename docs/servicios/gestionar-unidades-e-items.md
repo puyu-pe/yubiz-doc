@@ -1,10 +1,9 @@
-# Gestionar unidades e ítems de servicio
+<a id="gestionar-unidades-e-ítems-de-servicio"></a>
 
-## Estado
+# 5.1 Gestionar unidades e ítems de servicio
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -35,11 +34,13 @@ mantener.
 
 ## Campos y validaciones observados
 
-La fuente separa las unidades de los ítems de servicio. El formulario de internado
+La interfaz separa las unidades de los ítems de servicio. El formulario de internado
 selecciona una unidad y agrega ítems a su detalle; la obligatoriedad y los límites
-de cada mantenimiento requieren verificación en entorno.
+de cada mantenimiento deben revisarse antes de continuar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Una unidad o ítem disponible puede incorporarse al formulario de una orden de
 servicio. La creación efectiva y los mensajes mostrados no han sido verificados.
@@ -54,11 +55,6 @@ ya usan órdenes existentes. Deténgase ante nombres duplicados o datos incomple
 - No encuentra el registro esperado: revise la lista antes de crear uno nuevo.
 - La unidad no aparece al registrar: deténgase y confirme el contexto del entorno.
 - No puede identificar el ítem: no lo agregue a una orden.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, filtros, campos obligatorios y mensajes de guardado.
-- Disponibilidad real de unidades e ítems en una orden.
 
 ## Enlaces relacionados
 

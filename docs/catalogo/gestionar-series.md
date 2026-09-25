@@ -1,10 +1,9 @@
-# Gestionar series y trazabilidad de productos
+<a id="gestionar-series-y-trazabilidad-de-productos"></a>
 
-## Estado
+# 3.10 Gestionar series y trazabilidad de productos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -43,20 +42,22 @@ descripción y seleccione la acción de edición disponible.
 
 La edición revisada muestra producto, lote de solo lectura, serie, ubicación de solo
 lectura y detalle. Para ciertos contenedores aparecen contenido, llenado, condición
-operativa, tipo de propietario y atributos. La fuente rechaza una descripción de serie
-duplicada. Las reglas de visibilidad, valores admitidos y mensajes requieren runtime.
+operativa, tipo de propietario y atributos. La interfaz evita una descripción de serie
+duplicada. Las reglas de visibilidad, valores admitidos y mensajes pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente actualiza la serie y conserva su vínculo con lote, producto y ubicación. Un
-cambio de producto tiene condiciones adicionales en la fuente; esta ficha no afirma
+## Resultado esperado
+
+La interfaz actualiza la serie y conserva su vínculo con lote, producto y ubicación. Un
+cambio de producto tiene condiciones adicionales en la interfaz; esta ficha no afirma
 que esté disponible ni describe sus efectos sobre existencias en un entorno desplegado.
 
 ## Advertencias y casos límite
 
 No use esta ficha para asignar series en entradas, salidas o cargas: son flujos
 operativos distintos. La ubicación, el propietario y los campos de contenedor pueden
-limitar la modificación. No infiera trazabilidad completa sin validarla en runtime.
+limitar la modificación. No infiera trazabilidad completa sin validarla en el entorno de trabajo.
 
 ## Problemas frecuentes y condiciones de detención
 
@@ -64,12 +65,6 @@ limitar la modificación. No infiera trazabilidad completa sin validarla en runt
 - Descripción repetida: use un identificador distinto o revise el registro existente.
 - La serie no está en el contexto esperado: no intente forzar un cambio de producto.
 - Controles de contenedor ausentes: confirme si aplican al tipo de producto.
-
-## Verificaciones pendientes en runtime
-
-- Habilitación, permisos, etiquetas y filtros de la lista de series.
-- Campos adicionales por tipo de producto y sus validaciones visibles.
-- Consecuencias reales de cambios de ubicación, propietario o producto asociado.
 
 ## Enlaces relacionados
 

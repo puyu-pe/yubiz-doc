@@ -1,10 +1,9 @@
-# Consultar stock por almacén
+<a id="consultar-stock-por-almacén"></a>
 
-## Estado
+# 4.1 Consultar stock por almacén
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,9 +39,11 @@ pantalla revisada muestra el producto y un selector de almacén.
 La vista revisada presenta producto, almacén y stock actual. También muestra precio
 de compra, precio de venta, unidades vendidas y márgenes como datos de consulta. La
 precisión de los decimales, la disponibilidad de todos los almacenes y los valores
-mostrados deben verificarse en runtime.
+mostrados deben verificarse en el entorno de trabajo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Al cambiar de almacén, la interfaz vuelve a cargar el contexto del producto con el
 almacén elegido y muestra la cantidad asociada. No se afirma que el valor sea una
@@ -58,12 +59,6 @@ depender del almacén elegido y de operaciones que requieran revisión posterior
 - Producto equivocado: vuelva a identificarlo antes de interpretar la cantidad.
 - Almacén no disponible: confirme el contexto habilitado, sin asumir un permiso.
 - Diferencia que no puede explicar: deténgase y revise los movimientos.
-
-## Verificaciones pendientes en runtime
-
-- Nombres visibles, almacenes disponibles y reglas de acceso de la sesión.
-- Actualización de la cantidad después de una operación real.
-- Significado operativo de los valores complementarios de precio y margen.
 
 ## Enlaces relacionados
 

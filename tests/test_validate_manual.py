@@ -47,7 +47,7 @@ class ValidateManualTests(unittest.TestCase):
         report = validate_manual(root)
 
         self.assertFalse(report.is_valid)
-        self.assertIn("missing-status", report.diagnostics[0])
+        self.assertIn("required-section", report.diagnostics[0])
         self.assertNotIn("secreto-de-prueba", report.diagnostics[0])
 
     def test_final_mode_rejects_pending_enrichment(self) -> None:
@@ -56,7 +56,7 @@ class ValidateManualTests(unittest.TestCase):
         self.assertFalse(report.is_valid)
         self.assertIn("pending-enrichment", report.diagnostics[0])
 
-    def test_live_partial_manual_accepts_legacy_pending_enrichment_fichas(self) -> None:
+    def test_live_partial_manual_accepts_pending_enrichment_fichas(self) -> None:
         report = validate_manual(PROJECT_ROOT)
 
         self.assertTrue(report.is_valid, report.diagnostics)
@@ -135,13 +135,13 @@ class ValidateManualTests(unittest.TestCase):
     def test_allows_safe_words_and_yaml_source_revision(self) -> None:
         root = self.copy_fixture("valid")
         ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(ficha.read_text(encoding="utf-8") + "\nEl token de turno y la API se verifican en runtime.\n", encoding="utf-8")
+        ficha.write_text(ficha.read_text(encoding="utf-8") + "\nEl token de turno y la API se comprueban antes de continuar.\n", encoding="utf-8")
 
         report = validate_manual(root)
 
         self.assertTrue(report.is_valid)
 
-    def test_allows_human_three_row_status_banner_during_transition(self) -> None:
+    def test_allows_clean_reader_fichas(self) -> None:
         report = validate_manual(self.copy_fixture("valid"))
         self.assertTrue(report.is_valid, report.diagnostics)
 
@@ -149,10 +149,8 @@ class ValidateManualTests(unittest.TestCase):
         root = self.copy_fixture("valid")
         ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
         ficha.write_text(
-            ficha.read_text(encoding="utf-8").replace(
-                "- Revisión de fuente: revisada en código\n- Verificación en entorno: pendiente\n- Paridad con la versión desplegada: pendiente",
-                "- `source_reviewed_draft`\n- `pending_runtime_verification`",
-            ),
+            ficha.read_text(encoding="utf-8")
+            + "\n- `source_reviewed_draft`\n- `pending_runtime_verification`\n",
             encoding="utf-8",
         )
         report = validate_manual(root)
@@ -160,19 +158,85 @@ class ValidateManualTests(unittest.TestCase):
         self.assertFalse(report.is_valid)
         self.assertTrue(any("raw-reader-status" in item for item in report.diagnostics))
 
-    def test_requires_all_three_human_status_rows(self) -> None:
+    def test_rejects_reader_process_notice(self) -> None:
         root = self.copy_fixture("valid")
         ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
         ficha.write_text(
             ficha.read_text(encoding="utf-8")
-            .replace("- Paridad con la versión desplegada: pendiente\n", ""),
+            + "\n> **Borrador revisado en código · verificación en entorno pendiente.**\n",
             encoding="utf-8",
         )
 
         report = validate_manual(root)
 
         self.assertFalse(report.is_valid)
-        self.assertTrue(any("missing-status" in item for item in report.diagnostics))
+        self.assertTrue(any("reader-process-notice" in item for item in report.diagnostics))
+
+    def test_rejects_embedded_process_clauses_but_allows_legacy_aliases(self) -> None:
+        root = self.copy_fixture("valid")
+        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
+        clean_text = ficha.read_text(encoding="utf-8")
+        ficha.write_text(
+            clean_text
+            + "\n<a id=\"revision-de-fuente-revisada-en-codigo\"></a>\n"
+            + "La revisión de fuente: revisada en código. Los montos requieren verificación en runtime.\n",
+            encoding="utf-8",
+        )
+
+        report = validate_manual(root)
+
+        self.assertFalse(report.is_valid)
+        self.assertTrue(any("reader-process-notice" in item for item in report.diagnostics))
+        ficha.write_text(clean_text + "\n<a id=\"revision-de-fuente-revisada-en-codigo\"></a>\n", encoding="utf-8")
+        self.assertTrue(validate_manual(root).is_valid)
+
+    def test_allows_operational_draft_and_pending_payment_states(self) -> None:
+        root = self.copy_fixture("valid")
+        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
+        ficha.write_text(
+            ficha.read_text(encoding="utf-8")
+            + "\nUna cotización puede permanecer en borrador y un pago puede quedar pendiente.\n",
+            encoding="utf-8",
+        )
+
+        self.assertTrue(validate_manual(root).is_valid)
+
+    def test_numbered_fixture_rejects_wrong_or_duplicate_guide_numbers(self) -> None:
+        root = self.copy_fixture("numbered")
+        config = root / "mkdocs.yml"
+        config.write_text(config.read_text(encoding="utf-8").replace("1.2 Seleccionar", "1.1 Seleccionar"), encoding="utf-8")
+
+        report = validate_manual(root)
+
+        self.assertFalse(report.is_valid)
+        self.assertTrue(any("numbering-nav" in item for item in report.diagnostics))
+
+    def test_numbered_fixture_rejects_mismatched_h1_and_index_numbers(self) -> None:
+        root = self.copy_fixture("numbered")
+        ficha = root / "docs" / "ventas" / "seleccionar-cliente.md"
+        ficha.write_text(ficha.read_text(encoding="utf-8").replace("# 1.2", "# 1.1"), encoding="utf-8")
+        index = root / "docs" / "ventas" / "index.md"
+        index.write_text(index.read_text(encoding="utf-8").replace("[1.2 Seleccionar", "[1.1 Seleccionar"), encoding="utf-8")
+
+        report = validate_manual(root)
+
+        self.assertFalse(report.is_valid)
+        self.assertTrue(any("numbering-h1" in item for item in report.diagnostics))
+        self.assertTrue(any("numbering-index" in item for item in report.diagnostics))
+
+    def test_explicit_legacy_aliases_require_their_actual_fragment_value(self) -> None:
+        root = self.copy_fixture("valid")
+        target = root / "docs" / "ventas" / "seleccionar-cliente.md"
+        target.write_text(target.read_text(encoding="utf-8") + "\n<a id=\"legacy.fragment\"></a>\n", encoding="utf-8")
+        source = root / "docs" / "ventas" / "elegir-establecimiento.md"
+        source.write_text(source.read_text(encoding="utf-8") + "\n[Alias válido](seleccionar-cliente.md#legacy.fragment)\n", encoding="utf-8")
+        self.assertTrue(validate_manual(root).is_valid)
+        source.write_text(source.read_text(encoding="utf-8") + "\n[Alias inválido](seleccionar-cliente.md#legacy-fragment)\n", encoding="utf-8")
+
+        report = validate_manual(root)
+
+        self.assertFalse(report.is_valid)
+        self.assertTrue(any("broken-anchor" in item for item in report.diagnostics))
 
     def test_allows_machine_status_in_yaml_but_rejects_private_reader_path(self) -> None:
         root = self.copy_fixture("valid")
@@ -317,7 +381,7 @@ class ValidateManualTests(unittest.TestCase):
         homepage = (PROJECT_ROOT / "docs" / "index.md").read_text(encoding="utf-8")
 
         self.assertEqual(
-            ["Inicio", "Ventas", "Contactos y catálogo", "Inventario", "Servicios y estancias", "Compras, gastos y caja", "Operación comercial", "Administración y configuración"],
+            ["1. Inicio", "2. Ventas", "3. Contactos y catálogo", "4. Inventario", "5. Servicios y estancias", "6. Compras, gastos y caja", "7. Operación comercial", "8. Administración y configuración"],
             top_groups,
         )
         self.assertTrue(expected_area_indexes <= set(nav_paths))

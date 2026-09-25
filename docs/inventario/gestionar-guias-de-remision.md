@@ -1,10 +1,9 @@
-# Crear y consultar guías de remisión
+<a id="crear-y-consultar-guías-de-remisión"></a>
 
-## Estado
+# 4.6 Crear y consultar guías de remisión
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -41,15 +40,17 @@ o inicie un registro nuevo solo cuando cuente con los datos de traslado necesari
 
 ## Campos y validaciones observados
 
-La interfaz revisada incluye documento, serie, almacén, fecha, motivo, destinatario,
+La interfaz incluye documento, serie, almacén, fecha, motivo, destinatario,
 ubicaciones, direcciones, modalidad de transporte, productos, cantidad y peso. La
-fuente valida documento-serie, fecha, destinatario, ubicaciones y direcciones, además
+el formulario valida documento-serie, fecha, destinatario, ubicaciones y direcciones, además
 de producto, descripción y peso por detalle. Los mensajes y condiciones exactas deben
-verificarse en runtime.
+verificarse en el entorno de trabajo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda cabecera y detalles en una transacción y devuelve éxito o error. La
+## Resultado esperado
+
+El flujo registra cabecera y detalles en una transacción y devuelve éxito o error. La
 lista puede filtrar el conjunto disponible. No se afirma que el resultado produzca una
 aceptación fiscal, transporte autorizado o cambio de stock sin evidencia del entorno.
 
@@ -64,12 +65,6 @@ estar restringida por condiciones del sistema.
 - Serie, destinatario o ubicaciones sin identificar: complete los datos antes de seguir.
 - Detalle sin peso o producto: no registre una guía incompleta.
 - Resultado incierto: consulte la lista antes de reenviar la operación.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad de documentos, motivos, transporte y acciones de la sesión.
-- Reglas de formato, obligatoriedad, impresión y comunicación del documento.
-- Efectos operativos, tributarios y de stock aplicables a la organización.
 
 ## Enlaces relacionados
 

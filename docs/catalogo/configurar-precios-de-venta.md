@@ -1,10 +1,9 @@
-# Configurar precios de venta por tipo y establecimiento
+<a id="configurar-precios-de-venta-por-tipo-y-establecimiento"></a>
 
-## Estado
+# 3.7 Configurar precios de venta por tipo y establecimiento
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -43,10 +42,12 @@ La tabla revisada muestra tipo, establecimiento, precio y porcentaje de comisió
 El formulario exige un precio de venta mayor que cero; cada precio de la tabla
 también es obligatorio y debe ser mayor que cero. Cuando la configuración no
 habilita precios por establecimiento, el precio general se sincroniza desde el
-campo principal. La fuente no permite convertir estas condiciones en una regla
+campo principal. La interfaz no permite convertir estas condiciones en una regla
 universal para todos los entornos.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Al guardar, la ficha conserva los precios asociados al producto. En edición, los
 precios configurados se vuelven a cargar con el producto y se actualizan junto con
@@ -66,12 +67,6 @@ otro flujo.
   configuración aplicable.
 - Variantes duplicadas o no reconocibles: revise la tabla antes de agregar otra.
 - No puede evaluar el impacto de retirar un precio: no continúe.
-
-## Verificaciones pendientes en runtime
-
-- Tipos, establecimientos y comisiones visibles para cada tenant.
-- Reglas de sincronización entre precio general y precios por establecimiento.
-- Uso de los precios configurados en ventas desplegadas.
 
 ## Enlaces relacionados
 

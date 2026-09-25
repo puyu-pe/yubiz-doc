@@ -1,10 +1,9 @@
-# Seleccionar cliente
+<a id="seleccionar-cliente"></a>
 
-## Estado
+# 2.2 Seleccionar cliente
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -36,12 +35,14 @@ esté disponible para su cuenta.
 
 ## Campos y validaciones observados
 
-El control admite una selección. Para un documento nuevo, la fuente revisada
+El control admite una selección. Para un documento nuevo, la interfaz
 solicita ocho u once dígitos numéricos; si el cliente seleccionado no tiene
 documento o su dirección supera el límite tratado por el formulario, se solicita
 corrección antes de continuar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La selección entrega el identificador y los datos del cliente al formulario de
 venta; el formulario requiere un cliente antes de abrir el detalle de pago.
@@ -58,12 +59,6 @@ confirmadas para todos los entornos.
 - Documento incompleto o inválido: corríjalo antes de seleccionar al cliente.
 - Datos que no corresponden a la operación: retire la selección y valide con el
   equipo responsable.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, resultados y búsqueda externa disponibles.
-- Reglas aplicadas a documento, dirección y creación de clientes.
-- Permisos y comportamiento desplegado por cuenta.
 
 ## Enlaces relacionados
 

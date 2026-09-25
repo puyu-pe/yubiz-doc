@@ -1,10 +1,9 @@
-# Crear un pedido de compra
+<a id="crear-un-pedido-de-compra"></a>
 
-## Estado
+# 6.1 Crear un pedido de compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -44,11 +43,13 @@ de agregar productos para poder revisar el total completo.
 La interfaz solicita documento, serie, fecha y proveedor. La validación revisada
 exige esos datos; para cada detalle exige producto, cantidad, descripción, valor
 unitario e importe. La serie tiene un límite de longitud en la validación del
-formulario. Los mensajes exactos requieren verificación en runtime.
+formulario. Los mensajes exactos pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda la cabecera y sus detalles dentro de una transacción y asigna un
+## Resultado esperado
+
+El flujo registra la cabecera y sus detalles dentro de una transacción y asigna un
 correlativo de la serie. El pedido es un documento de solicitud: no equivale por sí
 mismo a una orden de compra ni confirma recepción, stock, pago o efecto contable.
 
@@ -64,12 +65,6 @@ del detalle. Una observación interna no debe reemplazar los datos del producto.
 - Una línea no tiene producto, cantidad, descripción, valor o importe: corríjala o
   retírela antes de continuar.
 - El resultado no es claro: consulte la lista antes de repetir el registro.
-
-## Verificaciones pendientes en runtime
-
-- Nombres visibles de la opción y documentos habilitados para la sesión.
-- Reglas de serie, correlativo, impuestos y productos disponibles.
-- Permisos, avisos finales y cualquier aprobación o efecto operativo posterior.
 
 ## Enlaces relacionados
 

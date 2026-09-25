@@ -1,10 +1,9 @@
-# Registrar recargas, compromisos y residuales
+<a id="registrar-recargas-compromisos-y-residuales"></a>
 
-## Estado
+# 7.6 Registrar recargas, compromisos y residuales
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,13 +39,15 @@ acción está disponible.
 La pantalla conserva documento, estado, origen, vehículo, distribuidor y fecha.
 Permite observación, productos, ventas y selección de reposiciones. La cantidad
 de reposición se limita al déficit mostrado. Debe existir al menos un producto;
-las reglas exactas de seguimiento y cantidades requieren runtime.
+las reglas exactas de seguimiento y cantidades deben revisarse antes de continuar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La recarga registra detalles vinculados a la orden y puede incluir reposiciones
 de compromisos seleccionadas. La interfaz expone residual comprometido, residual
-libre y cantidades de preventa o manuales. Esos datos son mecánica de fuente;
+libre y cantidades de preventa o manuales. Esos datos pertenecen al flujo;
 no prueban disponibilidad física, reserva, stock ni un compromiso comercial en
 un tenant.
 
@@ -62,12 +63,6 @@ recarga para corregir una descarga o una liquidación.
 - Déficit o cantidad no comprendidos: no seleccione la reposición.
 - Falta producto o seguimiento: complete el dato o cancele.
 - Error de registro: no duplique la recarga; consulte el detalle primero.
-
-## Verificaciones pendientes en runtime
-
-- Elegibilidad de la recarga y cálculo de déficits/residuales.
-- Reglas de seguimiento, reservas y reposición de compromisos.
-- Consecuencias sobre stock, ventas, caja y liquidación.
 
 ## Enlaces relacionados
 

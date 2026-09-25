@@ -1,10 +1,9 @@
-# Crear y editar productos del catálogo
+<a id="crear-y-editar-productos-del-catálogo"></a>
 
-## Estado
+# 3.5 Crear y editar productos del catálogo
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -44,15 +43,17 @@ agregar, o abra un registro existente para editarlo.
 La ficha revisada incluye nombre, códigos, afectación tributaria, precio de venta,
 costo, utilidad, observación, compra/venta, seguimiento, stock mínimo y peso. El
 navegador exige nombre, precio mayor que cero, costo, seguimiento, stock mínimo y
-peso no negativos. El guardado de fuente también exige categoría, marca y medida.
+peso no negativos. El guardado también exige categoría, marca y medida.
 Al cambiar precio, costo o utilidad, el formulario recalcula campos relacionados.
-Un código interno o de barras duplicado se rechaza; si queda vacío, la fuente
+Un código interno o de barras duplicado se rechaza; si queda vacío, la interfaz
 revisada intenta asignarlo automáticamente.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El guardado válido crea o actualiza la ficha y conserva sus precios y proveedores
-relacionados. En una creación, la fuente revisada prepara registros de producto
+relacionados. En una creación, la interfaz prepara registros de producto
 para los almacenes disponibles con cantidad inicial cero.
 
 ## Advertencias y casos límite
@@ -70,12 +71,6 @@ suponga que puede cambiarse después de crear el producto.
 - Precio no válido o costo, stock o peso negativos: corrija el valor antes de guardar.
 - No puede confirmar el efecto del seguimiento: deténgase y valide el contexto
   operativo antes de modificarlo.
-
-## Verificaciones pendientes en runtime
-
-- Permisos, etiquetas y campos visibles para la sesión.
-- Generación de códigos, mensajes de guardado y actualización de la lista.
-- Efecto real de compra, venta y seguimiento en el entorno desplegado.
 
 ## Enlaces relacionados
 

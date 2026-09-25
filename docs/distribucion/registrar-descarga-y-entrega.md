@@ -1,10 +1,9 @@
-# Registrar una orden de descarga y el resultado de entrega
+<a id="registrar-una-orden-de-descarga-y-el-resultado-de-entrega"></a>
 
-## Estado
+# 7.7 Registrar una orden de descarga y el resultado de entrega
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -18,7 +17,7 @@ un retorno, una pérdida, una salida de stock ni una aprobación de cierre.
 
 ## Requisitos y datos
 
-- Una orden de carga cerrada sin descarga asociada, según la interfaz revisada.
+- Una orden de carga cerrada sin descarga asociada, según la interfaz.
 - Serie documental, almacén destino y detalle de productos.
 - Cantidades retornadas o en vehículo; lotes o series si el producto los exige.
 
@@ -44,13 +43,15 @@ seguimiento se asigna lote o serie a retornado, vehículo o faltante. La pantall
 muestra cantidades de venta, externa, entregada, rechazada, esperada, protegida,
 libre, perdida, en vehículo y retornada.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador solicita confirmación antes de registrar la descarga y el servidor
 rechaza datos inválidos. El resumen de seguimiento es local y no persiste por sí
-solo. La fuente relaciona resultados de entrega, ajustes, movimientos y cobertura
+solo. La interfaz relaciona resultados de entrega, ajustes, movimientos y cobertura
 de compromisos; describir su efecto de stock, caja o ventas como resultado
-productivo requiere evidencia runtime.
+productivo requiere confirmación antes de continuar.
 
 ## Advertencias y casos límite
 
@@ -64,12 +65,6 @@ falta el historial de seguimiento, no continúe con una asignación incompleta.
 - Falta serie, almacén o detalle: complete el dato visible.
 - Lote o serie sin asignación completa: deténgase antes de guardar.
 - Cobertura de compromiso incierta o respuesta inesperada: cancele y revise el detalle.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad de series, almacenes, estados y controles de cobertura.
-- Reglas para cantidades entregadas, retornadas, en vehículo y faltantes.
-- Efectos reales sobre existencias, compromisos, resultados de entrega y caja.
 
 ## Enlaces relacionados
 

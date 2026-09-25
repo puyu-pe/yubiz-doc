@@ -1,10 +1,9 @@
-# Registrar y consultar cargas de contenedores
+<a id="registrar-y-consultar-cargas-de-contenedores"></a>
 
-## Estado
+# 4.8 Registrar y consultar cargas de contenedores
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,9 +39,11 @@ revisar registros existentes o inicie uno nuevo con el contenido y almacén defi
 La pantalla revisada contiene contenido, documento, serie, almacén, stock de solo
 lectura, contenedores, cantidad, descripción, medida, total, detalle y observación
 interna. La lista permite filtrar por documento, fecha, usuario y establecimiento.
-La obligatoriedad y los límites exactos requieren verificación en runtime.
+La obligatoriedad y los límites exactos pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador actualiza el stock según contenido y almacén, envía cabecera y detalles,
 y puede abrir o imprimir el resultado. La lista entrega registros paginados y totales.
@@ -58,12 +59,6 @@ de carga de distribución ni use el total como garantía de stock disponible.
 - Módulo ausente: confirme su habilitación sin asumir acceso.
 - Stock o seguimiento no identificables: detenga el registro.
 - Resultado de envío incierto: consulte la lista antes de repetir la carga.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad del módulo, documentos, series y controles de la sesión.
-- Reglas de cantidad, seguimiento y efecto real sobre existencias.
-- Alcance del detalle, impresión y reporte consolidado.
 
 ## Enlaces relacionados
 

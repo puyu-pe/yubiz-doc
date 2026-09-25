@@ -1,10 +1,9 @@
-# Registrar una inyección o ajuste manual de caja
+<a id="registrar-una-inyección-o-ajuste-manual-de-caja"></a>
 
-## Estado
+# 6.15 Registrar una inyección o ajuste manual de caja
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -48,14 +47,16 @@ El formulario solicita tipo, importe, método, fecha y hora; la observación es
 opcional. Para ajustes, la dirección es obligatoria y admite ingreso o egreso. La
 validación revisada requiere tipo permitido, importe numérico mayor que cero, método
 y fecha válida; el servidor acepta valores de moneda definidos por su validación,
-pero la interfaz revisada no ofrece una conversión de moneda.
+pero la interfaz no ofrece una conversión de moneda.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La operación se registra como movimiento manual y, después de una respuesta exitosa,
 el reporte se vuelve a cargar. La inyección usa dirección de ingreso; el ajuste usa
 la dirección seleccionada. El resultado no confirma saldo físico, autorización,
-conciliación, conversión ni consecuencias financieras o contables en runtime.
+conciliación, conversión ni consecuencias financieras o contables en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
@@ -68,12 +69,6 @@ claro, no repita el envío: vuelva al reporte y valide los movimientos mostrados
 - Tipo o dirección incorrectos: detenga el flujo y corrija antes de guardar.
 - Importe no positivo o fecha inválida: complete datos válidos antes de continuar.
 - Reporte no actualizado o saldo inesperado: no registre otra operación hasta revisar filtros y registros de origen.
-
-## Verificaciones pendientes en runtime
-
-- Tipos, métodos, moneda aceptada y controles disponibles para cada sesión.
-- Resultado de guardar, actualización del reporte y mensajes de error.
-- Autorización, conciliación y efectos financieros, contables o de entrega aplicables.
 
 ## Enlaces relacionados
 

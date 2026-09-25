@@ -1,10 +1,9 @@
-# Elegir documento, serie, fecha y almacén de una venta
+<a id="elegir-documento-serie-fecha-y-almacén-de-una-venta"></a>
 
-## Estado
+# 2.9 Elegir documento, serie, fecha y almacén de una venta
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -46,7 +45,9 @@ como requerida y con un máximo de cuatro caracteres. La fecha se valida como
 requerida y contra el rango disponible del documento seleccionado; el formulario
 muestra como máximo la fecha actual en el control observado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El formulario carga documentos, series, almacenes, líneas y vendedores según los
 
@@ -63,12 +64,6 @@ o fiscal. Si cambia el documento después de cargar ítems, revise precios,
   admite el documento seleccionado.
 - Almacén o vendedor no visible: no asuma un permiso o una configuración; use solo
   las opciones disponibles.
-
-## Verificaciones pendientes en runtime
-
-- Documentos, series, almacenes, líneas y vendedores habilitados.
-- Rango de fechas aplicado por cada documento.
-- Validaciones, efectos de cambio de documento y comportamiento desplegado.
 
 ## Enlaces relacionados
 

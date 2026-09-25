@@ -1,10 +1,9 @@
-# Consultar roles disponibles
+<a id="consultar-roles-disponibles"></a>
 
-## Estado
+# 8.2 Consultar roles disponibles
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -13,7 +12,7 @@ presuponer que pueda modificarlos o asignar privilegios.
 
 ## Acceso condicional
 
-La lista y sus acciones dependen de la sesión. La fuente reserva la asignación de
+La lista y sus acciones dependen de la sesión. La interfaz reserva la asignación de
 módulos y permisos a un contexto sensible; esa operación no forma parte de esta
 guía. Si necesita cambiar privilegios, deténgase y contacte a la persona
 administradora autorizada.
@@ -40,12 +39,14 @@ Abra **Gestión de Roles** y revise la lista antes de seleccionar cualquier acci
 La lista revisada muestra código, nombre del rol, descripción, estado y
 actualización. En el formulario, código, nombre y estado son obligatorios, y el
 código debe ser único. El estado se muestra como activo o inactivo. La aplicación
-de estas reglas en la sesión debe confirmarse en runtime.
+de estas reglas en la sesión debe confirmarse en el entorno de trabajo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador puede mostrar los datos de roles y restringe las acciones según el
-contexto. La fuente contiene mecanismos sensibles de módulos y permisos fuera del
+contexto. El flujo incluye mecanismos sensibles de módulos y permisos fuera del
 alcance público; esta ficha no describe su uso ni asegura privilegios.
 
 ## Advertencias y casos límite
@@ -60,12 +61,6 @@ suponga una jerarquía por sus nombres.
 - Código duplicado o campos incompletos: no guarde hasta que la persona autorizada los revise.
 - Necesita módulos o permisos: detenga el proceso y escale a administración autorizada.
 - Cambio inesperado: vuelva a consultar el rol antes de continuar.
-
-## Verificaciones pendientes en runtime
-
-- Roles y acciones visibles para la sesión.
-- Reglas de creación, edición, estado y unicidad.
-- Efecto real de un cambio y relación con accesos o establecimientos.
 
 ## Enlaces relacionados
 

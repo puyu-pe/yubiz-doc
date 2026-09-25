@@ -1,10 +1,9 @@
-# Registrar pagos de compras y consultar saldos
+<a id="registrar-pagos-de-compras-y-consultar-saldos"></a>
 
-## Estado
+# 6.7 Registrar pagos de compras y consultar saldos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -44,11 +43,13 @@ deuda; el formulario solo presenta una nueva línea mientras exista deuda.
 El formulario muestra fecha, método, detalle del método, número de operación, monto y
 observación. La interfaz valida monto positivo y que la suma no supere el total. El
 historial muestra fecha, monto, método, número de operación, detalle, observación y
-fecha de registro. La fuente exige tipo de pago e identifica la compra antes de guardar.
+fecha de registro. La interfaz exige tipo de pago e identifica la compra antes de guardar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda el pago y actualiza los campos de pagado y deuda de la compra dentro
+## Resultado esperado
+
+El flujo registra el pago y actualiza los campos de pagado y deuda de la compra dentro
 de una transacción. El saldo es un dato de la orden, no un comprobante del proveedor.
 No se afirma que registrar el pago produzca una salida de caja, validación bancaria,
 registro presupuestal o asiento contable en un entorno desplegado.
@@ -65,12 +66,6 @@ no envíe ni imprima una constancia sin verificar esa relación y el correo disp
 - Monto cero, negativo o superior al saldo permitido: corrija el importe antes de guardar.
 - Falta método de pago o la compra no se identifica: detenga el registro.
 - Falta documento relacionado para la constancia: relaciónelo antes de imprimir o enviar.
-
-## Verificaciones pendientes en runtime
-
-- Métodos habilitados, obligatoriedad de detalle y número de operación.
-- Cálculo de saldo, permisos y límites de pago en la sesión.
-- Efectos de caja, presupuesto, banco, comprobante y correo de constancia.
 
 ## Enlaces relacionados
 

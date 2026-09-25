@@ -1,10 +1,9 @@
-# Buscar, filtrar y revisar el detalle de ventas
+<a id="buscar-filtrar-y-revisar-el-detalle-de-ventas"></a>
 
-## Estado
+# 2.8 Buscar, filtrar y revisar el detalle de ventas
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -45,12 +44,14 @@ La lista define columnas para documento, serie, correlativo, fechas, línea,
 cliente, establecimiento, subtotal, impuesto, total, pagado, deuda, usuario,
 personalizables que aparezcan en el entorno no sustituyen la revisión del detalle.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador carga una tabla de ventas, permite abrir el detalle de una fila y
 ofrece controles para editar columnas, limpiar o restablecer filtros y generar
 salidas. El contenido, los filtros efectivos y los resultados de exportación
-requieren verificación en runtime.
+pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 
@@ -67,12 +68,6 @@ variar.
   documento, serie y correlativo.
 - Una exportación o control no está disponible: no lo sustituya con una acción no
   observada; confirme la configuración de su entorno.
-
-## Verificaciones pendientes en runtime
-
-- Filtros, columnas configurables y datos que devuelve la lista.
-- Acceso al detalle y disponibilidad de acciones por estado.
-- Resultado de exportaciones y comportamiento desplegado.
 
 ## Enlaces relacionados
 

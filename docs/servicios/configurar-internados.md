@@ -1,10 +1,9 @@
-# Configurar el módulo de internados
+<a id="configurar-el-módulo-de-internados"></a>
 
-## Estado
+# 5.5 Configurar el módulo de internados
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,9 +39,11 @@ La pantalla presenta estados de unidad, estados de servicio y categorías. El
 guardado observado exige descripción y estado; permite crear o editar el registro
 del grupo seleccionado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda el parámetro en una transacción y devuelve un mensaje de resultado.
+## Resultado esperado
+
+El flujo registra el parámetro en una transacción y devuelve un mensaje de resultado.
 La aplicación real del cambio en formularios y órdenes debe verificarse en entorno.
 
 ## Advertencias y casos límite
@@ -55,11 +56,6 @@ operadores y su disponibilidad visible requieren verificación adicional.
 - Descripción o estado incompletos: complete ambos antes de guardar.
 - No reconoce el grupo de configuración: deténgase y confirme la instrucción.
 - Cambio sensible durante una operación: no continúe sin validación operativa.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, acciones habilitadas, mensajes y efecto del cambio en el módulo.
-- Disponibilidad y comportamiento de la sección de operadores.
 
 ## Enlaces relacionados
 

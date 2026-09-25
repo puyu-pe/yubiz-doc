@@ -1,10 +1,9 @@
-# Gestionar clientes
+<a id="gestionar-clientes"></a>
 
-## Estado
+# 3.1 Gestionar clientes
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -46,7 +45,9 @@ como numérico y se valida entre ocho y once dígitos; para DNI y RUC se observa
 longitudes de ocho y once dígitos, respectivamente. El correo se valida como
 correo y la dirección y el código interno tienen límites de longitud.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Al guardar un registro válido, el flujo crea o actualiza el cliente. El listado
 no muestra registros retirados de uso; la operación de retiro revisada conserva
@@ -68,12 +69,6 @@ aquella guía asocia un cliente a una venta y no administra su ficha maestra.
   revisar el registro.
 - Registro existente o retirada de uso: deténgase y revise su estado antes de
   crear o retirar otro registro.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, acciones visibles y permisos de la lista.
-- Mensajes de duplicidad, creación, edición y retiro de uso.
-- Reglas exactas aplicadas a cada tipo de documento en el entorno desplegado.
 
 ## Enlaces relacionados
 

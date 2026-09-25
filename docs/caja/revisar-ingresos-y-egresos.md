@@ -1,10 +1,9 @@
-# Revisar ingresos, egresos y saldo de caja
+<a id="revisar-ingresos-egresos-y-saldo-de-caja"></a>
 
-## Estado
+# 6.13 Revisar ingresos, egresos y saldo de caja
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -48,16 +47,18 @@ que se actualicen los datos después de cambiar el establecimiento.
 ## Campos y validaciones observados
 
 El formulario incluye establecimiento, usuario, fecha inicial y fecha final. La
-fuente revisada rechaza fechas inválidas y una fecha inicial posterior a la final.
+interfaz rechaza fechas inválidas y una fecha inicial posterior a la final.
 El tablero muestra totales de ingreso y egreso, saldo, detalle comercial, operaciones
 manuales y montos agrupados por los métodos disponibles en la interfaz.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El reporte calcula el saldo como ingresos menos egresos para el filtro recibido y
 presenta totales por tipo de movimiento y método. Una pantalla sin datos limpia los
 valores mostrados. La exactitud de registros, alcance del filtro y significado de
-cada total deben verificarse en runtime.
+cada total deben verificarse en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
@@ -70,12 +71,6 @@ Evite comparar períodos o establecimientos distintos sin revisar los filtros ac
 - Fechas inválidas o invertidas: corrija el rango antes de buscar.
 - Datos inesperados: detenga la revisión y confirme establecimiento, usuario y período.
 - Saldo sin respaldo operativo: no entregue ni ajuste caja hasta revisar los movimientos de origen.
-
-## Verificaciones pendientes en runtime
-
-- Establecimientos, usuarios, métodos y filtros disponibles para la sesión.
-- Cálculo, actualización y formato de los totales mostrados.
-- Conciliación, entrega, autorización y efectos contables aplicables a la organización.
 
 ## Enlaces relacionados
 

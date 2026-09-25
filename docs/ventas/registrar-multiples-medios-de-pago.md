@@ -1,10 +1,9 @@
-# Registrar pagos con uno o varios medios
+<a id="registrar-pagos-con-uno-o-varios-medios"></a>
 
-## Estado
+# 2.10 Registrar pagos con uno o varios medios
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -44,7 +43,9 @@ En el detalle de pago que se abre al registrar una venta.
 El formulario calcula total pagado, deuda y vuelto a partir de los montos
 ingresados. Cada monto debe ser válido y mayor que cero. Solo permite un medio de
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador incorpora los medios de pago junto con la venta y sus ítems en el
 flujo de registro. Los datos de cada medio incluyen monto y, según el tipo, detalle
@@ -62,12 +63,6 @@ contables desde esta guía.
 - Dos medios de efectivo: retire uno; el control observado admite solo uno.
 - Suma mayor que el total o deuda con fecha inválida: detenga el registro y revise
   medios, montos y fechas.
-
-## Verificaciones pendientes en runtime
-
-- Medios, detalles y campos de operación habilitados.
-- Cálculo de deuda, vuelto y fecha de vencimiento en el entorno.
-- Registro financiero, comunicación, impresión y comportamiento desplegado.
 
 ## Enlaces relacionados
 

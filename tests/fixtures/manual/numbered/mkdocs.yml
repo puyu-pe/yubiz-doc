@@ -1,0 +1,6 @@
+site_name: Manual de prueba
+nav:
+  - 1. Ventas:
+      - Índice: docs/ventas/index.md
+      - 1.1 Elegir: ventas/elegir-establecimiento.md
+      - 1.2 Seleccionar: ventas/seleccionar-cliente.md

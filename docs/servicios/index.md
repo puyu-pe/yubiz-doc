@@ -1,18 +1,12 @@
 # Servicios
 
-> **Estado del contenido**
->
-> - Revisión de fuente: revisada en código.
-> - Verificación en entorno: pendiente.
-> - Paridad con la versión desplegada: pendiente.
-
-Estas fichas describen el módulo de internados observado en la fuente. Los nombres,
-campos y acciones disponibles pueden variar según la configuración del entorno.
+Los nombres, campos y acciones disponibles pueden variar según la configuración
+del entorno.
 
 ## Fichas disponibles
 
-- [Gestionar unidades e ítems de servicio](gestionar-unidades-e-items.md)
-- [Registrar una orden de servicio o internado](registrar-internado.md)
-- [Consultar un internado y agregar procedimientos](gestionar-internado.md)
-- [Convertir, anular o imprimir un internado](cerrar-o-anular-internado.md)
-- [Configurar el módulo de internados](configurar-internados.md)
+- [5.1 Gestionar unidades e ítems de servicio](gestionar-unidades-e-items.md)
+- [5.2 Registrar una orden de servicio o internado](registrar-internado.md)
+- [5.3 Consultar un internado y agregar procedimientos](gestionar-internado.md)
+- [5.4 Convertir, anular o imprimir un internado](cerrar-o-anular-internado.md)
+- [5.5 Configurar el módulo de internados](configurar-internados.md)

@@ -1,10 +1,9 @@
-# Gestionar proveedores y sus cuentas bancarias
+<a id="gestionar-proveedores-y-sus-cuentas-bancarias"></a>
 
-## Estado
+# 3.2 Gestionar proveedores y sus cuentas bancarias
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -52,7 +51,9 @@ dirección tienen validaciones de formato, número y longitud. La ficha de cuent
 requiere entidad financiera, tipo de cuenta, moneda, número de cuenta y estado;
 CCI y titular aparecen como datos adicionales.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El flujo guarda un proveedor nuevo o actualiza uno existente. Las cuentas quedan
 asociadas al proveedor seleccionado y se pueden consultar con su entidad, tipo,
@@ -74,12 +75,6 @@ antes de modificar su estado.
   la disponibilidad del módulo.
 - Faltan datos obligatorios de la cuenta: no guarde hasta completarlos y revisar
   que correspondan al proveedor correcto.
-
-## Verificaciones pendientes en runtime
-
-- Acciones, campos y permisos visibles por sesión.
-- Mensajes de validación, guardado, consulta y cambio de estado.
-- Comportamiento de cuentas activas e inactivas en el entorno desplegado.
 
 ## Enlaces relacionados
 

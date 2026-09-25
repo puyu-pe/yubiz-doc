@@ -1,10 +1,9 @@
-# Exportar el detalle de pagos
+<a id="exportar-el-detalle-de-pagos"></a>
 
-## Estado
+# 6.17 Exportar el detalle de pagos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -43,10 +42,12 @@ serie, correlativo, fechas de venta y pago, cliente, deuda, total, pagado, méto
 detalle, número de operación y usuario. Permite filtrar fechas y algunos valores de
 columna, editar o restablecer columnas y solicitar un PDF.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La generación toma los parámetros y las columnas configuradas en el listado. La
-fuente impone un límite de resultados para el PDF; cuando se supera, la solicitud no
+la exportación limita un límite de resultados para el PDF; cuando se supera, la solicitud no
 debe tratarse como una exportación válida y requiere acotar los filtros.
 
 ## Advertencias y casos límite
@@ -62,12 +63,6 @@ con datos no verificados.
 - Columnas insuficientes: ajuste la vista antes de exportar; no suponga columnas ocultas.
 - Totales o filas inesperados: detenga la distribución del archivo y revise fechas y filtros.
 - Sin resultados: confirme el período y el criterio de fecha elegido antes de escalar.
-
-## Verificaciones pendientes en runtime
-
-- Límite efectivo de exportación, formato y descarga del PDF.
-- Filtros, columnas y filas visibles para la sesión.
-- Tratamiento de archivos generados y su uso operativo.
 
 ## Enlaces relacionados
 

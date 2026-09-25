@@ -1,10 +1,9 @@
-# Consultar, exportar y notificar órdenes de compra
+<a id="consultar-exportar-y-notificar-órdenes-de-compra"></a>
 
-## Estado
+# 6.5 Consultar, exportar y notificar órdenes de compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,7 +13,7 @@ notificarla al proveedor cuando esas acciones estén disponibles.
 ## Acceso condicional
 
 Las columnas, filtros, exportación y correo dependen de la sesión y configuración. La
-fuente muestra acciones deshabilitadas para un estado anulado; no confirma permisos,
+la interfaz muestra acciones deshabilitadas para un estado anulado; no confirma permisos,
 entrega de correo ni validez del archivo en un entorno desplegado.
 
 ## Requisitos y datos
@@ -45,14 +44,16 @@ abrir el detalle de la orden que necesita revisar.
 La lista revisada incluye documento, serie, correlativo, fecha, proveedor, almacén,
 categoría de egreso, período tributable, importes, deuda, pagado, origen, moneda,
 usuario y estado. El formulario de correo exige orden identificable, proveedor y
-correo. La exportación de fuente rechaza conjuntos de más de 10 000 registros.
+correo. La exportación rechaza conjuntos de más de 10 000 registros.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La exportación prepara un enlace para las columnas y filtros recibidos. La
 notificación genera un documento y solicita envío al correo indicado. Una orden es
 distinta del pedido que pudo originarla y de los documentos del proveedor asociados;
-el resultado no confirma recepción, pago ni efecto contable en runtime.
+el resultado no confirma recepción, pago ni efecto contable en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
@@ -65,12 +66,6 @@ anular. Verifique el destinatario y no reenvíe si el resultado no es claro.
 - El listado es demasiado amplio: reduzca filtros antes de exportar.
 - El correo o proveedor no está confirmado: detenga el envío hasta revisarlo.
 - La acción aparece deshabilitada: revise el estado mostrado y no intente forzarla.
-
-## Verificaciones pendientes en runtime
-
-- Filtros, columnas, límite de exportación y acciones disponibles para cada rol.
-- Archivo descargado, correo entregado y mensajes de error finales.
-- Significado operativo del estado y efectos posteriores de notificar o imprimir.
 
 ## Enlaces relacionados
 

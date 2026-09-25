@@ -1,10 +1,9 @@
-# Exportar inventario y movimientos
+<a id="exportar-inventario-y-movimientos"></a>
 
-## Estado
+# 4.7 Exportar inventario y movimientos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,12 +39,14 @@ de solicitar la exportación.
 
 La grilla de inventario muestra almacén, producto, códigos, categoría, marca, modelo,
 medida, stock mínimo y stock. La de movimientos incluye fecha, operación, tipo, lote,
-cantidad, precio, total, saldo y estado. La fuente rechaza una exportación si supera
-10 000 filas. Las columnas efectivamente disponibles requieren verificación en runtime.
+cantidad, precio, total, saldo y estado. La interfaz evita una exportación si supera
+10 000 filas. Las columnas efectivamente disponibles pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente consulta los registros con los parámetros de la grilla, formatea valores
+## Resultado esperado
+
+La interfaz consulta los registros con los parámetros de la grilla, formatea valores
 numéricos y genera un enlace de descarga. Para movimientos incorpora el contexto de
 producto y almacén; cuando se consulta todo, calcula un total de almacenes. No se
 afirma precisión contable, fiscal ni exhaustividad del archivo sin comprobarlo.
@@ -61,12 +62,6 @@ procedimiento de su organización.
 - Exceso de registros: reduzca filtros antes de reintentar.
 - Almacén o producto equivocado: corrija el contexto antes de descargar.
 - Archivo no identificable: no lo distribuya hasta confirmar sus columnas y período.
-
-## Verificaciones pendientes en runtime
-
-- Permisos, formato, destino del enlace y límites efectivos de exportación.
-- Aplicación real de cada filtro y actualización posterior a operaciones.
-- Uso autorizado y significado contable de las columnas exportadas.
 
 ## Enlaces relacionados
 

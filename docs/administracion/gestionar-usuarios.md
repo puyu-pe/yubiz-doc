@@ -1,10 +1,9 @@
-# Gestionar usuarios
+<a id="gestionar-usuarios"></a>
 
-## Estado
+# 8.1 Gestionar usuarios
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -39,14 +38,16 @@ datos de acceso en esta guía.
 
 ## Campos y validaciones observados
 
-El formulario fuente incluye nombre, apellido, usuario, teléfono, contraseña y
+El formulario incluye nombre, apellido, usuario, teléfono, contraseña y
 estado. Nombre, usuario y contraseña se declaran obligatorios en el alta, y el
 usuario debe ser único. Estado se presenta como activo o inactivo. La validación
-exacta y las acciones disponibles requieren verificación en runtime.
+exacta y las acciones disponibles pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente renderiza una lista y formularios con esos campos, limita los controles
+## Resultado esperado
+
+La interfaz renderiza una lista y formularios con esos campos, limita los controles
 según el contexto de sesión y evita exportación e impresión desde ese recorrido.
 No se afirma que crear, editar, desactivar o cambiar una clave tenga aprobación,
 permiso o efecto desplegado.
@@ -63,12 +64,6 @@ a un establecimiento solo por aparecer en la lista.
 - Usuario duplicado o campo obligatorio vacío: corrija el dato visible antes de guardar.
 - Resultado inesperado: detenga cambios posteriores y vuelva a revisar la lista.
 - Solicitud de privilegios, módulos o permisos: no continúe en este recorrido.
-
-## Verificaciones pendientes en runtime
-
-- Alcance de consulta, alta, edición y estado para cada sesión.
-- Mensajes, reglas de contraseña y efecto real de un cambio.
-- Auditoría, notificaciones y efectos sobre accesos o sesiones existentes.
 
 ## Enlaces relacionados
 

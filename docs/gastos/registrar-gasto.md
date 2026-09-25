@@ -1,10 +1,9 @@
-# Registrar un gasto
+<a id="registrar-un-gasto"></a>
 
-## Estado
+# 6.10 Registrar un gasto
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -16,7 +15,7 @@ Registrar un gasto con su proveedor, datos del documento, categoría y detalle d
 Los documentos, series, proveedores, categorías, medios de pago y presupuestos
 mostrados dependen de la sesión y configuración. Seleccionar una asignación de
 presupuesto es opcional en la validación revisada; no confirma una autorización ni
-un efecto financiero o contable en runtime.
+un efecto financiero o contable en el entorno de trabajo.
 
 ## Requisitos y datos
 
@@ -46,14 +45,16 @@ de completar el formulario.
 
 La validación del navegador requiere proveedor, documento, serie, moneda, medio de
 pago, categoría, fecha, descripción, tipo de IGV y total. Al elegir presupuesto,
-la fuente revisada compara la moneda y valida el monto disponible antes de guardar.
+la interfaz compara la moneda y valida el monto disponible antes de guardar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El flujo guarda un gasto inicialmente pendiente con sus detalles y solicita abrir
 una impresión tras una respuesta exitosa. Cuando se selecciona una asignación
-compatible, la fuente registra un consumo asociado. La persistencia, la impresión,
-el estado final y sus consecuencias operativas requieren verificación en runtime.
+compatible, la interfaz registra un consumo asociado. La persistencia, la impresión,
+el estado final y sus consecuencias operativas pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 
@@ -66,12 +67,6 @@ moneda, tratamiento fiscal, caja, stock ni aprobación a partir de este formular
 - Faltan datos obligatorios: complete los campos marcados y los detalles antes de guardar.
 - La asignación no coincide con la moneda o no tiene disponibilidad: detenga el registro y revise el contexto presupuestario.
 - Total o ítems no son claros: corrija el detalle antes de confirmar.
-
-## Verificaciones pendientes en runtime
-
-- Campos, documentos, series, proveedores, categorías y medios disponibles para la sesión.
-- Resultado de guardar, impresión, numeración y mensajes de error.
-- Efectos de presupuesto, caja, fiscalidad, contabilidad y autorización aplicables.
 
 ## Enlaces relacionados
 

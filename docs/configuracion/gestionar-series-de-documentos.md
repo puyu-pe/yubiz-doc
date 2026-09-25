@@ -1,10 +1,9 @@
-# Gestionar documentos, series y correlativos
+<a id="gestionar-documentos-series-y-correlativos"></a>
 
-## Estado
+# 8.6 Gestionar documentos, series y correlativos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -39,15 +38,17 @@ documento dentro de una operación que la requiera.
 
 ## Campos y validaciones observados
 
-El formulario fuente exige documento, serie, establecimiento y fecha. La lista incluye
+El formulario exige documento, serie, establecimiento y fecha. La lista incluye
 correlativo, observación, visibilidad y un dato de terminal cuando corresponda. Si no hay
 series para el documento y establecimiento, el navegador informa esa ausencia.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente carga las series asociadas al documento seleccionado y al establecimiento de
+## Resultado esperado
+
+La pantalla puede cargar las series asociadas al documento seleccionado y al establecimiento de
 la sesión. No garantiza formato fiscal, consecutividad, reinicio, aprobación ni emisión
-de comprobantes; esos efectos deben verificarse en runtime.
+de comprobantes; esos efectos deben verificarse en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
@@ -60,12 +61,6 @@ autorizado antes de guardar.
 - No hay series disponibles: confirme documento y establecimiento; no invente una serie.
 - Falta un campo requerido: complete solo el dato autorizado antes de guardar.
 - Correlativo inesperado o resultado incierto: no repita ni reinicie la operación.
-
-## Verificaciones pendientes en runtime
-
-- Permisos y acciones disponibles por sesión.
-- Formatos, reglas de correlativo, fechas y visibilidad.
-- Efectos sobre emisión, documentos existentes y procesos externos.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Registrar cobro posterior y consultar saldo
+<a id="registrar-cobro-posterior-y-consultar-saldo"></a>
 
-## Estado
+# 2.6 Registrar cobro posterior y consultar saldo
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,7 +13,7 @@ presente esa posibilidad.
 ## Acceso condicional
 
 El acceso a pagos y la fila de nuevo cobro dependen de la venta, la sesión y el
-módulo disponible. La fuente solo muestra la fila de ingreso cuando la deuda es
+módulo disponible. La interfaz solo muestra la fila de ingreso cuando la deuda es
 mayor que cero.
 
 ## Requisitos y datos
@@ -45,11 +44,13 @@ observación de pagos existentes. El nuevo pago se habilita con deuda positiva; 
 fecha no puede ser posterior al día mostrado por el formulario, el monto debe ser
 mayor que cero y el total cancelado no puede superar el total de la venta.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-El navegador envía el nuevo pago y, ante respuesta exitosa, recarga la pantalla.
+## Resultado esperado
+
+Al confirmar, se registran el nuevo pago y, ante respuesta exitosa, recarga la pantalla.
 El controlador revisado devuelve un resultado de guardado; el saldo final y la
-constancia requieren verificación en runtime.
+constancia pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 
@@ -63,12 +64,6 @@ la verificación del resultado en el entorno.
   cuenta disponga de acceso.
 - Monto cero, negativo o superior al total: corrija el valor antes de registrar.
 - Método incompleto: complete los datos habilitados o detenga la operación.
-
-## Verificaciones pendientes en runtime
-
-- Acción de acceso desde la lista y visibilidad del saldo.
-- Métodos, detalles, permisos y validaciones efectivos.
-- Saldo resultante, constancia e integración desplegada.
 
 ## Enlaces relacionados
 

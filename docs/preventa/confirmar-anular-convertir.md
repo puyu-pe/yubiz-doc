@@ -1,10 +1,9 @@
-# Confirmar, anular o convertir una preventa en venta
+<a id="confirmar-anular-o-convertir-una-preventa-en-venta"></a>
 
-## Estado
+# 7.3 Confirmar, anular o convertir una preventa en venta
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -44,11 +43,13 @@ editar y anular se muestran para borrador; convertir se muestra para borrador o
 confirmada. El cuadro de conversión solicita documento y serie, y valida un documento
 de cliente de 8 u 11 dígitos; para factura exige 11 dígitos.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Confirmar cambia el estado desde borrador. Anular deja la preventa cancelada y la
 interfaz impide convertirla. Convertir puede procesar una preventa en borrador o
-confirmada después de seleccionar una serie. La fuente trata reservas y movimientos,
+confirmada después de seleccionar una serie. La interfaz trata reservas y movimientos,
 pero no permite afirmar su disponibilidad o efecto en un tenant.
 
 ## Advertencias y casos límite
@@ -63,12 +64,6 @@ cliente o la serie no cumplen las validaciones visibles.
 - Documento del cliente inválido: corríjalo antes de convertir.
 - Serie no seleccionada: selecciónela o cancele la conversión.
 - Resultado inesperado: detenga acciones posteriores y revise detalle, estado e ítems.
-
-## Verificaciones pendientes en runtime
-
-- Transiciones permitidas, reservas, liberaciones y conversión para la sesión.
-- Documentos, series y validaciones disponibles.
-- Efectos de inventario, comerciales, financieros y autorizaciones.
 
 ## Enlaces relacionados
 

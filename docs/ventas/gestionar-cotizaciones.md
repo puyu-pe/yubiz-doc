@@ -1,10 +1,9 @@
-# Crear y gestionar cotizaciones
+<a id="crear-y-gestionar-cotizaciones"></a>
 
-## Estado
+# 2.7 Crear y gestionar cotizaciones
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -45,12 +44,14 @@ El formulario valida cliente, documento, serie, fecha de emisión y fecha de
 vencimiento. La serie admite hasta cuatro caracteres en la validación del
 navegador. Cada detalle requiere un ítem, cantidad, descripción, precio unitario
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El flujo envía la cotización y sus ítems para guardarlos y, tras una respuesta
 exitosa, intenta abrir una impresión. El detalle muestra controles para revisar,
 replicar o convertir una cotización cuando esos controles están habilitados. La
-persistencia, la impresión y la conversión efectiva deben verificarse en runtime.
+persistencia, la impresión y la conversión efectiva deben verificarse en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
@@ -66,12 +67,6 @@ están habilitados para todas las personas usuarias.
 - Ítems incompletos o con valores no numéricos: corrija el detalle y los totales.
 - Opción de editar o convertir no disponible: detenga el flujo y confirme el
   estado de la cotización en su entorno.
-
-## Verificaciones pendientes en runtime
-
-- Documentos, series, líneas, vendedores y controles disponibles.
-- Resultado de registro, edición, réplica, conversión e impresión.
-- Reglas de vigencia, permisos y comportamiento desplegado.
 
 ## Enlaces relacionados
 

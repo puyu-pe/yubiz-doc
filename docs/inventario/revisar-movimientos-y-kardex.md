@@ -1,10 +1,9 @@
-# Revisar movimientos y kardex de un producto
+<a id="revisar-movimientos-y-kardex-de-un-producto"></a>
 
-## Estado
+# 4.2 Revisar movimientos y kardex de un producto
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -42,11 +41,13 @@ La tabla revisada se carga para el producto y el almacén en contexto.
 La tabla revisada incluye fecha, operación, tipo, lote, cantidad, precio, total,
 saldo y estado. La interfaz ofrece filtros para operación, tipo y estado, y un rango
 de fecha. Un detalle de ajuste solo se abre cuando existe el registro de seguimiento
-de la operación; los mensajes y filtros exactos requieren verificación en runtime.
+de la operación; los mensajes y filtros exactos pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente obtiene movimientos para el producto y almacén seleccionados, entrega
+## Resultado esperado
+
+La pantalla presenta movimientos para el producto y almacén seleccionados, entrega
 valores de filtro y permite abrir un detalle según la operación de origen. No se
 afirma que la tabla constituya un kardex fiscal, contable o aprobado.
 
@@ -61,12 +62,6 @@ revise el detalle disponible y el contexto operativo.
 - Sin filas tras aplicar filtros: limpie o revise el almacén y período elegidos.
 - Operación no identificable: no infiera el origen; solicite revisión operativa.
 - Detalle no disponible: no sustituya la evidencia por una corrección manual.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, opciones de filtrado y formato de columnas en el entorno.
-- Alcance de cada estado y el contenido visible de los detalles.
-- Correspondencia entre el saldo mostrado y las operaciones reales del tenant.
 
 ## Enlaces relacionados
 

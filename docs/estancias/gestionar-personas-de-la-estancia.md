@@ -1,10 +1,9 @@
-# Gestionar sujetos y personas relacionadas
+<a id="gestionar-sujetos-y-personas-relacionadas"></a>
 
-## Estado
+# 5.8 Gestionar sujetos y personas relacionadas
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -24,7 +23,7 @@ Prepare un caso ficticio y busque antes de crear un registro.
 ## Requisitos y datos
 
 - El sujeto puede registrarse como persona, mascota u objeto.
-- La fuente solicita nombre, tipo y número de documento de identidad para el
+- La interfaz solicita nombre, tipo y número de documento de identidad para el
   alta de un sujeto.
 - Puede sincronizar personas relacionadas, incluidas referencias principal y de
   recojo, con una observación cuando esté disponible.
@@ -42,15 +41,17 @@ Prepare un caso ficticio y busque antes de crear un registro.
 ## Campos y validaciones observados
 
 - El nombre, el tipo de documento y el número de documento son requeridos por
-  la fuente al guardar un sujeto.
+  la interfaz al guardar un sujeto.
 - No se admite otro sujeto activo con el mismo número de documento.
 - El guardado de sujeto y relaciones se realiza como una sola transacción.
 - La relación de recojo modela datos de negocio; no otorga, comprueba ni
   reemplaza autorización de software.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda el sujeto y sincroniza sus relaciones. Los campos visibles,
+## Resultado esperado
+
+El flujo registra el sujeto y sincroniza sus relaciones. Los campos visibles,
 mensajes y disponibilidad real de estas opciones deben confirmarse en el
 entorno.
 
@@ -66,12 +67,6 @@ Las relaciones registradas describen el caso; no son prueba de permisos del sist
 - No está claro quién debe figurar en la relación: no deduzca reglas de negocio
   ni aprobación real a partir de esta pantalla; escale el caso a quien
   corresponda.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, búsqueda y formulario disponible para cada tipo de sujeto.
-- Cómo se muestran las relaciones principal y de recojo.
-- Comportamiento del entorno frente a registros duplicados.
 
 ## Enlaces relacionados
 

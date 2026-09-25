@@ -1,10 +1,9 @@
-# Consultar un internado y agregar procedimientos
+<a id="consultar-un-internado-y-agregar-procedimientos"></a>
 
-## Estado
+# 5.3 Consultar un internado y agregar procedimientos
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -36,12 +35,14 @@ En **Internado**, abra **Internados** y seleccione la orden que necesita revisar
 ## Campos y validaciones observados
 
 El detalle presenta procedimiento, operador, descripción, recomendaciones y fecha.
-Al agregar, la fuente puede asociar almacén e ítems; valida el detalle antes de
+Al agregar, la interfaz puede asociar almacén e ítems; valida el detalle antes de
 guardarlo y recalcula los totales de la orden.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda el procedimiento y, si hay ítems, los incorpora a la orden dentro
+## Resultado esperado
+
+El flujo registra el procedimiento y, si hay ítems, los incorpora a la orden dentro
 de una transacción. La visualización final y los mensajes requieren verificación.
 
 ## Advertencias y casos límite
@@ -54,11 +55,6 @@ Deténgase si el estado no permite el cambio o si los ítems no son trazables.
 - La orden no aparece: revise filtros y no cree una orden duplicada.
 - Añadir no está disponible: no intente forzar el procedimiento.
 - Faltan datos de ítems: complete datos válidos o detenga el registro.
-
-## Verificaciones pendientes en runtime
-
-- Filtros, estados, mensajes y disponibilidad de la acción Añadir.
-- Actualización de totales, ítems y procedimientos en la interfaz.
 
 ## Enlaces relacionados
 

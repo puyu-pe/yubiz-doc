@@ -1,10 +1,9 @@
-# Iniciar sesión y elegir establecimiento
+<a id="iniciar-sesión-y-elegir-establecimiento"></a>
 
-## Estado
+# 1.1 Iniciar sesión y elegir establecimiento
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,7 +13,7 @@ Iniciar una sesión de trabajo con el establecimiento que corresponda a la tarea
 
 El acceso depende de una cuenta activa y de una relación válida con el
 establecimiento seleccionado. Las cuentas y establecimientos disponibles deben
-confirmarse en runtime.
+confirmarse en el entorno de trabajo.
 
 ## Requisitos y datos
 
@@ -35,11 +34,13 @@ En la pantalla de inicio de sesión, cuando esté disponible en su entorno.
 
 ## Campos y validaciones observados
 
-La pantalla revisada contiene establecimiento, usuario y contraseña. La fuente
+La pantalla revisada contiene establecimiento, usuario y contraseña. La interfaz
 requiere usuario y contraseña, y comprueba que la cuenta tenga una asociación
 activa con el establecimiento elegido.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Cuando la validación se completa, el sistema prepara el contexto de persona
 usuaria, establecimiento y rol para continuar a la primera opción disponible.
@@ -54,12 +55,6 @@ comparta ni registre credenciales en canales no autorizados.
 - Credenciales rechazadas: revise el dato con el responsable de acceso.
 - Establecimiento sin acceso: detenga el intento y confirme la asignación.
 - Contexto posterior inesperado: no continúe con operaciones hasta verificarlo.
-
-## Verificaciones pendientes en runtime
-
-- Establecimientos y mensajes visibles para cada cuenta.
-- Procedimiento de recuperación o soporte de acceso.
-- Comportamiento de la versión desplegada.
 
 ## Enlaces relacionados
 

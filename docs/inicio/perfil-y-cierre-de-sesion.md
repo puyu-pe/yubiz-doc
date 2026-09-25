@@ -1,10 +1,9 @@
-# Revisar el perfil, editar datos y cerrar sesión
+<a id="revisar-el-perfil-editar-datos-y-cerrar-sesión"></a>
 
-## Estado
+# 1.4 Revisar el perfil, editar datos y cerrar sesión
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -41,11 +40,13 @@ En el menú de personas usuarias, con una opción de perfil o edición disponibl
 ## Campos y validaciones observados
 
 El perfil muestra nombre, apellido, usuario y una clave enmascarada. La edición
-revisada permite nombre y apellido; la fuente exige nombre, apellido y teléfono.
+revisada permite nombre y apellido; la interfaz exige nombre, apellido y teléfono.
 Si se solicita cambio de clave, exige clave actual, una nueva clave de al menos
 seis caracteres y coincidencia con la confirmación.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La edición válida actualiza datos propios y redirige a la pantalla inicial. El
 cierre de sesión elimina el contexto de sesión y dirige al inicio de acceso.
@@ -61,12 +62,6 @@ que desea conservar, no guarde y confirme el procedimiento aplicable.
 - Nueva clave sin coincidencia o demasiado corta: corríjala antes de confirmar.
 - Opción no visible: no intente administrar cuentas ajenas; confirme el alcance
   disponible para su sesión.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, disponibilidad y campos visibles de perfil y edición.
-- Mensajes de validación, actualización y cierre de sesión.
-- Paridad de la navegación y comportamiento desplegado.
 
 ## Enlaces relacionados
 

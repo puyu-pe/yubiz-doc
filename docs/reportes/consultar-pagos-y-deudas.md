@@ -1,10 +1,9 @@
-# Consultar pagos y deudas de ventas
+<a id="consultar-pagos-y-deudas-de-ventas"></a>
 
-## Estado
+# 6.16 Consultar pagos y deudas de ventas
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -45,10 +44,12 @@ exige esos datos y rechaza un rango con fecha inicial posterior a la final. El t
 presenta un total de pagos, desglose por los métodos disponibles y un importe total
 de ventas para el mismo contexto de consulta.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Al buscar, el navegador solicita los datos del período, establecimiento y usuario
-seleccionados y actualiza el tablero con agrupaciones y totales. La fuente compara el
+seleccionados y actualiza el tablero con agrupaciones y totales. La interfaz compara el
 total de pagos con el total de ventas mostrado, pero esa diferencia no establece por
 sí sola una deuda conciliada ni la calidad de los datos.
 
@@ -64,12 +65,6 @@ los filtros elegidos. No use una diferencia como autorización para ajustar sald
 - Usuario o establecimiento inesperado: detenga la interpretación y revise el contexto de consulta.
 - Diferencia no explicada: revise ventas y pagos de origen antes de escalarla.
 - Sin resultados: reduzca o corrija filtros; no concluya que no existen operaciones.
-
-## Verificaciones pendientes en runtime
-
-- Establecimientos, personas usuarias y métodos visibles para la sesión.
-- Fechas efectivas usadas por cada total y actualización del tablero.
-- Significado operativo de diferencias, deudas, conciliación y autorizaciones.
 
 ## Enlaces relacionados
 

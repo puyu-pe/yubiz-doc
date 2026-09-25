@@ -1,10 +1,9 @@
-# Gestionar establecimientos y almacenes
+<a id="gestionar-establecimientos-y-almacenes"></a>
 
-## Estado
+# 8.7 Gestionar establecimientos y almacenes
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -38,13 +37,15 @@ registro que necesita revisar.
 
 ## Campos y validaciones observados
 
-La fuente muestra para establecimientos datos de identificación, ubicación, teléfono y
+La interfaz puede mostrar para establecimientos datos de identificación, ubicación, teléfono y
 estado. Para almacenes exige descripción y establecimiento, y evita repetir la descripción;
-puede presentar opciones operativas y una observación. Las reglas finales requieren runtime.
+puede presentar opciones operativas y una observación. Las reglas finales pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente relaciona cada almacén con un establecimiento y presenta controles para sus
+## Resultado esperado
+
+La interfaz relaciona cada almacén con un establecimiento y presenta controles para sus
 opciones operativas. No confirma creación, eliminación, aprobación ni impacto sobre stock,
 ventas, compras o usuarios existentes.
 
@@ -59,12 +60,6 @@ existentes hasta contar con una indicación autorizada.
 - Descripción repetida o campo requerido vacío: corrija el dato antes de guardar.
 - No aparece la acción esperada: no la fuerce; consulte a soporte autorizado.
 - Resultado inesperado: no cree un registro alternativo para compensarlo.
-
-## Verificaciones pendientes en runtime
-
-- Acciones, permisos y campos disponibles por sesión.
-- Reglas de unicidad, estado y opciones operativas.
-- Efecto de cambios sobre operaciones y registros existentes.
 
 ## Enlaces relacionados
 

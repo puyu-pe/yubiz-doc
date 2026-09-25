@@ -1,10 +1,9 @@
-# Registrar proveedores, costos e imágenes de un producto
+<a id="registrar-proveedores-costos-e-imágenes-de-un-producto"></a>
 
-## Estado
+# 3.8 Registrar proveedores, costos e imágenes de un producto
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -42,11 +41,13 @@ Abra el producto existente y seleccione **Compras** o **Galería** según la tar
 La tabla de compras revisada incluye proveedor, código de producto, precio y
 cantidad mínima. El costo principal es obligatorio y no puede ser negativo. La
 galería acepta archivos con extensiones JPG, JPEG o PNG; su control se habilita
-solo para productos con identificador existente. La fuente revisada guarda una
+solo para productos con identificador existente. La interfaz guarda una
 imagen y permite actualizar, marcar una principal o retirarla; no confirma límites
 de tamaño, resolución ni el resultado visual desplegado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 Los proveedores y precios de compra se guardan junto con el producto. Las imágenes
 guardadas se asocian al producto y una puede marcarse como principal. Retirar una
@@ -67,12 +68,6 @@ a comprobar la ficha.
 - Archivo con formato no admitido: no intente cambiar su extensión; use un archivo
   apto y autorizado.
 - No puede determinar cuál imagen es principal o qué se retirará: deténgase.
-
-## Verificaciones pendientes en runtime
-
-- Proveedores disponibles y campos de compra por sesión.
-- Límites y mensajes de carga de imágenes.
-- Visibilidad de la imagen principal y efecto de retirar una imagen desplegada.
 
 ## Enlaces relacionados
 

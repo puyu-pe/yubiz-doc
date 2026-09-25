@@ -1,10 +1,9 @@
-# Asignar series en entradas, salidas y cargas
+<a id="asignar-series-en-entradas-salidas-y-cargas"></a>
 
-## Estado
+# 4.9 Asignar series en entradas, salidas y cargas
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -43,7 +42,9 @@ de contenedor, añade tipo de propietario, propietario, contenido y estado de ll
 La salida busca series por lote y almacén, impide agregarlas dos veces y exige al menos
 una serie seleccionada. La obligatoriedad exacta depende del flujo y debe verificarse.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La interfaz reúne las series seleccionadas con el detalle del movimiento o carga. No
 se afirma que asignar una serie cree una nueva serie de catálogo ni que confirme por
@@ -60,12 +61,6 @@ la operación y revisar la trazabilidad.
 - Serie duplicada: elimine la repetición antes de guardar.
 - No aparecen series: confirme lote, almacén y seguimiento aplicable.
 - Cantidad y filas no coinciden: no continúe hasta reconciliarlas.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad de series, lotes y atributos por producto y sesión.
-- Reglas de cantidad, mensajes y efectos de entrada, salida o carga.
-- Integración real con el catálogo y con el historial de movimientos.
 
 ## Enlaces relacionados
 

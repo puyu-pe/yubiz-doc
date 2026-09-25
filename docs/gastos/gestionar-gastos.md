@@ -1,10 +1,9 @@
-# Consultar, aprobar y exportar gastos
+<a id="consultar-aprobar-y-exportar-gastos"></a>
 
-## Estado
+# 6.11 Consultar, aprobar y exportar gastos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -48,12 +47,14 @@ proveedor, fecha, categoría, establecimiento, subtotal, IGV, total, usuario, mo
 medio de pago y estado. El detalle solicita confirmación antes de aprobar; la
 interfaz evita esa acción cuando el control está deshabilitado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La lista recupera gastos paginados y permite abrir su detalle. La aprobación envía
 el identificador del gasto y actualiza la grilla después de una respuesta exitosa.
 La exportación prepara una vista imprimible basada en los filtros y columnas
-actuales; su archivo, entrega y significado operativo deben comprobarse en runtime.
+actuales; su archivo, entrega y significado operativo deben comprobarse en el entorno de trabajo.
 
 ## Advertencias y casos límite
 
@@ -66,12 +67,6 @@ una acción que no haya mostrado un resultado claro.
 - No se identifica el gasto: refine filtros y confirme documento, proveedor y fecha.
 - La acción está deshabilitada o no aparece: detenga el flujo y revise el estado mostrado.
 - La exportación contiene más datos de los esperados: cancele la revisión y ajuste filtros.
-
-## Verificaciones pendientes en runtime
-
-- Columnas, filtros, estados y acciones disponibles para cada sesión.
-- Resultado de aprobar, anular, imprimir y exportar.
-- Permisos, autorización de negocio y efectos posteriores de cada cambio de estado.
 
 ## Enlaces relacionados
 

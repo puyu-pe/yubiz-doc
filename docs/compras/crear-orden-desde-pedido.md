@@ -1,10 +1,9 @@
-# Crear una orden desde un pedido de compra
+<a id="crear-una-orden-desde-un-pedido-de-compra"></a>
 
-## Estado
+# 6.4 Crear una orden desde un pedido de compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -14,8 +13,8 @@ disponible y el pedido continúe en un estado que permita la conversión.
 ## Acceso condicional
 
 Esta es una capacidad condicional: la acción depende del estado del pedido y de la
-sesión. La fuente muestra que no está disponible en los estados `COMPRADO` y
-`ANULADO`; las reglas definitivas deben verificarse en runtime.
+sesión. La interfaz puede mostrar que no está disponible en los estados `COMPRADO` y
+`ANULADO`; las reglas definitivas deben verificarse en el entorno de trabajo.
 
 ## Requisitos y datos
 
@@ -49,11 +48,13 @@ La validación exige documento, serie, fecha, almacén y proveedor. El detalle c
 cantidad, descripción, valor, afectación de IGV, precio e importe; las opciones de
 seguimiento dependen del producto y de la configuración.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda el vínculo entre la orden y el pedido y actualiza el estado del
+## Resultado esperado
+
+El flujo registra el vínculo entre la orden y el pedido y actualiza el estado del
 pedido a `COMPRADO` cuando la orden se registra desde ese origen. Este significado es
-documental y de estado observado en fuente; no confirma recepción física, aprobación,
+documental y de estado disponible; no confirma recepción física, aprobación,
 stock, pago, caja ni asiento contable en el entorno desplegado.
 
 ## Advertencias y casos límite
@@ -69,12 +70,6 @@ al caso, detenga el registro y revise el pedido antes de crear una nueva orden.
   confirmar.
 - Las cantidades o líneas requieren cambios: vuelva a revisar el pedido antes de
   continuar con la conversión.
-
-## Verificaciones pendientes en runtime
-
-- Estados reales que permiten convertir y su presentación para cada rol.
-- Datos trasladados, restricciones de edición y mensajes finales.
-- Consecuencias operativas, de stock, pago, caja y contabilidad tras el registro.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Consultar ventas por usuario y cliente
+<a id="consultar-ventas-por-usuario-y-cliente"></a>
 
-## Estado
+# 2.17 Consultar ventas por usuario y cliente
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,7 +39,9 @@ Los formularios observados requieren fecha desde y hasta; el navegador rechaza f
 vacías y una fecha final anterior a la inicial. También muestra un selector de usuario
 o vendedor y una opción general, según el reporte disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La interfaz vuelve a cargar la tabla con las fechas y el selector elegidos. No confirma
 cobertura de datos, significado de los totales, acceso a usuarios ni exactitud del archivo exportado.
@@ -55,12 +56,6 @@ Una tabla vacía no prueba que no existan ventas, clientes o usuarios fuera del 
 - Fechas vacías o invertidas: corríjalas antes de buscar.
 - Usuario o vendedor inesperado: no continúe hasta validar el filtro.
 - Resultado o exportación inciertos: conserve el contexto y solicite revisión.
-
-## Verificaciones pendientes en runtime
-
-- Usuarios, vendedores, tablas y exportaciones disponibles.
-- Zona horaria, alcance del periodo y significado de los totales.
-- Cobertura de clientes y consecuencias de usar los resultados.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Consultar comisiones de ventas por producto
+<a id="consultar-comisiones-de-ventas-por-producto"></a>
 
-## Estado
+# 2.16 Consultar comisiones de ventas por producto
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -37,7 +36,9 @@ Abra el reporte de comisiones disponible en el entorno.
 
 La tabla observada ofrece filtros por rango de fecha, usuario y valor de comisión.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador presenta una consulta de comisiones con opciones de exportación. No
 confirma fórmula, base de cálculo, liquidación, pago ni validez contable.
@@ -52,12 +53,6 @@ No confunda este reporte con la asignación de vendedores y establecimientos de
 - Periodo o filtro incorrecto: corríjalo antes de exportar o comunicar un total.
 - Sin resultados: no concluya ausencia de comisiones sin validar el contexto.
 - Total inesperado: detenga la interpretación y solicite revisión responsable.
-
-## Verificaciones pendientes en runtime
-
-- Acceso, filtros, columnas y formatos de exportación.
-- Datos devueltos, totales y definición de valor de comisión.
-- Cálculo, pago y consecuencias administrativas.
 
 ## Enlaces relacionados
 

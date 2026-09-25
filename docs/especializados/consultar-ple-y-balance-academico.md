@@ -1,10 +1,9 @@
-# Consultar PLE y balance académico
+<a id="consultar-ple-y-balance-académico"></a>
 
-## Estado
+# 5.12 Consultar PLE y balance académico
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -33,9 +32,11 @@ Abra el reporte requerido desde el módulo especializado y confirme el período 
 
 ## Campos y validaciones observados
 
-La fuente devuelve filas, total y filtros para el balance. El exportador PLE limita la salida cuando la consulta alcanza 5 000 filas; los campos y formatos visibles deben confirmarse en el entorno.
+La interfaz devuelve filas, total y filtros para el balance. El exportador PLE limita la salida cuando la consulta alcanza 5 000 filas; los campos y formatos visibles deben confirmarse en el entorno.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 La consulta puede devolver una tabla con total y filtros, y el PLE puede generar una salida de reporte. La exactitud contable y el archivo resultante no se verificaron.
 
@@ -48,11 +49,6 @@ No interprete un total como cierre o aprobación. Si la consulta supera el lími
 - No hay datos: revise el período y no infiera que no existen registros.
 - Límite de filas: reduzca el alcance de la consulta.
 - Exportación no verificable: no asuma que el archivo fue generado.
-
-## Verificaciones pendientes en runtime
-
-- Filtros disponibles, etiquetas, mensajes y descarga de reportes.
-- Significado y exactitud de los saldos presentados.
 
 ## Enlaces relacionados
 

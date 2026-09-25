@@ -1,10 +1,9 @@
-# Gestionar lotes de productos
+<a id="gestionar-lotes-de-productos"></a>
 
-## Estado
+# 3.9 Gestionar lotes de productos
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -41,13 +40,15 @@ la lista antes de agregar o editar un registro.
 ## Campos y validaciones observados
 
 El formulario revisado muestra producto, lote, precio, fecha de vencimiento y detalle.
-La edición muestra además stock por almacén y un total. La fuente rechaza una
+La edición muestra además stock por almacén y un total. La interfaz evita una
 descripción duplicada para el mismo producto durante la actualización. La obligatoriedad
-exacta, los rangos y los mensajes visibles requieren verificación en runtime.
+exacta, los rangos y los mensajes visibles pueden variar según la configuración disponible.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente revisada crea o actualiza el registro de lote asociado al producto y permite
+## Resultado esperado
+
+La interfaz crea o actualiza el registro de lote asociado al producto y permite
 consultar su información junto con cantidades por almacén. No se afirma un efecto de
 stock ni una política de vencimientos sin evidencia del entorno.
 
@@ -63,12 +64,6 @@ configuración. Un lote no sustituye la trazabilidad individual por series.
 - Producto o lote no identificable: deténgase y valide los datos maestros.
 - No puede confirmar el impacto sobre existencias: no continúe con la modificación.
 - Opción ausente: confirme la habilitación del módulo y el seguimiento aplicable.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad, alias, permisos y campos obligatorios de la sesión.
-- Mensajes de guardado, filtros y actualización de cantidades mostradas.
-- Efecto real de crear, editar o usar un lote en operaciones posteriores.
 
 ## Enlaces relacionados
 

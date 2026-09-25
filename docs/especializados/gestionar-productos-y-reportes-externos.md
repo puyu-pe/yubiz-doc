@@ -1,10 +1,9 @@
-# Gestionar productos y reportes externos
+<a id="gestionar-productos-y-reportes-externos"></a>
 
-## Estado
+# 5.13 Gestionar productos y reportes externos
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -33,11 +32,13 @@ Abra la acción especializada que corresponda y revise los campos visibles antes
 
 ## Campos y validaciones observados
 
-La interfaz de carga acepta archivos TXT de hasta 4 MB antes de generar una vista previa. La fuente rechaza secciones, fechas, números, importes o ítems no válidos. El reporte externo limita la exportación a 10 000 filas y el período a tres meses.
+La interfaz de carga acepta archivos TXT de hasta 4 MB antes de generar una vista previa. La interfaz evita secciones, fechas, números, importes o ítems no válidos. El reporte externo limita la exportación a 10 000 filas y el período a tres meses.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente puede mostrar una vista previa, guardar registros asociados a la carga y generar un reporte exportable. Sus efectos, mensajes y archivos finales son pendientes.
+## Resultado esperado
+
+La interfaz puede mostrar una vista previa, guardar registros asociados a la carga y generar un reporte exportable. Sus efectos, mensajes y archivos finales son pendientes.
 
 ## Advertencias y casos límite
 
@@ -48,11 +49,6 @@ No cargue archivos con datos no autorizados ni use esta guía para interpretar s
 - Archivo no TXT o mayor que el límite: elija un archivo válido.
 - Datos de vista previa incompletos: no continúe con el guardado.
 - Período demasiado amplio: reduzca filtros antes de exportar.
-
-## Verificaciones pendientes en runtime
-
-- Formatos admitidos, etiquetas, vista previa, mensajes y resultados de carga.
-- Campos, exportación y significado de los datos del reporte externo.
 
 ## Enlaces relacionados
 

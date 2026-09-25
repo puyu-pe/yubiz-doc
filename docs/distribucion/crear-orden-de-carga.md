@@ -1,10 +1,9 @@
-# Crear una orden de carga
+<a id="crear-una-orden-de-carga"></a>
 
-## Estado
+# 7.4 Crear una orden de carga
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -40,9 +39,11 @@ La pantalla solicita serie, almacén de origen, vehículo, distribuidor y fecha.
 Exige al menos un producto; el almacén de origen no puede coincidir con el
 vehículo seleccionado. Al cambiar el almacén, los productos ingresados por
 serie se retiran de la tabla. La fecha mínima y las opciones disponibles deben
-confirmarse en runtime.
+confirmarse en el entorno de trabajo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El navegador registra una orden con su detalle y ofrece impresión. También
 consulta residuales y compromisos del vehículo antes del registro. Esto no
@@ -62,12 +63,6 @@ solo hecho de incluirla.
 - No hay productos: agregue al menos uno o cancele la operación.
 - No se puede validar el residual: deténgase y actualice el contexto del vehículo.
 - El resultado no es claro: no repita el registro; consulte la lista o el detalle.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad del módulo, controles, series y datos de la sesión.
-- Reglas de cantidades, seguimiento, residuales y productos provenientes de ventas.
-- Efectos reales sobre existencias, compromisos, documentos y operaciones posteriores.
 
 ## Enlaces relacionados
 

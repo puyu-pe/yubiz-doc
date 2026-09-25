@@ -1,10 +1,9 @@
-# Registrar una orden de servicio o internado
+<a id="registrar-una-orden-de-servicio-o-internado"></a>
 
-## Estado
+# 5.2 Registrar una orden de servicio o internado
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -39,13 +38,15 @@ establecimiento correcto.
 ## Campos y validaciones observados
 
 La interfaz exige cliente, unidad, documento, serie, fechas, categoría,
-responsable, prioridad y detalle. El guardado de fuente valida cliente, documento
+responsable, prioridad y detalle. El guardado de el formulario valida cliente, documento
 y serie, fechas y cada ítem con cantidad, descripción, precio, importe y afectación.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El guardado válido crea la orden en una transacción, asigna numeración y registra
-el detalle. Si falla, la fuente revierte la operación; el resultado visible debe
+el detalle. Si falla, la interfaz revierte la operación; el resultado visible debe
 confirmarse en el entorno.
 
 ## Advertencias y casos límite
@@ -58,11 +59,6 @@ suponga que fechas, series o almacenes tendrán los mismos valores en cada entor
 - No hay serie o documento seleccionable: deténgase y confirme la configuración.
 - Falta un dato obligatorio: complete el dato o no continúe.
 - El total no representa el detalle: revise los ítems antes de guardar.
-
-## Verificaciones pendientes en runtime
-
-- Mensajes, numeración, campos visibles y actualización de la lista.
-- Efecto real sobre el detalle, existencias y registros relacionados.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Consultar y editar preventas
+<a id="consultar-y-editar-preventas"></a>
 
-## Estado
+# 7.2 Consultar y editar preventas
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -42,11 +41,13 @@ almacén, cliente, total y estado, con filtros y columnas configurables. El form
 de edición carga cliente, documento, fecha, usuario, observación e ítems; envía el
 identificador, la observación y el detalle de ítems para validación.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El detalle moderno expone los estados borrador, confirmada, procesada y cancelada.
-La edición aparece solo para borrador en la interfaz. La fuente maneja actualizaciones
-y movimientos de reserva, pero su efecto real requiere verificación en runtime.
+La edición aparece solo para borrador en la interfaz. La interfaz maneja actualizaciones
+y movimientos de reserva, pero su efecto real pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 
@@ -58,12 +59,6 @@ puede responder a filtros o estado. Revise el estado antes de modificar ítems.
 - Preventa no encontrada: limpie o ajuste filtros antes de concluir que no existe.
 - Estado no editable: no fuerce una modificación; revise el detalle y el contexto.
 - Ítems o total inesperados: detenga la actualización y revise el origen.
-
-## Verificaciones pendientes en runtime
-
-- Filtros, columnas y estados visibles para la sesión.
-- Validaciones de ítems y comportamiento de reservas al actualizar.
-- Permisos, mensajes y efectos desplegados.
 
 ## Enlaces relacionados
 

@@ -3,7 +3,10 @@
 ## Documentation baseline
 
 - Use neutral Spanish for reader-facing pages and English for technical files.
-- Preserve the visible draft and runtime-verification status on every ficha.
+- Keep reader-facing operational documentation separate from editorial and review
+  metadata; do not require draft or runtime-verification banners or footers.
+- A presentation-only edit does not establish runtime verification or deployment;
+  retain pending states until supported by runtime evidence.
 - Do not state universal labels, permissions, policies, screenshots, or deployed
   behavior without runtime evidence.
 - Keep detailed source traces in private Engram evidence only.

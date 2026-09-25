@@ -1,10 +1,9 @@
-# Gestionar campañas de descuento
+<a id="gestionar-campañas-de-descuento"></a>
 
-## Estado
+# 7.8 Gestionar campañas de descuento
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -39,11 +38,13 @@ Abra la lista de campañas o el formulario de creación cuando las opciones apar
 
 El formulario observado muestra descripción, fechas, monto mínimo y porcentaje de
 descuento. La validación de rangos, fechas y reglas de aplicación requiere
-verificación en runtime.
+revisión antes de continuar.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente presenta controles para registrar una campaña con periodo, monto mínimo y
+## Resultado esperado
+
+La interfaz presenta controles para registrar una campaña con periodo, monto mínimo y
 porcentaje. La asociación de productos se presenta después de que la campaña ya
 cuenta con un registro; ninguna de estas pantallas confirma su aplicación a una
 operación concreta.
@@ -58,12 +59,6 @@ Una campaña visible o con estado mostrado no prueba que sea aplicable al contex
 - Fechas, monto o porcentaje dudosos: corrija antes de registrar.
 - Producto no visible: no lo incorpore mediante una alternativa no observada.
 - Estado o aplicación inciertos: detenga la operación comercial y solicite revisión.
-
-## Verificaciones pendientes en runtime
-
-- Permisos, filtros, estados y acciones disponibles.
-- Validaciones de fechas, monto, porcentaje y productos.
-- Condiciones reales de aplicación y efecto sobre ventas o precios.
 
 ## Enlaces relacionados
 

@@ -1,10 +1,9 @@
-# Registrar venta al contado
+<a id="registrar-venta-al-contado"></a>
 
-## Estado
+# 2.4 Registrar venta al contado
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -30,8 +29,8 @@ En el formulario **Venta / Agregar**, después de revisar el total de los ítems
 1. Revise cliente, documento, serie, fecha, almacén y total antes de usar
    **Registrar**.
 2. Confirme el detalle de pago que se abre desde el formulario.
-3. Revise el método **Efectivo** y el campo **Monto**; cuando no hay un pago
-   predefinido, la fuente carga efectivo por el total de la venta.
+3. Revise el método **Efectivo** y el campo **Monto**; cuando no haya un pago
+   predefinido, confirme que el importe coincida con el total de la venta.
 4. Ingrese o confirme el importe recibido y revise **Total pagado**, **Deuda** y
    **Vuelto**.
 5. Seleccione **Confirmar** solo si los importes y datos de la operación son
@@ -44,11 +43,12 @@ pago deben ser válidos y mayores que cero; para efectivo, el cálculo puede mos
 vuelto cuando el pago supera el total. Solo se permite agregar un método de pago
 en efectivo al detalle.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-Al confirmar, el navegador envía venta, ítems y pagos al flujo de registro. La
-fuente muestra un resultado exitoso del flujo y luego intenta comunicar e imprimir;
-la confirmación efectiva, el documento y sus efectos requieren runtime.
+## Resultado esperado
+
+Al confirmar, revise el resultado mostrado antes de comunicar o imprimir. Confirme
+el documento y sus efectos en la pantalla antes de continuar.
 
 ## Advertencias y casos límite
 
@@ -62,12 +62,6 @@ comunicación como constancia de que el proceso finalizó en su entorno.
   abrir el pago.
 - Monto inválido: detenga el registro y corrija el importe.
 - Productos eliminados en la tabla: retírelos antes de intentar confirmar.
-
-## Verificaciones pendientes en runtime
-
-- Métodos habilitados, documentos, series y permisos disponibles.
-- Validaciones de monto, vuelto y deuda en el entorno.
-- Confirmación, impresión, comunicación y comportamiento desplegado.
 
 ## Enlaces relacionados
 

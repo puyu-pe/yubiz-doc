@@ -1,10 +1,9 @@
-# Cambiar de establecimiento durante la sesión
+<a id="cambiar-de-establecimiento-durante-la-sesión"></a>
 
-## Estado
+# 1.3 Cambiar de establecimiento durante la sesión
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -38,15 +37,17 @@ visible.
 ## Campos y validaciones observados
 
 El selector muestra los establecimientos asociados a la sesión y marca el actual.
-Al cambiarlo, el navegador envía la selección y recarga tras una respuesta exitosa;
-la fuente valida la asociación de la cuenta antes de sustituir el contexto de
+Al cambiarlo, confirme la selección y revise la pantalla antes de continuar;
+la interfaz valida la asociación de la cuenta antes de sustituir el contexto de
 sesión.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
+
+## Resultado esperado
 
 El mecanismo revisado actualiza el establecimiento guardado en la sesión y luego
 recarga la página. La persistencia visual y los efectos sobre formularios abiertos
-requieren verificación en runtime.
+pueden variar según la configuración disponible.
 
 ## Advertencias y casos límite
 
@@ -61,12 +62,6 @@ operación según el procedimiento aplicable antes de cambiar.
   asignación antes de reintentar.
 - La pantalla recarga con datos inesperados: detenga cualquier operación y revise
   el establecimiento mostrado.
-
-## Verificaciones pendientes en runtime
-
-- Disponibilidad del selector por cuenta y rol.
-- Mensajes de error, recarga y conservación de formularios abiertos.
-- Paridad con la versión desplegada.
 
 ## Enlaces relacionados
 

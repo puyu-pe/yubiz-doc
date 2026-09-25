@@ -1,10 +1,9 @@
-# Registrar ingresos y salidas de almacén
+<a id="registrar-ingresos-y-salidas-de-almacén"></a>
 
-## Estado
+# 4.5 Registrar ingresos y salidas de almacén
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -45,11 +44,13 @@ La pantalla revisada incluye documento, serie, fecha, responsable, tipos y valor
 origen/destino, productos, cantidades, detalle e información interna. El navegador
 reconfigura los campos según el documento: ingreso usa una descripción de origen y
 almacén de destino; salida usa almacén de origen y una descripción de destino. Los
-requisitos exactos y las validaciones de cantidades deben verificarse en runtime.
+requisitos exactos y las validaciones de cantidades deben verificarse en el entorno de trabajo.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente prepara el encabezado y detalle de la operación, incluyendo productos,
+## Resultado esperado
+
+La interfaz prepara el encabezado y detalle de la operación, incluyendo productos,
 cantidades y seguimiento, y los envía al flujo de transferencia externo. El servidor
 responde éxito o error; el efecto final sobre existencias y documentos queda pendiente
 de comprobación en el entorno.
@@ -66,12 +67,6 @@ un cumplimiento fiscal o de una autorización organizacional.
 - Origen o destino incorrecto: corrija antes de agregar productos.
 - Seguimiento incompleto: detenga el registro hasta identificar lote o series.
 - Resultado incierto: confirme el historial antes de reenviar.
-
-## Verificaciones pendientes en runtime
-
-- Nombres, documentos, series y campos obligatorios disponibles en la sesión.
-- Reglas de stock, trazabilidad y mensajes de éxito o error.
-- Resultado operativo, fiscal, contable y de despacho de cada tipo de movimiento.
 
 ## Enlaces relacionados
 

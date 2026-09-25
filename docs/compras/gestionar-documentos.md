@@ -1,10 +1,9 @@
-# Registrar y relacionar documentos de compra
+<a id="registrar-y-relacionar-documentos-de-compra"></a>
 
-## Estado
+# 6.8 Registrar y relacionar documentos de compra
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -42,16 +41,18 @@ pagos existentes antes de crear o modificar una relación.
 ## Campos y validaciones observados
 
 El alta solicita compra, fecha, documento, serie y correlativo; la validación del
-navegador exige esos cinco datos. La lista de pagos admite selección múltiple. La fuente
+navegador exige esos cinco datos. La lista de pagos admite selección múltiple. La interfaz
 rechaza repetir para el mismo proveedor la combinación de comprobante, serie y
 correlativo; al modificar, exige documento y al menos un pago seleccionado.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda el documento del proveedor y puede asignar pagos de la misma compra.
-Al actualizar relaciones, libera los pagos retirados y asigna los seleccionados. El
-documento del proveedor no es la orden de compra ni el pago: es un registro relacionado
-cuya validez, recepción y tratamiento fiscal permanecen pendientes de runtime.
+## Resultado esperado
+
+Al actualizar relaciones, revise que los pagos retirados y seleccionados correspondan
+al documento. El documento del proveedor no es la orden de compra ni el pago: es un
+registro relacionado. Verifique su validez, recepción y tratamiento fiscal según el
+procedimiento aplicable.
 
 ## Advertencias y casos límite
 
@@ -65,12 +66,6 @@ relación de pago no sustituye la verificación del monto, saldo o documento rec
 - La combinación ya existe para el proveedor: revise el detalle en lugar de duplicarla.
 - No hay pago válido para relacionar: no fuerce una relación vacía.
 - La orden está anulada o la acción está deshabilitada: detenga el cambio.
-
-## Verificaciones pendientes en runtime
-
-- Tipos de documento, permisos y acciones disponibles por estado.
-- Reglas fiscales, formato de serie/correlativo y mensajes de error finales.
-- Efecto de relacionar o eliminar documentos sobre pagos, constancias y procesos externos.
 
 ## Enlaces relacionados
 

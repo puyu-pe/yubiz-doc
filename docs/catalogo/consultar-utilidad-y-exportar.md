@@ -1,10 +1,9 @@
-# Consultar utilidad y exportar el catálogo
+<a id="consultar-utilidad-y-exportar-el-catálogo"></a>
 
-## Estado
+# 3.12 Consultar utilidad y exportar el catálogo
 
-- Revisión de fuente: revisada en código
-- Verificación en entorno: pendiente
-- Paridad con la versión desplegada: pendiente
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -38,15 +37,17 @@ exportar, revise los filtros y las columnas seleccionadas.
 
 ## Campos y validaciones observados
 
-La interfaz revisada incluye edición de columnas, limpieza y restablecimiento de
-filtros, además de acciones para PDF y Excel. La consulta fuente incorpora filtros de
+La interfaz incluye edición de columnas, limpieza y restablecimiento de
+filtros, además de acciones para PDF y Excel. La consulta incorpora filtros de
 producto y campos de cantidad, costo, venta y utilidad. La exportación revisada limita
 la salida a 10 000 registros. La interpretación financiera de columnas y totales debe
 confirmarse en el entorno.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente genera una lista paginada y puede preparar salidas PDF o Excel a partir de
+## Resultado esperado
+
+La interfaz genera una lista paginada y puede preparar salidas PDF o Excel a partir de
 los parámetros y columnas seleccionados. No se afirma que la descarga se entregue,
 que los totales sean definitivos ni que la información tenga un uso contable o fiscal.
 
@@ -62,12 +63,6 @@ columna. Evite exportar conjuntos amplios si no necesita todos los registros.
 - Totales inesperados: revise filtros, período y columnas antes de comunicar datos.
 - Opción de exportación ausente: confirme módulo, permiso y sesión.
 - No puede interpretar una columna: deténgase y valide el reporte con el responsable.
-
-## Verificaciones pendientes en runtime
-
-- Permisos, columnas, filtros y formatos disponibles en la sesión.
-- Descarga, contenido y límite efectivo de las salidas generadas.
-- Significado operativo, financiero y contable de cantidades, costos, ventas y utilidad.
 
 ## Enlaces relacionados
 

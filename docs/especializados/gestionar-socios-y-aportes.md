@@ -1,10 +1,9 @@
-# Gestionar socios y aportes
+<a id="gestionar-socios-y-aportes"></a>
 
-## Estado
+# 5.11 Gestionar socios y aportes
 
-- Revisión de fuente: revisada en código.
-- Verificación en entorno: pendiente.
-- Paridad con la versión desplegada: pendiente.
+<a id="estado"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>
 
 ## Objetivo
 
@@ -33,11 +32,13 @@ Abra **Gestión de Socios** desde el módulo especializado y busque primero el r
 
 ## Campos y validaciones observados
 
-La gestión observada requiere descripción, color, aporte y porcentaje; los dos últimos se tratan como valores numéricos. Al guardar un aporte, la fuente recalcula los porcentajes agregados de los socios.
+La gestión observada requiere descripción, color, aporte y porcentaje; los dos últimos se tratan como valores numéricos. Al guardar un aporte, la interfaz recalcula los porcentajes agregados de los socios.
 
-## Resultado revisado en fuente
+<a id="resultado-revisado-en-fuente"></a>
 
-La fuente guarda aportes en una transacción y actualiza los porcentajes calculados. El resultado visible, los importes y el informe requieren verificación en entorno.
+## Resultado esperado
+
+El flujo registra aportes en una transacción y actualiza los porcentajes calculados. El resultado visible, los importes y el informe deben revisarse antes de continuar.
 
 ## Advertencias y casos límite
 
@@ -48,11 +49,6 @@ No cambie aportes o porcentajes si no puede verificar el registro correcto. Los 
 - Datos obligatorios incompletos: complete los datos o no guarde.
 - Socio no identificado: deténgase antes de registrar un aporte.
 - Total o porcentaje inesperado: revise el detalle y valide el contexto.
-
-## Verificaciones pendientes en runtime
-
-- Etiquetas, acciones habilitadas, mensajes y cálculo visible de porcentajes.
-- Datos y resultados del informe anual o mensual.
 
 ## Enlaces relacionados
 
