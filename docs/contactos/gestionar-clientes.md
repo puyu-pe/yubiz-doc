@@ -1,76 +1,48 @@
 <a id="gestionar-clientes"></a>
 
-# 3.1 Gestionar clientes
+# 8.1 Registrar y actualizar clientes
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="31-registrar-y-actualizar-clientes"></a>
 
-## Objetivo
+<a id="31-gestionar-clientes"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Crear, revisar, editar o retirar de uso un cliente desde el área de contactos.
+Registre un cliente nuevo o actualice sus datos de contacto para identificarlo en las operaciones que lo requieran.
 
-## Acceso condicional
+## Cómo acceder
 
-La entrada de clientes depende de que el módulo esté visible para la sesión. La
-posibilidad de crear, editar o retirar registros debe confirmarse en el entorno.
+1. En la barra lateral, abra **Contactos**.
+2. Seleccione **Clientes**.
+3. Seleccione un cliente para actualizarlo.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Tipo y número de documento del cliente.
-- Nombre o razón social.
-- Datos de contacto y dirección, si corresponden a la operación.
-
-## Punto de partida
-
-En **Contactos**, abra **Clientes** cuando la opción esté disponible.
+- Tenga el tipo y número de documento, y el nombre o razón social.
 
 ## Pasos
 
-1. Abra la lista y ubique el cliente por documento, nombre o código interno.
-2. Para crear un registro, elija la acción disponible para agregar e ingrese el
-   documento y el nombre o razón social.
-3. Complete código interno, dirección, correo, teléfono o referencia solo si son
-   necesarios para el registro.
-4. Revise los datos antes de guardar. Para modificar, abra el registro existente
-   y repita esta revisión.
-5. Si el listado ofrece retirar un registro, deténgase y confirme que no será
-   necesario en operaciones posteriores antes de continuar.
+1. Busque el documento o nombre en la lista para evitar duplicados.
+2. Seleccione la acción para agregar un cliente o abra el registro existente.
+3. Complete tipo y número de documento y nombre o razón social. Agregue dirección, correo, teléfono o referencia cuando correspondan.
+4. Revise que el documento identifica a la misma persona u organización y guarde.
+5. Para actualizar, abra la ficha, cambie los datos necesarios y guarde de nuevo.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La ficha revisada incluye documento, código interno, nombre o razón social,
-dirección, correo, teléfono y referencia. El documento, el nombre o razón social
-y el tipo de documento son obligatorios en el flujo general. El número se trata
-como numérico y se valida entre ocho y once dígitos; para DNI y RUC se observan
-longitudes de ocho y once dígitos, respectivamente. El correo se valida como
-correo y la dirección y el código interno tienen límites de longitud.
+Busque el cliente por documento o nombre y compruebe que la ficha muestra los datos guardados.
 
+## Situaciones frecuentes
+
+- **Documento repetido:** abra el cliente encontrado y actualícelo; no cree una segunda ficha.
+
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-Al guardar un registro válido, el flujo crea o actualiza el cliente. El listado
-no muestra registros retirados de uso; la operación de retiro revisada conserva
-el registro para esa finalidad en vez de describirse como eliminación definitiva.
-
-## Advertencias y casos límite
-
-No use datos de otra persona u organización como ejemplo. Un documento ya
-registrado requiere revisar el registro existente; no cree un duplicado. Esta
-ficha es distinta de [seleccionar cliente](../ventas/seleccionar-cliente.md):
-aquella guía asocia un cliente a una venta y no administra su ficha maestra.
-
-## Problemas frecuentes y condiciones de detención
-
-- Documento con longitud no válida: corrija el tipo o el número antes de guardar.
-- Nombre insuficiente para el tipo de documento: complete el dato solicitado por
-  el formulario.
-- Correo, dirección o código rechazados: corrija el campo señalado y vuelva a
-  revisar el registro.
-- Registro existente o retirada de uso: deténgase y revise su estado antes de
-  crear o retirar otro registro.
-
-## Enlaces relacionados
-
-- [Seleccionar cliente](../ventas/seleccionar-cliente.md)
-- [Gestionar proveedores y sus cuentas bancarias](gestionar-proveedores.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

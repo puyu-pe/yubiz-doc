@@ -1,13 +1,12 @@
 # Distribución
 
-Las órdenes de carga, sus recargas y las órdenes de descarga son recorridos
-condicionales. La carga de contenedores de Inventario es un flujo distinto. No
-suponga disponibilidad, permisos ni efectos de stock, caja o compromisos fuera
-de la sesión verificada.
+## Guías disponibles
 
-## Fichas disponibles
-
-- [7.4 Crear una orden de carga](crear-orden-de-carga.md)
-- [7.5 Consultar y gestionar el ciclo de una orden de carga](gestionar-orden-de-carga.md)
-- [7.6 Registrar recargas, compromisos y residuales](recargas-y-compromisos.md)
-- [7.7 Registrar una orden de descarga y el resultado de entrega](registrar-descarga-y-entrega.md)
+- [6.1 Crear una orden de carga](crear-orden-de-carga-contract.md)
+- [6.2 Consultar una orden de carga](consultar-orden-de-carga.md)
+- [6.3 Confirmar una orden de carga](confirmar-orden-de-carga.md)
+- [6.4 Registrar recargas, compromisos y residuales](recargas-compromisos-residuales.md)
+- [6.5 Cerrar una orden de carga](cerrar-orden-de-carga.md)
+- [6.6 Generar una orden de descarga](generar-orden-de-descarga.md)
+- [6.7 Consultar e imprimir una orden de descarga](consultar-imprimir-orden-descarga.md)
+- [6.8 Liquidar una orden de carga](liquidar-orden-de-carga.md)

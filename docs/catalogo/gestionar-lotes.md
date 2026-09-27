@@ -1,72 +1,42 @@
 <a id="gestionar-lotes-de-productos"></a>
 
-# 3.9 Gestionar lotes de productos
+# 5.5 Registrar y actualizar lotes
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="45-registrar-y-actualizar-lotes"></a>
 
-## Objetivo
+<a id="39-gestionar-lotes-de-productos"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Registrar, consultar o actualizar lotes asociados a un producto cuando el seguimiento
-por lote esté habilitado en el entorno.
+Registre un lote de producto o actualice sus datos para identificarlo en operaciones con seguimiento por lote.
 
-## Acceso condicional
+## Cómo acceder
 
-Esta capacidad depende de la configuración de seguimiento, del módulo y de la sesión.
-El nombre mostrado para lote puede variar según la configuración; no supone que todos
-los productos ni entornos usen este control.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Lotes**.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Un producto disponible para asociar al lote.
-- Descripción del lote, precio y fecha de vencimiento cuando correspondan.
-- Detalle que permita reconocer el registro sin incluir datos sensibles.
-
-## Punto de partida
-
-Abra la lista de lotes solo si está disponible en la navegación de su sesión. Revise
-la lista antes de agregar o editar un registro.
+- Tenga producto, descripción del lote y, si corresponde, precio y fecha de vencimiento.
 
 ## Pasos
 
-1. Use la acción disponible para agregar un lote o abra el registro que desea editar.
-2. Al crear, seleccione el producto y complete la descripción del lote.
-3. Registre precio, fecha de vencimiento y detalle únicamente cuando correspondan al
-   producto y al procedimiento de su organización.
-4. Guarde y vuelva a la lista para identificar el lote por producto y descripción.
-5. Al editar, revise la distribución mostrada por almacén antes de cambiar datos del
-   lote; deténgase si no puede explicar el efecto operativo.
+1. Seleccione el producto y complete la descripción del lote.
+2. Agregue precio, fecha de vencimiento y detalle cuando correspondan.
+3. Revise que no exista un lote equivalente para el mismo producto y guarde.
+4. Para actualizarlo, abra el lote, revise las cantidades por almacén y guarde los cambios necesarios.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-El formulario revisado muestra producto, lote, precio, fecha de vencimiento y detalle.
-La edición muestra además stock por almacén y un total. La interfaz evita una
-descripción duplicada para el mismo producto durante la actualización. La obligatoriedad
-exacta, los rangos y los mensajes visibles pueden variar según la configuración disponible.
+Compruebe que la lista muestra el lote asociado al producto y que su ficha conserva los datos guardados.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La interfaz crea o actualiza el registro de lote asociado al producto y permite
-consultar su información junto con cantidades por almacén. No se afirma un efecto de
-stock ni una política de vencimientos sin evidencia del entorno.
-
-## Advertencias y casos límite
-
-No cambie un lote para corregir una operación de inventario sin seguir el procedimiento
-autorizado. El alias, las columnas y las acciones visibles pueden cambiar por
-configuración. Un lote no sustituye la trazabilidad individual por series.
-
-## Problemas frecuentes y condiciones de detención
-
-- Lote duplicado para el producto: revise el listado antes de crear otro.
-- Producto o lote no identificable: deténgase y valide los datos maestros.
-- No puede confirmar el impacto sobre existencias: no continúe con la modificación.
-- Opción ausente: confirme la habilitación del módulo y el seguimiento aplicable.
-
-## Enlaces relacionados
-
-- [Crear y editar productos del catálogo](gestionar-productos.md)
-- [Gestionar series y trazabilidad de productos](gestionar-series.md)
-- [Catálogo](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

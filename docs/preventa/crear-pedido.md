@@ -1,67 +1,44 @@
-<a id="crear-un-pedido-de-preventa"></a>
+---
+search:
+  exclude: true
+---
 
-# 7.1 Crear un pedido de preventa
+# 8.1 Crear un pedido de preventa
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="71-crear-un-pedido-de-preventa"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Registre un pedido de preventa con cliente, productos y cantidades antes de confirmarlo.
 
-Registrar un pedido en el recorrido heredado de preventa cuando sus opciones estén
-habilitadas.
+## Cómo acceder
 
-## Acceso condicional
+1. En la barra lateral, abra **Preventa**.
+2. Seleccione **Crear preventa**.
 
-Este formulario heredado convive con la lista moderna de preventas. No suponga que
-sus campos, conversión o estados equivalen al recorrido moderno de borrador,
-confirmación, procesamiento y cancelación.
+## Antes de empezar
 
-## Requisitos y datos
-
-- Documento, serie y fecha disponibles.
-- Promotor y cliente identificados.
-- Línea, productos, cantidades y precios disponibles.
-- Detalle u observación cuando correspondan.
-
-## Punto de partida
-
-Abra el registro de pedido de venta dentro de Preventa si aparece para la sesión.
+- Tenga cliente, productos, cantidades y fecha de entrega cuando corresponda.
 
 ## Pasos
 
-1. Seleccione documento y serie; revise el correlativo mostrado.
-2. Indique fecha y promotor disponibles.
-3. Busque o registre el cliente mediante su documento cuando el control lo permita.
-4. Seleccione la línea disponible y agregue productos a la tabla.
-5. Revise cantidad, precio unitario, importe y los totales calculados.
-6. Complete detalles u observación si son necesarios y guarde el pedido.
+1. Seleccione el cliente y complete los datos generales solicitados.
+2. Agregue productos, cantidades y condiciones disponibles.
+3. Revise el detalle y total antes de guardar.
+4. Guarde y localice el pedido en la lista.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-El formulario muestra documento, serie, correlativo de solo lectura, fecha, promotor,
-identificador de cliente, línea, productos, cantidad, precio unitario, subtotal, IGV,
-total, detalle y observación. Los totales se presentan como campos calculados.
+Abra el pedido y compruebe cliente, productos, cantidades, total y estado inicial.
 
+<a id="crear-un-pedido-de-preventa"></a>
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El recorrido heredado reúne datos de documento, cliente, promotor y detalle de
-productos para registrar el pedido. Los efectos comerciales, fiscales, de stock o de
-reserva pueden variar según la configuración disponible.
-
-## Advertencias y casos límite
-
-No interprete el correlativo o total calculado como confirmación final. No use este
-procedimiento para editar una preventa de la lista moderna; use su ficha específica.
-
-## Problemas frecuentes y condiciones de detención
-
-- Cliente o producto no identificado: confirme el dato de origen antes de guardar.
-- Total inesperado: revise cantidades y precios antes de continuar.
-- Serie no disponible: no sustituya el control por una serie no observada.
-
-## Enlaces relacionados
-
-- [Consultar y editar preventas](consultar-y-editar.md)
-- [Confirmar, anular o convertir una preventa en venta](confirmar-anular-convertir.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

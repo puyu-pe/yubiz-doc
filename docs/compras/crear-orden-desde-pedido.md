@@ -1,78 +1,42 @@
-<a id="crear-una-orden-desde-un-pedido-de-compra"></a>
+# 7.5 Crear una orden de compra desde un pedido
 
-# 6.4 Crear una orden desde un pedido de compra
+<a id="65-crear-una-orden-de-compra-desde-un-pedido"></a>
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="64-crear-una-orden-desde-un-pedido-de-compra"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Convierta un pedido vigente en una orden de compra conservando el detalle que debe continuar.
 
-Crear una orden de compra a partir de un pedido existente cuando la acción esté
-disponible y el pedido continúe en un estado que permita la conversión.
+## Cómo acceder
 
-## Acceso condicional
+1. En la barra lateral, abra **Compras**.
+2. Seleccione **Pedidos**.
+3. Seleccione el pedido y continúe con la creación de la compra.
 
-Esta es una capacidad condicional: la acción depende del estado del pedido y de la
-sesión. La interfaz puede mostrar que no está disponible en los estados `COMPRADO` y
-`ANULADO`; las reglas definitivas deben verificarse en el entorno de trabajo.
+## Antes de empezar
 
-## Requisitos y datos
-
-- Pedido de compra existente, identificable y revisado.
-- Proveedor, documento, serie, moneda, fechas, almacén y categoría de egreso para la
-  orden resultante cuando el formulario los solicite.
-- Detalle de productos, cantidades, impuestos y precios revisado antes de confirmar.
-
-## Punto de partida
-
-Abra el detalle del pedido de compra desde la lista y confirme que muestra la acción
-para generar una orden.
+- Compruebe que el pedido no esté **COMPRADO** ni **ANULADO**.
 
 ## Pasos
 
-1. Revise en el detalle del pedido el proveedor, las líneas, las cantidades, el IGV y
-   los totales.
-2. Confirme que el estado no haya deshabilitado la acción Generar orden.
-3. Seleccione Generar orden y revise los datos trasladados al formulario de orden.
-4. Complete documento, serie, moneda, fecha, período tributable, almacén y categoría
-   de egreso según las opciones disponibles.
-5. Revise el detalle trasladado; en este origen la interfaz restringe la modificación
-   de cantidades y eliminación de líneas.
-6. Confirme la orden solo después de validar productos, impuestos, importes, total,
-   pago y deuda.
+1. Abra el pedido y revise proveedor, productos, cantidades y total.
+2. Seleccione la acción para crear la orden desde el pedido.
+3. Complete documento, serie, fecha, almacén y los datos que la orden solicite.
+4. Revise el detalle transferido y guarde la orden.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-El formulario de orden conserva el origen y carga los datos y productos del pedido.
-La validación exige documento, serie, fecha, almacén y proveedor. El detalle conserva
-cantidad, descripción, valor, afectación de IGV, precio e importe; las opciones de
-seguimiento dependen del producto y de la configuración.
+Abra la orden creada y compruebe sus datos y detalle contra el pedido de origen.
 
+<a id="crear-una-orden-desde-un-pedido-de-compra"></a>
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El flujo registra el vínculo entre la orden y el pedido y actualiza el estado del
-pedido a `COMPRADO` cuando la orden se registra desde ese origen. Este significado es
-documental y de estado disponible; no confirma recepción física, aprobación,
-stock, pago, caja ni asiento contable en el entorno desplegado.
-
-## Advertencias y casos límite
-
-No convierta un pedido sin revisar su estado y detalle. La conversión no debe tratarse
-como duplicación: crea una orden relacionada. Si los datos trasladados no corresponden
-al caso, detenga el registro y revise el pedido antes de crear una nueva orden.
-
-## Problemas frecuentes y condiciones de detención
-
-- La acción Generar orden no está disponible: revise el estado y no intente forzarla.
-- Faltan almacén, serie o proveedor en la orden: complete los obligatorios antes de
-  confirmar.
-- Las cantidades o líneas requieren cambios: vuelva a revisar el pedido antes de
-  continuar con la conversión.
-
-## Enlaces relacionados
-
-- [Consultar, editar y notificar pedidos de compra](gestionar-pedidos.md)
-- [Registrar una orden de compra](registrar-orden.md)
-- [Compras](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

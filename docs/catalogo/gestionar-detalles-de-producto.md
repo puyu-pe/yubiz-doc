@@ -1,75 +1,42 @@
 <a id="gestionar-marcas-categorías-medidas-y-modelos"></a>
 
-# 3.6 Gestionar marcas, categorías, medidas y modelos
+# 5.3 Registrar marcas, categorías, medidas y modelos
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="43-registrar-marcas-categorias-medidas-y-modelos"></a>
 
-## Objetivo
+<a id="36-gestionar-marcas-categorias-medidas-y-modelos"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Crear, revisar, editar o retirar de uso los datos maestros que describen un
-producto: marcas, categorías, medidas y modelos o presentaciones.
+Registre o actualice los datos maestros que describen un producto.
 
-## Acceso condicional
+## Cómo acceder
 
-La disponibilidad del administrador de detalles depende del módulo y de la
-sesión. No se asume que toda persona pueda crear o retirar datos maestros.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Gestión detalles producto**.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Descripción clara para el detalle que se desea administrar.
-- Código opcional, si se utiliza en la organización.
-- Para categorías, datos adicionales de seguimiento; para modelos, unidad
-  numérica, solo cuando esos campos sean pertinentes.
-
-## Punto de partida
-
-Desde el área de catálogo, abra la gestión de detalles y elija **Marca**,
-**Medida**, **Modelo o presentación** o **Categoría**.
+- Tenga una descripción clara y, si corresponde, el código o dato adicional.
 
 ## Pasos
 
-1. Cambie a la lista del tipo de detalle que necesita revisar.
-2. Busque la descripción para comprobar que no exista un dato equivalente.
-3. Use la acción disponible para agregar o editar e ingrese la descripción.
-4. Complete código, datos adicionales de categoría o unidad de modelo solo si
-   corresponden al dato que está creando.
-5. Guarde y vuelva a la lista para confirmar que el detalle se pueda reconocer.
-6. Si aparece una acción para retirar un detalle, deténgase y revise primero los
-   productos que podrían depender de él.
+1. Seleccione el tipo de detalle y busque su descripción antes de crear otro.
+2. Agregue el detalle o abra el registro que actualizará.
+3. Complete la descripción; agregue código, datos de seguimiento de categoría o unidad de modelo solo cuando el formulario los solicite.
+4. Guarde y vuelva a la lista.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-Las cuatro fichas comparten código opcional y descripción. La categoría presenta
-un campo adicional de datos de seguimiento; el modelo o presentación, una unidad
-numérica opcional. En registros existentes, ciertos códigos de reserva aparecen
-solo de lectura. La interfaz trata descripciones repetidas como un conflicto
-al crear o modificar un detalle distinto.
+Compruebe que el detalle aparece en su lista y puede seleccionarse al registrar o actualizar un producto.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El detalle guardado queda disponible para seleccionarse en la ficha de producto.
-La acción de retiro revisada no debe interpretarse como eliminación definitiva ni
-como autorización para cambiar datos usados por productos existentes.
-
-## Advertencias y casos límite
-
-No cree variantes por diferencias de escritura sin revisar la lista. Una categoría,
-marca o medida puede ser necesaria para guardar un producto; coordine el dato
-maestro antes de iniciar la ficha del producto.
-
-## Problemas frecuentes y condiciones de detención
-
-- Descripción duplicada: deténgase y use o revise el detalle existente.
-- Código bloqueado: no intente reemplazarlo por un valor alternativo sin validar
-  su uso en el entorno.
-- No está claro qué productos dependen del detalle: no lo retire de uso.
-- Campo adicional sin significado operativo confirmado: déjelo pendiente de
-  validación del entorno antes de inventar un valor.
-
-## Enlaces relacionados
-
-- [Crear y editar productos del catálogo](gestionar-productos.md)
-- [Completar datos de compra e imágenes](completar-datos-de-compra-e-imagenes.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

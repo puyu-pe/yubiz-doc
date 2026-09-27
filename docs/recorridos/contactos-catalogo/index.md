@@ -1,13 +1,13 @@
-# Contactos y catálogo
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-Prepare los datos que sostienen la operación comercial: personas vinculadas, productos, precios y sus atributos.
+# Guías disponibles
 
-## Recorrido sugerido
+Este recorrido histórico fue integrado en el catálogo actual de tareas.
 
-1. Organice [Contactos](../../contactos/index.md) antes de operar con clientes o proveedores.
-2. Complete el [Catálogo](../../catalogo/index.md) para trabajar con productos, precios y trazabilidad.
-
-## Áreas incluidas
-
-- [Contactos](../../contactos/index.md)
-- [Catálogo](../../catalogo/index.md)
+[Ver las guías disponibles](../../index.md)

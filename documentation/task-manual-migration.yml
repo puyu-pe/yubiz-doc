@@ -1,0 +1,2659 @@
+schema_version: 2
+contract: task-oriented-manual-contract-v2.md
+contract_version: 2
+group_indexes:
+  Presupuesto: presupuesto/index.md
+active_entries:
+- number: '1.1'
+  title: Empezar a trabajar en Yubiz
+  group: Panel principal
+  target: inicio/iniciar-sesion.md
+  doc_id: foundation-sign-in
+  capability_ids:
+  - FND-01
+- number: '2.1'
+  title: Registrar una venta al contado
+  group: Ventas
+  target: ventas/registrar-venta-al-contado.md
+  doc_id: sales-register-cash-sale
+  capability_ids:
+  - SAL-04
+- number: '2.2'
+  title: Registrar una venta con saldo pendiente
+  group: Ventas
+  target: ventas/registrar-venta-con-saldo-pendiente.md
+  doc_id: sales-register-sale-with-pending-balance
+  capability_ids:
+  - SAL-05
+- number: '2.3'
+  title: Registrar un cobro posterior
+  group: Ventas
+  target: ventas/registrar-cobro-posterior-y-consultar-saldo.md
+  doc_id: sales-collect-later-and-check-balance
+  capability_ids:
+  - SAL-06
+- number: '2.4'
+  title: Crear y consultar cotizaciones
+  group: Ventas
+  target: ventas/gestionar-cotizaciones.md
+  doc_id: sales-manage-quotations
+  capability_ids:
+  - SAL-07
+- number: '2.5'
+  title: Convertir una cotización en venta
+  group: Ventas
+  target: ventas/convertir-cotizacion-en-venta.md
+  doc_id: manual-2-5
+  capability_ids: []
+- number: '2.6'
+  title: Consultar una venta, imprimirla o comunicarla
+  group: Ventas
+  target: ventas/consultar-ventas.md
+  doc_id: sales-search-filter-and-review-sales
+  capability_ids:
+  - SAL-08
+- number: '2.7'
+  title: Anular una venta
+  group: Ventas
+  target: ventas/anular-venta.md
+  doc_id: sales-void-sale
+  capability_ids:
+  - SAL-12
+- number: '2.8'
+  title: Emitir una nota de crédito
+  group: Ventas
+  target: ventas/notas-de-credito-y-canje.md
+  doc_id: sales-credit-notes-and-exchange
+  capability_ids:
+  - SAL-13
+- number: '2.9'
+  title: Canjear un documento de venta
+  group: Ventas
+  target: ventas/canjear-documento-de-venta.md
+  doc_id: manual-2-9
+  capability_ids: []
+- number: '2.10'
+  title: Consultar pagos y deudas de ventas
+  group: Ventas
+  target: reportes/consultar-pagos-y-deudas.md
+  doc_id: reports-consult-sales-payments-and-debts
+  capability_ids:
+  - FIN-04
+- number: '2.11'
+  title: Consultar la tabla de pagos
+  group: Ventas
+  target: reportes/consultar-tabla-pagos.md
+  doc_id: sales-view-payment-table
+  capability_ids: []
+- number: '2.12'
+  title: Consultar comisiones por producto
+  group: Ventas
+  target: reportes-especializados/comisiones-de-ventas.md
+  doc_id: specialist-reports-sales-commissions
+  capability_ids:
+  - COM-01
+- number: '2.13'
+  title: Consultar movimientos de caja
+  group: Ventas
+  target: caja/consultar-movimientos-caja.md
+  doc_id: sales-review-cash-movements
+  capability_ids: []
+- number: '2.14'
+  title: Registrar saldo inicial de caja
+  group: Ventas
+  target: caja/registrar-saldo-inicial-caja.md
+  doc_id: sales-register-opening-cash-balance
+  capability_ids: []
+- number: '2.15'
+  title: Registrar una operación manual de caja
+  group: Ventas
+  target: caja/registrar-operacion-manual-caja.md
+  doc_id: sales-register-manual-cash-operation
+  capability_ids: []
+- number: '3.1'
+  title: Registrar y actualizar unidades de servicio
+  group: Internado
+  target: servicios/registrar-actualizar-unidades-servicio.md
+  doc_id: internado-manage-service-units
+  capability_ids: []
+- number: '3.2'
+  title: Registrar y actualizar ítems de servicio
+  group: Internado
+  target: servicios/registrar-actualizar-items-servicio.md
+  doc_id: internado-manage-service-items
+  capability_ids: []
+- number: '3.3'
+  title: Registrar una orden de servicio o internado
+  group: Internado
+  target: servicios/registrar-orden-servicio-internado-contract.md
+  doc_id: manual-10-2
+  capability_ids: []
+- number: '3.4'
+  title: Consultar un internado y registrar procedimientos
+  group: Internado
+  target: servicios/consultar-internado-procedimientos.md
+  doc_id: manual-10-3
+  capability_ids: []
+- number: '3.5'
+  title: Convertir un internado en venta
+  group: Internado
+  target: servicios/convertir-internado-en-venta.md
+  doc_id: manual-10-4
+  capability_ids: []
+- number: '3.6'
+  title: Anular un internado
+  group: Internado
+  target: servicios/anular-internado.md
+  doc_id: manual-10-5
+  capability_ids: []
+- number: '3.7'
+  title: Configurar parámetros del módulo internado
+  group: Internado
+  target: servicios/configurar-parametros-internado.md
+  doc_id: internado-configure-parameters
+  capability_ids: []
+- number: '4.1'
+  title: Crear campañas de descuento y asignar productos
+  group: Campañas de descuento
+  target: fidelizacion/crear-campanas-descuento.md
+  doc_id: manual-12-1
+  capability_ids: []
+- number: '5.1'
+  title: Registrar y actualizar productos
+  group: Inventario
+  target: catalogo/gestionar-productos.md
+  doc_id: catalog-manage-products
+  capability_ids:
+  - CAT-01
+- number: '5.2'
+  title: Eliminar productos
+  group: Inventario
+  target: catalogo/eliminar-producto.md
+  doc_id: manual-4-2
+  capability_ids: []
+- number: '5.3'
+  title: Registrar marcas, categorías, medidas y modelos
+  group: Inventario
+  target: catalogo/gestionar-detalles-de-producto.md
+  doc_id: catalog-manage-product-details
+  capability_ids:
+  - CAT-02
+- number: '5.4'
+  title: Configurar precios de venta
+  group: Inventario
+  target: catalogo/configurar-precios-de-venta.md
+  doc_id: catalog-configure-sale-prices
+  capability_ids:
+  - CAT-03
+- number: '5.5'
+  title: Registrar y actualizar lotes
+  group: Inventario
+  target: catalogo/gestionar-lotes.md
+  doc_id: catalog-manage-lots
+  capability_ids:
+  - CAT-05
+- number: '5.6'
+  title: Registrar y consultar series de productos
+  group: Inventario
+  target: catalogo/gestionar-series.md
+  doc_id: catalog-manage-series
+  capability_ids:
+  - CAT-06
+- number: '5.7'
+  title: Registrar una conversión entre productos
+  group: Inventario
+  target: catalogo/registrar-conversion-entre-productos.md
+  doc_id: inventory-register-product-conversion
+  capability_ids: []
+- number: '5.8'
+  title: Consultar productos y su utilidad
+  group: Inventario
+  target: catalogo/consultar-utilidad-y-exportar.md
+  doc_id: catalog-review-utility-and-export
+  capability_ids:
+  - CAT-08
+- number: '5.9'
+  title: Consultar stock por almacén
+  group: Inventario
+  target: inventario/consultar-stock-por-almacen.md
+  doc_id: inventory-check-stock-by-warehouse
+  capability_ids:
+  - INV-01
+- number: '5.10'
+  title: Revisar movimientos y kardex
+  group: Inventario
+  target: inventario/revisar-movimientos-y-kardex.md
+  doc_id: inventory-review-movements-and-kardex
+  capability_ids:
+  - INV-02
+- number: '5.11'
+  title: Registrar un ingreso de almacén
+  group: Inventario
+  target: inventario/registrar-ingreso.md
+  doc_id: manual-5-3
+  capability_ids: []
+- number: '5.12'
+  title: Registrar una salida de almacén
+  group: Inventario
+  target: inventario/registrar-salida.md
+  doc_id: manual-5-4
+  capability_ids: []
+- number: '5.13'
+  title: Transferir productos entre almacenes
+  group: Inventario
+  target: inventario/transferir-entre-almacenes.md
+  doc_id: inventory-transfer-between-warehouses
+  capability_ids:
+  - INV-04
+- number: '5.14'
+  title: Registrar un ajuste de inventario
+  group: Inventario
+  target: inventario/registrar-ajuste.md
+  doc_id: inventory-register-adjustment
+  capability_ids:
+  - INV-03
+- number: '5.15'
+  title: Crear y consultar guías de remisión
+  group: Inventario
+  target: inventario/gestionar-guias-de-remision.md
+  doc_id: inventory-manage-remission-guides
+  capability_ids:
+  - INV-06
+- number: '6.1'
+  title: Crear una orden de carga
+  group: Distribución
+  target: distribucion/crear-orden-de-carga-contract.md
+  doc_id: manual-9-1
+  capability_ids: []
+- number: '6.2'
+  title: Consultar una orden de carga
+  group: Distribución
+  target: distribucion/consultar-orden-de-carga.md
+  doc_id: manual-9-2
+  capability_ids: []
+- number: '6.3'
+  title: Confirmar una orden de carga
+  group: Distribución
+  target: distribucion/confirmar-orden-de-carga.md
+  doc_id: manual-9-3
+  capability_ids: []
+- number: '6.4'
+  title: Registrar recargas, compromisos y residuales
+  group: Distribución
+  target: distribucion/recargas-compromisos-residuales.md
+  doc_id: manual-9-4
+  capability_ids: []
+- number: '6.5'
+  title: Cerrar una orden de carga
+  group: Distribución
+  target: distribucion/cerrar-orden-de-carga.md
+  doc_id: manual-9-5
+  capability_ids: []
+- number: '6.6'
+  title: Generar una orden de descarga
+  group: Distribución
+  target: distribucion/generar-orden-de-descarga.md
+  doc_id: manual-9-6
+  capability_ids: []
+- number: '6.7'
+  title: Consultar e imprimir una orden de descarga
+  group: Distribución
+  target: distribucion/consultar-imprimir-orden-descarga.md
+  doc_id: distribution-consult-print-unload-order
+  capability_ids: []
+- number: '6.8'
+  title: Liquidar una orden de carga
+  group: Distribución
+  target: distribucion/liquidar-orden-de-carga.md
+  doc_id: manual-9-8
+  capability_ids: []
+- number: '7.1'
+  title: Crear un pedido de compra
+  group: Compras
+  target: compras/crear-pedido.md
+  doc_id: purchases-create-request
+  capability_ids:
+  - PUR-01
+- number: '7.2'
+  title: Consultar, actualizar y notificar un pedido de compra
+  group: Compras
+  target: compras/gestionar-pedidos.md
+  doc_id: purchases-manage-requests
+  capability_ids:
+  - PUR-02
+- number: '7.3'
+  title: Anular un pedido de compra
+  group: Compras
+  target: compras/anular-pedido.md
+  doc_id: manual-6-3
+  capability_ids: []
+- number: '7.4'
+  title: Registrar una orden de compra
+  group: Compras
+  target: compras/registrar-orden.md
+  doc_id: purchases-register-order
+  capability_ids:
+  - PUR-03
+- number: '7.5'
+  title: Crear una orden de compra desde un pedido
+  group: Compras
+  target: compras/crear-orden-desde-pedido.md
+  doc_id: purchases-create-order-from-request
+  capability_ids:
+  - PUR-04
+- number: '7.6'
+  title: Consultar y notificar órdenes de compra
+  group: Compras
+  target: compras/gestionar-ordenes.md
+  doc_id: purchases-manage-orders
+  capability_ids:
+  - PUR-05
+- number: '7.7'
+  title: Cambiar el estado de una compra
+  group: Compras
+  target: compras/cambiar-estado-de-compra.md
+  doc_id: purchases-change-or-void-state
+  capability_ids:
+  - PUR-06
+- number: '7.8'
+  title: Anular una compra
+  group: Compras
+  target: compras/anular-compra.md
+  doc_id: manual-6-8
+  capability_ids: []
+- number: '7.9'
+  title: Registrar pagos de compra y revisar saldos
+  group: Compras
+  target: compras/registrar-pagos-y-saldos.md
+  doc_id: purchases-register-payments-and-balances
+  capability_ids:
+  - PUR-07
+- number: '7.10'
+  title: Registrar y relacionar documentos de compra
+  group: Compras
+  target: compras/gestionar-documentos.md
+  doc_id: purchases-manage-supplier-documents
+  capability_ids:
+  - PUR-08
+- number: '7.11'
+  title: Registrar un gasto
+  group: Compras
+  target: gastos/registrar-gasto.md
+  doc_id: expenses-register-expense
+  capability_ids:
+  - PUR-09
+- number: '7.12'
+  title: Consultar y exportar gastos
+  group: Compras
+  target: gastos/gestionar-gastos.md
+  doc_id: expenses-manage-expenses
+  capability_ids:
+  - PUR-10
+- number: '7.13'
+  title: Aprobar un gasto
+  group: Compras
+  target: gastos/aprobar-gasto.md
+  doc_id: manual-7-3
+  capability_ids: []
+- number: '7.14'
+  title: Anular un gasto
+  group: Compras
+  target: gastos/anular-gasto.md
+  doc_id: manual-7-4
+  capability_ids: []
+- number: '8.1'
+  title: Registrar y actualizar clientes
+  group: Contactos
+  target: contactos/gestionar-clientes.md
+  doc_id: contacts-manage-customers
+  capability_ids:
+  - CON-01
+- number: '8.2'
+  title: Registrar y actualizar proveedores y sus cuentas bancarias
+  group: Contactos
+  target: contactos/gestionar-proveedores.md
+  doc_id: contacts-manage-suppliers-and-bank-accounts
+  capability_ids:
+  - CON-02
+- number: '8.3'
+  title: Registrar y actualizar transportistas
+  group: Contactos
+  target: contactos/gestionar-transportistas.md
+  doc_id: contacts-manage-carriers
+  capability_ids:
+  - CON-03
+- number: '8.4'
+  title: Registrar y actualizar entidades financieras
+  group: Contactos
+  target: contactos/registrar-actualizar-entidades-financieras.md
+  doc_id: contacts-manage-financial-entities
+  capability_ids: []
+- number: '9.1'
+  title: Registrar y actualizar socios y aportes
+  group: Socios
+  target: socios/registrar-actualizar-socios-aportes.md
+  doc_id: members-manage-contributions
+  capability_ids: []
+- number: '9.2'
+  title: Consultar el informe de socios
+  group: Socios
+  target: socios/consultar-informe-socios.md
+  doc_id: members-consult-report
+  capability_ids: []
+- number: '10.1'
+  title: Crear y consultar períodos presupuestarios
+  group: Presupuesto
+  target: compras/crear-consultar-periodos-presupuestarios.md
+  doc_id: budget-manage-periods
+  capability_ids: []
+- number: '10.2'
+  title: Asignar presupuesto
+  group: Presupuesto
+  target: compras/asignar-presupuesto.md
+  doc_id: budget-assign
+  capability_ids: []
+- number: '10.3'
+  title: Consultar consumo de asignaciones
+  group: Presupuesto
+  target: compras/consultar-consumo-asignaciones.md
+  doc_id: budget-consult-allocations-consumption
+  capability_ids: []
+- number: '11.1'
+  title: Registrar una estancia
+  group: Estancia
+  target: estancias/registrar-estancia-contract.md
+  doc_id: manual-11-1
+  capability_ids: []
+- number: '11.2'
+  title: Consultar estancias del día y su detalle
+  group: Estancia
+  target: estancias/consultar-estancias-detalle.md
+  doc_id: manual-11-2
+  capability_ids: []
+- number: '11.3'
+  title: Registrar sujetos y personas relacionadas
+  group: Estancia
+  target: estancias/registrar-sujetos-personas.md
+  doc_id: manual-11-3
+  capability_ids: []
+- number: '11.4'
+  title: Registrar y actualizar tarifas de estadía
+  group: Estancia
+  target: estancias/registrar-actualizar-tarifas-estadia.md
+  doc_id: stay-manage-rates
+  capability_ids: []
+- number: '11.5'
+  title: Registrar y actualizar relaciones de estancia
+  group: Estancia
+  target: estancias/registrar-actualizar-relaciones-estancia.md
+  doc_id: stay-manage-relations
+  capability_ids: []
+- number: '11.6'
+  title: Crear y consultar descuentos de estancia
+  group: Estancia
+  target: estancias/crear-consultar-descuentos-estancia.md
+  doc_id: stay-manage-discounts
+  capability_ids: []
+- number: '11.7'
+  title: Consultar el reporte de estancias
+  group: Estancia
+  target: estancias/consultar-reporte-estancias.md
+  doc_id: stay-consult-report
+  capability_ids: []
+- number: '11.8'
+  title: Convertir una estancia en venta
+  group: Estancia
+  target: estancias/convertir-estancia-en-venta.md
+  doc_id: manual-11-5
+  capability_ids: []
+- number: '11.9'
+  title: Anular una estancia
+  group: Estancia
+  target: estancias/anular-estancia.md
+  doc_id: manual-11-6
+  capability_ids: []
+- number: '12.1'
+  title: Consultar y actualizar una preventa
+  group: Preventa
+  target: preventa/consultar-y-editar.md
+  doc_id: presale-list-and-edit
+  capability_ids:
+  - PSD-05
+- number: '12.2'
+  title: Confirmar una preventa
+  group: Preventa
+  target: preventa/confirmar-preventa.md
+  doc_id: manual-8-3
+  capability_ids: []
+- number: '12.3'
+  title: Anular una preventa
+  group: Preventa
+  target: preventa/anular-preventa.md
+  doc_id: manual-8-4
+  capability_ids: []
+- number: '12.4'
+  title: Convertir una preventa en venta
+  group: Preventa
+  target: preventa/convertir-preventa-en-venta.md
+  doc_id: manual-8-5
+  capability_ids: []
+compatibility:
+  frozen_legacy_base: 64f85fc9460a109257dca134967fdd806bae98e0
+  legacy_explicit_fragment_count: 352
+  legacy_historical_fragment_count: 1320
+  search_hidden:
+  - administracion/asignar-establecimientos-a-vendedores.md
+  - administracion/consultar-roles.md
+  - administracion/gestionar-usuarios.md
+  - caja/registrar-operacion-manual.md
+  - caja/registrar-saldo-inicial.md
+  - caja/revisar-ingresos-y-egresos.md
+  - catalogo/completar-datos-de-compra-e-imagenes.md
+  - configuracion/configurar-logo.md
+  - configuracion/gestionar-establecimientos-y-almacenes.md
+  - configuracion/gestionar-series-de-documentos.md
+  - configuracion/revisar-parametros-generales.md
+  - contactos/gestionar-entidades-financieras.md
+  - distribucion/crear-orden-de-carga.md
+  - distribucion/gestionar-orden-de-carga.md
+  - distribucion/recargas-y-compromisos.md
+  - distribucion/registrar-descarga-y-entrega.md
+  - especializados/consultar-ple-y-balance-academico.md
+  - especializados/gestionar-cilindros-deuda-y-cargas.md
+  - especializados/gestionar-productos-y-reportes-externos.md
+  - especializados/gestionar-socios-y-aportes.md
+  - estancias/convertir-o-anular-estancia.md
+  - estancias/gestionar-estancias.md
+  - estancias/gestionar-personas-de-la-estancia.md
+  - estancias/gestionar-tarifas-y-descuentos.md
+  - estancias/registrar-estancia.md
+  - fidelizacion/gestionar-campanas.md
+  - inicio/cambiar-establecimiento.md
+  - inicio/perfil-y-cierre-de-sesion.md
+  - inicio/ubicarse-en-yubiz.md
+  - inventario/asignar-series-en-movimientos.md
+  - inventario/exportar-inventario-y-movimientos.md
+  - inventario/registrar-ingresos-y-salidas.md
+  - preventa/confirmar-anular-convertir.md
+  - reportes/exportar-detalle-de-pagos.md
+  - servicios/cerrar-o-anular-internado.md
+  - servicios/configurar-internados.md
+  - servicios/gestionar-internado.md
+  - servicios/gestionar-unidades-e-items.md
+  - servicios/registrar-internado.md
+  - ventas/configurar-datos-del-documento.md
+  - ventas/elegir-establecimiento.md
+  - ventas/imprimir-y-comunicar-venta.md
+  - ventas/registrar-multiples-medios-de-pago.md
+  - ventas/seleccionar-cliente.md
+  - ventas/seleccionar-productos-y-revisar-condiciones.md
+  - ventas/revisar-reportes-de-ventas.md
+  - reportes-especializados/ventas-por-usuario-y-cliente.md
+  - ventas/vendedores-y-comisiones.md
+  - catalogo/gestionar-lineas-y-conversiones.md
+  - inventario/gestionar-cargas-de-contenedores.md
+  - compras/gestionar-presupuesto.md
+  - gastos/categorias-y-costos-fijos.md
+  - preventa/crear-pedido.md
+  records:
+  - path: administracion/asignar-establecimientos-a-vendedores.md
+    target: index.md
+    fragments:
+    - asignar-establecimientos-a-vendedores
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - asignar-establecimientos-a-vendedores
+    - 83-asignar-establecimientos-a-vendedores
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: administracion/consultar-roles.md
+    target: index.md
+    fragments:
+    - consultar-roles-disponibles
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-roles-disponibles
+    - 82-consultar-roles-disponibles
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: administracion/gestionar-usuarios.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-usuarios
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-usuarios
+    - 81-gestionar-usuarios
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: caja/registrar-operacion-manual.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-una-inyección-o-ajuste-manual-de-caja
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-una-inyección-o-ajuste-manual-de-caja
+    - 615-registrar-una-inyeccion-o-ajuste-manual-de-caja
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: caja/registrar-saldo-inicial.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-el-saldo-inicial-de-caja
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-el-saldo-inicial-de-caja
+    - 614-registrar-el-saldo-inicial-de-caja
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: caja/revisar-ingresos-y-egresos.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - revisar-ingresos-egresos-y-saldo-de-caja
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - revisar-ingresos-egresos-y-saldo-de-caja
+    - 613-revisar-ingresos-egresos-y-saldo-de-caja
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/completar-datos-de-compra-e-imagenes.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-proveedores-costos-e-imágenes-de-un-producto
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-proveedores-costos-e-imágenes-de-un-producto
+    - 38-registrar-proveedores-costos-e-imagenes-de-un-producto
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/configurar-precios-de-venta.md
+    target: catalogo/configurar-precios-de-venta.md
+    fragments:
+    - configurar-precios-de-venta-por-tipo-y-establecimiento
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - configurar-precios-de-venta-por-tipo-y-establecimiento
+    - 37-configurar-precios-de-venta-por-tipo-y-establecimiento
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/consultar-utilidad-y-exportar.md
+    target: catalogo/consultar-utilidad-y-exportar.md
+    fragments:
+    - consultar-utilidad-y-exportar-el-catálogo
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-utilidad-y-exportar-el-catálogo
+    - 312-consultar-utilidad-y-exportar-el-catalogo
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/gestionar-detalles-de-producto.md
+    target: catalogo/gestionar-detalles-de-producto.md
+    fragments:
+    - estado
+    - gestionar-marcas-categorías-medidas-y-modelos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-marcas-categorías-medidas-y-modelos
+    - 36-gestionar-marcas-categorias-medidas-y-modelos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/gestionar-lineas-y-conversiones.md
+    target: catalogo/gestionar-lineas-y-conversiones.md
+    fragments:
+    - estado
+    - gestionar-líneas-y-conversiones-de-productos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-líneas-y-conversiones-de-productos
+    - 311-gestionar-lineas-y-conversiones-de-productos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/gestionar-lotes.md
+    target: catalogo/gestionar-lotes.md
+    fragments:
+    - estado
+    - gestionar-lotes-de-productos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-lotes-de-productos
+    - 39-gestionar-lotes-de-productos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/gestionar-productos.md
+    target: catalogo/gestionar-productos.md
+    fragments:
+    - crear-y-editar-productos-del-catálogo
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-y-editar-productos-del-catálogo
+    - 35-crear-y-editar-productos-del-catalogo
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: catalogo/gestionar-series.md
+    target: catalogo/gestionar-series.md
+    fragments:
+    - estado
+    - gestionar-series-y-trazabilidad-de-productos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-series-y-trazabilidad-de-productos
+    - 310-gestionar-series-y-trazabilidad-de-productos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/cambiar-estado-de-compra.md
+    target: compras/cambiar-estado-de-compra.md
+    fragments:
+    - cambiar-o-anular-el-estado-de-una-compra
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - cambiar-o-anular-el-estado-de-una-compra
+    - 66-cambiar-o-anular-el-estado-de-una-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/crear-orden-desde-pedido.md
+    target: compras/crear-orden-desde-pedido.md
+    fragments:
+    - crear-una-orden-desde-un-pedido-de-compra
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-una-orden-desde-un-pedido-de-compra
+    - 64-crear-una-orden-desde-un-pedido-de-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/crear-pedido.md
+    target: compras/crear-pedido.md
+    fragments:
+    - crear-un-pedido-de-compra
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-un-pedido-de-compra
+    - 61-crear-un-pedido-de-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/gestionar-documentos.md
+    target: compras/gestionar-documentos.md
+    fragments:
+    - estado
+    - registrar-y-relacionar-documentos-de-compra
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-y-relacionar-documentos-de-compra
+    - 68-registrar-y-relacionar-documentos-de-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/gestionar-ordenes.md
+    target: compras/gestionar-ordenes.md
+    fragments:
+    - consultar-exportar-y-notificar-órdenes-de-compra
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-exportar-y-notificar-órdenes-de-compra
+    - 65-consultar-exportar-y-notificar-ordenes-de-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/gestionar-pedidos.md
+    target: compras/gestionar-pedidos.md
+    fragments:
+    - consultar-editar-y-notificar-pedidos-de-compra
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-editar-y-notificar-pedidos-de-compra
+    - 62-consultar-editar-y-notificar-pedidos-de-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/gestionar-presupuesto.md
+    target: compras/crear-consultar-periodos-presupuestarios.md
+    fragments:
+    - estado
+    - gestionar-períodos-asignaciones-y-consumo-de-presupuesto
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-períodos-asignaciones-y-consumo-de-presupuesto
+    - 69-gestionar-periodos-asignaciones-y-consumo-de-presupuesto
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/registrar-orden.md
+    target: compras/registrar-orden.md
+    fragments:
+    - estado
+    - registrar-una-orden-de-compra
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-una-orden-de-compra
+    - 63-registrar-una-orden-de-compra
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: compras/registrar-pagos-y-saldos.md
+    target: compras/registrar-pagos-y-saldos.md
+    fragments:
+    - estado
+    - registrar-pagos-de-compras-y-consultar-saldos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-pagos-de-compras-y-consultar-saldos
+    - 67-registrar-pagos-de-compras-y-consultar-saldos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: configuracion/configurar-logo.md
+    target: index.md
+    fragments:
+    - configurar-logo-de-la-empresa
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - configurar-logo-de-la-empresa
+    - 85-configurar-logo-de-la-empresa
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: configuracion/gestionar-establecimientos-y-almacenes.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-establecimientos-y-almacenes
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-establecimientos-y-almacenes
+    - 87-gestionar-establecimientos-y-almacenes
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: configuracion/gestionar-series-de-documentos.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-documentos-series-y-correlativos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-documentos-series-y-correlativos
+    - 86-gestionar-documentos-series-y-correlativos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: configuracion/revisar-parametros-generales.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - revisar-parámetros-generales
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - revisar-parámetros-generales
+    - 84-revisar-parametros-generales
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: contactos/gestionar-clientes.md
+    target: contactos/gestionar-clientes.md
+    fragments:
+    - estado
+    - gestionar-clientes
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-clientes
+    - 31-gestionar-clientes
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: contactos/gestionar-entidades-financieras.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-entidades-financieras
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-entidades-financieras
+    - 34-gestionar-entidades-financieras
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: contactos/gestionar-proveedores.md
+    target: contactos/gestionar-proveedores.md
+    fragments:
+    - estado
+    - gestionar-proveedores-y-sus-cuentas-bancarias
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-proveedores-y-sus-cuentas-bancarias
+    - 32-gestionar-proveedores-y-sus-cuentas-bancarias
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: contactos/gestionar-transportistas.md
+    target: contactos/gestionar-transportistas.md
+    fragments:
+    - estado
+    - gestionar-transportistas
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-transportistas
+    - 33-gestionar-transportistas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: distribucion/crear-orden-de-carga.md
+    target: index.md
+    fragments:
+    - crear-una-orden-de-carga
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-una-orden-de-carga
+    - 74-crear-una-orden-de-carga
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: distribucion/gestionar-orden-de-carga.md
+    target: index.md
+    fragments:
+    - consultar-y-gestionar-el-ciclo-de-una-orden-de-carga
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-y-gestionar-el-ciclo-de-una-orden-de-carga
+    - 75-consultar-y-gestionar-el-ciclo-de-una-orden-de-carga
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: distribucion/recargas-y-compromisos.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-recargas-compromisos-y-residuales
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-recargas-compromisos-y-residuales
+    - 76-registrar-recargas-compromisos-y-residuales
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: distribucion/registrar-descarga-y-entrega.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-una-orden-de-descarga-y-el-resultado-de-entrega
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-una-orden-de-descarga-y-el-resultado-de-entrega
+    - 77-registrar-una-orden-de-descarga-y-el-resultado-de-entrega
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: especializados/consultar-ple-y-balance-academico.md
+    target: index.md
+    fragments:
+    - consultar-ple-y-balance-académico
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-ple-y-balance-académico
+    - 512-consultar-ple-y-balance-academico
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: especializados/gestionar-cilindros-deuda-y-cargas.md
+    target: index.md
+    fragments:
+    - consultar-cilindros-deuda-y-cargas
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-cilindros-deuda-y-cargas
+    - 514-consultar-cilindros-deuda-y-cargas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: especializados/gestionar-productos-y-reportes-externos.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-productos-y-reportes-externos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-productos-y-reportes-externos
+    - 513-gestionar-productos-y-reportes-externos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: especializados/gestionar-socios-y-aportes.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-socios-y-aportes
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-socios-y-aportes
+    - 511-gestionar-socios-y-aportes
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: estancias/convertir-o-anular-estancia.md
+    target: index.md
+    fragments:
+    - convertir-anular-y-consultar-reportes-de-estancias
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - convertir-anular-y-consultar-reportes-de-estancias
+    - 510-convertir-anular-y-consultar-reportes-de-estancias
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - punto-de-partida
+    - requisitos-y-datos
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: estancias/gestionar-estancias.md
+    target: index.md
+    fragments:
+    - consultar-las-estancias-del-día-la-lista-y-el-detalle
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-las-estancias-del-día-la-lista-y-el-detalle
+    - 57-consultar-las-estancias-del-dia-la-lista-y-el-detalle
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - punto-de-partida
+    - requisitos-y-datos
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: estancias/gestionar-personas-de-la-estancia.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-sujetos-y-personas-relacionadas
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-sujetos-y-personas-relacionadas
+    - 58-gestionar-sujetos-y-personas-relacionadas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - punto-de-partida
+    - requisitos-y-datos
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: estancias/gestionar-tarifas-y-descuentos.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-tarifas-relaciones-y-descuentos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-tarifas-relaciones-y-descuentos
+    - 59-gestionar-tarifas-relaciones-y-descuentos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - punto-de-partida
+    - requisitos-y-datos
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: estancias/registrar-estancia.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-una-estancia
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-una-estancia
+    - 56-registrar-una-estancia
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - punto-de-partida
+    - requisitos-y-datos
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: fidelizacion/gestionar-campanas.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-campañas-de-descuento
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-campañas-de-descuento
+    - 78-gestionar-campanas-de-descuento
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: gastos/categorias-y-costos-fijos.md
+    target: gastos/categorias-y-costos-fijos.md
+    fragments:
+    - estado
+    - gestionar-categorías-de-gasto-y-costos-fijos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-categorías-de-gasto-y-costos-fijos
+    - 612-gestionar-categorias-de-gasto-y-costos-fijos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: gastos/gestionar-gastos.md
+    target: gastos/gestionar-gastos.md
+    fragments:
+    - consultar-aprobar-y-exportar-gastos
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-aprobar-y-exportar-gastos
+    - 611-consultar-aprobar-y-exportar-gastos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: gastos/registrar-gasto.md
+    target: gastos/registrar-gasto.md
+    fragments:
+    - estado
+    - registrar-un-gasto
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-un-gasto
+    - 610-registrar-un-gasto
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inicio/cambiar-establecimiento.md
+    target: index.md
+    fragments:
+    - cambiar-de-establecimiento-durante-la-sesión
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - cambiar-de-establecimiento-durante-la-sesión
+    - 13-cambiar-de-establecimiento-durante-la-sesion
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inicio/iniciar-sesion.md
+    target: inicio/iniciar-sesion.md
+    fragments:
+    - estado
+    - iniciar-sesión-y-elegir-establecimiento
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - iniciar-sesión-y-elegir-establecimiento
+    - 11-iniciar-sesion-y-elegir-establecimiento
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inicio/perfil-y-cierre-de-sesion.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - revisar-el-perfil-editar-datos-y-cerrar-sesión
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - revisar-el-perfil-editar-datos-y-cerrar-sesión
+    - 14-revisar-el-perfil-editar-datos-y-cerrar-sesion
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inicio/ubicarse-en-yubiz.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - ubicarse-en-yubiz-y-reconocer-el-menú-disponible
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - ubicarse-en-yubiz-y-reconocer-el-menú-disponible
+    - 12-ubicarse-en-yubiz-y-reconocer-el-menu-disponible
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/asignar-series-en-movimientos.md
+    target: index.md
+    fragments:
+    - asignar-series-en-entradas-salidas-y-cargas
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - asignar-series-en-entradas-salidas-y-cargas
+    - 49-asignar-series-en-entradas-salidas-y-cargas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/consultar-stock-por-almacen.md
+    target: inventario/consultar-stock-por-almacen.md
+    fragments:
+    - consultar-stock-por-almacén
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-stock-por-almacén
+    - 41-consultar-stock-por-almacen
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/exportar-inventario-y-movimientos.md
+    target: index.md
+    fragments:
+    - estado
+    - exportar-inventario-y-movimientos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - exportar-inventario-y-movimientos
+    - 47-exportar-inventario-y-movimientos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/gestionar-cargas-de-contenedores.md
+    target: inventario/gestionar-cargas-de-contenedores.md
+    fragments:
+    - estado
+    - registrar-y-consultar-cargas-de-contenedores
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-y-consultar-cargas-de-contenedores
+    - 48-registrar-y-consultar-cargas-de-contenedores
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/gestionar-guias-de-remision.md
+    target: inventario/gestionar-guias-de-remision.md
+    fragments:
+    - crear-y-consultar-guías-de-remisión
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-y-consultar-guías-de-remisión
+    - 46-crear-y-consultar-guias-de-remision
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/registrar-ajuste.md
+    target: inventario/registrar-ajuste.md
+    fragments:
+    - estado
+    - registrar-un-ajuste-de-inventario
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-un-ajuste-de-inventario
+    - 43-registrar-un-ajuste-de-inventario
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/registrar-ingresos-y-salidas.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-ingresos-y-salidas-de-almacén
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-ingresos-y-salidas-de-almacén
+    - 45-registrar-ingresos-y-salidas-de-almacen
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/revisar-movimientos-y-kardex.md
+    target: inventario/revisar-movimientos-y-kardex.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - revisar-movimientos-y-kardex-de-un-producto
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - revisar-movimientos-y-kardex-de-un-producto
+    - 42-revisar-movimientos-y-kardex-de-un-producto
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: inventario/transferir-entre-almacenes.md
+    target: inventario/transferir-entre-almacenes.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - transferir-productos-entre-almacenes
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - transferir-productos-entre-almacenes
+    - 44-transferir-productos-entre-almacenes
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: preventa/confirmar-anular-convertir.md
+    target: index.md
+    fragments:
+    - confirmar-anular-o-convertir-una-preventa-en-venta
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - confirmar-anular-o-convertir-una-preventa-en-venta
+    - 73-confirmar-anular-o-convertir-una-preventa-en-venta
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: preventa/consultar-y-editar.md
+    target: preventa/consultar-y-editar.md
+    fragments:
+    - consultar-y-editar-preventas
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-y-editar-preventas
+    - 72-consultar-y-editar-preventas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: preventa/crear-pedido.md
+    target: preventa/crear-pedido.md
+    fragments:
+    - crear-un-pedido-de-preventa
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-un-pedido-de-preventa
+    - 71-crear-un-pedido-de-preventa
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: reportes-especializados/comisiones-de-ventas.md
+    target: reportes-especializados/comisiones-de-ventas.md
+    fragments:
+    - consultar-comisiones-de-ventas-por-producto
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-comisiones-de-ventas-por-producto
+    - 216-consultar-comisiones-de-ventas-por-producto
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: reportes-especializados/ventas-por-usuario-y-cliente.md
+    target: reportes-especializados/ventas-por-usuario-y-cliente.md
+    fragments:
+    - consultar-ventas-por-usuario-y-cliente
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-ventas-por-usuario-y-cliente
+    - 217-consultar-ventas-por-usuario-y-cliente
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: reportes/consultar-pagos-y-deudas.md
+    target: reportes/consultar-pagos-y-deudas.md
+    fragments:
+    - consultar-pagos-y-deudas-de-ventas
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-pagos-y-deudas-de-ventas
+    - 616-consultar-pagos-y-deudas-de-ventas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: reportes/exportar-detalle-de-pagos.md
+    target: index.md
+    fragments:
+    - estado
+    - exportar-el-detalle-de-pagos
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - exportar-el-detalle-de-pagos
+    - 617-exportar-el-detalle-de-pagos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: servicios/cerrar-o-anular-internado.md
+    target: index.md
+    fragments:
+    - convertir-anular-o-imprimir-un-internado
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - convertir-anular-o-imprimir-un-internado
+    - 54-convertir-anular-o-imprimir-un-internado
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: servicios/configurar-internados.md
+    target: index.md
+    fragments:
+    - configurar-el-módulo-de-internados
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - configurar-el-módulo-de-internados
+    - 55-configurar-el-modulo-de-internados
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: servicios/gestionar-internado.md
+    target: index.md
+    fragments:
+    - consultar-un-internado-y-agregar-procedimientos
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-un-internado-y-agregar-procedimientos
+    - 53-consultar-un-internado-y-agregar-procedimientos
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: servicios/gestionar-unidades-e-items.md
+    target: index.md
+    fragments:
+    - estado
+    - gestionar-unidades-e-ítems-de-servicio
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-unidades-e-ítems-de-servicio
+    - 51-gestionar-unidades-e-items-de-servicio
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: servicios/registrar-internado.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-una-orden-de-servicio-o-internado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-una-orden-de-servicio-o-internado
+    - 52-registrar-una-orden-de-servicio-o-internado
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/anular-venta.md
+    target: ventas/anular-venta.md
+    fragments:
+    - anular-una-venta-con-cautela
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - anular-una-venta-con-cautela
+    - 212-anular-una-venta-con-cautela
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/configurar-datos-del-documento.md
+    target: index.md
+    fragments:
+    - elegir-documento-serie-fecha-y-almacén-de-una-venta
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - elegir-documento-serie-fecha-y-almacén-de-una-venta
+    - 29-elegir-documento-serie-fecha-y-almacen-de-una-venta
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/consultar-ventas.md
+    target: ventas/consultar-ventas.md
+    fragments:
+    - buscar-filtrar-y-revisar-el-detalle-de-ventas
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - buscar-filtrar-y-revisar-el-detalle-de-ventas
+    - 28-buscar-filtrar-y-revisar-el-detalle-de-ventas
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/elegir-establecimiento.md
+    target: index.md
+    fragments:
+    - elegir-establecimiento
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - elegir-establecimiento
+    - 21-elegir-establecimiento
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/gestionar-cotizaciones.md
+    target: ventas/gestionar-cotizaciones.md
+    fragments:
+    - crear-y-gestionar-cotizaciones
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - crear-y-gestionar-cotizaciones
+    - 27-crear-y-gestionar-cotizaciones
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/imprimir-y-comunicar-venta.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    - visualizar-imprimir-y-comunicar-una-venta
+    historical_fragments:
+    - visualizar-imprimir-y-comunicar-una-venta
+    - 211-visualizar-imprimir-y-comunicar-una-venta
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/notas-de-credito-y-canje.md
+    target: ventas/notas-de-credito-y-canje.md
+    fragments:
+    - emitir-una-nota-de-crédito-o-canjear-un-documento
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - emitir-una-nota-de-crédito-o-canjear-un-documento
+    - 213-emitir-una-nota-de-credito-o-canjear-un-documento
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/registrar-cobro-posterior-y-consultar-saldo.md
+    target: ventas/registrar-cobro-posterior-y-consultar-saldo.md
+    fragments:
+    - estado
+    - registrar-cobro-posterior-y-consultar-saldo
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-cobro-posterior-y-consultar-saldo
+    - 26-registrar-cobro-posterior-y-consultar-saldo
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/registrar-multiples-medios-de-pago.md
+    target: index.md
+    fragments:
+    - estado
+    - registrar-pagos-con-uno-o-varios-medios
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-pagos-con-uno-o-varios-medios
+    - 210-registrar-pagos-con-uno-o-varios-medios
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/registrar-venta-al-contado.md
+    target: ventas/registrar-venta-al-contado.md
+    fragments:
+    - estado
+    - registrar-venta-al-contado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-venta-al-contado
+    - 24-registrar-venta-al-contado
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/registrar-venta-con-saldo-pendiente.md
+    target: ventas/registrar-venta-con-saldo-pendiente.md
+    fragments:
+    - estado
+    - registrar-venta-con-saldo-pendiente
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - registrar-venta-con-saldo-pendiente
+    - 25-registrar-venta-con-saldo-pendiente
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/revisar-reportes-de-ventas.md
+    target: ventas/revisar-reportes-de-ventas.md
+    fragments:
+    - consultar-reportes-consolidados-y-ventas-por-producto
+    - estado
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - consultar-reportes-consolidados-y-ventas-por-producto
+    - 214-consultar-reportes-consolidados-y-ventas-por-producto
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/seleccionar-cliente.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - seleccionar-cliente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - seleccionar-cliente
+    - 22-seleccionar-cliente
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/seleccionar-productos-y-revisar-condiciones.md
+    target: index.md
+    fragments:
+    - estado
+    - resultado-revisado-en-fuente
+    - seleccionar-productos-y-revisar-condiciones
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - seleccionar-productos-y-revisar-condiciones
+    - 23-seleccionar-productos-y-revisar-condiciones
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  - path: ventas/vendedores-y-comisiones.md
+    target: ventas/vendedores-y-comisiones.md
+    fragments:
+    - estado
+    - gestionar-vendedores-y-consultar-comisiones
+    - resultado-revisado-en-fuente
+    - verificaciones-pendientes-en-runtime
+    historical_fragments:
+    - gestionar-vendedores-y-consultar-comisiones
+    - 215-gestionar-vendedores-y-consultar-comisiones
+    - estado
+    - verificaciones-pendientes-en-runtime
+    - objetivo
+    - acceso-condicional
+    - requisitos-y-datos
+    - punto-de-partida
+    - pasos
+    - campos-y-validaciones-observados
+    - resultado-revisado-en-fuente
+    - resultado-esperado
+    - advertencias-y-casos-limite
+    - problemas-frecuentes-y-condiciones-de-detencion
+    - enlaces-relacionados
+  indexes:
+  - index.md
+  - administracion/index.md
+  - caja/index.md
+  - catalogo/index.md
+  - compras/index.md
+  - configuracion/index.md
+  - contactos/index.md
+  - distribucion/index.md
+  - especializados/index.md
+  - estancias/index.md
+  - fidelizacion/index.md
+  - gastos/index.md
+  - inicio/index.md
+  - inventario/index.md
+  - preventa/index.md
+  - recorridos/administracion-configuracion/index.md
+  - recorridos/compras-finanzas/index.md
+  - recorridos/contactos-catalogo/index.md
+  - recorridos/operacion-comercial/index.md
+  - recorridos/servicios-estancias/index.md
+  - recorridos/ventas/index.md
+  - reportes-especializados/index.md
+  - reportes/index.md
+  - presupuesto/index.md
+  - socios/index.md
+  inactive:
+  - distribucion/registrar-resultado-entrega.md
+  - administracion/gestionar-usuarios-contract.md
+  - administracion/gestionar-vendedores-contract.md
+  - administracion/asignar-establecimientos-vendedores-contract.md
+  - servicios/registrar-unidades-items-contract.md
+  - estancias/definir-tarifas-relaciones-descuentos.md
+  - servicios/index.md
+  - ventas/index.md
+integration_status: complete
+contract_version: 2

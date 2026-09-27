@@ -1,0 +1,1069 @@
+schema_version: 1
+contract_version: 2
+records:
+- id: foundation-sign-in
+  guide: '1.1'
+  path: inicio/iniciar-sesion.md
+  classification: quickstart
+  sidebar: []
+  starting_screen: Pantalla de inicio de sesión
+  entry_action: Complete el inicio de sesión antes de usar el menú lateral.
+- id: sales-register-cash-sale
+  guide: '2.1'
+  path: ventas/registrar-venta-al-contado.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Crear venta
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Crear venta**.
+- id: sales-register-sale-with-pending-balance
+  guide: '2.2'
+  path: ventas/registrar-venta-con-saldo-pendiente.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Crear venta
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Crear venta**.
+- id: sales-collect-later-and-check-balance
+  guide: '2.3'
+  path: ventas/registrar-cobro-posterior-y-consultar-saldo.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Ventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Ventas**.
+  - Localice la venta y ábrala para continuar con el cobro.
+- id: sales-manage-quotations
+  guide: '2.4'
+  path: ventas/gestionar-cotizaciones.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Crear cotización
+  - Ventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Crear cotización** para iniciar una cotización nueva.
+  - Para consultar una cotización existente, abra **Ventas**, seleccione **Cotizaciones**
+    y seleccione el registro.
+- id: manual-2-5
+  guide: '2.5'
+  path: ventas/convertir-cotizacion-en-venta.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Cotizaciones
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Cotizaciones**.
+  - Seleccione la cotización y use Convertir venta para abrir la venta de origen.
+- id: sales-search-filter-and-review-sales
+  guide: '2.6'
+  path: ventas/consultar-ventas.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Ventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Ventas**.
+  - Seleccione la venta para abrir su detalle.
+- id: sales-void-sale
+  guide: '2.7'
+  path: ventas/anular-venta.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Ventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Ventas**.
+  - Seleccione la venta para abrir su detalle.
+- id: sales-credit-notes-and-exchange
+  guide: '2.8'
+  path: ventas/notas-de-credito-y-canje.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Notas de crédito
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Notas de crédito**.
+- id: manual-2-9
+  guide: '2.9'
+  path: ventas/canjear-documento-de-venta.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Ventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Ventas**.
+  - Seleccione la venta para abrir su detalle.
+- id: reports-consult-sales-payments-and-debts
+  guide: '2.10'
+  path: reportes/consultar-pagos-y-deudas.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Reportes
+  - Pagos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Reportes**.
+  - Seleccione **Pagos**.
+  - Use los filtros disponibles para consultar pagos y deudas.
+- id: sales-view-payment-table
+  guide: '2.11'
+  path: reportes/consultar-tabla-pagos.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Reportes
+  - Tabla pagos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Abra **Reportes** y seleccione **Tabla pagos**.
+- id: specialist-reports-sales-commissions
+  guide: '2.12'
+  path: reportes-especializados/comisiones-de-ventas.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Reportes
+  - Comisiones de ventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Seleccione **Reportes**.
+  - Seleccione **Comisiones de ventas**.
+  - La grilla muestra ventas por comisión; use sus filtros antes de revisar los productos,
+    marcas, usuarios y comisiones.
+- id: sales-review-cash-movements
+  guide: '2.13'
+  path: caja/consultar-movimientos-caja.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Reportes
+  - Ingreso egreso dinero
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Abra **Reportes** y seleccione **Ingreso egreso dinero**.
+- id: sales-register-opening-cash-balance
+  guide: '2.14'
+  path: caja/registrar-saldo-inicial-caja.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Reportes
+  - Ingreso egreso dinero
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Abra **Reportes** y seleccione **Ingreso egreso dinero**.
+- id: sales-register-manual-cash-operation
+  guide: '2.15'
+  path: caja/registrar-operacion-manual-caja.md
+  classification: direct
+  sidebar:
+  - Ventas
+  - Reportes
+  - Ingreso egreso dinero
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Ventas**.
+  - Abra **Reportes** y seleccione **Ingreso egreso dinero**.
+- id: internado-manage-service-units
+  guide: '3.1'
+  path: servicios/registrar-actualizar-unidades-servicio.md
+  classification: direct
+  sidebar:
+  - Internado
+  - Unidades
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Internado**.
+  - Seleccione **Unidades**.
+- id: internado-manage-service-items
+  guide: '3.2'
+  path: servicios/registrar-actualizar-items-servicio.md
+  classification: direct
+  sidebar:
+  - Internado
+  - Servicios
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Internado**.
+  - Seleccione **Servicios**.
+- id: manual-10-2
+  guide: '3.3'
+  path: servicios/registrar-orden-servicio-internado-contract.md
+  classification: direct
+  sidebar:
+  - Servicio
+  - Crear servicio
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Servicio**.
+  - Seleccione **Crear servicio**.
+- id: manual-10-3
+  guide: '3.4'
+  path: servicios/consultar-internado-procedimientos.md
+  classification: direct
+  sidebar:
+  - Servicio
+  - Servicios
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Servicio**.
+  - Seleccione **Servicios**.
+  - Seleccione el internado para abrir su detalle.
+- id: manual-10-4
+  guide: '3.5'
+  path: servicios/convertir-internado-en-venta.md
+  classification: direct
+  sidebar:
+  - Servicio
+  - Servicios
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Servicio**.
+  - Seleccione **Servicios**.
+  - Seleccione el internado y abra su detalle antes de convertirlo.
+- id: manual-10-5
+  guide: '3.6'
+  path: servicios/anular-internado.md
+  classification: direct
+  sidebar:
+  - Servicio
+  - Servicios
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Servicio**.
+  - Seleccione **Servicios**.
+  - Seleccione el internado y abra su detalle antes de anularlo.
+- id: internado-configure-parameters
+  guide: '3.7'
+  path: servicios/configurar-parametros-internado.md
+  classification: direct
+  sidebar:
+  - Internado
+  - Configuraciones
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Internado**.
+  - Seleccione **Configuraciones**.
+- id: manual-12-1
+  guide: '4.1'
+  path: fidelizacion/crear-campanas-descuento.md
+  classification: direct
+  sidebar:
+  - Fidelización de clientes
+  - Crear campaña de descuento
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Fidelización de clientes**.
+  - Seleccione **Crear campaña de descuento**.
+  - Para consultar una campaña, abra Fidelización de clientes > Campañas y selecciónela.
+- id: catalog-manage-products
+  guide: '5.1'
+  path: catalogo/gestionar-productos.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Catálogo
+  - Nuevo producto
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Catálogo**.
+  - Para crear un producto, seleccione **Nuevo producto**; para editarlo, ábralo con
+    doble clic.
+- id: manual-4-2
+  guide: '5.2'
+  path: catalogo/eliminar-producto.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Catálogo
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Catálogo**.
+  - Seleccione el producto para abrir su edición antes de eliminarlo.
+- id: catalog-manage-product-details
+  guide: '5.3'
+  path: catalogo/gestionar-detalles-de-producto.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Gestión detalles producto
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Gestión detalles producto**.
+- id: catalog-configure-sale-prices
+  guide: '5.4'
+  path: catalogo/configurar-precios-de-venta.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Catálogo
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Catálogo**.
+  - Seleccione el producto para abrir su edición y continuar con los precios.
+- id: catalog-manage-lots
+  guide: '5.5'
+  path: catalogo/gestionar-lotes.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Lotes
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Lotes**.
+- id: catalog-manage-series
+  guide: '5.6'
+  path: catalogo/gestionar-series.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Series
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Series**.
+- id: inventory-register-product-conversion
+  guide: '5.7'
+  path: catalogo/registrar-conversion-entre-productos.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Conversión
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Conversión**.
+- id: catalog-review-utility-and-export
+  guide: '5.8'
+  path: catalogo/consultar-utilidad-y-exportar.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Utilidad de productos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Utilidad de productos**.
+- id: inventory-check-stock-by-warehouse
+  guide: '5.9'
+  path: inventario/consultar-stock-por-almacen.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Inventario
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Inventario**.
+- id: inventory-review-movements-and-kardex
+  guide: '5.10'
+  path: inventario/revisar-movimientos-y-kardex.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Ingresos y salidas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Ingresos y salidas**.
+- id: manual-5-3
+  guide: '5.11'
+  path: inventario/registrar-ingreso.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Crear ingreso a almacen
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Crear ingreso a almacen**.
+- id: manual-5-4
+  guide: '5.12'
+  path: inventario/registrar-salida.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Crear salida de almacen
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Crear salida de almacen**.
+- id: inventory-transfer-between-warehouses
+  guide: '5.13'
+  path: inventario/transferir-entre-almacenes.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Crear traslado interno
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Crear traslado interno**.
+- id: inventory-register-adjustment
+  guide: '5.14'
+  path: inventario/registrar-ajuste.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Inventario
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Inventario**.
+  - Seleccione el producto para abrir el ajuste.
+- id: inventory-manage-remission-guides
+  guide: '5.15'
+  path: inventario/gestionar-guias-de-remision.md
+  classification: direct
+  sidebar:
+  - Inventario
+  - Crear Guía Remisión
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Inventario**.
+  - Seleccione **Crear Guía Remisión**.
+  - Para consultar una guía, abra Inventario > Guías de Remisión y seleccione el registro.
+- id: manual-9-1
+  guide: '6.1'
+  path: distribucion/crear-orden-de-carga-contract.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Crear orden de carga
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Crear orden de carga**.
+- id: manual-9-2
+  guide: '6.2'
+  path: distribucion/consultar-orden-de-carga.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de carga
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de carga**.
+  - En la lista, abra el detalle con doble clic en la fila de la orden.
+- id: manual-9-3
+  guide: '6.3'
+  path: distribucion/confirmar-orden-de-carga.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de carga
+  - Confirmar
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de carga**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Confirmar**.
+- id: manual-9-4
+  guide: '6.4'
+  path: distribucion/recargas-compromisos-residuales.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de carga
+  - Recargar orden de carga
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de carga**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Recargar orden de carga**.
+- id: manual-9-5
+  guide: '6.5'
+  path: distribucion/cerrar-orden-de-carga.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de carga
+  - Cerrar
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de carga**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Cerrar**.
+- id: manual-9-6
+  guide: '6.6'
+  path: distribucion/generar-orden-de-descarga.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de carga
+  - Generar orden de descarga
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de carga**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Generar orden de descarga**.
+- id: distribution-consult-print-unload-order
+  guide: '6.7'
+  path: distribucion/consultar-imprimir-orden-descarga.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de descarga
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de descarga**.
+  - En la lista, abra el detalle con doble clic en la fila de una orden confirmada.
+- id: manual-9-8
+  guide: '6.8'
+  path: distribucion/liquidar-orden-de-carga.md
+  classification: direct
+  sidebar:
+  - Distribución
+  - Listar ordenes de carga
+  - Liquidar
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Distribución**.
+  - Seleccione **Listar ordenes de carga**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Liquidar**.
+- id: purchases-create-request
+  guide: '7.1'
+  path: compras/crear-pedido.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Crear Pedido
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Crear Pedido**.
+- id: purchases-manage-requests
+  guide: '7.2'
+  path: compras/gestionar-pedidos.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Pedidos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Pedidos**.
+  - Seleccione el pedido para abrirlo.
+- id: manual-6-3
+  guide: '7.3'
+  path: compras/anular-pedido.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Pedidos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Pedidos**.
+  - Seleccione el pedido para abrirlo antes de anularlo.
+- id: purchases-register-order
+  guide: '7.4'
+  path: compras/registrar-orden.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Crear Compra
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Crear Compra**.
+- id: purchases-create-order-from-request
+  guide: '7.5'
+  path: compras/crear-orden-desde-pedido.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Pedidos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Pedidos**.
+  - Seleccione el pedido y continúe con la creación de la compra.
+- id: purchases-manage-orders
+  guide: '7.6'
+  path: compras/gestionar-ordenes.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Compras
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Compras**.
+  - Seleccione la compra para abrirla.
+- id: purchases-change-or-void-state
+  guide: '7.7'
+  path: compras/cambiar-estado-de-compra.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Compras
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Compras**.
+  - Seleccione la compra para abrirla.
+- id: manual-6-8
+  guide: '7.8'
+  path: compras/anular-compra.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Compras
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Compras**.
+  - Seleccione la compra para abrirla antes de anularla.
+- id: purchases-register-payments-and-balances
+  guide: '7.9'
+  path: compras/registrar-pagos-y-saldos.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Compras
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Compras**.
+  - Seleccione la compra para abrir su detalle y los pagos.
+- id: purchases-manage-supplier-documents
+  guide: '7.10'
+  path: compras/gestionar-documentos.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Compras
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Compras**.
+  - Seleccione la compra para abrir su detalle y los documentos.
+- id: expenses-register-expense
+  guide: '7.11'
+  path: gastos/registrar-gasto.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Crear Gasto
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Crear Gasto**.
+- id: expenses-manage-expenses
+  guide: '7.12'
+  path: gastos/gestionar-gastos.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Gastos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Gastos**.
+  - Seleccione un gasto para abrirlo.
+- id: manual-7-3
+  guide: '7.13'
+  path: gastos/aprobar-gasto.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Gastos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Gastos**.
+  - Seleccione el gasto para abrirlo antes de aprobarlo.
+- id: manual-7-4
+  guide: '7.14'
+  path: gastos/anular-gasto.md
+  classification: direct
+  sidebar:
+  - Compras
+  - Gastos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Compras**.
+  - Seleccione **Gastos**.
+  - Seleccione el gasto para abrirlo antes de anularlo.
+- id: contacts-manage-customers
+  guide: '8.1'
+  path: contactos/gestionar-clientes.md
+  classification: direct
+  sidebar:
+  - Contactos
+  - Clientes
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Contactos**.
+  - Seleccione **Clientes**.
+  - Seleccione un cliente para actualizarlo.
+- id: contacts-manage-suppliers-and-bank-accounts
+  guide: '8.2'
+  path: contactos/gestionar-proveedores.md
+  classification: direct
+  sidebar:
+  - Contactos
+  - Proveedores
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Contactos**.
+  - Seleccione **Proveedores**.
+  - Seleccione un proveedor para actualizarlo.
+- id: contacts-manage-carriers
+  guide: '8.3'
+  path: contactos/gestionar-transportistas.md
+  classification: direct
+  sidebar:
+  - Contactos
+  - Transportistas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Contactos**.
+  - Seleccione **Transportistas**.
+  - Seleccione un transportista para actualizarlo.
+- id: contacts-manage-financial-entities
+  guide: '8.4'
+  path: contactos/registrar-actualizar-entidades-financieras.md
+  classification: direct
+  sidebar:
+  - Contactos
+  - Entidades Financieras
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Contactos**.
+  - Seleccione **Entidades Financieras**.
+- id: members-manage-contributions
+  guide: '9.1'
+  path: socios/registrar-actualizar-socios-aportes.md
+  classification: direct
+  sidebar:
+  - Socios
+  - Gestion de Socios
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Socios**.
+  - Seleccione **Gestion de Socios**.
+- id: members-consult-report
+  guide: '9.2'
+  path: socios/consultar-informe-socios.md
+  classification: direct
+  sidebar:
+  - Socios
+  - Informe
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Socios**.
+  - Seleccione **Informe**.
+- id: budget-manage-periods
+  guide: '10.1'
+  path: compras/crear-consultar-periodos-presupuestarios.md
+  classification: direct
+  sidebar:
+  - Presupuesto
+  - Periodos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Presupuesto**.
+  - Seleccione **Periodos**.
+- id: budget-assign
+  guide: '10.2'
+  path: compras/asignar-presupuesto.md
+  classification: direct
+  sidebar:
+  - Presupuesto
+  - Asignaciones
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Presupuesto**.
+  - Seleccione **Asignaciones**.
+- id: budget-consult-allocations-consumption
+  guide: '10.3'
+  path: compras/consultar-consumo-asignaciones.md
+  classification: direct
+  sidebar:
+  - Presupuesto
+  - Consumos de asignaciones
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Presupuesto**.
+  - Seleccione **Consumos de asignaciones**.
+- id: manual-11-1
+  guide: '11.1'
+  path: estancias/registrar-estancia-contract.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Registrar estancia
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Registrar estancia**.
+- id: manual-11-2
+  guide: '11.2'
+  path: estancias/consultar-estancias-detalle.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Estancias del dia
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Estancias del dia**.
+- id: manual-11-3
+  guide: '11.3'
+  path: estancias/registrar-sujetos-personas.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Lista de sujetos
+  - Nuevo sujeto
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Lista de sujetos**.
+  - En la lista, abra el menú de más opciones y seleccione **Nuevo sujeto** para abrir
+    el cuadro de registro. Para personas relacionadas, use la alternativa disponible
+    desde el sujeto registrado.
+- id: stay-manage-rates
+  guide: '11.4'
+  path: estancias/registrar-actualizar-tarifas-estadia.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Tarifas de estadía
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Tarifas de estadía**.
+- id: stay-manage-relations
+  guide: '11.5'
+  path: estancias/registrar-actualizar-relaciones-estancia.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Relacion
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Relacion**.
+- id: stay-manage-discounts
+  guide: '11.6'
+  path: estancias/crear-consultar-descuentos-estancia.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Descuentos
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Descuentos**.
+- id: stay-consult-report
+  guide: '11.7'
+  path: estancias/consultar-reporte-estancias.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Reporte de estancias
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Reporte de estancias**.
+- id: manual-11-5
+  guide: '11.8'
+  path: estancias/convertir-estancia-en-venta.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Lista de estancias
+  - Convertir en venta
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Lista de estancias**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Convertir en venta**.
+- id: manual-11-6
+  guide: '11.9'
+  path: estancias/anular-estancia.md
+  classification: direct
+  sidebar:
+  - Estancia
+  - Lista de estancias
+  - Anular operación
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Estancia**.
+  - Seleccione **Lista de estancias**.
+  - En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones,
+    seleccione **Anular operación**.
+- id: presale-list-and-edit
+  guide: '12.1'
+  path: preventa/consultar-y-editar.md
+  classification: direct
+  sidebar:
+  - Preventa
+  - Preventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Preventa**.
+  - Seleccione **Preventas**.
+  - Seleccione la preventa para abrirla.
+- id: manual-8-3
+  guide: '12.2'
+  path: preventa/confirmar-preventa.md
+  classification: direct
+  sidebar:
+  - Preventa
+  - Preventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Preventa**.
+  - Seleccione **Preventas**.
+  - Seleccione la preventa para abrirla antes de confirmarla.
+- id: manual-8-4
+  guide: '12.3'
+  path: preventa/anular-preventa.md
+  classification: direct
+  sidebar:
+  - Preventa
+  - Preventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Preventa**.
+  - Seleccione **Preventas**.
+  - Seleccione la preventa para abrirla antes de anularla.
+- id: manual-8-5
+  guide: '12.4'
+  path: preventa/convertir-preventa-en-venta.md
+  classification: direct
+  sidebar:
+  - Preventa
+  - Preventas
+  starting_screen: ''
+  entry_action: ''
+  access_steps:
+  - En la barra lateral, abra **Preventa**.
+  - Seleccione **Preventas**.
+  - Seleccione la preventa para abrirla antes de convertirla.

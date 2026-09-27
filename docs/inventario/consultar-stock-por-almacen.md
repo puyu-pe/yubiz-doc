@@ -1,67 +1,42 @@
 <a id="consultar-stock-por-almacén"></a>
 
-# 4.1 Consultar stock por almacén
+# 5.9 Consultar stock por almacén
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="51-consultar-stock-por-almacen"></a>
 
-## Objetivo
+<a id="41-consultar-stock-por-almacen"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Consultar la cantidad actual de un producto en un almacén concreto antes de revisar
-su historial o iniciar una operación.
+Consulte la cantidad de un producto en un almacén antes de iniciar o revisar una operación.
 
-## Acceso condicional
+## Cómo acceder
 
-La disponibilidad de inventario y de cada almacén depende de la configuración y de
-la sesión. Esta guía no confirma qué almacenes podrá consultar cada persona.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Inventario**.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Un producto identificable en el catálogo.
-- El almacén que desea revisar, cuando corresponda.
-
-## Punto de partida
-
-Abra el detalle de inventario del producto si está disponible en su navegación. La
-pantalla revisada muestra el producto y un selector de almacén.
+- Tenga identificado el producto y, cuando corresponda, el almacén.
 
 ## Pasos
 
-1. Confirme que el producto mostrado corresponde al que desea revisar.
-2. Seleccione un almacén en el selector; use la vista de todos solo para una revisión
-   general cuando esa alternativa esté disponible.
-3. Revise el valor de stock actual asociado al contexto seleccionado.
-4. Si necesita explicar una diferencia, continúe con la ficha de movimientos antes
-   de modificar cantidades.
+1. Compruebe que el producto mostrado es el que desea consultar.
+2. Seleccione el almacén; use la vista de todos solo para una revisión general cuando esté disponible.
+3. Revise el stock mostrado para ese producto y almacén.
+4. Si necesita explicar una diferencia, abra los movimientos antes de modificar cantidades.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La vista revisada presenta producto, almacén y stock actual. También muestra precio
-de compra, precio de venta, unidades vendidas y márgenes como datos de consulta. La
-precisión de los decimales, la disponibilidad de todos los almacenes y los valores
-mostrados deben verificarse en el entorno de trabajo.
+Compruebe que el producto, almacén seleccionado y cantidad mostrada corresponden a su consulta.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-Al cambiar de almacén, la interfaz vuelve a cargar el contexto del producto con el
-almacén elegido y muestra la cantidad asociada. No se afirma que el valor sea una
-existencia disponible para una decisión comercial sin comprobar el entorno.
-
-## Advertencias y casos límite
-
-No use este dato aislado para corregir una diferencia de inventario. El valor puede
-depender del almacén elegido y de operaciones que requieran revisión posterior.
-
-## Problemas frecuentes y condiciones de detención
-
-- Producto equivocado: vuelva a identificarlo antes de interpretar la cantidad.
-- Almacén no disponible: confirme el contexto habilitado, sin asumir un permiso.
-- Diferencia que no puede explicar: deténgase y revise los movimientos.
-
-## Enlaces relacionados
-
-- [Revisar movimientos y kardex de un producto](revisar-movimientos-y-kardex.md)
-- [Crear y editar productos del catálogo](../catalogo/gestionar-productos.md)
-- [Inventario](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

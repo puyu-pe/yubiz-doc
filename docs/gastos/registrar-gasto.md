@@ -1,75 +1,41 @@
-<a id="registrar-un-gasto"></a>
+# 7.11 Registrar un gasto
 
-# 6.10 Registrar un gasto
+<a id="71-registrar-un-gasto"></a>
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="610-registrar-un-gasto"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Registre un gasto con sus datos y detalle para que pueda revisarse posteriormente.
 
-Registrar un gasto con su proveedor, datos del documento, categoría y detalle de
-ítems para revisarlo posteriormente en el listado.
+## Cómo acceder
 
-## Acceso condicional
+1. En la barra lateral, abra **Compras**.
+2. Seleccione **Crear Gasto**.
 
-Los documentos, series, proveedores, categorías, medios de pago y presupuestos
-mostrados dependen de la sesión y configuración. Seleccionar una asignación de
-presupuesto es opcional en la validación revisada; no confirma una autorización ni
-un efecto financiero o contable en el entorno de trabajo.
+## Antes de empezar
 
-## Requisitos y datos
-
-- Proveedor, documento, serie, moneda, medio de pago, categoría y fecha.
-- Al menos un ítem con cantidad, descripción, valor e importe revisados.
-- Si corresponde, una asignación presupuestaria disponible en la misma moneda.
-
-## Punto de partida
-
-Abra la opción para registrar un gasto y espere a que carguen los selectores antes
-de completar el formulario.
+- Tenga fecha, proveedor o beneficiario, categoría, importe y detalle del gasto.
 
 ## Pasos
 
-1. Seleccione el proveedor y complete documento, serie y moneda.
-2. Indique el medio de pago, la categoría y la fecha del gasto.
-3. Si aparece una asignación presupuestaria, elija una que corresponda a la moneda
-   del gasto; si no corresponde, continúe sin seleccionarla.
-4. Agregue los ítems y revise cantidad, descripción, valor unitario, tipo de IGV e
-   importe de cada fila.
-5. Revise subtotal, IGV y total calculados; agregue detalles para impresión u
-   observación interna solo cuando sean necesarios.
-6. Seleccione **Guardar**, confirme la acción y revise el resultado mostrado antes
-   de continuar con una impresión o un nuevo registro.
+1. Complete fecha, categoría y los datos generales que solicite el formulario.
+2. Agregue los conceptos, cantidades e importes del gasto.
+3. Revise total y detalle antes de guardar.
+4. Guarde el gasto y localícelo en la lista.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La validación del navegador requiere proveedor, documento, serie, moneda, medio de
-pago, categoría, fecha, descripción, tipo de IGV y total. Al elegir presupuesto,
-la interfaz compara la moneda y valida el monto disponible antes de guardar.
+Abra el gasto y compruebe sus datos generales, conceptos, importes y estado mostrado.
 
+<a id="estado"></a>
+<a id="registrar-un-gasto"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El flujo guarda un gasto inicialmente pendiente con sus detalles y solicita abrir
-una impresión tras una respuesta exitosa. Cuando se selecciona una asignación
-compatible, la interfaz registra un consumo asociado. La persistencia, la impresión,
-el estado final y sus consecuencias operativas pueden variar según la configuración disponible.
-
-## Advertencias y casos límite
-
-No use el total mostrado como sustituto de revisar los ítems. Si el presupuesto no
-aparece, no asuma que debe crearse ni que el gasto quedará sin control. No infiera
-moneda, tratamiento fiscal, caja, stock ni aprobación a partir de este formulario.
-
-## Problemas frecuentes y condiciones de detención
-
-- Faltan datos obligatorios: complete los campos marcados y los detalles antes de guardar.
-- La asignación no coincide con la moneda o no tiene disponibilidad: detenga el registro y revise el contexto presupuestario.
-- Total o ítems no son claros: corrija el detalle antes de confirmar.
-
-## Enlaces relacionados
-
-- [Consultar, aprobar y exportar gastos](gestionar-gastos.md)
-- [Gestionar períodos, asignaciones y consumo de presupuesto](../compras/gestionar-presupuesto.md)
-- [Gastos](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

@@ -1,10 +1,13 @@
-# Reportes especializados
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-Estas fichas describen filtros, tablas y exportaciones observados para reportes
-especializados. Su disponibilidad, datos, cálculos y resultados dependen del módulo,
-la sesión y la configuración; no confirman permisos, liquidaciones ni exactitud.
+# Guías disponibles
 
-## Fichas disponibles
+Estas entradas se integraron en las tareas de ventas.
 
-- [2.16 Consultar comisiones de ventas por producto](comisiones-de-ventas.md)
-- [2.17 Consultar ventas por usuario y cliente](ventas-por-usuario-y-cliente.md)
+[Ver las guías de ventas](../ventas/index.md)

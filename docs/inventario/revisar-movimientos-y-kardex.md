@@ -1,70 +1,42 @@
 <a id="revisar-movimientos-y-kardex-de-un-producto"></a>
 
-# 4.2 Revisar movimientos y kardex de un producto
+# 5.10 Revisar movimientos y kardex
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="52-revisar-movimientos-y-kardex"></a>
 
-## Objetivo
+<a id="42-revisar-movimientos-y-kardex-de-un-producto"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Revisar el historial de movimientos de un producto en un almacén para reconocer el
-origen de una variación de cantidad.
+Revise los movimientos de un producto para identificar el origen de una variación de cantidad.
 
-## Acceso condicional
+## Cómo acceder
 
-La pantalla de movimientos y sus detalles dependen de la navegación disponible para
-la sesión. Las operaciones que aparecen pueden variar según el producto y el entorno.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Ingresos y salidas**.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Un producto y, cuando aplique, un almacén para acotar la consulta.
-- Un período u operación que permita reconocer el movimiento investigado.
-
-## Punto de partida
-
-Desde el detalle de inventario del producto, seleccione el almacén que desea revisar.
-La tabla revisada se carga para el producto y el almacén en contexto.
+- Tenga identificado el producto, almacén y período u operación a revisar.
 
 ## Pasos
 
-1. Confirme el producto y el almacén antes de leer la tabla.
-2. Use los filtros disponibles de fecha, operación, tipo o estado para reducir el
-   conjunto de movimientos.
+1. Confirme producto y almacén antes de leer la tabla.
+2. Aplique filtros de fecha, operación, tipo o estado para acotar los movimientos.
 3. Compare cantidad, saldo y los datos de lote o serie cuando estén presentes.
-4. Abra el detalle de la fila que necesita investigar; el comportamiento depende del
-   tipo de operación de origen.
-5. Registre la diferencia para el procedimiento autorizado de su organización; no
-   modifique el historial solo para hacer coincidir un valor esperado.
+4. Abra el detalle de la fila que investigará y revise la operación de origen.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La tabla revisada incluye fecha, operación, tipo, lote, cantidad, precio, total,
-saldo y estado. La interfaz ofrece filtros para operación, tipo y estado, y un rango
-de fecha. Un detalle de ajuste solo se abre cuando existe el registro de seguimiento
-de la operación; los mensajes y filtros exactos pueden variar según la configuración disponible.
+Compruebe que la tabla muestra los movimientos del producto y almacén seleccionados, y que el detalle coincide con la fila consultada.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La pantalla presenta movimientos para el producto y almacén seleccionados, entrega
-valores de filtro y permite abrir un detalle según la operación de origen. No se
-afirma que la tabla constituya un kardex fiscal, contable o aprobado.
-
-## Advertencias y casos límite
-
-Una misma pantalla puede reunir ventas, compras, transferencias, ajustes y otras
-operaciones. No concluya la causa de una diferencia solo por el nombre de la fila;
-revise el detalle disponible y el contexto operativo.
-
-## Problemas frecuentes y condiciones de detención
-
-- Sin filas tras aplicar filtros: limpie o revise el almacén y período elegidos.
-- Operación no identificable: no infiera el origen; solicite revisión operativa.
-- Detalle no disponible: no sustituya la evidencia por una corrección manual.
-
-## Enlaces relacionados
-
-- [Consultar stock por almacén](consultar-stock-por-almacen.md)
-- [Registrar un ajuste de inventario](registrar-ajuste.md)
-- [Inventario](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

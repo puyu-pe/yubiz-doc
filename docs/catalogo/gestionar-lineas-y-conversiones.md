@@ -1,76 +1,46 @@
+---
+search:
+  exclude: true
+---
+
 <a id="gestionar-líneas-y-conversiones-de-productos"></a>
 
-# 3.11 Gestionar líneas y conversiones de productos
+# 4.7 Registrar y actualizar líneas y conversiones
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="311-gestionar-lineas-y-conversiones-de-productos"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Registre una conversión entre productos y mantenga las líneas cuando estas opciones estén disponibles.
 
-Registrar una conversión entre un producto de origen y uno de destino cuando la
-capacidad esté habilitada; reconocer la selección de línea cuando aparezca en otros
-formularios del entorno.
+## Cómo acceder
 
-## Acceso condicional
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Linea**.
 
-Esta capacidad depende de módulos, configuración y sesión. La interfaz puede mostrar una
-entrada de líneas en la navegación y una pantalla de conversión, pero no permite
-afirmar que ambas opciones estén habilitadas ni que tengan el mismo alcance en todos
-los entornos.
+## Antes de empezar
 
-## Requisitos y datos
-
-- Almacén, producto y cantidad de origen.
-- Almacén, producto y cantidad de destino.
-- Unidades mostradas por el formulario y autorización operativa para la conversión.
-
-## Punto de partida
-
-Abra la opción de conversión solo si está disponible. Antes de registrar, confirme
-con el responsable operativo los productos, almacenes y cantidades que corresponden.
+- Tenga almacén, producto y cantidad de origen, y almacén, producto y cantidad de destino.
 
 ## Pasos
 
-1. Seleccione el almacén y el producto de origen disponibles en el formulario.
-2. Ingrese una cantidad de origen mayor que cero y revise la medida mostrada.
-3. Seleccione el almacén y el producto de destino.
-4. Ingrese la cantidad de destino y revise su medida antes de registrar.
-5. Revise todos los datos y use la acción de registro solo si puede confirmar el
-   procedimiento aplicable.
-6. Si su flujo presenta una selección de línea, úsela solo cuando esté disponible y
-   confirmada para la operación; esta revisión no prueba una administración autónoma
-   de líneas.
+1. En **Líneas**, agregue una línea o abra una existente, complete la descripción y guarde.
+2. En una conversión, seleccione almacén, producto y cantidad de origen.
+3. Seleccione almacén, producto y cantidad de destino; ambas cantidades deben ser mayores que cero.
+4. Revise las medidas, productos y almacenes. **Antes de confirmar,** deténgase si corresponde una transferencia o ajuste, no una conversión.
+5. Registre la conversión.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La pantalla revisada presenta almacén, producto, cantidad y medida para origen y
-destino. Ambas cantidades tienen mínimo uno y las medidas se muestran como solo
-lectura. La interfaz no aporta evidencia suficiente para documentar validaciones de
-compatibilidad, efectos contables o reglas de líneas como políticas universales.
+Compruebe que la línea aparece en su lista o que la conversión muestra productos, almacenes y cantidades seleccionados.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La interfaz ofrece registrar una conversión con datos de origen y destino. El efecto
-sobre inventario, costos, documentos relacionados y disponibilidad posterior debe
-verificarse en el entorno de trabajo antes de ser afirmado.
-
-## Advertencias y casos límite
-
-Una conversión puede ser operativamente sensible. No la use para ajustar existencias
-ni para reemplazar una transferencia sin el procedimiento autorizado. No suponga que
-la línea observada en otro formulario controle o valide esta operación.
-
-## Problemas frecuentes y condiciones de detención
-
-- Producto o almacén no disponible: confirme la configuración y el contexto de sesión.
-- Cantidad menor que uno: corrija el dato antes de registrar.
-- No puede explicar el efecto de la conversión: deténgase y solicite validación.
-- La opción de líneas o conversión no aparece: no use una ruta alternativa no revisada.
-
-## Enlaces relacionados
-
-- [Crear y editar productos del catálogo](gestionar-productos.md)
-- [Gestionar lotes de productos](gestionar-lotes.md)
-- [Catálogo](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

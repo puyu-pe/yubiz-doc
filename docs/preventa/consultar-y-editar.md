@@ -1,66 +1,38 @@
-<a id="consultar-y-editar-preventas"></a>
+# 12.1 Consultar y actualizar una preventa
 
-# 7.2 Consultar y editar preventas
+<a id="82-consultar-y-actualizar-una-preventa"></a>
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="72-consultar-y-editar-preventas"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Consulte una preventa y actualice sus datos mientras el estado permita editarla.
 
-Buscar una preventa en la lista moderna, revisar su detalle y actualizar la
-observación o los ítems mientras el estado permita la acción.
+## Cómo acceder
 
-## Acceso condicional
-
-La lista moderna es un recorrido distinto del pedido heredado. Los filtros, columnas,
-estados y edición disponibles dependen de la sesión; no confirme que toda preventa
-pueda editarse ni que un cambio preserve reservas o resultados operativos.
-
-## Requisitos y datos
-
-- Un criterio como fecha, usuario, establecimiento, almacén, cliente o estado.
-- Identificación de la preventa antes de abrir el detalle.
-- Observación e ítems correctos si la edición está disponible.
-
-## Punto de partida
-
-Abra la **Lista de preventas** disponible para su sesión.
+1. En la barra lateral, abra **Preventa**.
+2. Seleccione **Preventas**.
+3. Seleccione la preventa para abrirla.
 
 ## Pasos
 
-1. Aplique filtros o ajuste columnas para encontrar la preventa.
-2. Abra el detalle y revise documento, fecha, cliente, almacén, observación e ítems.
-3. Confirme el estado antes de elegir **Editar**.
-4. Actualice la observación o los ítems disponibles y revise cantidades, precios e importes.
-5. Seleccione **Actualizar** y vuelva a la lista para revisar el resultado.
+1. Filtre por cliente, fecha, documento o estado y abra la preventa.
+2. Revise productos, cantidades y total antes de modificarla.
+3. Actualice los datos necesarios y guarde.
+4. Vuelva a la lista y use los filtros para confirmar el registro actualizado.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La lista muestra documento, serie, correlativo, fecha, usuario, establecimiento,
-almacén, cliente, total y estado, con filtros y columnas configurables. El formulario
-de edición carga cliente, documento, fecha, usuario, observación e ítems; envía el
-identificador, la observación y el detalle de ítems para validación.
+Compruebe que la preventa conserva los datos y detalle actualizados.
 
+<a id="consultar-y-editar-preventas"></a>
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El detalle moderno expone los estados borrador, confirmada, procesada y cancelada.
-La edición aparece solo para borrador en la interfaz. La interfaz maneja actualizaciones
-y movimientos de reserva, pero su efecto real pueden variar según la configuración disponible.
-
-## Advertencias y casos límite
-
-No edite desde el pedido heredado una preventa de esta lista. Una fila sin resultados
-puede responder a filtros o estado. Revise el estado antes de modificar ítems.
-
-## Problemas frecuentes y condiciones de detención
-
-- Preventa no encontrada: limpie o ajuste filtros antes de concluir que no existe.
-- Estado no editable: no fuerce una modificación; revise el detalle y el contexto.
-- Ítems o total inesperados: detenga la actualización y revise el origen.
-
-## Enlaces relacionados
-
-- [Crear un pedido de preventa](crear-pedido.md)
-- [Confirmar, anular o convertir una preventa en venta](confirmar-anular-convertir.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

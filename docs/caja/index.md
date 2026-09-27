@@ -1,11 +1,13 @@
-# Caja y reportes
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-Las cifras, filtros, métodos y acciones pueden variar según la sesión y la
-configuración. Estas fichas describen recorridos disponibles; no confirman
-permisos, autorizaciones ni resultados de un entorno desplegado.
+# Guías disponibles
 
-## Fichas disponibles
+Estas fichas históricas no forman parte del catálogo actual de tareas.
 
-- [6.13 Revisar ingresos, egresos y saldo de caja](revisar-ingresos-y-egresos.md)
-- [6.14 Registrar el saldo inicial de caja](registrar-saldo-inicial.md)
-- [6.15 Registrar una inyección o ajuste manual de caja](registrar-operacion-manual.md)
+[Ver las guías disponibles](../index.md)

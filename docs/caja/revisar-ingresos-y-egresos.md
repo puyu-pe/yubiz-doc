@@ -1,79 +1,30 @@
-<a id="revisar-ingresos-egresos-y-saldo-de-caja"></a>
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-# 6.13 Revisar ingresos, egresos y saldo de caja
+# Guías disponibles
+
+<a id="613-revisar-ingresos-egresos-y-saldo-de-caja"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
 
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Consultar el resumen de movimientos de caja para un período y revisar ingresos,
-egresos, saldo, detalle comercial y montos agrupados por método mostrado.
-
-## Acceso condicional
-
-Los establecimientos, personas usuarias, métodos, cifras y acciones disponibles
-dependen de la sesión y configuración. El saldo mostrado es un cálculo del reporte
-para el filtro seleccionado; no confirma conciliación, cierre, entrega ni una regla
-contable de la organización.
-
-## Requisitos y datos
-
-- Establecimiento, persona usuaria y rango de fechas que se desea revisar.
-- Un rango donde la fecha inicial no sea posterior a la final.
-- Contexto operativo para interpretar ventas, compras, gastos y operaciones manuales.
-
-## Punto de partida
-
-Abra el reporte de ingresos y egresos. Revise los filtros antes de buscar y espere
-que se actualicen los datos después de cambiar el establecimiento.
-
-## Pasos
-
-1. Seleccione un establecimiento o mantenga **Todos** cuando necesite una vista
-   amplia disponible para su sesión.
-2. Elija una persona usuaria si corresponde; el selector se actualiza al cambiar el
-   establecimiento.
-3. Indique las fechas **Desde** y **Hasta** y seleccione **Buscar**.
-4. Revise ingresos, egresos y el saldo mostrado para ese filtro antes de tomar una
-   decisión operativa.
-5. Contraste el detalle comercial de ventas, compras y gastos, incluidos los valores
-   válidos, anulaciones y total presentados.
-6. Revise saldo inicial, inyecciones y ajustes manuales por separado; no los mezcle
-   con una confirmación de dinero físico.
-7. Si el resumen requiere entrega o conciliación, confirme primero los registros de
-   origen y el procedimiento aplicable de su organización.
-
-## Campos y validaciones observados
-
-El formulario incluye establecimiento, usuario, fecha inicial y fecha final. La
-interfaz rechaza fechas inválidas y una fecha inicial posterior a la final.
-El tablero muestra totales de ingreso y egreso, saldo, detalle comercial, operaciones
-manuales y montos agrupados por los métodos disponibles en la interfaz.
-
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El reporte calcula el saldo como ingresos menos egresos para el filtro recibido y
-presenta totales por tipo de movimiento y método. Una pantalla sin datos limpia los
-valores mostrados. La exactitud de registros, alcance del filtro y significado de
-cada total deben verificarse en el entorno de trabajo.
-
-## Advertencias y casos límite
-
-No interprete un saldo positivo como efectivo disponible ni un resumen por método
-como conciliación bancaria. Un movimiento anulado puede mostrarse de forma separada.
-Evite comparar períodos o establecimientos distintos sin revisar los filtros activos.
-
-## Problemas frecuentes y condiciones de detención
-
-- Fechas inválidas o invertidas: corrija el rango antes de buscar.
-- Datos inesperados: detenga la revisión y confirme establecimiento, usuario y período.
-- Saldo sin respaldo operativo: no entregue ni ajuste caja hasta revisar los movimientos de origen.
-
-## Enlaces relacionados
-
-- [Registrar el saldo inicial de caja](registrar-saldo-inicial.md)
-- [Registrar una inyección o ajuste manual de caja](registrar-operacion-manual.md)
-- [Caja y reportes](index.md)
+<a id="revisar-ingresos-egresos-y-saldo-de-caja"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>

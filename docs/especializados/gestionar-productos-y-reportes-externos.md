@@ -1,55 +1,30 @@
-<a id="gestionar-productos-y-reportes-externos"></a>
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-# 5.13 Gestionar productos y reportes externos
+# Guías disponibles
+
+<a id="513-gestionar-productos-y-reportes-externos"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
 
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Usar los recorridos especializados para PLE, carga de ticket y reporte de ingresos externos sin exponer datos operativos.
-
-## Acceso condicional
-
-El menú declarado incluye **Reporte PLE**, **Cargar ticket abono** y **Reporte de ingresos externos**. La disponibilidad y el propósito operativo requieren verificación.
-
-## Requisitos y datos
-
-- Archivo de texto autorizado para la carga, cuando la acción esté disponible.
-- Período y filtros para consultar el reporte externo.
-
-## Punto de partida
-
-Abra la acción especializada que corresponda y revise los campos visibles antes de seleccionar un archivo o solicitar un reporte.
-
-## Pasos
-
-1. Para PLE o reporte externo, complete los filtros disponibles y ejecute la consulta.
-2. Revise filas, total y período antes de exportar.
-3. Para una carga de ticket, seleccione un archivo de texto autorizado.
-4. Revise la vista previa de los datos que muestre la interfaz.
-5. Deténgase ante datos incompletos o inesperados; no confirme la carga sin revisión.
-
-## Campos y validaciones observados
-
-La interfaz de carga acepta archivos TXT de hasta 4 MB antes de generar una vista previa. La interfaz evita secciones, fechas, números, importes o ítems no válidos. El reporte externo limita la exportación a 10 000 filas y el período a tres meses.
-
+<a id="gestionar-productos-y-reportes-externos"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La interfaz puede mostrar una vista previa, guardar registros asociados a la carga y generar un reporte exportable. Sus efectos, mensajes y archivos finales son pendientes.
-
-## Advertencias y casos límite
-
-No cargue archivos con datos no autorizados ni use esta guía para interpretar saldos. Reduzca el período si supera el límite y deténgase ante una vista previa incorrecta.
-
-## Problemas frecuentes y condiciones de detención
-
-- Archivo no TXT o mayor que el límite: elija un archivo válido.
-- Datos de vista previa incompletos: no continúe con el guardado.
-- Período demasiado amplio: reduzca filtros antes de exportar.
-
-## Enlaces relacionados
-
-- [Módulos especializados](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

@@ -1,29 +1,34 @@
 <a id="buscar-filtrar-y-revisar-el-detalle-de-ventas"></a>
 
-# 2.8 Buscar, filtrar y revisar el detalle de ventas
+# 2.6 Consultar una venta, imprimirla o comunicarla
+
+<a id="28-buscar-filtrar-y-revisar-el-detalle-de-ventas"></a>
+<a id="objetivo"></a>
+<a id="punto-de-partida"></a>
+<a id="resultado-esperado"></a>
 
 <a id="estado"></a>
 <a id="verificaciones-pendientes-en-runtime"></a>
+<a id="acceso-condicional"></a><a id="requisitos-y-datos"></a><a id="campos-y-validaciones-observados"></a><a id="advertencias-y-casos-limite"></a><a id="problemas-frecuentes-y-condiciones-de-detencion"></a><a id="enlaces-relacionados"></a>
 
-## Objetivo
+Ubique una venta, revise su detalle y use la impresión o comunicación disponibles solo después de confirmar que es el documento correcto.
 
-Ubicar una venta en la lista, aplicar los filtros disponibles y revisar su detalle
-antes de continuar con una acción operativa.
-
-## Acceso condicional
+## Antes de empezar
 
 La lista, sus columnas, filtros, exportaciones y acciones del detalle dependen de
 la sesión, módulo y configuración disponible.
 
-## Requisitos y datos
+### Datos necesarios
 
 - Acceso a la lista de ventas.
 - Un dato de búsqueda o filtro, cuando sea necesario.
 - Identificación de la venta que se desea revisar.
 
-## Punto de partida
+## Cómo acceder
 
-En la pantalla de lista de ventas.
+1. En la barra lateral, abra **Ventas**.
+2. Seleccione **Ventas**.
+3. Seleccione la venta para abrir su detalle.
 
 ## Pasos
 
@@ -35,10 +40,10 @@ En la pantalla de lista de ventas.
    **Restablecer columnas** cuando esas opciones estén visibles.
 4. Abra el detalle de la venta seleccionada para revisar datos del cliente, datos
    generales, ítems y pagos mostrados.
-5. Use las opciones de exportación o detalle solo después de confirmar que la fila
-   corresponde a la operación que busca.
+5. Use **Imprimir** o la opción de comunicación que esté disponible solo después de confirmar que la fila corresponde a la operación que busca.
+6. Revise el resultado visible de esa acción junto con el documento abierto; no use el intento de imprimir o comunicar como comprobación de que la venta fue registrada.
 
-## Campos y validaciones observados
+### Datos que debe revisar
 
 La lista define columnas para documento, serie, correlativo, fechas, línea,
 cliente, establecimiento, subtotal, impuesto, total, pagado, deuda, usuario,
@@ -46,21 +51,18 @@ personalizables que aparezcan en el entorno no sustituyen la revisión del detal
 
 <a id="resultado-revisado-en-fuente"></a>
 
-## Resultado esperado
+## Compruebe el resultado
 
-El navegador carga una tabla de ventas, permite abrir el detalle de una fila y
-ofrece controles para editar columnas, limpiar o restablecer filtros y generar
-salidas. El contenido, los filtros efectivos y los resultados de exportación
-pueden variar según la configuración disponible.
+El navegador carga una tabla de ventas, permite abrir el detalle de una fila y puede ofrecer controles para imprimir o comunicar el documento. Compruebe primero que el detalle, el cliente, los ítems y los importes son los que buscaba; el resultado de una salida puede variar según la configuración disponible.
 
-## Advertencias y casos límite
+## Situaciones frecuentes
 
 Los montos pagado y deuda son datos financieros. No tome una fila, un estado o una
 salida generada como comprobación definitiva sin contrastarla con el detalle y la
 operación real. La disponibilidad de exportaciones y acciones del detalle puede
 variar.
 
-## Problemas frecuentes y condiciones de detención
+### Si necesita detenerse
 
 - No encuentra la venta: revise filtros, columnas y datos de documento antes de
   concluir que no existe.
@@ -69,8 +71,7 @@ variar.
 - Una exportación o control no está disponible: no lo sustituya con una acción no
   observada; confirme la configuración de su entorno.
 
-## Enlaces relacionados
+## Continuar con
 
-- [Elegir documento, serie, fecha y almacén de una venta](configurar-datos-del-documento.md)
 - [Registrar cobro posterior y consultar saldo](registrar-cobro-posterior-y-consultar-saldo.md)
-- [Crear y gestionar cotizaciones](gestionar-cotizaciones.md)
+- [Crear y consultar cotizaciones](gestionar-cotizaciones.md)

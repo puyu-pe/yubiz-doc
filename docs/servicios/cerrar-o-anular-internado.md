@@ -1,64 +1,30 @@
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
+
+# Guías disponibles
+
+<a id="54-convertir-anular-o-imprimir-un-internado"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
+
 <a id="convertir-anular-o-imprimir-un-internado"></a>
-
-# 5.4 Convertir, anular o imprimir un internado
-
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Revisar las acciones disponibles para convertir, imprimir o anular una orden de
-servicio sin asumir resultados operativos no verificados.
-
-## Acceso condicional
-
-Estas acciones aparecen desde el detalle de **Internados**. Su disponibilidad varía
-según el estado de la orden y el entorno.
-
-## Requisitos y datos
-
-- Orden correcta abierta en el detalle.
-- Confirmación operativa antes de anular o convertir.
-
-## Punto de partida
-
-Abra una orden desde **Internados** y revise su estado antes de usar el menú de
-acciones.
-
-## Pasos
-
-1. Confirme el número, cliente, unidad, ítems y estado de la orden.
-2. Para convertir, elija la acción disponible y revise el contexto de la venta.
-3. Para imprimir, seleccione orden o nota y compruebe el documento generado.
-4. Para anular, confirme que es la orden correcta y acepte la confirmación mostrada.
-5. Regrese a la lista y compruebe el estado que presenta la interfaz.
-
-## Campos y validaciones observados
-
-El detalle deshabilita convertir y anular cuando la orden está anulada o ya fue
-convertida. La anulación solicita confirmación antes de enviar la acción; las
-salidas impresas usan el identificador de la orden.
-
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La anulación actualiza el estado dentro de una transacción y la lista se recarga.
-La conversión abre el flujo de venta y la impresión solicita el documento; sus
-resultados operativos deben verificarse en el entorno.
-
-## Advertencias y casos límite
-
-Anular o convertir cambia el contexto del registro. Deténgase si no puede confirmar
-la orden o si la interfaz marca la acción como no disponible.
-
-## Problemas frecuentes y condiciones de detención
-
-- Acción deshabilitada: respete el estado mostrado y no fuerce una alternativa.
-- Impresión sin resultado visible: no asuma que se generó el documento.
-- Duda sobre la orden: deténgase antes de confirmar la anulación.
-
-## Enlaces relacionados
-
-- [Consultar un internado y agregar procedimientos](gestionar-internado.md)
-- [Servicios](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

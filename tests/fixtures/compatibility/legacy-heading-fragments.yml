@@ -1,0 +1,16 @@
+source: |
+  <a id="legacy-entry"></a>
+
+  # 2.4 Registrar venta al contado
+
+  ## Objetivo
+
+  ## Punto de partida
+
+  ## Resultado esperado
+fragments:
+  - legacy-entry
+  - 24-registrar-venta-al-contado
+  - objetivo
+  - punto-de-partida
+  - resultado-esperado

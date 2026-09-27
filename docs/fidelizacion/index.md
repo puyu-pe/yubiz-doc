@@ -1,8 +1,5 @@
-# Fidelización
+# Campañas de descuento
 
-La campaña descrita es condicional. Los descuentos, productos, fechas y resultados
-efectivos requieren verificación en el entorno.
+## Guías disponibles
 
-## Fichas disponibles
-
-- [7.8 Gestionar campañas de descuento](gestionar-campanas.md)
+- [4.1 Crear campañas de descuento y asignar productos](crear-campanas-descuento.md)

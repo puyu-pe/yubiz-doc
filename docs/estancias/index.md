@@ -1,12 +1,13 @@
-# Estancias
+# Estancia
 
-Los nombres visibles, datos disponibles y resultados pueden variar según la
-configuración del entorno.
+## Guías disponibles
 
-## Fichas disponibles
-
-- [5.6 Registrar una estancia](registrar-estancia.md)
-- [5.7 Consultar las estancias del día, la lista y el detalle](gestionar-estancias.md)
-- [5.8 Gestionar sujetos y personas relacionadas](gestionar-personas-de-la-estancia.md)
-- [5.9 Gestionar tarifas, relaciones y descuentos](gestionar-tarifas-y-descuentos.md)
-- [5.10 Convertir, anular y consultar reportes de estancias](convertir-o-anular-estancia.md)
+- [11.1 Registrar una estancia](registrar-estancia-contract.md)
+- [11.2 Consultar estancias del día y su detalle](consultar-estancias-detalle.md)
+- [11.3 Registrar sujetos y personas relacionadas](registrar-sujetos-personas.md)
+- [11.4 Registrar y actualizar tarifas de estadía](registrar-actualizar-tarifas-estadia.md)
+- [11.5 Registrar y actualizar relaciones de estancia](registrar-actualizar-relaciones-estancia.md)
+- [11.6 Crear y consultar descuentos de estancia](crear-consultar-descuentos-estancia.md)
+- [11.7 Consultar el reporte de estancias](consultar-reporte-estancias.md)
+- [11.8 Convertir una estancia en venta](convertir-estancia-en-venta.md)
+- [11.9 Anular una estancia](anular-estancia.md)

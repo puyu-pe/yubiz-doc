@@ -1,73 +1,39 @@
-<a id="crear-un-pedido-de-compra"></a>
+<a id="61-crear-un-pedido-de-compra"></a>
 
-# 6.1 Crear un pedido de compra
+# 7.1 Crear un pedido de compra
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Prepare un pedido de compra con proveedor, productos y cantidades antes de convertirlo en una orden.
 
-Registrar un pedido de compra con su proveedor, documento, fecha y detalle de
-productos cuando esta opción esté disponible para la sesión.
+## Cómo acceder
 
-## Acceso condicional
+1. En la barra lateral, abra **Compras**.
+2. Seleccione **Crear Pedido**.
 
-La disponibilidad del módulo, los documentos, las series y los productos depende de
-la configuración, el establecimiento y la sesión. Esta guía no confirma permisos ni
-reglas de aprobación en el entorno desplegado.
+## Antes de empezar
 
-## Requisitos y datos
-
-- Proveedor identificable y documento y serie disponibles.
-- Fecha del pedido y, por cada línea, producto, cantidad, descripción, importe y
-  tipo de IGV aplicable.
-- Observaciones para impresión o uso interno solo si son necesarias.
-
-## Punto de partida
-
-Abra el formulario para crear un pedido de compra. Tenga los datos comerciales antes
-de agregar productos para poder revisar el total completo.
+- Tenga proveedor, fecha, productos, cantidades y precios de referencia.
 
 ## Pasos
 
-1. Seleccione el proveedor y revise el documento y la serie mostrados.
-2. Indique la fecha del pedido.
-3. Agregue cada producto y complete cantidad, descripción, valor unitario, tipo de
-   IGV, precio unitario e importe.
-4. Revise subtotal, IGV y total calculados por la tabla.
-5. Agregue detalle de impresión u observación interna solo cuando corresponda.
-6. Registre el pedido y conserve la referencia generada para consultarla después.
+1. Seleccione proveedor, documento, serie y fecha cuando el formulario los muestre.
+2. Agregue cada producto con cantidad, medida y precio; revise el total y observación antes de guardar.
+3. Guarde el pedido y ubíquelo en la lista.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La interfaz solicita documento, serie, fecha y proveedor. La validación revisada
-exige esos datos; para cada detalle exige producto, cantidad, descripción, valor
-unitario e importe. La serie tiene un límite de longitud en la validación del
-formulario. Los mensajes exactos pueden variar según la configuración disponible.
+Abra el pedido y compruebe proveedor, documento, serie, productos, cantidades y total.
 
+<a id="crear-un-pedido-de-compra"></a>
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El flujo registra la cabecera y sus detalles dentro de una transacción y asigna un
-correlativo de la serie. El pedido es un documento de solicitud: no equivale por sí
-mismo a una orden de compra ni confirma recepción, stock, pago o efecto contable.
-
-## Advertencias y casos límite
-
-No registre productos eliminados que continúen en la tabla. Revise importes e IGV
-antes de guardar; los campos de resumen son calculados y no sustituyen la revisión
-del detalle. Una observación interna no debe reemplazar los datos del producto.
-
-## Problemas frecuentes y condiciones de detención
-
-- Falta proveedor, documento, serie o fecha: complete los campos antes de registrar.
-- Una línea no tiene producto, cantidad, descripción, valor o importe: corríjala o
-  retírela antes de continuar.
-- El resultado no es claro: consulte la lista antes de repetir el registro.
-
-## Enlaces relacionados
-
-- [Consultar, editar y notificar pedidos de compra](gestionar-pedidos.md)
-- [Registrar una orden de compra](registrar-orden.md)
-- [Compras](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

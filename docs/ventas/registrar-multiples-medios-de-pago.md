@@ -1,71 +1,30 @@
-<a id="registrar-pagos-con-uno-o-varios-medios"></a>
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-# 2.10 Registrar pagos con uno o varios medios
+# Guías disponibles
+
+<a id="210-registrar-pagos-con-uno-o-varios-medios"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
 
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Distribuir el pago de una venta entre los medios que el formulario tenga
-disponibles, revisando el total pagado, la deuda y el vuelto calculados.
-
-## Acceso condicional
-
-Esta guía aplica solo cuando el detalle de pago y los medios correspondientes están
-habilitados para la venta, la sesión y la configuración del entorno.
-
-## Requisitos y datos
-
-- Venta con cliente, documento, serie, fecha, almacén e ítems revisados.
-- Total mostrado por el formulario.
-- Monto y, cuando aparezca, detalle u operación del medio de pago.
-
-## Punto de partida
-
-En el detalle de pago que se abre al registrar una venta.
-
-## Pasos
-
-1. Revise el total de la venta antes de agregar o modificar un medio de pago.
-2. Agregue los medios que estén disponibles, como efectivo, billetera móvil o
-   transferencia, solo si corresponden al cobro recibido.
-3. Ingrese un monto positivo en cada medio y complete el detalle u operación cuando
-   el formulario lo solicite.
-4. Revise **Total pagado**, **Deuda** y **Vuelto** después de cada cambio.
-5. Si queda deuda, complete una fecha de vencimiento posterior a la fecha de
-   emisión antes de confirmar.
-6. Confirme únicamente cuando la suma de los medios y los importes mostrados
-   representen la operación real.
-
-## Campos y validaciones observados
-
-El formulario calcula total pagado, deuda y vuelto a partir de los montos
-ingresados. Cada monto debe ser válido y mayor que cero. Solo permite un medio de
-
+<a id="registrar-pagos-con-uno-o-varios-medios"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El navegador incorpora los medios de pago junto con la venta y sus ítems en el
-flujo de registro. Los datos de cada medio incluyen monto y, según el tipo, detalle
-
-## Advertencias y casos límite
-
-Esta es una operación financiera. No ajuste importes para forzar un resultado ni
-interprete el vuelto o la deuda calculados como una conciliación externa. Los medios
-disponibles y sus nombres pueden variar; no infiera políticas, permisos ni efectos
-contables desde esta guía.
-
-## Problemas frecuentes y condiciones de detención
-
-- Monto vacío, no numérico o no positivo: corrija el importe antes de confirmar.
-- Dos medios de efectivo: retire uno; el control observado admite solo uno.
-- Suma mayor que el total o deuda con fecha inválida: detenga el registro y revise
-  medios, montos y fechas.
-
-## Enlaces relacionados
-
-- [Registrar venta al contado](registrar-venta-al-contado.md)
-- [Registrar una venta con saldo pendiente](registrar-venta-con-saldo-pendiente.md)
-- [Registrar cobro posterior y consultar saldo](registrar-cobro-posterior-y-consultar-saldo.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

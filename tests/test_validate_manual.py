@@ -1,20 +1,39 @@
 from __future__ import annotations
 
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
+import re
+import json
 from pathlib import Path
 
 import yaml
 
-from scripts.validate_manual import validate_manual
+from scripts.validate_manual import anchor_ids, validate_manual
 
 
-FIXTURES = Path(__file__).parent / "fixtures" / "manual"
 PROJECT_ROOT = Path(__file__).parent.parent
+FIXTURES = Path(__file__).parent / "fixtures" / "manual"
 
 
 class ValidateManualTests(unittest.TestCase):
+    def copy_manual(self) -> Path:
+        temporary_directory = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary_directory.cleanup)
+        destination = Path(temporary_directory.name) / "manual"
+        shutil.copytree(PROJECT_ROOT, destination, ignore=shutil.ignore_patterns(".git", ".build", "__pycache__", ".venv"))
+        return destination
+
+    def migration(self, root: Path) -> dict[str, object]:
+        return yaml.safe_load((root / "documentation/task-manual-migration.yml").read_text(encoding="utf-8"))
+
+    def write_migration(self, root: Path, migration: dict[str, object]) -> None:
+        (root / "documentation/task-manual-migration.yml").write_text(
+            yaml.safe_dump(migration, allow_unicode=True, sort_keys=False), encoding="utf-8"
+        )
+
     def copy_fixture(self, name: str) -> Path:
         temporary_directory = tempfile.TemporaryDirectory()
         self.addCleanup(temporary_directory.cleanup)
@@ -22,395 +41,390 @@ class ValidateManualTests(unittest.TestCase):
         shutil.copytree(FIXTURES / name, destination)
         return destination
 
-    def test_counts_only_non_index_fichas_at_any_depth(self) -> None:
-        report = validate_manual(self.copy_fixture("valid"))
+    def metadata(self, root: Path, name: str) -> dict[str, object]:
+        return yaml.safe_load((root / "documentation" / name).read_text(encoding="utf-8"))
 
-        self.assertTrue(report.is_valid)
-        self.assertEqual(2, report.ficha_count)
+    def write_metadata(self, root: Path, name: str, value: dict[str, object]) -> None:
+        (root / "documentation" / name).write_text(yaml.safe_dump(value, allow_unicode=True, sort_keys=False), encoding="utf-8")
 
-    def test_requires_all_sections_and_visible_statuses(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(ficha.read_text(encoding="utf-8").replace("## Pasos\n", ""), encoding="utf-8")
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertIn("required-section", report.diagnostics[0])
-        self.assertIn("Pasos", report.diagnostics[0])
-
-    def test_redacts_fixture_content_from_diagnostics(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text("# secreto-de-prueba\n", encoding="utf-8")
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertIn("required-section", report.diagnostics[0])
-        self.assertNotIn("secreto-de-prueba", report.diagnostics[0])
-
-    def test_final_mode_rejects_pending_enrichment(self) -> None:
-        report = validate_manual(self.copy_fixture("valid"), final=True)
-
-        self.assertFalse(report.is_valid)
-        self.assertIn("pending-enrichment", report.diagnostics[0])
-
-    def test_live_partial_manual_accepts_pending_enrichment_fichas(self) -> None:
+    def test_contract_manual_is_complete(self) -> None:
         report = validate_manual(PROJECT_ROOT)
+        migration = self.migration(PROJECT_ROOT)
+        records = migration["compatibility"]["records"]
 
         self.assertTrue(report.is_valid, report.diagnostics)
-        self.assertEqual(report.document_count, report.ficha_count)
+        self.assertEqual(83, report.ficha_count)
+        self.assertEqual(12, len({entry["group"] for entry in migration["active_entries"]}))
+        self.assertEqual(88, len(records))
+        self.assertEqual(352, sum(len(record["fragments"]) for record in records))
+        self.assertEqual(1320, sum(len(record["historical_fragments"]) for record in records))
 
-    def test_valid_fixture_enforces_metadata_parity_and_canonical_ids(self) -> None:
-        report = validate_manual(self.copy_fixture("valid"))
+    def test_frozen_baseline_retains_numbered_and_renamed_heading_fragments(self) -> None:
+        fixture = yaml.safe_load((FIXTURES.parent / "compatibility/legacy-heading-fragments.yml").read_text(encoding="utf-8"))
+        self.assertEqual(set(fixture["fragments"]), anchor_ids(fixture["source"]))
+        self.assertTrue(validate_manual(PROJECT_ROOT, audit_compatibility=True).is_valid)
 
-        self.assertTrue(report.is_valid)
-        self.assertEqual(2, report.document_count)
-        self.assertEqual({"CAP-01", "CAP-02", "CAP-03"}, set(report.capability_ids))
+    def test_v1_rendered_baseline_rejects_a_missing_captured_h1_alias(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/catalogo/gestionar-productos.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace('<a id="41-registrar-y-actualizar-productos"></a>\n', "", 1), encoding="utf-8")
+        self.assertTrue(any("v1-rendered-anchor" in item for item in validate_manual(root).diagnostics))
 
-    def test_reports_duplicate_capability_and_missing_navigation_parity(self) -> None:
-        root = self.copy_fixture("valid")
-        inventory = root / "documentation" / "inventory.yml"
-        inventory.write_text(inventory.read_text(encoding="utf-8").replace("CAP-03", "CAP-01"), encoding="utf-8")
+    def test_progress_requires_exact_v2_titles_and_paths(self) -> None:
+        root = self.copy_manual()
+        progress = self.metadata(root, "task-manual-v2-progress.yml")
+        progress["contract_targets"][1]["tasks"][5]["imprimirla o comunicarla"] = None
+        self.write_metadata(root, "task-manual-v2-progress.yml", progress)
+        self.assertTrue(any("progress-target-shape" in item for item in validate_manual(root).diagnostics))
+
+    def test_procedure_evidence_requires_immutable_revision_and_bounded_execution(self) -> None:
+        root = self.copy_manual()
+        inventory = self.metadata(root, "inventory.yml")
+        evidence = next(document["procedure_evidence"] for document in inventory["documents"] if "procedure_evidence" in document)
+        evidence["reviewed_revision"] = "330857"
+        self.write_metadata(root, "inventory.yml", inventory)
+        self.assertTrue(any("invalid-procedure-evidence" in item for item in validate_manual(root).diagnostics))
+
+    def test_rendered_search_excludes_declared_compatibility_only_pages(self) -> None:
+        root = self.copy_manual()
+        site = root / ".build" / "search-exclusion"
+        subprocess.run(
+            [sys.executable, "-m", "mkdocs", "build", "--strict", "--clean", "--site-dir", str(site)],
+            check=True,
+            cwd=root,
+        )
+        migration = self.migration(root)
+        search = json.loads((site / "search/search_index.json").read_text(encoding="utf-8"))["docs"]
+        locations = {entry["location"].split("#", 1)[0] for entry in search}
+        hidden = {path.removesuffix(".md") + "/" for path in migration["compatibility"]["search_hidden"]}
+        active = {entry["target"].removesuffix(".md") + "/" for entry in migration["active_entries"]}
+        self.assertFalse(hidden & locations)
+        self.assertTrue(active & locations)
+        indexed_text = json.dumps(search, ensure_ascii=False)
+        for title in (
+            "Registrar y consultar cargas de contenedores",
+            "Registrar categorías de gasto y costos fijos",
+            "Registrar y actualizar usuarios",
+            "Registrar y actualizar vendedores",
+            "Asignar establecimientos a vendedores",
+        ):
+            self.assertNotIn(title, indexed_text)
+
+    def test_searchable_page_cannot_link_to_a_held_task(self) -> None:
+        root = self.copy_manual()
+        index = root / "docs/inventario/index.md"
+        index.write_text("# Inventario\n\n[Histórico](gestionar-cargas-de-contenedores.md)\n", encoding="utf-8")
+        self.assertTrue(any("searchable-held-link" in item for item in validate_manual(root).diagnostics))
+
+    def test_missing_required_core_section_fails(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("## Pasos", "## Recorrido", 1), encoding="utf-8")
+
+        self.assertTrue(any("required-section" in item for item in validate_manual(root).diagnostics))
+
+    def test_access_audit_requires_complete_literal_routes_and_honest_gaps(self) -> None:
+        root = self.copy_manual()
+        audit = yaml.safe_load((root / "documentation/access-audit.yml").read_text(encoding="utf-8"))
+        audit["records"].pop()
+        (root / "documentation/access-audit.yml").write_text(yaml.safe_dump(audit, allow_unicode=True, sort_keys=False), encoding="utf-8")
+        self.assertTrue(any("access-audit-coverage" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        guide = root / "docs/ventas/gestionar-cotizaciones.md"
+        guide.write_text(re.sub(r"(## Cómo acceder\n\n).*?(?=\n## )", r"\1Abra el formulario de cotización.\n", guide.read_text(encoding="utf-8"), count=1, flags=re.S), encoding="utf-8")
+        self.assertTrue(any("access-label-coverage" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("## Cómo acceder\n\n", "## Cómo acceder\n\nNo se confirmó una entrada lateral literal\n", 1), encoding="utf-8")
+        self.assertTrue(any("access-public-audit-note" in item for item in validate_manual(root).diagnostics))
+
+    def test_access_audit_requires_meaningful_ordered_steps_for_confirmed_routes(self) -> None:
+        root = self.copy_manual()
+        audit = yaml.safe_load((root / "documentation/access-audit.yml").read_text(encoding="utf-8"))
+        record = next(record for record in audit["records"] if record["guide"] == "2.4")
+        record["access_steps"] = ["Abra el formulario."]
+        (root / "documentation/access-audit.yml").write_text(yaml.safe_dump(audit, allow_unicode=True, sort_keys=False), encoding="utf-8")
+        self.assertTrue(any("access-audit-steps" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        guide = root / "docs/ventas/gestionar-cotizaciones.md"
+        guide.write_text(re.sub(r"\n3\. .*?(?=\n## )", "", guide.read_text(encoding="utf-8"), count=1, flags=re.S), encoding="utf-8")
+        self.assertTrue(any("access-step-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_access_audit_supports_dynamic_three_level_and_detail_routes(self) -> None:
+        root = self.copy_manual()
+        audit = yaml.safe_load((root / "documentation/access-audit.yml").read_text(encoding="utf-8"))
+        commission = next(record for record in audit["records"] if record["guide"] == "2.13")
+        self.assertEqual(["Ventas", "Reportes", "Ingreso egreso dinero"], commission["sidebar"])
+        confirmation = next(record for record in audit["records"] if record["guide"] == "6.3")
+        self.assertIn("doble clic", confirmation["access_steps"][2])
+        self.assertIn("Confirmar", confirmation["access_steps"][2])
+        self.assertEqual("quickstart", next(record for record in audit["records"] if record["guide"] == "1.1")["classification"])
+        self.assertEqual([], [record["guide"] for record in audit["records"] if record["classification"] == "technical-gap"])
+
+    def test_duplicate_or_missing_contract_entry_fails(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        migration["active_entries"][1]["number"] = "1.1"
+        self.write_migration(root, migration)
+
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("duplicate-active-entry" in item for item in diagnostics))
+
+    def test_navigation_title_number_and_path_must_match_registry(self) -> None:
+        root = self.copy_manual()
         config = root / "mkdocs.yml"
-        config.write_text(config.read_text(encoding="utf-8").replace("      - Cliente: ventas/seleccionar-cliente.md\n", ""), encoding="utf-8")
+        config.write_text(config.read_text(encoding="utf-8").replace("2.1 Registrar una venta al contado", "2.9 Registrar una venta al contado", 1), encoding="utf-8")
 
-        report = validate_manual(root)
+        self.assertTrue(any("nav-parity" in item for item in validate_manual(root).diagnostics))
 
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("duplicate-capability-id" in item for item in report.diagnostics))
-        self.assertTrue(any("nav-parity" in item for item in report.diagnostics))
+    def test_legacy_path_and_exact_anchor_are_required(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        records = migration["compatibility"]["records"]
+        records.pop()
+        self.write_migration(root, migration)
+        self.assertTrue(any("legacy-path-coverage" in item for item in validate_manual(root).diagnostics))
 
-    def test_rejects_invalid_final_classification_and_pending_states(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        record = next(record for record in migration["compatibility"]["records"] if record["fragments"])
+        alias = record["fragments"][0]
+        source = root / "docs" / record["path"]
+        source.write_text(source.read_text(encoding="utf-8").replace(f'<a id="{alias}"></a>', "", 1), encoding="utf-8")
+        self.assertTrue(any("legacy-historical-anchor" in item for item in validate_manual(root).diagnostics))
+
+    def test_compatibility_page_cannot_be_active_or_navigated(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        compatibility_path = next(record["path"] for record in migration["compatibility"]["records"] if record["path"] not in {entry["target"] for entry in migration["active_entries"]})
+        migration["active_entries"][0]["target"] = compatibility_path
+        self.write_migration(root, migration)
+
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("active-title" in item for item in diagnostics))
+        self.assertTrue(any("inventory-parity" in item for item in diagnostics))
+
+    def test_unclassified_markdown_and_private_content_fail(self) -> None:
+        root = self.copy_manual()
+        orphan = root / "docs/orphan.md"
+        orphan.write_text("# Orphan\n", encoding="utf-8")
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\ntoken = secret-value\n", encoding="utf-8")
+
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("unclassified-markdown" in item for item in diagnostics))
+        self.assertTrue(any("privacy-secret-assignment" in item for item in diagnostics))
+
+    def test_legacy_valid_and_numbered_fixtures_remain_exercised(self) -> None:
+        self.assertTrue(validate_manual(self.copy_fixture("valid")).is_valid)
+        self.assertTrue(validate_manual(self.copy_fixture("numbered")).is_valid)
+
+    def test_legacy_fixture_requires_its_core_sections_without_leaking_content(self) -> None:
         root = self.copy_fixture("valid")
-        catalog = root / "documentation" / "capability-dispositions.yml"
-        catalog.write_text(catalog.read_text(encoding="utf-8").replace("classification: conditional", "classification: uncertain"), encoding="utf-8")
+        guide = root / "docs/ventas/elegir-establecimiento.md"
+        guide.write_text("# secreto-de-prueba\n", encoding="utf-8")
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("required-section" in item for item in diagnostics))
+        self.assertFalse(any("secreto-de-prueba" in item for item in diagnostics))
 
-        report = validate_manual(root, final=True)
+    def test_legacy_final_mode_rejects_pending_enrichment(self) -> None:
+        diagnostics = validate_manual(self.copy_fixture("valid"), final=True).diagnostics
+        self.assertIn("pending-enrichment", diagnostics)
 
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("illegal-disposition" in item for item in report.diagnostics))
-        self.assertTrue(any("pending-enrichment" in item for item in report.diagnostics))
-
-    def test_allows_documented_conditional_without_grant_fields(self) -> None:
-        report = validate_manual(self.copy_fixture("valid"))
-
-        self.assertTrue(report.is_valid, report.diagnostics)
-
-    def test_rejects_excluded_capability_with_inventory_or_canonical_document(self) -> None:
+    def test_legacy_duplicate_capability_and_numbering_regressions_fail(self) -> None:
         root = self.copy_fixture("valid")
-        catalog = root / "documentation" / "capability-dispositions.yml"
-        catalog.write_text(
-            catalog.read_text(encoding="utf-8").replace(
-                "classification: core\n    disposition: documented\n    canonical_doc_id: sales-context",
-                "classification: core\n    disposition: owner_excluded_from_documentation\n    reason_category: owner_scope_exclusion\n    canonical_doc_id: sales-context",
-                1,
-            ),
-            encoding="utf-8",
-        )
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("excluded-capability-document" in item for item in report.diagnostics))
-
-    def test_validates_links_anchors_and_redacts_privacy_matches(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(
-            ficha.read_text(encoding="utf-8")
-            + "\n[Ancla inválida](seleccionar-cliente.md#sin-destino)\n"
-            + "token = super-secret-value\n",
-            encoding="utf-8",
-        )
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("broken-anchor" in item for item in report.diagnostics))
-        self.assertTrue(any("privacy-secret-assignment" in item for item in report.diagnostics))
-        self.assertFalse(any("super-secret-value" in item for item in report.diagnostics))
-
-    def test_allows_safe_words_and_yaml_source_revision(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(ficha.read_text(encoding="utf-8") + "\nEl token de turno y la API se comprueban antes de continuar.\n", encoding="utf-8")
-
-        report = validate_manual(root)
-
-        self.assertTrue(report.is_valid)
-
-    def test_allows_clean_reader_fichas(self) -> None:
-        report = validate_manual(self.copy_fixture("valid"))
-        self.assertTrue(report.is_valid, report.diagnostics)
-
-    def test_rejects_raw_reader_status_tokens(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(
-            ficha.read_text(encoding="utf-8")
-            + "\n- `source_reviewed_draft`\n- `pending_runtime_verification`\n",
-            encoding="utf-8",
-        )
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("raw-reader-status" in item for item in report.diagnostics))
-
-    def test_rejects_reader_process_notice(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(
-            ficha.read_text(encoding="utf-8")
-            + "\n> **Borrador revisado en código · verificación en entorno pendiente.**\n",
-            encoding="utf-8",
-        )
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("reader-process-notice" in item for item in report.diagnostics))
-
-    def test_rejects_embedded_process_clauses_but_allows_legacy_aliases(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        clean_text = ficha.read_text(encoding="utf-8")
-        ficha.write_text(
-            clean_text
-            + "\n<a id=\"revision-de-fuente-revisada-en-codigo\"></a>\n"
-            + "La revisión de fuente: revisada en código. Los montos requieren verificación en runtime.\n",
-            encoding="utf-8",
-        )
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("reader-process-notice" in item for item in report.diagnostics))
-        ficha.write_text(clean_text + "\n<a id=\"revision-de-fuente-revisada-en-codigo\"></a>\n", encoding="utf-8")
-        self.assertTrue(validate_manual(root).is_valid)
-
-    def test_allows_operational_draft_and_pending_payment_states(self) -> None:
-        root = self.copy_fixture("valid")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(
-            ficha.read_text(encoding="utf-8")
-            + "\nUna cotización puede permanecer en borrador y un pago puede quedar pendiente.\n",
-            encoding="utf-8",
-        )
-
-        self.assertTrue(validate_manual(root).is_valid)
-
-    def test_numbered_fixture_rejects_wrong_or_duplicate_guide_numbers(self) -> None:
+        inventory = self.metadata(root, "inventory.yml")
+        inventory["documents"][1]["capability_ids"] = ["CAP-01"]
+        self.write_metadata(root, "inventory.yml", inventory)
+        self.assertTrue(any("duplicate-capability-id" in item for item in validate_manual(root).diagnostics))
         root = self.copy_fixture("numbered")
         config = root / "mkdocs.yml"
         config.write_text(config.read_text(encoding="utf-8").replace("1.2 Seleccionar", "1.1 Seleccionar"), encoding="utf-8")
+        self.assertTrue(any("numbering-nav" in item for item in validate_manual(root).diagnostics))
 
-        report = validate_manual(root)
+    def test_checkpoint_revision_and_pending_range_are_consistent(self) -> None:
+        root = self.copy_manual()
+        checkpoint = self.metadata(root, "source-checkpoint.yml")
+        checkpoint["source_revision"] = "not-a-sha"
+        checkpoint["source_sync"]["pending"]["count"] = 0
+        self.write_metadata(root, "source-checkpoint.yml", checkpoint)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("checkpoint-source-revision" in item for item in diagnostics))
 
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("numbering-nav" in item for item in report.diagnostics))
+    def test_checkpoint_preserves_independent_pending_states(self) -> None:
+        root = self.copy_manual()
+        checkpoint = self.metadata(root, "source-checkpoint.yml")
+        checkpoint["runtime_status"] = "verified"
+        self.write_metadata(root, "source-checkpoint.yml", checkpoint)
+        self.assertTrue(any("checkpoint-states" in item for item in validate_manual(root).diagnostics))
 
-    def test_numbered_fixture_rejects_mismatched_h1_and_index_numbers(self) -> None:
-        root = self.copy_fixture("numbered")
-        ficha = root / "docs" / "ventas" / "seleccionar-cliente.md"
-        ficha.write_text(ficha.read_text(encoding="utf-8").replace("# 1.2", "# 1.1"), encoding="utf-8")
-        index = root / "docs" / "ventas" / "index.md"
-        index.write_text(index.read_text(encoding="utf-8").replace("[1.2 Seleccionar", "[1.1 Seleccionar"), encoding="utf-8")
+    def test_final_mode_requires_the_existing_complete_content_scope(self) -> None:
+        root = self.copy_manual()
+        checkpoint = self.metadata(root, "source-checkpoint.yml")
+        checkpoint["scope_state"] = "slice_pending"
+        self.write_metadata(root, "source-checkpoint.yml", checkpoint)
+        self.assertTrue(any("scope-state" in item for item in validate_manual(root, final=True).diagnostics))
 
-        report = validate_manual(root)
+    def test_scoped_source_alignment_cannot_advance_the_global_pin(self) -> None:
+        root = self.copy_manual()
+        inventory = self.metadata(root, "inventory.yml")
+        inventory["documents"][0]["source_revision"] = inventory["active_content_revision"]
+        inventory["scoped_source_bases"][0]["reviewed_revision"] = "not-a-sha"
+        self.write_metadata(root, "inventory.yml", inventory)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("invalid-document-status: source_revision" in item for item in diagnostics))
+        self.assertTrue(any("invalid-scoped-source-basis" in item for item in diagnostics))
 
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("numbering-h1" in item for item in report.diagnostics))
-        self.assertTrue(any("numbering-index" in item for item in report.diagnostics))
+    def test_catalog_rejects_duplicate_ids_and_invalid_dispositions(self) -> None:
+        root = self.copy_manual()
+        catalog = self.metadata(root, "capability-dispositions.yml")
+        catalog["capabilities"].append(dict(catalog["capabilities"][0]))
+        catalog["capabilities"][1]["disposition"] = "coverage_gap"
+        self.write_metadata(root, "capability-dispositions.yml", catalog)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("duplicate-capability-id" in item for item in diagnostics))
+        self.assertTrue(any("illegal-disposition" in item for item in diagnostics))
 
-    def test_explicit_legacy_aliases_require_their_actual_fragment_value(self) -> None:
-        root = self.copy_fixture("valid")
-        target = root / "docs" / "ventas" / "seleccionar-cliente.md"
-        target.write_text(target.read_text(encoding="utf-8") + "\n<a id=\"legacy.fragment\"></a>\n", encoding="utf-8")
-        source = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        source.write_text(source.read_text(encoding="utf-8") + "\n[Alias válido](seleccionar-cliente.md#legacy.fragment)\n", encoding="utf-8")
+    def test_catalog_exclusions_and_historical_gaps_are_checkpoint_bound(self) -> None:
+        root = self.copy_manual()
+        catalog = self.metadata(root, "capability-dispositions.yml")
+        excluded = next(item for item in catalog["capabilities"] if item["disposition"] == "owner_excluded_from_documentation")
+        excluded["disposition"] = "documented"
+        self.write_metadata(root, "capability-dispositions.yml", catalog)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("owner-exclusion-parity" in item for item in diagnostics))
+
+    def test_active_capabilities_must_match_real_catalog_canonicals(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        migration["active_entries"][0]["capability_ids"] = ["SAL-04"]
+        self.write_migration(root, migration)
+        self.assertTrue(any("active-capability-parity" in item for item in validate_manual(root).diagnostics))
+
+    def test_inventory_rejects_duplicate_ids_and_unsafe_paths(self) -> None:
+        root = self.copy_manual()
+        inventory = self.metadata(root, "inventory.yml")
+        inventory["documents"][1]["doc_id"] = inventory["documents"][0]["doc_id"]
+        inventory["documents"][2]["path"] = "../outside.md"
+        self.write_metadata(root, "inventory.yml", inventory)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("duplicate-doc-id" in item for item in diagnostics))
+        self.assertTrue(any("unsafe-document-path" in item for item in diagnostics))
+
+    def test_contract_titles_and_group_order_are_exact(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        migration["active_entries"][0]["title"] = "Otro título"
+        self.write_migration(root, migration)
+        self.assertTrue(any("contract-parity" in item for item in validate_manual(root).diagnostics))
+
+    def test_compatibility_rejects_duplicate_fragments_and_bad_classification(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        record = migration["compatibility"]["records"][0]
+        record["fragments"].append(record["fragments"][0])
+        migration["compatibility"]["indexes"].append(record["path"])
+        self.write_migration(root, migration)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("duplicate-legacy-fragment" in item for item in diagnostics))
+        self.assertTrue(any("invalid-markdown-classification" in item for item in diagnostics))
+
+    def test_compatibility_rejects_loss_of_a_generated_historical_heading(self) -> None:
+        root = self.copy_manual()
+        migration = self.migration(root)
+        record = next(record for record in migration["compatibility"]["records"] if record["path"] == "ventas/registrar-venta-al-contado.md")
+        record["historical_fragments"].remove("24-registrar-venta-al-contado")
+        self.write_migration(root, migration)
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("legacy-historical-anchor-coverage" in item for item in diagnostics))
+
+    def test_links_require_exact_html_ids_and_generated_heading_anchors(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\n[Correcto](#cómo-acceder)\n[Incorrecto](#como-acceder)\n<a id=\"legacy.fragment\"></a>\n[Alias](#legacy-fragment)\n", encoding="utf-8")
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("broken-anchor" in item for item in diagnostics))
+
+    def test_links_reject_empty_bare_and_file_targets(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\n[](otro.md)\n[Vacío]()\n[Archivo](file:///tmp/private)\n", encoding="utf-8")
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("bare-link" in item for item in diagnostics))
+        self.assertTrue(any("empty-link" in item for item in diagnostics))
+        self.assertTrue(any("unsafe-link-scheme" in item for item in diagnostics))
+
+    def test_privacy_sanitizes_paths_urls_secrets_and_email_examples(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\napplication/controllers/private.php\nhttps://internal.example.test/private\ntoken = super-secret\nAuthorization: Bearer value\n-----BEGIN PRIVATE KEY-----\nname@example.test\n", encoding="utf-8")
+        diagnostics = validate_manual(root).diagnostics
+        for predicate in ("privacy-source-path", "privacy-private-url", "privacy-secret-assignment", "privacy-authorization", "privacy-pem", "privacy-email-example"):
+            self.assertTrue(any(predicate in item for item in diagnostics), predicate)
+        self.assertFalse(any("super-secret" in item for item in diagnostics))
+
+    def test_optional_headings_are_not_required_but_core_headings_are(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        clean = guide.read_text(encoding="utf-8").replace("## Antes de empezar", "## Preparación opcional", 1)
+        guide.write_text(clean, encoding="utf-8")
+        self.assertFalse(any("required-section" in item for item in validate_manual(root).diagnostics))
+        guide.write_text(clean.replace("## Compruebe el resultado", "## Resultado", 1), encoding="utf-8")
+        self.assertTrue(any("required-section" in item for item in validate_manual(root).diagnostics))
+
+    def test_active_guides_reject_legacy_template_headings(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\n## Acceso condicional\n", encoding="utf-8")
+        self.assertTrue(any("legacy-template-heading" in item for item in validate_manual(root).diagnostics))
+
+    def test_home_cannot_link_to_compatibility_areas_or_claim_legacy_coverage(self) -> None:
+        root = self.copy_manual()
+        home = root / "docs/index.md"
+        home.write_text(home.read_text(encoding="utf-8") + '\n<a href="recorridos/ventas/">Histórico</a>\n18 áreas\n', encoding="utf-8")
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("home-compat-navigation" in item for item in diagnostics))
+        self.assertTrue(any("home-legacy-coverage-claim" in item for item in diagnostics))
+
+    def test_home_cards_use_rendered_directory_urls(self) -> None:
+        root = self.copy_manual()
+        site = root / ".build" / "home-cards"
+        subprocess.run(
+            [sys.executable, "-m", "mkdocs", "build", "--strict", "--clean", "--site-dir", str(site)],
+            check=True,
+            cwd=root,
+        )
+        rendered = (site / "index.html").read_text(encoding="utf-8")
+        links = re.findall(r'<a href="([^"]+)"><strong>', rendered)
+        self.assertEqual(15, len(links))
+        self.assertFalse(any(link.endswith(".md") for link in links))
+        self.assertTrue(all((site / link / "index.html").is_file() for link in links))
+
+    def test_quickstart_must_include_session_actions(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/inicio/iniciar-sesion.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("Cerrar Sesión", "Salir", 1), encoding="utf-8")
+        self.assertTrue(any("quickstart-incomplete" in item for item in validate_manual(root).diagnostics))
+
+    def test_active_guide_cannot_continue_to_compatibility_only_page(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\n[Anterior](elegir-establecimiento.md)\n", encoding="utf-8")
+        self.assertTrue(any("active-compat-continuation" in item for item in validate_manual(root).diagnostics))
+
+    def test_raw_reader_statuses_remain_forbidden_only_in_markdown(self) -> None:
+        root = self.copy_manual()
+        inventory = root / "documentation/inventory.yml"
+        inventory.write_text(inventory.read_text(encoding="utf-8") + "\nmachine_status: source_reviewed_draft\n", encoding="utf-8")
         self.assertTrue(validate_manual(root).is_valid)
-        source.write_text(source.read_text(encoding="utf-8") + "\n[Alias inválido](seleccionar-cliente.md#legacy-fragment)\n", encoding="utf-8")
-
-        report = validate_manual(root)
-
-        self.assertFalse(report.is_valid)
-        self.assertTrue(any("broken-anchor" in item for item in report.diagnostics))
-
-    def test_allows_machine_status_in_yaml_but_rejects_private_reader_path(self) -> None:
-        root = self.copy_fixture("valid")
-        inventory = root / "documentation" / "inventory.yml"
-        inventory.write_text(
-            inventory.read_text(encoding="utf-8") + "\nmachine_status: source_reviewed_draft\n",
-            encoding="utf-8",
-        )
-        self.assertTrue(validate_manual(root).is_valid)
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(ficha.read_text(encoding="utf-8") + "\napplication/controllers/private.php\n", encoding="utf-8")
-        report = validate_manual(root)
-        self.assertTrue(any("privacy-source-path" in item for item in report.diagnostics))
-
-    def test_candidate_admission_needs_no_grant_and_does_not_change_exclusions(self) -> None:
-        report = validate_manual(PROJECT_ROOT)
-        catalog = __import__("yaml").safe_load((PROJECT_ROOT / "documentation" / "capability-dispositions.yml").read_text(encoding="utf-8"))
-        documented = {"SRV-01", "SRV-02", "SRV-03", "SRV-04", "SRV-05", "SPC-01", "SPC-02", "SPC-03", "SPC-04", "CUS-01", "CUS-02", "CUS-03", "CUS-04", "CUS-05"}
-        qal = {"QAL-01", "QAL-02", "QAL-03", "QAL-04", "QAL-05"}
-        states = {item["id"]: item["disposition"] for item in catalog["capabilities"]}
-        self.assertTrue(report.is_valid, report.diagnostics)
-        self.assertTrue(all(states[item] == "documented" for item in documented))
-        self.assertTrue(all(states[item] == "out_of_current_menu_scope" for item in qal))
-
-    def test_requires_independent_deployed_parity_for_enriched_inventory(self) -> None:
-        root = self.copy_fixture("valid")
-        inventory = root / "documentation" / "inventory.yml"
-        inventory.write_text(inventory.read_text(encoding="utf-8").replace("content_status: pending_enrichment", "content_status: source_backed_enriched", 1), encoding="utf-8")
-        report = validate_manual(root)
-        self.assertTrue(any("invalid-document-status: deployed_parity_status" in item for item in report.diagnostics))
-
-    def test_rejects_path_escapes_and_multiple_privacy_predicates(self) -> None:
-        root = self.copy_fixture("valid")
-        inventory = root / "documentation" / "inventory.yml"
-        inventory.write_text(inventory.read_text(encoding="utf-8").replace("ventas/seleccionar-cliente.md", "../outside.md"), encoding="utf-8")
-        ficha = root / "docs" / "ventas" / "elegir-establecimiento.md"
-        ficha.write_text(
-            ficha.read_text(encoding="utf-8")
-            + "\napplication/controllers/private.php\n"
-            + "https://internal.example.test/private\n"
-            + "-----BEGIN PRIVATE KEY-----\n",
-            encoding="utf-8",
-        )
-
-        report = validate_manual(root)
-
-        self.assertTrue(any("unsafe-document-path" in item for item in report.diagnostics))
-        self.assertTrue(any("privacy-source-path" in item for item in report.diagnostics))
-        self.assertTrue(any("privacy-private-url" in item for item in report.diagnostics))
-        self.assertTrue(any("privacy-pem" in item for item in report.diagnostics))
-
-    def test_menu_scope_reconciliation_final_set(self) -> None:
-        expected_excluded = {
-            "FIN-06", "FIN-07", "INV-09", "PSD-01", "PSD-02", "PSD-03",
-            "PRD-01", "PRD-02", "PRD-03", "PRD-04", "ACC-01", "ACC-02",
-            "CRM-01", "CRM-02",
-        }
-        expected_retained_paths = {
-            "compras/gestionar-presupuesto.md",
-            "preventa/crear-pedido.md",
-            "preventa/consultar-y-editar.md",
-            "preventa/confirmar-anular-convertir.md",
-            "distribucion/crear-orden-de-carga.md",
-            "distribucion/gestionar-orden-de-carga.md",
-            "distribucion/recargas-y-compromisos.md",
-            "distribucion/registrar-descarga-y-entrega.md",
-            "reportes-especializados/ventas-por-usuario-y-cliente.md",
-        }
-        report = validate_manual(PROJECT_ROOT)
-        checkpoint = yaml.safe_load((PROJECT_ROOT / "documentation" / "source-checkpoint.yml").read_text(encoding="utf-8"))
-        inventory = yaml.safe_load((PROJECT_ROOT / "documentation" / "inventory.yml").read_text(encoding="utf-8"))
-        catalog = yaml.safe_load((PROJECT_ROOT / "documentation" / "capability-dispositions.yml").read_text(encoding="utf-8"))
-        inventory_paths = {document["path"] for document in inventory["documents"]}
-        excluded = {
-            item["id"]
-            for item in catalog["capabilities"]
-            if item["disposition"] == "owner_excluded_from_documentation"
-        }
-
-        self.assertTrue(report.is_valid, report.diagnostics)
-        self.assertEqual(88, report.ficha_count)
-        self.assertEqual(114, len(catalog["capabilities"]))
-        self.assertEqual(expected_excluded, excluded)
-        self.assertTrue(all(
-            item.get("reason_category") == "owner_scope_exclusion"
-            and "canonical_doc_id" not in item
-            for item in catalog["capabilities"]
-            if item["id"] in expected_excluded
-        ))
-        self.assertTrue(expected_retained_paths <= inventory_paths)
-        self.assertTrue(all((PROJECT_ROOT / "docs" / path).is_file() for path in expected_retained_paths))
-        self.assertFalse((PROJECT_ROOT / "docs" / "crm" / "index.md").exists())
-        self.assertFalse(any(path.startswith("crm/") for path in inventory_paths))
-        self.assertNotIn("crm/", (PROJECT_ROOT / "mkdocs.yml").read_text(encoding="utf-8"))
-        self.assertNotIn("crm/", (PROJECT_ROOT / "docs" / "index.md").read_text(encoding="utf-8"))
-        self.assertEqual({"scope_complete": True}, checkpoint["menu_scope_reconciliation"])
-
-    def test_navigation_groups_keep_all_areas_and_fichas(self) -> None:
-        config = yaml.safe_load((PROJECT_ROOT / "mkdocs.yml").read_text(encoding="utf-8"))
-        top_groups = [next(iter(item)) for item in config["nav"]]
-        expected_hubs = {
-            "recorridos/ventas/index.md",
-            "recorridos/contactos-catalogo/index.md",
-            "recorridos/servicios-estancias/index.md",
-            "recorridos/compras-finanzas/index.md",
-            "recorridos/operacion-comercial/index.md",
-            "recorridos/administracion-configuracion/index.md",
-        }
-        expected_area_indexes = {
-            "inicio/index.md", "ventas/index.md", "reportes-especializados/index.md",
-            "contactos/index.md", "catalogo/index.md", "inventario/index.md",
-            "servicios/index.md", "estancias/index.md", "especializados/index.md",
-            "compras/index.md", "gastos/index.md", "caja/index.md", "reportes/index.md",
-            "preventa/index.md", "distribucion/index.md", "fidelizacion/index.md",
-            "administracion/index.md", "configuracion/index.md",
-        }
-
-        def leaves(value: object) -> list[str]:
-            if isinstance(value, str):
-                return [value]
-            if isinstance(value, list):
-                return [path for item in value for path in leaves(item)]
-            if isinstance(value, dict):
-                return [path for item in value.values() for path in leaves(item)]
-            return []
-
-        def assert_unique_labels(value: object) -> None:
-            if isinstance(value, list):
-                labels = [next(iter(item)) for item in value if isinstance(item, dict)]
-                self.assertEqual(len(labels), len(set(labels)))
-                for item in value:
-                    assert_unique_labels(item)
-            elif isinstance(value, dict):
-                for item in value.values():
-                    assert_unique_labels(item)
-
-        nav_paths = leaves(config["nav"])
-        ficha_paths = {
-            document["path"]
-            for document in yaml.safe_load((PROJECT_ROOT / "documentation" / "inventory.yml").read_text(encoding="utf-8"))["documents"]
-        }
-        homepage = (PROJECT_ROOT / "docs" / "index.md").read_text(encoding="utf-8")
-
-        self.assertEqual(
-            ["1. Inicio", "2. Ventas", "3. Contactos y catálogo", "4. Inventario", "5. Servicios y estancias", "6. Compras, gastos y caja", "7. Operación comercial", "8. Administración y configuración"],
-            top_groups,
-        )
-        self.assertTrue(expected_area_indexes <= set(nav_paths))
-        self.assertEqual(1, nav_paths.count("inventario/index.md"))
-        self.assertEqual(expected_hubs, {path for path in nav_paths if path.startswith("recorridos/")})
-        self.assertTrue(all(nav_paths.count(path) == 1 for path in expected_hubs))
-        self.assertEqual(len(nav_paths), len(set(nav_paths)))
-        self.assertEqual(ficha_paths, {path for path in nav_paths if not path.endswith("index.md")})
-        self.assertEqual(88, len(ficha_paths))
-        self.assertEqual(
-            [
-                "ventas/elegir-establecimiento/", "inicio/iniciar-sesion/", "recorridos/contactos-catalogo/",
-                "recorridos/ventas/", "recorridos/contactos-catalogo/", "inventario/index/",
-                "recorridos/servicios-estancias/", "recorridos/compras-finanzas/", "recorridos/operacion-comercial/",
-                "recorridos/administracion-configuracion/",
-            ],
-            __import__("re").findall(r'href="([^"]+)"', homepage),
-        )
-        self.assertTrue(all((PROJECT_ROOT / "docs" / path).is_file() for path in expected_hubs))
-        self.assertTrue(all((PROJECT_ROOT / "docs" / path).read_text(encoding="utf-8").count("](") >= 2 for path in expected_hubs))
-        self.assertTrue({"navigation.path", "navigation.footer", "navigation.instant", "navigation.instant.progress"} <= set(config["theme"]["features"]))
-        self.assertNotIn("navigation.sections", config["theme"]["features"])
-        self.assertNotIn("navigation.expand", config["theme"]["features"])
-        self.assertEqual(["javascripts/sidebar-accordion.js"], config["extra_javascript"])
-        script = (PROJECT_ROOT / "docs" / "javascripts" / "sidebar-accordion.js").read_text(encoding="utf-8")
-        self.assertIn(".md-sidebar--primary .md-nav--primary", script)
-        self.assertIn("document$.subscribe(synchronize)", script)
-        assert_unique_labels(config["nav"])
-
+        guide = root / "docs/ventas/registrar-venta-al-contado.md"
+        guide.write_text(guide.read_text(encoding="utf-8") + "\nsource_reviewed_draft\nBorrador revisado en código · verificación en entorno pendiente\n<a id=\"revision-de-fuente-revisada-en-codigo\"></a>\n", encoding="utf-8")
+        diagnostics = validate_manual(root).diagnostics
+        self.assertTrue(any("raw-reader-status" in item for item in diagnostics))
+        self.assertTrue(any("reader-process-notice" in item for item in diagnostics))
 
 
 if __name__ == "__main__":

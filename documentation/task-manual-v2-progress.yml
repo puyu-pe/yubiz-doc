@@ -1,0 +1,289 @@
+schema_version: 2
+contract: task-oriented-manual-contract-v2.md
+scope: active_v2_integration
+contract_target_count: 83
+implemented_in_this_batch: 83
+integration_status: active_v2_navigation_inventory_access_audit_validator
+baseline:
+  current_v1_rendered_baseline: v1-rendered-baseline.yml
+  captured_before_v2_guide_changes: true
+  content_only_v1_fragment_count: 1052
+  excluded_renderer_chrome_fragment_count: 2496
+  content_only_basis: Captured V1 reader IDs; Material drawer, search,
+    palette, navigation, table-of-contents and configuration IDs are renderer chrome
+    and are not compatibility aliases.
+  frozen_legacy_compatibility_base: 64f85fc9460a109257dca134967fdd806bae98e0
+source_basis:
+  reviewed_revision: 330857197e5e01c24147d03452f7c59909abc968
+  historical_revision: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
+  scope: guide_specific_source_support_and_observed_demo_controls
+  limitation: Does not change the global source checkpoint, capability dispositions,
+    runtime verification, deployed parity, or access-audit states.
+guides:
+- title: Consultar la tabla de pagos
+  path: reportes/consultar-tabla-pagos.md
+  status: active_v2
+  basis: pantalla
+- title: Consultar movimientos de caja
+  path: caja/consultar-movimientos-caja.md
+  status: active_v2
+  basis: pantalla
+- title: Registrar saldo inicial de caja
+  path: caja/registrar-saldo-inicial-caja.md
+  status: active_v2
+  basis: control
+- title: Registrar una operación manual de caja
+  path: caja/registrar-operacion-manual-caja.md
+  status: active_v2
+  basis: control
+- title: Configurar parámetros del módulo internado
+  path: servicios/configurar-parametros-internado.md
+  status: active_v2
+  basis: pantalla_y_solo_fuente_acotada
+- title: Consultar e imprimir una orden de descarga
+  path: distribucion/consultar-imprimir-orden-descarga.md
+  status: active_v2
+  basis: pantalla
+- title: Registrar y actualizar entidades financieras
+  path: contactos/registrar-actualizar-entidades-financieras.md
+  status: active_v2
+  basis: pantalla
+- title: Registrar y actualizar socios y aportes
+  path: socios/registrar-actualizar-socios-aportes.md
+  status: active_v2
+  basis: control
+- title: Consultar el informe de socios
+  path: socios/consultar-informe-socios.md
+  status: active_v2
+  basis: pantalla
+- title: Consultar el reporte de estancias
+  path: estancias/consultar-reporte-estancias.md
+  status: active_v2
+  basis: pantalla
+- title: Crear y consultar períodos presupuestarios
+  path: compras/crear-consultar-periodos-presupuestarios.md
+  status: active_v2
+  basis: control
+- title: Asignar presupuesto
+  path: compras/asignar-presupuesto.md
+  status: active_v2
+  basis: control
+- title: Consultar consumo de asignaciones
+  path: compras/consultar-consumo-asignaciones.md
+  status: active_v2
+  basis: pantalla
+- title: Registrar y actualizar unidades de servicio
+  path: servicios/registrar-actualizar-unidades-servicio.md
+  status: active_v2
+  basis: control
+- title: Registrar y actualizar ítems de servicio
+  path: servicios/registrar-actualizar-items-servicio.md
+  status: active_v2
+  basis: control
+- title: Registrar y actualizar tarifas de estadía
+  path: estancias/registrar-actualizar-tarifas-estadia.md
+  status: active_v2
+  basis: control
+- title: Registrar y actualizar relaciones de estancia
+  path: estancias/registrar-actualizar-relaciones-estancia.md
+  status: active_v2
+  basis: control
+- title: Crear y consultar descuentos de estancia
+  path: estancias/crear-consultar-descuentos-estancia.md
+  status: active_v2
+  basis: control
+- title: Registrar una conversión entre productos
+  path: catalogo/registrar-conversion-entre-productos.md
+  status: active_v2
+  basis: pantalla_y_solo_fuente_acotada
+contract_targets:
+- module: Panel principal
+  tasks:
+  - title: Empezar a trabajar en Yubiz
+    status: active_v2
+- module: Ventas
+  tasks:
+  - title: Registrar una venta al contado
+    status: active_v2
+  - title: Registrar una venta con saldo pendiente
+    status: active_v2
+  - title: Registrar un cobro posterior
+    status: active_v2
+  - title: Crear y consultar cotizaciones
+    status: active_v2
+  - title: Convertir una cotización en venta
+    status: active_v2
+  - title: "Consultar una venta, imprimirla o comunicarla"
+    status: active_v2
+  - title: Anular una venta
+    status: active_v2
+  - title: Emitir una nota de crédito
+    status: active_v2
+  - title: Canjear un documento de venta
+    status: active_v2
+  - title: Consultar pagos y deudas de ventas
+    status: active_v2
+  - title: Consultar la tabla de pagos
+    status: active_v2
+  - title: Consultar comisiones por producto
+    status: active_v2
+  - title: Consultar movimientos de caja
+    status: active_v2
+  - title: Registrar saldo inicial de caja
+    status: active_v2
+  - title: Registrar una operación manual de caja
+    status: active_v2
+- module: Internado
+  tasks:
+  - title: Registrar y actualizar unidades de servicio
+    status: active_v2
+  - title: Registrar y actualizar ítems de servicio
+    status: active_v2
+  - title: Registrar una orden de servicio o internado
+    status: active_v2
+  - title: Consultar un internado y registrar procedimientos
+    status: active_v2
+  - title: Convertir un internado en venta
+    status: active_v2
+  - title: Anular un internado
+    status: active_v2
+  - title: Configurar parámetros del módulo internado
+    status: active_v2
+- module: Campañas de descuento
+  tasks:
+  - title: Crear campañas de descuento y asignar productos
+    status: active_v2
+- module: Inventario
+  tasks:
+  - title: Registrar y actualizar productos
+    status: active_v2
+  - title: Eliminar productos
+    status: active_v2
+  - title: "Registrar marcas, categorías, medidas y modelos"
+    status: active_v2
+  - title: Configurar precios de venta
+    status: active_v2
+  - title: Registrar y actualizar lotes
+    status: active_v2
+  - title: Registrar y consultar series de productos
+    status: active_v2
+  - title: Registrar una conversión entre productos
+    status: active_v2
+  - title: Consultar productos y su utilidad
+    status: active_v2
+  - title: Consultar stock por almacén
+    status: active_v2
+  - title: Revisar movimientos y kardex
+    status: active_v2
+  - title: Registrar un ingreso de almacén
+    status: active_v2
+  - title: Registrar una salida de almacén
+    status: active_v2
+  - title: Transferir productos entre almacenes
+    status: active_v2
+  - title: Registrar un ajuste de inventario
+    status: active_v2
+  - title: Crear y consultar guías de remisión
+    status: active_v2
+- module: Distribución
+  tasks:
+  - title: Crear una orden de carga
+    status: active_v2
+  - title: Consultar una orden de carga
+    status: active_v2
+  - title: Confirmar una orden de carga
+    status: active_v2
+  - title: "Registrar recargas, compromisos y residuales"
+    status: active_v2
+  - title: Cerrar una orden de carga
+    status: active_v2
+  - title: Generar una orden de descarga
+    status: active_v2
+  - title: Consultar e imprimir una orden de descarga
+    status: active_v2
+  - title: Liquidar una orden de carga
+    status: active_v2
+- module: Compras
+  tasks:
+  - title: Crear un pedido de compra
+    status: active_v2
+  - title: "Consultar, actualizar y notificar un pedido de compra"
+    status: active_v2
+  - title: Anular un pedido de compra
+    status: active_v2
+  - title: Registrar una orden de compra
+    status: active_v2
+  - title: Crear una orden de compra desde un pedido
+    status: active_v2
+  - title: Consultar y notificar órdenes de compra
+    status: active_v2
+  - title: Cambiar el estado de una compra
+    status: active_v2
+  - title: Anular una compra
+    status: active_v2
+  - title: Registrar pagos de compra y revisar saldos
+    status: active_v2
+  - title: Registrar y relacionar documentos de compra
+    status: active_v2
+  - title: Registrar un gasto
+    status: active_v2
+  - title: Consultar y exportar gastos
+    status: active_v2
+  - title: Aprobar un gasto
+    status: active_v2
+  - title: Anular un gasto
+    status: active_v2
+- module: Contactos
+  tasks:
+  - title: Registrar y actualizar clientes
+    status: active_v2
+  - title: Registrar y actualizar proveedores y sus cuentas bancarias
+    status: active_v2
+  - title: Registrar y actualizar transportistas
+    status: active_v2
+  - title: Registrar y actualizar entidades financieras
+    status: active_v2
+- module: Socios
+  tasks:
+  - title: Registrar y actualizar socios y aportes
+    status: active_v2
+  - title: Consultar el informe de socios
+    status: active_v2
+- module: Presupuesto
+  tasks:
+  - title: Crear y consultar períodos presupuestarios
+    status: active_v2
+  - title: Asignar presupuesto
+    status: active_v2
+  - title: Consultar consumo de asignaciones
+    status: active_v2
+- module: Estancia
+  tasks:
+  - title: Registrar una estancia
+    status: active_v2
+  - title: Consultar estancias del día y su detalle
+    status: active_v2
+  - title: Registrar sujetos y personas relacionadas
+    status: active_v2
+  - title: Registrar y actualizar tarifas de estadía
+    status: active_v2
+  - title: Registrar y actualizar relaciones de estancia
+    status: active_v2
+  - title: Crear y consultar descuentos de estancia
+    status: active_v2
+  - title: Consultar el reporte de estancias
+    status: active_v2
+  - title: Convertir una estancia en venta
+    status: active_v2
+  - title: Anular una estancia
+    status: active_v2
+- module: Preventa
+  tasks:
+  - title: Consultar y actualizar una preventa
+    status: active_v2
+  - title: Confirmar una preventa
+    status: active_v2
+  - title: Anular una preventa
+    status: active_v2
+  - title: Convertir una preventa en venta
+    status: active_v2

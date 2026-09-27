@@ -1,74 +1,43 @@
 <a id="configurar-precios-de-venta-por-tipo-y-establecimiento"></a>
 
-# 3.7 Configurar precios de venta por tipo y establecimiento
+# 5.4 Configurar precios de venta
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="44-configurar-precios-de-venta"></a>
 
-## Objetivo
+<a id="37-configurar-precios-de-venta-por-tipo-y-establecimiento"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Revisar y configurar precios de venta asociados a un producto por tipo y, cuando
-la configuración lo habilite, por establecimiento.
+Configure el precio de venta de un producto y sus variantes por tipo o establecimiento cuando estén disponibles.
 
-## Acceso condicional
+## Cómo acceder
 
-La tabla de precios está dentro de la ficha de producto. La visibilidad por
-establecimiento y los tipos de precio dependen de la configuración del entorno.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Catálogo**.
+3. Seleccione el producto para abrir su edición y continuar con los precios.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Producto existente o ficha de producto en creación.
-- Tipo de precio y establecimiento, cuando el formulario los muestre.
-- Precio mayor que cero y comisión solo si corresponde al tipo configurado.
-
-## Punto de partida
-
-Abra el producto y seleccione la pestaña **Ventas** cuando esté disponible.
+- Tenga identificado el producto, el tipo de precio y el importe mayor que cero.
 
 ## Pasos
 
-1. Revise el precio de venta general de la ficha antes de agregar variantes.
-2. Compruebe si la tabla muestra establecimientos o si el entorno trabaja con un
-   precio general.
-3. Seleccione el tipo de precio disponible y complete el importe asociado.
-4. Si aparece una comisión, revise su valor junto con el precio antes de guardar.
-5. Guarde la ficha completa y vuelva a abrirla para comprobar los precios listados.
-6. Para retirar una variante, use la acción disponible solo después de confirmar
-   que no se necesita para operaciones en curso.
+1. Revise el precio general antes de agregar una variante.
+2. Seleccione el tipo de precio y el establecimiento cuando la tabla los muestre.
+3. Complete importe y comisión si el formulario la solicita.
+4. Guarde la ficha y vuelva a abrir **Ventas** para revisar o actualizar una variante.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La tabla revisada muestra tipo, establecimiento, precio y porcentaje de comisión.
-El formulario exige un precio de venta mayor que cero; cada precio de la tabla
-también es obligatorio y debe ser mayor que cero. Cuando la configuración no
-habilita precios por establecimiento, el precio general se sincroniza desde el
-campo principal. La interfaz no permite convertir estas condiciones en una regla
-universal para todos los entornos.
+Compruebe que la tabla conserva tipo, establecimiento cuando aplique, precio y comisión.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-Al guardar, la ficha conserva los precios asociados al producto. En edición, los
-precios configurados se vuelven a cargar con el producto y se actualizan junto con
-sus demás datos.
-
-## Advertencias y casos límite
-
-No publique ni suponga una moneda, lista comercial, aprobación o política de
-descuentos. Un establecimiento o tipo que no aparezca en la tabla debe tratarse
-como una condición de configuración, no como un error que se pueda resolver con
-otro flujo.
-
-## Problemas frecuentes y condiciones de detención
-
-- Precio vacío, cero o negativo: corríjalo antes de guardar.
-- No aparece el tipo o establecimiento esperado: deténgase y confirme la
-  configuración aplicable.
-- Variantes duplicadas o no reconocibles: revise la tabla antes de agregar otra.
-- No puede evaluar el impacto de retirar un precio: no continúe.
-
-## Enlaces relacionados
-
-- [Crear y editar productos del catálogo](gestionar-productos.md)
-- [Seleccionar productos y revisar condiciones](../ventas/seleccionar-productos-y-revisar-condiciones.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

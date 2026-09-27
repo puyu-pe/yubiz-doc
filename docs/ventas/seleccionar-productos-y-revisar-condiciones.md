@@ -1,69 +1,30 @@
-<a id="seleccionar-productos-y-revisar-condiciones"></a>
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-# 2.3 Seleccionar productos y revisar condiciones
+# Guías disponibles
+
+<a id="23-seleccionar-productos-y-revisar-condiciones"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
 
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Incorporar productos a la venta y revisar sus importes antes de confirmar el pago.
-
-## Acceso condicional
-
-Los productos, precios, opciones adicionales y edición de filas pueden variar por
-catálogo, establecimiento, configuración y cuenta.
-
-## Requisitos y datos
-
-- Cliente seleccionado.
-- Producto, código o código de barras que se desea buscar.
-- Cantidades y condiciones comerciales acordadas.
-
-## Punto de partida
-
-En el formulario de venta, con el control **Item** disponible.
-
-## Pasos
-
-1. Escriba al menos dos caracteres en **Item** para iniciar la búsqueda.
-2. Seleccione el producto que corresponda; el formulario agrega una fila y vuelve
-   a calcular los totales.
-3. Revise **Cant.**, **Producto**, **Descripción**, **P. Unit.** e **Importe**.
-4. Ajuste solo los datos habilitados y repita la selección para los demás
-   productos.
-5. Antes de pagar, confirme el subtotal, IGV y total mostrados.
-
-## Campos y validaciones observados
-
-La búsqueda usa código, descripción o código de barras y devuelve hasta veinte
-coincidencias. La tabla conserva cantidad, descripción, tipo de IGV, precio e
-importe; el formulario impide continuar si identifica productos eliminados en la
-tabla.
-
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-Cada selección agrega una fila de producto y dispara el recálculo de los totales
-del formulario. Las existencias y condiciones comerciales finales requieren
-revisión antes de continuar.
-
-## Advertencias y casos límite
-
-No confirme el pago si queda una fila marcada como eliminada o si los importes no
-coinciden con lo acordado. Las opciones de descuento, recargo, precio alternativo
-o cupón no se asumen disponibles.
-
-## Problemas frecuentes y condiciones de detención
-
-- Búsqueda sin resultados: verifique el término o el producto con el responsable.
-- Importe inesperado: detenga la venta antes de abrir el detalle de pago.
-- Producto no disponible: no sustituya ni cree un producto sin el procedimiento
-  aplicable en su entorno.
-
-## Enlaces relacionados
-
-- [Seleccionar cliente](seleccionar-cliente.md)
-- [Registrar venta al contado](registrar-venta-al-contado.md)
-- [Registrar venta con saldo pendiente](registrar-venta-con-saldo-pendiente.md)
+<a id="seleccionar-productos-y-revisar-condiciones"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>

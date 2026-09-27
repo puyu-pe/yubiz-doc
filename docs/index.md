@@ -7,27 +7,24 @@
 ## Comience por una tarea
 
 <div class="quick-paths">
-  <a href="ventas/elegir-establecimiento/"><strong>Vender</strong>Seleccione el establecimiento antes de registrar una venta.</a>
-  <a href="inicio/iniciar-sesion/"><strong>Ingresar</strong>Inicie sesión y ubique el menú disponible.</a>
-  <a href="recorridos/contactos-catalogo/"><strong>Preparar el catálogo</strong>Revise productos, precios y datos maestros.</a>
+  <a href="inicio/iniciar-sesion/"><strong>Ingresar</strong>Inicie sesión, ubique el menú y confirme el establecimiento de trabajo.</a>
+  <a href="ventas/registrar-venta-al-contado/"><strong>Registrar una venta</strong>Seleccione cliente y productos, registre el pago y compruebe el documento.</a>
+  <a href="ventas/gestionar-cotizaciones/"><strong>Crear una cotización</strong>Prepare los datos, los ítems y el total para dar seguimiento o convertirla después.</a>
 </div>
 
 ## Explorar las guías
 
 <div class="task-clusters">
-  <a href="recorridos/ventas/"><strong>Ventas</strong>Ventas, cobros, cotizaciones y reportes comerciales.</a>
-  <a href="recorridos/contactos-catalogo/"><strong>Contactos y catálogo</strong>Clientes, proveedores, productos y precios.</a>
-  <a href="inventario/index/"><strong>Inventario</strong>Stock, movimientos, traslados y trazabilidad.</a>
-  <a href="recorridos/servicios-estancias/"><strong>Servicios y estancias</strong>Órdenes, internados, estancias y sus operaciones relacionadas.</a>
-  <a href="recorridos/compras-finanzas/"><strong>Compras, gastos y caja</strong>Compras, presupuestos, gastos y caja.</a>
-  <a href="recorridos/operacion-comercial/"><strong>Operación comercial</strong>Preventa, distribución y fidelización.</a>
-  <a href="recorridos/administracion-configuracion/"><strong>Administración y configuración</strong>Acciones administrativas y parámetros disponibles.</a>
+  <a href="inicio/"><strong>Panel principal</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="ventas/"><strong>Ventas</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="servicios/"><strong>Internado</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="fidelizacion/"><strong>Campañas de descuento</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="catalogo/"><strong>Inventario</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="distribucion/"><strong>Distribución</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="compras/"><strong>Compras</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="contactos/"><strong>Contactos</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="socios/"><strong>Socios</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="presupuesto/"><strong>Presupuesto</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="estancias/"><strong>Estancia</strong>Explore las tareas disponibles de este módulo.</a>
+  <a href="preventa/"><strong>Preventa</strong>Explore las tareas disponibles de este módulo.</a>
 </div>
-
-<div class="verification-note">
-  <strong>Sobre estas guías.</strong> Revise las opciones, permisos y resultados que se muestren en su sesión antes de continuar.
-</div>
-
-## Todas las áreas
-
-El menú lateral reúne las 18 áreas del manual en siete recorridos. Utilice la búsqueda para ir directo a una tarea o seleccione un recorrido para empezar.

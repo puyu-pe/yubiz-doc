@@ -1,66 +1,30 @@
-<a id="seleccionar-cliente"></a>
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-# 2.2 Seleccionar cliente
+# Guías disponibles
+
+<a id="22-seleccionar-cliente"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
 
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Asociar un cliente a la venta antes de registrar productos y pagos.
-
-## Acceso condicional
-
-El formulario de venta y sus resultados de búsqueda están sujetos a la sesión,
-rol y datos disponibles en el entorno.
-
-## Requisitos y datos
-
-- Contexto de establecimiento confirmado.
-- Documento o dato de identificación del cliente.
-
-## Punto de partida
-
-En la pantalla de registro de venta, en la sección de datos del cliente, cuando
-esté disponible para su cuenta.
-
-## Pasos
-
-1. Ubique **Datos cliente** y el control **DNI / RUC**.
-2. Busque el cliente por su documento, nombre o referencia disponible y seleccione
-   un único resultado.
-3. Revise el documento y la descripción mostrados antes de continuar.
-4. Si el control ofrece crear o completar un dato, confirme primero que ese flujo
-   corresponde a la operación de su entorno.
-
-## Campos y validaciones observados
-
-El control admite una selección. Para un documento nuevo, la interfaz
-solicita ocho u once dígitos numéricos; si el cliente seleccionado no tiene
-documento o su dirección supera el límite tratado por el formulario, se solicita
-corrección antes de continuar.
-
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La selección entrega el identificador y los datos del cliente al formulario de
-venta; el formulario requiere un cliente antes de abrir el detalle de pago.
-
-## Advertencias y casos límite
-
-No continúe con un documento o dirección que el propio formulario marque para
-corrección. La búsqueda externa y la creación de clientes no se consideran
-confirmadas para todos los entornos.
-
-## Problemas frecuentes y condiciones de detención
-
-- Sin resultados: confirme el dato de identificación antes de intentar otro flujo.
-- Documento incompleto o inválido: corríjalo antes de seleccionar al cliente.
-- Datos que no corresponden a la operación: retire la selección y valide con el
-  equipo responsable.
-
-## Enlaces relacionados
-
-- [Elegir establecimiento](elegir-establecimiento.md)
-- [Seleccionar productos y revisar condiciones](seleccionar-productos-y-revisar-condiciones.md)
+<a id="seleccionar-cliente"></a>
+<a id="verificaciones-pendientes-en-runtime"></a>

@@ -1,22 +1,19 @@
 # Ventas
 
-Las opciones disponibles pueden variar según el contexto de la persona usuaria.
-Esta sección incorporará las fichas a medida que se revisen.
+## Guías disponibles
 
-## Fichas disponibles
-
-- [2.1 Elegir establecimiento](elegir-establecimiento.md)
-- [2.2 Seleccionar cliente](seleccionar-cliente.md)
-- [2.3 Seleccionar productos y revisar condiciones](seleccionar-productos-y-revisar-condiciones.md)
-- [2.4 Registrar venta al contado](registrar-venta-al-contado.md)
-- [2.5 Registrar venta con saldo pendiente](registrar-venta-con-saldo-pendiente.md)
-- [2.6 Registrar cobro posterior y consultar saldo](registrar-cobro-posterior-y-consultar-saldo.md)
-- [2.7 Crear y gestionar cotizaciones](gestionar-cotizaciones.md)
-- [2.8 Buscar, filtrar y revisar el detalle de ventas](consultar-ventas.md)
-- [2.9 Elegir documento, serie, fecha y almacén de una venta](configurar-datos-del-documento.md)
-- [2.10 Registrar pagos con uno o varios medios](registrar-multiples-medios-de-pago.md)
-- [2.11 Visualizar, imprimir y comunicar una venta](imprimir-y-comunicar-venta.md)
-- [2.12 Anular una venta con cautela](anular-venta.md)
-- [2.13 Emitir una nota de crédito o canjear un documento](notas-de-credito-y-canje.md)
-- [2.14 Consultar reportes consolidados y ventas por producto](revisar-reportes-de-ventas.md)
-- [2.15 Gestionar vendedores y consultar comisiones](vendedores-y-comisiones.md)
+- [2.1 Registrar una venta al contado](registrar-venta-al-contado.md)
+- [2.2 Registrar una venta con saldo pendiente](registrar-venta-con-saldo-pendiente.md)
+- [2.3 Registrar un cobro posterior](registrar-cobro-posterior-y-consultar-saldo.md)
+- [2.4 Crear y consultar cotizaciones](gestionar-cotizaciones.md)
+- [2.5 Convertir una cotización en venta](convertir-cotizacion-en-venta.md)
+- [2.6 Consultar una venta, imprimirla o comunicarla](consultar-ventas.md)
+- [2.7 Anular una venta](anular-venta.md)
+- [2.8 Emitir una nota de crédito](notas-de-credito-y-canje.md)
+- [2.9 Canjear un documento de venta](canjear-documento-de-venta.md)
+- [2.10 Consultar pagos y deudas de ventas](../reportes/consultar-pagos-y-deudas.md)
+- [2.11 Consultar la tabla de pagos](../reportes/consultar-tabla-pagos.md)
+- [2.12 Consultar comisiones por producto](../reportes-especializados/comisiones-de-ventas.md)
+- [2.13 Consultar movimientos de caja](../caja/consultar-movimientos-caja.md)
+- [2.14 Registrar saldo inicial de caja](../caja/registrar-saldo-inicial-caja.md)
+- [2.15 Registrar una operación manual de caja](../caja/registrar-operacion-manual-caja.md)

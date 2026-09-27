@@ -1,77 +1,44 @@
 <a id="registrar-un-ajuste-de-inventario"></a>
 
-# 4.3 Registrar un ajuste de inventario
+# 5.14 Registrar un ajuste de inventario
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="56-registrar-un-ajuste-de-inventario"></a>
 
-## Objetivo
+<a id="43-registrar-un-ajuste-de-inventario"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Registrar un ajuste de entrada o salida para un producto y almacén ya identificados,
-solo después de confirmar que el procedimiento operativo autoriza la corrección.
+Registre un ajuste de ingreso o salida cuando pueda justificar la diferencia de inventario.
 
-## Acceso condicional
+## Cómo acceder
 
-La acción aparece desde el historial del producto cuando hay un almacén específico
-seleccionado. La configuración de seguimiento por lote o serie cambia los controles
-disponibles. Esta guía no confirma permisos, aprobaciones ni políticas de auditoría.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Inventario**.
+3. Seleccione el producto para abrir el ajuste.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Producto y almacén específico seleccionados.
-- Tipo de operación, cantidad y observación que permitan justificar el ajuste.
-- Datos de lote o serie si el producto usa ese seguimiento.
-
-## Punto de partida
-
-Abra los movimientos del producto, seleccione un almacén concreto y use la acción de
-ajuste solo cuando pueda explicar la diferencia que va a registrar.
+- Tenga producto, almacén, tipo de operación, cantidad, motivo y lote o serie cuando corresponda.
 
 ## Pasos
 
-1. Revise el stock actual mostrado y elija ingreso o salida según corresponda al
-   hecho que está documentando.
-2. Indique la cantidad y escriba una observación que permita reconocer el motivo.
-3. Si el producto usa lotes o series, complete o seleccione los datos de seguimiento
-   que la interfaz solicite.
-4. Revise producto, almacén, tipo y cantidad antes de guardar.
-5. Guarde y vuelva al historial para confirmar que la interfaz actualizó el contexto.
-6. Deténgase si no puede justificar el ajuste; no use esta acción para eludir el
-   seguimiento o el procedimiento de auditoría de su organización.
+1. Revise el stock actual y seleccione ingreso o salida según el hecho que registrará.
+2. Ingrese la cantidad y una observación que identifique el motivo.
+3. Complete lote o series si el producto usa ese seguimiento.
+4. Revise producto, almacén, tipo y cantidad. **Antes de confirmar,** deténgase si no puede justificar el ajuste.
+5. Guarde y vuelva al historial.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-El formulario revisado contiene tipo de operación, stock actual de solo lectura,
-cantidad y observación. La salida aparece deshabilitada cuando la cantidad actual no
-es positiva. Para seguimiento por lote o serie, la interfaz adapta la captura; en
-series distingue la entrada de la salida. La obligatoriedad, límites y mensajes
-visibles deben verificarse en el entorno de trabajo.
+Compruebe en el historial el movimiento de ajuste, con almacén, tipo, cantidad, observación y series cuando correspondan.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La interfaz valida datos de seguimiento, registra el ajuste y su movimiento dentro de
-una transacción, revierte ante un error y devuelve la cantidad del producto-almacén
-para actualizar la vista. El efecto final en existencias y registros relacionados
-debe comprobarse en el entorno.
-
-## Advertencias y casos límite
-
-Un ajuste de salida no se presenta como disponible en la condición observada de
-stock no positivo. Lotes y series pueden exigir información adicional. No invente un
-motivo ni continúe si el movimiento no es trazable.
-
-## Problemas frecuentes y condiciones de detención
-
-- No hay almacén específico: seleccione uno antes de intentar el ajuste.
-- Salida no disponible: revise el stock y no fuerce una alternativa.
-- Lote o serie incompletos: complete datos válidos o detenga el registro.
-- Error al guardar: no reintente a ciegas; confirme si se creó un movimiento.
-
-## Enlaces relacionados
-
-- [Revisar movimientos y kardex de un producto](revisar-movimientos-y-kardex.md)
-- [Gestionar lotes de productos](../catalogo/gestionar-lotes.md)
-- [Gestionar series y trazabilidad de productos](../catalogo/gestionar-series.md)
-- [Inventario](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

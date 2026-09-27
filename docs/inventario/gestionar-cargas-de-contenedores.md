@@ -1,67 +1,47 @@
+---
+search:
+  exclude: true
+---
+
 <a id="registrar-y-consultar-cargas-de-contenedores"></a>
 
-# 4.8 Registrar y consultar cargas de contenedores
+# 5.8 Registrar y consultar cargas de contenedores
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="48-registrar-y-consultar-cargas-de-contenedores"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-## Objetivo
+Registre una carga de contenedores o consulte una existente sin confundirla con una orden de carga de distribución.
 
-Registrar o consultar una carga de contenedores cuando el módulo especializado esté
-habilitado, manteniéndola separada de las órdenes de carga de distribución.
+## Cómo acceder
 
-## Acceso condicional
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Crear carga de contenedores**.
+3. Para consultar una carga, abra Inventario > Lista de carga de contenedores y seleccione el registro.
 
-Esta capacidad es condicional por módulo, configuración y sesión. Una carga de
-contenedores no debe interpretarse como una orden de carga de distribución.
+## Antes de empezar
 
-## Requisitos y datos
-
-- Contenido, documento, serie y almacén disponibles.
-- Contenedores, cantidades, medida y datos de lote o serie cuando se soliciten.
-
-## Punto de partida
-
-Abra la lista de cargas de contenedores si está disponible. Use los filtros para
-revisar registros existentes o inicie uno nuevo con el contenido y almacén definidos.
+- Tenga contenido, documento, serie, almacén, contenedores, cantidades y datos de lote o serie cuando correspondan.
 
 ## Pasos
 
-1. Seleccione el contenido y el almacén; revise el stock de solo lectura mostrado.
-2. Elija documento y serie disponibles.
+1. Seleccione contenido y almacén, y revise el stock mostrado.
+2. Elija documento y serie.
 3. Agregue cada contenedor con cantidad, descripción, medida y seguimiento aplicable.
-4. Revise el total, detalle e información interna antes de registrar.
-5. Tras guardar, consulte el detalle o la impresión disponible para comprobar el
-   resultado sin asumir un efecto adicional.
+4. Revise total, detalle y observación. **Antes de confirmar,** compruebe que contenedores, cantidades y series corresponden a la carga.
+5. Registre la carga o use los filtros de la lista para abrir una existente.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La pantalla revisada contiene contenido, documento, serie, almacén, stock de solo
-lectura, contenedores, cantidad, descripción, medida, total, detalle y observación
-interna. La lista permite filtrar por documento, fecha, usuario y establecimiento.
-La obligatoriedad y los límites exactos pueden variar según la configuración disponible.
+Compruebe que el detalle de la carga muestra documento, serie, almacén, contenedores, cantidades y seguimiento registrado.
 
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El navegador actualiza el stock según contenido y almacén, envía cabecera y detalles,
-y puede abrir o imprimir el resultado. La lista entrega registros paginados y totales.
-No se afirma una salida de almacén, despacho o entrega por registrar una carga.
-
-## Advertencias y casos límite
-
-Los contenedores pueden requerir lotes o series. No mezcle este flujo con una orden
-de carga de distribución ni use el total como garantía de stock disponible.
-
-## Problemas frecuentes y condiciones de detención
-
-- Módulo ausente: confirme su habilitación sin asumir acceso.
-- Stock o seguimiento no identificables: detenga el registro.
-- Resultado de envío incierto: consulte la lista antes de repetir la carga.
-
-## Enlaces relacionados
-
-- [Asignar series en entradas, salidas y cargas](asignar-series-en-movimientos.md)
-- [Gestionar lotes de productos](../catalogo/gestionar-lotes.md)
-- [Inventario](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

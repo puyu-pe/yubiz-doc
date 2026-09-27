@@ -1,12 +1,8 @@
 # Preventa
 
-Las rutas, promotores y preventas son capacidades condicionales. La interfaz puede mostrar
-un recorrido heredado para rutas y promotores, y otro más reciente para preventas y
-sus estados; no los sustituya entre sí ni suponga acceso, reservas o resultados en
-un entorno desplegado.
+## Guías disponibles
 
-## Fichas disponibles
-
-- [7.1 Crear un pedido de preventa](crear-pedido.md)
-- [7.2 Consultar y editar preventas](consultar-y-editar.md)
-- [7.3 Confirmar, anular o convertir una preventa en venta](confirmar-anular-convertir.md)
+- [12.1 Consultar y actualizar una preventa](consultar-y-editar.md)
+- [12.2 Confirmar una preventa](confirmar-preventa.md)
+- [12.3 Anular una preventa](anular-preventa.md)
+- [12.4 Convertir una preventa en venta](convertir-preventa-en-venta.md)

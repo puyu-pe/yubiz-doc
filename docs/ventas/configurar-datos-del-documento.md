@@ -1,72 +1,30 @@
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
+
+# Guías disponibles
+
+<a id="29-elegir-documento-serie-fecha-y-almacen-de-una-venta"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
+
 <a id="elegir-documento-serie-fecha-y-almacén-de-una-venta"></a>
-
-# 2.9 Elegir documento, serie, fecha y almacén de una venta
-
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Completar los datos del documento y del contexto de una venta antes de registrar
-ítems y pagos.
-
-## Acceso condicional
-
-Los documentos, series, almacenes, líneas y vendedores disponibles dependen de la
-sesión, módulo y configuración del entorno.
-
-## Requisitos y datos
-
-- Cliente seleccionado para la venta.
-- Documento, serie, fecha de emisión y almacén disponibles en el formulario.
-- Línea o vendedor, si el formulario los muestra y la operación los requiere.
-
-## Punto de partida
-
-En el formulario **Venta / Agregar**, antes de confirmar la operación.
-
-## Pasos
-
-1. Seleccione el documento disponible para la operación.
-2. Espere la carga de las series asociadas y seleccione la serie correspondiente.
-3. Ingrese o revise la fecha de emisión.
-4. Seleccione el almacén desde el cual se realizará la venta.
-5. Si aparecen, revise la línea y el vendedor; deje esos campos según el contexto
-   de la operación.
-6. Cambie de documento solo antes de continuar con los ítems: el formulario vuelve
-   a cargar sus series y recalcula condiciones de los ítems.
-7. Continúe con los productos y revise los datos otra vez antes de seleccionar
-   **Registrar**.
-
-## Campos y validaciones observados
-
-El navegador exige cliente, documento, serie, fecha y almacén. La serie se valida
-como requerida y con un máximo de cuatro caracteres. La fecha se valida como
-requerida y contra el rango disponible del documento seleccionado; el formulario
-muestra como máximo la fecha actual en el control observado.
-
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El formulario carga documentos, series, almacenes, líneas y vendedores según los
-
-## Advertencias y casos límite
-
-No use una serie, fecha o almacén como equivalentes de una autorización financiera
-o fiscal. Si cambia el documento después de cargar ítems, revise precios,
-
-## Problemas frecuentes y condiciones de detención
-
-- No hay serie disponible: detenga el registro y confirme el documento elegido en
-  el entorno.
-- Fecha rechazada por el formulario: corrija la fecha o confirme el rango que
-  admite el documento seleccionado.
-- Almacén o vendedor no visible: no asuma un permiso o una configuración; use solo
-  las opciones disponibles.
-
-## Enlaces relacionados
-
-- [Seleccionar cliente](seleccionar-cliente.md)
-- [Seleccionar productos y revisar condiciones](seleccionar-productos-y-revisar-condiciones.md)
-- [Registrar pagos con uno o varios medios](registrar-multiples-medios-de-pago.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

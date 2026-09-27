@@ -1,47 +1,60 @@
+---
+search:
+  exclude: true
+---
+
 <a id="gestionar-vendedores-y-consultar-comisiones"></a>
 
-# 2.15 Gestionar vendedores y consultar comisiones
+# 2.12 Consultar comisiones de vendedores
+
+<a id="215-gestionar-vendedores-y-consultar-comisiones"></a>
+<a id="objetivo"></a>
+<a id="punto-de-partida"></a>
+<a id="resultado-esperado"></a>
 
 <a id="estado"></a>
 <a id="verificaciones-pendientes-en-runtime"></a>
+<a id="acceso-condicional"></a><a id="requisitos-y-datos"></a><a id="campos-y-validaciones-observados"></a><a id="advertencias-y-casos-limite"></a><a id="problemas-frecuentes-y-condiciones-de-detencion"></a><a id="enlaces-relacionados"></a>
 
-## Objetivo
-Revisar el vínculo observado entre una persona usuaria, establecimientos y el contexto de vendedor, además de los controles de consulta de comisiones disponibles.
+Consulte las comisiones disponibles por vendedor para un periodo y conserve el contexto de filtros para su revisión.
 
-## Acceso condicional
+## Antes de empezar
 La gestión de vendedores, establecimientos y comisiones es condicional: depende de módulos, sesión, rol y configuración del entorno.
 
-## Requisitos y datos
-- Persona usuaria o vendedor identificado.
-- Establecimientos visibles en el formulario, cuando esté disponible.
-- Periodo o filtros de consulta, si aparecen en el reporte.
+### Datos necesarios
+- Periodo de consulta y vendedor, cuando el filtro esté disponible.
+- Criterio para contrastar los importes y productos mostrados.
 
-## Punto de partida
-En la opción disponible para establecimientos de vendedor o en un reporte de comisiones.
+## Cómo acceder
+En el reporte de comisiones disponible en el área de ventas.
+
+## Cómo acceder
+
+1. En la barra lateral, abra **Ventas**.
+2. Seleccione **Gestión de vendedores**.
 
 ## Pasos
-1. Confirme que está revisando la persona usuaria correcta antes de modificar una selección.
-2. Revise los establecimientos y sus datos mostrados en la tabla.
-3. Seleccione o quite una relación solo si esa acción está habilitada y corresponde a la decisión autorizada en su organización.
-4. Guarde y revise el resultado mostrado por el entorno.
-5. Para comisiones, aplique los filtros disponibles y revise el periodo, vendedor y datos mostrados antes de interpretar un resultado.
+1. Seleccione el periodo y el vendedor cuando esos filtros estén disponibles.
+2. Seleccione **Buscar** y confirme que el periodo y el vendedor visibles corresponden a la consulta.
+3. Revise los datos de comisión mostrados junto con el vendedor y el periodo.
+4. Antes de exportar o comunicar un importe, deténgase si no puede confirmar el contexto de filtros o el registro que lo origina.
 
-## Campos y validaciones observados
-El formulario observado presenta una lista seleccionable de establecimientos con dirección y ubicación, más una acción de guardar. Los reportes de ventas incluyen filtros de vendedor; la disponibilidad de una consulta de comisiones es condicional.
+### Datos que debe revisar
+Los reportes de ventas incluyen filtros de vendedor; la disponibilidad de una consulta de comisiones depende de la configuración disponible.
 
 <a id="resultado-revisado-en-fuente"></a>
 
-## Resultado esperado
-La interfaz envía las selecciones de establecimientos para la persona usuaria. La interfaz también incluye una salida de comisiones. La asignación efectiva, permisos, cálculo y pago de comisiones pueden variar según la configuración disponible.
+## Compruebe el resultado
+La interfaz presenta la salida de comisiones para el periodo y los filtros elegidos. El cálculo y el pago de comisiones requieren contrastarse con los registros aplicables.
 
-## Advertencias y casos límite
-No interprete una casilla seleccionada ni un reporte como autorización de acceso o confirmación de pago. Si no conoce las consecuencias de una asignación o de un cálculo, detenga el flujo y escale la consulta.
+## Situaciones frecuentes
+No interprete un reporte como confirmación de pago. Si no conoce el origen de un importe o las consecuencias de usarlo, detenga la revisión y escale la consulta.
 
-## Problemas frecuentes y condiciones de detención
-- Persona usuaria incorrecta: no guarde cambios.
-- Establecimiento o reporte no disponible: no infiera permisos ni habilitación universal.
+### Si necesita detenerse
+- Vendedor o periodo incorrectos: corrija los filtros antes de interpretar el resultado.
+- Reporte no disponible: no infiera su disponibilidad en otra sesión.
 - Resultado de comisión incierto: no tome decisiones de pago; solicite revisión responsable.
 
-## Enlaces relacionados
-- [Consultar reportes consolidados y ventas por producto](revisar-reportes-de-ventas.md)
-- [Elegir documento, serie, fecha y almacén de una venta](configurar-datos-del-documento.md)
+## Continuar con
+- [Consultar ventas y productos vendidos](revisar-reportes-de-ventas.md)
+- [Consultar comisiones por producto](../reportes-especializados/comisiones-de-ventas.md)

@@ -1,28 +1,36 @@
 <a id="consultar-comisiones-de-ventas-por-producto"></a>
 
-# 2.16 Consultar comisiones de ventas por producto
+# 2.12 Consultar comisiones por producto
+
+<a id="213-consultar-comisiones-por-producto"></a>
+
+<a id="216-consultar-comisiones-de-ventas-por-producto"></a>
+<a id="objetivo"></a>
+<a id="punto-de-partida"></a>
+<a id="resultado-esperado"></a>
 
 <a id="estado"></a>
 <a id="verificaciones-pendientes-en-runtime"></a>
+<a id="acceso-condicional"></a><a id="requisitos-y-datos"></a><a id="campos-y-validaciones-observados"></a><a id="advertencias-y-casos-limite"></a><a id="problemas-frecuentes-y-condiciones-de-detencion"></a><a id="enlaces-relacionados"></a>
 
-## Objetivo
+Consulte las comisiones por producto con el periodo y los filtros disponibles, sin confundir el reporte con una liquidación.
 
-Consultar la tabla de comisiones por producto y usar los filtros o exportaciones que
-estén visibles, sin interpretar sus valores como una liquidación o pago confirmado.
-
-## Acceso condicional
+## Antes de empezar
 
 Este reporte especializado depende del módulo, sesión, rol y configuración. Puede no
 estar disponible aunque exista la configuración de vendedores de Ventas.
 
-## Requisitos y datos
+### Datos necesarios
 
 - Periodo, producto, usuario o valor de comisión cuando aparezcan como filtros.
 - Criterio para revisar fecha de registro, cantidad y montos mostrados.
 
-## Punto de partida
+## Cómo acceder
 
-Abra el reporte de comisiones disponible en el entorno.
+1. En la barra lateral, abra **Ventas**.
+2. Seleccione **Reportes**.
+3. Seleccione **Comisiones de ventas**.
+4. La grilla muestra ventas por comisión; use sus filtros antes de revisar los productos, marcas, usuarios y comisiones.
 
 ## Pasos
 
@@ -32,29 +40,28 @@ Abra el reporte de comisiones disponible en el entorno.
 4. Use exportación a hoja de cálculo o PDF solo si la acción está visible.
 5. Conserve el periodo y filtros usados para una revisión posterior.
 
-## Campos y validaciones observados
+### Datos que debe revisar
 
 La tabla observada ofrece filtros por rango de fecha, usuario y valor de comisión.
 
 <a id="resultado-revisado-en-fuente"></a>
 
-## Resultado esperado
+## Compruebe el resultado
 
 El navegador presenta una consulta de comisiones con opciones de exportación. No
 confirma fórmula, base de cálculo, liquidación, pago ni validez contable.
 
-## Advertencias y casos límite
+## Situaciones frecuentes
 
 No confunda este reporte con la asignación de vendedores y establecimientos de
-[Ventas](../ventas/vendedores-y-comisiones.md). No tome decisiones de pago con un resultado no validado.
+[Ventas](../ventas/consultar-ventas.md). No tome decisiones de pago con un resultado no validado.
 
-## Problemas frecuentes y condiciones de detención
+### Si necesita detenerse
 
 - Periodo o filtro incorrecto: corríjalo antes de exportar o comunicar un total.
 - Sin resultados: no concluya ausencia de comisiones sin validar el contexto.
 - Total inesperado: detenga la interpretación y solicite revisión responsable.
 
-## Enlaces relacionados
+## Continuar con
 
-- [Gestionar vendedores y consultar comisiones](../ventas/vendedores-y-comisiones.md)
-- [Consultar ventas por usuario y cliente](ventas-por-usuario-y-cliente.md)
+- [Consultar una venta](../ventas/consultar-ventas.md)

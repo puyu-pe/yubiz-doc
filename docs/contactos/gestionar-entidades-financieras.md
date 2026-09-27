@@ -1,73 +1,30 @@
-<a id="gestionar-entidades-financieras"></a>
+---
+search:
+  exclude: true
+hide:
+  - navigation
+  - search
+---
 
-# 3.4 Gestionar entidades financieras
+# Guías disponibles
+
+<a id="34-gestionar-entidades-financieras"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="pasos"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
+
+Esta guía fue integrada en el manual por tareas. Consulte las guías disponibles para continuar.
+
+[Ver las guías disponibles](../index.md)
 
 <a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
-
-## Objetivo
-
-Registrar, revisar, editar o desactivar entidades financieras que se ofrecen al
-gestionar cuentas de proveedores, cuando la capacidad esté habilitada.
-
-## Acceso condicional
-
-Esta capacidad es condicional: su entrada, acciones y alcance dependen del módulo,
-la configuración y la sesión del entorno. No supone disponibilidad universal.
-
-## Requisitos y datos
-
-- Tipo de entidad y nombre.
-- Descripción, si ayuda a distinguir la entidad.
-- Estado que corresponda al uso autorizado en la organización.
-
-## Punto de partida
-
-Abra la opción de entidades financieras solo cuando esté disponible en la
-navegación de su sesión o desde el flujo autorizado de cuentas de proveedores.
-
-## Pasos
-
-1. Revise la lista para confirmar si la entidad ya está registrada.
-2. Para crear una entidad, use la acción disponible e indique tipo y nombre.
-3. Si corresponde, agregue una descripción que permita reconocerla sin incluir
-   datos de cuentas ni personas.
-4. Revise el estado antes de guardar o editar el registro.
-5. Para dejar de usar una entidad, utilice la acción disponible solo después de
-   confirmar el impacto sobre cuentas asociadas; no asuma eliminación definitiva.
-
-## Campos y validaciones observados
-
-El formulario revisado contiene tipo, nombre, descripción y estado. Tipo y nombre
-son obligatorios. Los tipos observados incluyen banco, caja, cooperativa y otros;
-el estado se presenta como activo o inactivo. La interfaz no confirma que
-estas etiquetas ni opciones sean idénticas en todos los entornos.
-
+<a id="gestionar-entidades-financieras"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-La entidad queda disponible para relacionarse con cuentas de proveedores. Al
-retirarla de uso, el flujo revisado cambia su estado a inactivo. La actualización
-registra una fecha de modificación en la interfaz, sin que esta ficha infiera una
-política de auditoría o aprobación.
-
-## Advertencias y casos límite
-
-No incluya números de cuenta, CCI, titulares ni datos de personas en la
-descripción. Antes de inactivar una entidad, confirme si existen cuentas asociadas
-y el procedimiento aplicable. Si esta opción no está visible, no intente crear
-entidades desde un flujo alternativo.
-
-## Problemas frecuentes y condiciones de detención
-
-- Falta tipo o nombre: complete ambos antes de guardar.
-- La entidad ya existe o no se distingue de otra: deténgase y revise el listado.
-- No se puede confirmar el impacto de inactivarla: no continúe sin el
-  procedimiento autorizado.
-- Opción ausente: confirme la habilitación del módulo y la sesión disponible.
-
-## Enlaces relacionados
-
-- [Gestionar proveedores y sus cuentas bancarias](gestionar-proveedores.md)
-- [Contactos](index.md)
+<a id="verificaciones-pendientes-en-runtime"></a>

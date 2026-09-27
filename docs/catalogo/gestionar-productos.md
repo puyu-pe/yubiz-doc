@@ -1,78 +1,49 @@
 <a id="crear-y-editar-productos-del-catálogo"></a>
 
-# 3.5 Crear y editar productos del catálogo
+# 5.1 Registrar y actualizar productos
 
-<a id="estado"></a>
-<a id="verificaciones-pendientes-en-runtime"></a>
+<a id="41-registrar-y-actualizar-productos"></a>
 
-## Objetivo
+<a id="35-crear-y-editar-productos-del-catalogo"></a>
+<a id="objetivo"></a>
+<a id="acceso-condicional"></a>
+<a id="requisitos-y-datos"></a>
+<a id="punto-de-partida"></a>
+<a id="campos-y-validaciones-observados"></a>
+<a id="resultado-esperado"></a>
+<a id="advertencias-y-casos-limite"></a>
+<a id="problemas-frecuentes-y-condiciones-de-detencion"></a>
+<a id="enlaces-relacionados"></a>
 
-Crear o actualizar la ficha maestra de un producto antes de utilizarlo en tareas
-de venta, compra o inventario.
+Registre la ficha de un producto o actualícela con sus datos comerciales, de compra y de seguimiento.
 
-## Acceso condicional
+## Cómo acceder
 
-La lista y el formulario de productos dependen del módulo y de la sesión. Los
-campos disponibles pueden variar según la configuración del entorno.
+1. En la barra lateral, abra **Inventario**.
+2. Seleccione **Catálogo**.
+3. Para crear un producto, seleccione **Nuevo producto**; para editarlo, ábralo con doble clic.
 
-## Requisitos y datos
+## Antes de empezar
 
-- Nombre del producto, precio de venta, costo, seguimiento, stock mínimo y peso.
-- Categoría, marca y medida para completar la ficha.
-- Código interno o código de barras solo si se cuenta con datos autorizados.
-
-## Punto de partida
-
-En **Catálogo**, abra la lista de productos y elija la acción disponible para
-agregar, o abra un registro existente para editarlo.
+- Tenga nombre, categoría, marca, medida, precio de venta, costo, seguimiento, stock mínimo y peso.
 
 ## Pasos
 
-1. Escriba el nombre del producto y revise si ya existe uno equivalente.
-2. Indique si puede comprarse o venderse, cuando las casillas estén disponibles.
-3. Complete precio de venta, costo, seguimiento, stock mínimo y peso.
-4. Abra los detalles adicionales para seleccionar marca, medida, modelo o
-   presentación y categoría cuando correspondan.
-5. Revise código interno y código de barras; déjelos sin completar solo si el
-   flujo de su entorno permite generarlos.
-6. Guarde y vuelva a abrir la ficha o la lista para comprobar que el producto
-   esperado quedó identificado correctamente.
+1. Revise la lista para evitar un producto, código interno o código de barras duplicado.
+2. Seleccione **Nuevo producto** o abra el producto con doble clic.
+3. Complete nombre, categoría, marca, medida, precio de venta, costo, seguimiento, stock mínimo y peso. Indique compra o venta cuando la ficha lo muestre.
+4. Agregue proveedor y datos de compra, e imágenes que identifiquen el producto, en los apartados disponibles.
+5. Revise códigos y precios antes de guardar. Si cambia el seguimiento, confirme primero que el producto tiene stock en cero.
+6. Guarde y vuelva a abrir la ficha para actualizar sus datos cuando sea necesario.
 
-## Campos y validaciones observados
+## Compruebe el resultado
 
-La ficha revisada incluye nombre, códigos, afectación tributaria, precio de venta,
-costo, utilidad, observación, compra/venta, seguimiento, stock mínimo y peso. El
-navegador exige nombre, precio mayor que cero, costo, seguimiento, stock mínimo y
-peso no negativos. El guardado también exige categoría, marca y medida.
-Al cambiar precio, costo o utilidad, el formulario recalcula campos relacionados.
-Un código interno o de barras duplicado se rechaza; si queda vacío, la interfaz
-revisada intenta asignarlo automáticamente.
+Busque el producto y compruebe su clasificación, precio, costo, proveedores, imágenes y seguimiento. En un producto nuevo, el stock inicial debe mostrarse como cero.
 
+## Situaciones frecuentes
+
+- **Cambio de seguimiento bloqueado:** revise el stock; no fuerce el cambio si existen unidades.
+
+<a id="estado"></a>
 <a id="resultado-revisado-en-fuente"></a>
-
-## Resultado esperado
-
-El guardado válido crea o actualiza la ficha y conserva sus precios y proveedores
-relacionados. En una creación, la interfaz prepara registros de producto
-para los almacenes disponibles con cantidad inicial cero.
-
-## Advertencias y casos límite
-
-No use esta ficha para seleccionar un producto en una venta: esa operación es
-distinta y se cubre en [seleccionar productos y revisar condiciones](../ventas/seleccionar-productos-y-revisar-condiciones.md).
-El seguimiento puede quedar bloqueado al editar según el estado de stock; no
-suponga que puede cambiarse después de crear el producto.
-
-## Problemas frecuentes y condiciones de detención
-
-- Producto, código interno o código de barras duplicado: revise el registro ya
-  existente antes de crear otro.
-- Falta categoría, marca o medida: complete los datos maestros necesarios.
-- Precio no válido o costo, stock o peso negativos: corrija el valor antes de guardar.
-- No puede confirmar el efecto del seguimiento: deténgase y valide el contexto
-  operativo antes de modificarlo.
-
-## Enlaces relacionados
-
-- [Gestionar marcas, categorías, medidas y modelos](gestionar-detalles-de-producto.md)
-- [Configurar precios de venta por tipo y establecimiento](configurar-precios-de-venta.md)
+<a id="verificaciones-pendientes-en-runtime"></a>
