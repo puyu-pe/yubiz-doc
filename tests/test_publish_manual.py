@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.publish_manual import GuardError, checked_artifact, checked_reviewed_main, checked_sha, load_target, plan, upload
+from scripts.publish_manual import GuardError, checked_artifact, checked_reviewed_main, checked_sha, load_target, plan, terminated_secret, upload
 
 
 SHA = "a" * 40
@@ -183,6 +183,10 @@ class PublishManualTests(unittest.TestCase):
             self.assertEqual("rsync", rsync.args[0][0])
             self.assertIn("--delete", rsync.args[0])
             self.assertEqual("publisher@docs.example.test:/srv/manual/", rsync.args[0][-1])
+
+    def test_ssh_secret_materialization_has_one_final_newline(self) -> None:
+        self.assertEqual("trusted\n", terminated_secret("trusted"))
+        self.assertEqual("trusted\n", terminated_secret("trusted\r\n\n"))
 
     def test_rejects_root_and_public_link_collisions_before_git(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

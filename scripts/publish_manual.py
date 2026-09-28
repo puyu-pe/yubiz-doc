@@ -92,6 +92,10 @@ def checked_sha(value: str) -> str:
     return value
 
 
+def terminated_secret(value: str) -> str:
+    return value.rstrip("\r\n") + "\n"
+
+
 def checked_reviewed_main(root: Path, sha: str) -> None:
     if not (root / ".git").exists():
         raise GuardError("local repository identity is unavailable")
@@ -170,8 +174,8 @@ def upload(root: Path, target_path: Path, artifact_dir: Path, sha: str) -> dict[
         raise GuardError("required SSH secret values are unavailable")
     with tempfile.TemporaryDirectory() as temporary:
         directory = Path(temporary)
-        known = directory / "known_hosts"; known.write_text(known_hosts, encoding="utf-8"); known.chmod(0o600)
-        private = directory / "key"; private.write_text(key, encoding="utf-8"); private.chmod(0o600)
+        known = directory / "known_hosts"; known.write_text(terminated_secret(known_hosts), encoding="utf-8"); known.chmod(0o600)
+        private = directory / "key"; private.write_text(terminated_secret(key), encoding="utf-8"); private.chmod(0o600)
         ssh = ["ssh", "-i", str(private), "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=yes", "-o", f"UserKnownHostsFile={known}", "-p", target["port"], f"{target['user']}@{target['host']}"]
         subprocess.run([*ssh, release_plan["remote_check"]], check=True)
         transport = shlex.join(ssh[:-1])
