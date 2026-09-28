@@ -21,7 +21,7 @@ Registre la entrada de productos en un almacén y compruebe el movimiento result
 3. Revise las unidades, la cantidad y cualquier observación solicitada.
 4. Si se solicitan series, asigne las series correspondientes antes de guardar.
 5. **Antes de confirmar,** revise que el almacén y la cantidad no correspondan a una salida ni a una transferencia.
-6. Guarde el movimiento.
+6. Seleccione **Registrar** para guardar el movimiento.
 
 ## Compruebe el resultado
 

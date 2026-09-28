@@ -21,7 +21,7 @@ Registre un cliente nuevo o actualice sus datos de contacto para identificarlo e
 
 1. En la barra lateral, abra **Contactos**.
 2. Seleccione **Clientes**.
-3. Seleccione un cliente para actualizarlo.
+3. Para crear, seleccione **Añadir cliente** en la lista. Para actualizar, abra el registro existente.
 
 ## Antes de empezar
 
@@ -30,7 +30,7 @@ Registre un cliente nuevo o actualice sus datos de contacto para identificarlo e
 ## Pasos
 
 1. Busque el documento o nombre en la lista para evitar duplicados.
-2. Seleccione la acción para agregar un cliente o abra el registro existente.
+2. Seleccione **Añadir cliente** para abrir el formulario o abra el registro existente.
 3. Complete tipo y número de documento y nombre o razón social. Agregue dirección, correo, teléfono o referencia cuando correspondan.
 4. Revise que el documento identifica a la misma persona u organización y guarde.
 5. Para actualizar, abra la ficha, cambie los datos necesarios y guarde de nuevo.

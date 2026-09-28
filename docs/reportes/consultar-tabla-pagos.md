@@ -11,7 +11,7 @@ Consulte los pagos registrados en una grilla y delimite el resultado antes de re
 
 1. Use la fila de filtros de la grilla para acotar los pagos que necesita revisar.
 2. Contraste las columnas **Documento**, **Cliente**, **V.F. emisión**, **F. pago**, **Método**, **MONTO** y **USUARIO** con el período o documento consultado.
-3. Si la pantalla muestra una acción de exportación para la consulta actual, solicítela después de revisar los filtros aplicados.
+3. En **Tabla pagos**, abra el menú de acciones de tres puntos y seleccione **Generar EXCEL** para preparar la exportación de la consulta actual, después de revisar los filtros aplicados.
 
 ## Compruebe el resultado
 

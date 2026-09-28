@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 contract_version: 2
 records:
 - id: foundation-sign-in
@@ -44,7 +44,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Ventas**.
   - Seleccione **Ventas**.
-  - Localice la venta y ábrala para continuar con el cobro.
+  - Localice la venta y haga doble clic en su fila para abrir el detalle.
+  - En el menú de acciones del detalle, seleccione **Registrar pago**. Se abrirá **Pagos / Agregar**.
 - id: sales-manage-quotations
   guide: '2.4'
   path: ventas/gestionar-cotizaciones.md
@@ -72,7 +73,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Ventas**.
   - Seleccione **Cotizaciones**.
-  - Seleccione la cotización y use Convertir venta para abrir la venta de origen.
+  - Abra el detalle de la cotización con doble clic en su fila. En el encabezado del detalle,
+    abra el menú de tres puntos verticales y seleccione **Convertir venta** para abrir el formulario de venta de origen.
 - id: sales-search-filter-and-review-sales
   guide: '2.6'
   path: ventas/consultar-ventas.md
@@ -85,7 +87,7 @@ records:
   access_steps:
   - En la barra lateral, abra **Ventas**.
   - Seleccione **Ventas**.
-  - Seleccione la venta para abrir su detalle.
+  - Haga doble clic en la fila de la venta para abrir su detalle.
 - id: sales-void-sale
   guide: '2.7'
   path: ventas/anular-venta.md
@@ -98,19 +100,20 @@ records:
   access_steps:
   - En la barra lateral, abra **Ventas**.
   - Seleccione **Ventas**.
-  - Seleccione la venta para abrir su detalle.
+  - Haga doble clic en la fila de la venta para abrir su detalle. En el menú de acciones del detalle, revise si **Anular** está habilitado.
 - id: sales-credit-notes-and-exchange
   guide: '2.8'
   path: ventas/notas-de-credito-y-canje.md
   classification: direct
   sidebar:
   - Ventas
-  - Notas de crédito
+  - Ventas
   starting_screen: ''
   entry_action: ''
   access_steps:
-  - En la barra lateral, abra **Ventas**.
-  - Seleccione **Notas de crédito**.
+  - En la barra lateral, abra **Ventas** y seleccione **Ventas**.
+  - Haga doble clic en la fila de la venta para abrir su detalle.
+  - En el menú de acciones del detalle, seleccione **Nota de crédito** solo si la opción está habilitada. Se abrirá **Nota de crédito / Agregar**.
 - id: manual-2-9
   guide: '2.9'
   path: ventas/canjear-documento-de-venta.md
@@ -123,7 +126,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Ventas**.
   - Seleccione **Ventas**.
-  - Seleccione la venta para abrir su detalle.
+  - Localice la venta y haga doble clic en su fila para abrir el detalle.
+  - En el menú de acciones del detalle, seleccione **Canjear** solo si está habilitado. Se abrirá el formulario de canje de la nota de venta.
 - id: reports-consult-sales-payments-and-debts
   guide: '2.10'
   path: reportes/consultar-pagos-y-deudas.md
@@ -320,8 +324,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Inventario**.
   - Seleccione **Catálogo**.
-  - Para crear un producto, seleccione **Nuevo producto**; para editarlo, ábralo con
-    doble clic.
+  - Para crear un producto, en el encabezado de **Lista de productos** abra el icono de tres puntos verticales situado en el extremo derecho y seleccione **Nuevo producto** en el menú desplegable. Se abrirá el formulario **Agregar producto**.
+  - Para editar un producto existente, localice su fila en la lista y haga doble clic en ella. Se abrirá el formulario **Editar producto**.
 - id: manual-4-2
   guide: '5.2'
   path: catalogo/eliminar-producto.md
@@ -334,7 +338,7 @@ records:
   access_steps:
   - En la barra lateral, abra **Inventario**.
   - Seleccione **Catálogo**.
-  - Seleccione el producto para abrir su edición antes de eliminarlo.
+  - Haga doble clic en la fila del producto para abrir **Editar producto**. En el encabezado del modal, abra el menú de tres puntos verticales y seleccione **Eliminar**.
 - id: catalog-manage-product-details
   guide: '5.3'
   path: catalogo/gestionar-detalles-de-producto.md
@@ -708,7 +712,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Compras**.
   - Seleccione **Compras**.
-  - Seleccione la compra para abrirla antes de anularla.
+  - Localice la compra y haga doble clic en su fila para abrir el detalle.
+  - En el menú de acciones del detalle, seleccione **Anular** solo si está habilitado. Se abrirá el formulario **ANULAR**.
 - id: purchases-register-payments-and-balances
   guide: '7.9'
   path: compras/registrar-pagos-y-saldos.md
@@ -721,7 +726,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Compras**.
   - Seleccione **Compras**.
-  - Seleccione la compra para abrir su detalle y los pagos.
+  - Localice la compra y haga doble clic en su fila para abrir el detalle.
+  - En el menú de acciones del detalle, seleccione **Registrar pago**. Se abrirá **Pagos / Agregar**.
 - id: purchases-manage-supplier-documents
   guide: '7.10'
   path: compras/gestionar-documentos.md
@@ -785,7 +791,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Compras**.
   - Seleccione **Gastos**.
-  - Seleccione el gasto para abrirlo antes de anularlo.
+  - Localice el gasto y haga doble clic en su fila para abrir el detalle.
+  - En el menú de acciones del detalle, seleccione **Anular** solo si está habilitado.
 - id: contacts-manage-customers
   guide: '8.1'
   path: contactos/gestionar-clientes.md
@@ -798,7 +805,7 @@ records:
   access_steps:
   - En la barra lateral, abra **Contactos**.
   - Seleccione **Clientes**.
-  - Seleccione un cliente para actualizarlo.
+  - Para crear, seleccione **Añadir cliente** en la lista. Para actualizar, abra el registro existente.
 - id: contacts-manage-suppliers-and-bank-accounts
   guide: '8.2'
   path: contactos/gestionar-proveedores.md
@@ -1027,7 +1034,8 @@ records:
   access_steps:
   - En la barra lateral, abra **Preventa**.
   - Seleccione **Preventas**.
-  - Seleccione la preventa para abrirla.
+  - Use el menú de tres puntos del encabezado solo para **Editar columnas**; no abre una preventa.
+  - Para abrir una preventa, haga doble clic en su fila. Se abrirá el detalle de ese registro.
 - id: manual-8-3
   guide: '12.2'
   path: preventa/confirmar-preventa.md
@@ -1040,7 +1048,7 @@ records:
   access_steps:
   - En la barra lateral, abra **Preventa**.
   - Seleccione **Preventas**.
-  - Seleccione la preventa para abrirla antes de confirmarla.
+  - Haga doble clic en la fila de la preventa para abrir su detalle. En el menú de acciones del registro, seleccione **Confirmar preventa** solo si está habilitado.
 - id: manual-8-4
   guide: '12.3'
   path: preventa/anular-preventa.md
@@ -1053,7 +1061,7 @@ records:
   access_steps:
   - En la barra lateral, abra **Preventa**.
   - Seleccione **Preventas**.
-  - Seleccione la preventa para abrirla antes de anularla.
+  - Haga doble clic en la fila de la preventa para abrir su detalle. En el menú de acciones del registro, seleccione **Anular preventa** solo si está habilitado.
 - id: manual-8-5
   guide: '12.4'
   path: preventa/convertir-preventa-en-venta.md
@@ -1066,4 +1074,402 @@ records:
   access_steps:
   - En la barra lateral, abra **Preventa**.
   - Seleccione **Preventas**.
-  - Seleccione la preventa para abrirla antes de convertirla.
+  - Haga doble clic en la fila de la preventa para abrir su detalle. En el menú de acciones del registro, seleccione **Convertir a venta** solo si está habilitado.
+control_catalog:
+  revision: 330857197e5e01c24147d03452f7c59909abc968
+  evidence_id: EV-SRC-330857-CONTROL-RELATIONS
+  controls:
+  - id: CTRL-PRODUCT-HEADER-CREATE-EDIT
+    container: encabezado de Lista de productos y fila del producto
+    gesture: clic de revelación y doble clic de edición
+    reveal: menú del encabezado antes de la opción de alta
+    option: Nuevo producto
+    next_state: formularios Agregar producto y Editar producto
+    visible_tokens: [encabezado de **Lista de productos**, icono de tres puntos verticales, '**Nuevo producto**', menú desplegable, '**Agregar producto**', doble clic, '**Editar producto**']
+  - id: CTRL-UNIT-HEADER-CREATE
+    container: encabezado de Lista de unidades
+    gesture: clic
+    reveal: menú desplegable del encabezado
+    option: Agregar unidad
+    next_state: formulario Agregar unidad
+    visible_tokens: [Lista de unidades, tres puntos verticales, '**Agregar unidad**', menú desplegable]
+  - id: CTRL-SERVICE-HEADER-CREATE
+    container: encabezado de Lista de servicios
+    gesture: clic
+    reveal: menú desplegable del encabezado
+    option: Agregar servicio
+    next_state: formulario Agregar servicio
+    visible_tokens: [Lista de servicios, tres puntos verticales, '**Agregar servicio**', menú desplegable]
+  - id: CTRL-PAYMENT-DETAIL
+    container: menú de acciones del detalle
+    gesture: doble clic de fila seguido de clic
+    reveal: abrir el detalle y su menú de acciones
+    option: Registrar pago
+    next_state: Pagos / Agregar
+    visible_tokens: [doble clic, menú de acciones del detalle, '**Registrar pago**', '**Pagos / Agregar**']
+  - id: CTRL-PERIOD-HEADER-CREATE
+    container: menú de acciones del encabezado de períodos
+    gesture: clic
+    reveal: abrir el menú del encabezado
+    option: Nuevo periodo
+    next_state: formulario de período
+    visible_tokens: [tres puntos verticales, '**Nuevo periodo**', formulario]
+  - id: CTRL-PRESALE-ROW-OPEN
+    container: menú del encabezado y fila de preventa
+    gesture: doble clic de fila
+    reveal: Editar columnas no revela el detalle
+    option: Editar columnas
+    next_state: detalle de preventa
+    visible_tokens: ['**Editar columnas**', no abre una preventa, doble clic, fila, detalle]
+  - id: CTRL-SALE-DETAIL-EXCHANGE
+    container: menú de acciones del detalle de venta
+    gesture: doble clic de fila seguido de clic
+    reveal: abrir el detalle y comprobar que Canjear está habilitado
+    option: Canjear
+    next_state: formulario de canje de nota de venta
+    visible_tokens: [doble clic, menú de acciones del detalle, '**Canjear**', Canjear cupón de descuento]
+  bindings:
+  - {id: catalog-manage-products, control_id: CTRL-PRODUCT-HEADER-CREATE-EDIT, variant: create_and_edit}
+  - {id: internado-manage-service-units, control_id: CTRL-UNIT-HEADER-CREATE, variant: create}
+  - {id: internado-manage-service-items, control_id: CTRL-SERVICE-HEADER-CREATE, variant: create}
+  - {id: sales-collect-later-and-check-balance, control_id: CTRL-PAYMENT-DETAIL, variant: payment}
+  - {id: purchases-register-payments-and-balances, control_id: CTRL-PAYMENT-DETAIL, variant: payment}
+  - {id: budget-manage-periods, control_id: CTRL-PERIOD-HEADER-CREATE, variant: create}
+  - {id: presale-list-and-edit, control_id: CTRL-PRESALE-ROW-OPEN, variant: edit}
+  - {id: manual-2-9, control_id: CTRL-SALE-DETAIL-EXCHANGE, variant: exchange}
+
+action_profiles:
+- id: catalog-manage-products
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions:
+  - {screen: Lista de productos, container: encabezado de la lista, control: icono de tres puntos verticales y Nuevo producto, gesture: clic, reveal: abrir el menú desplegable, next_state: formulario Agregar producto}
+  - {screen: Lista de productos, container: fila del producto, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: formulario Editar producto}
+- id: manual-4-2
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de productos, container: fila del producto, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: formulario Editar producto}]
+- id: catalog-manage-product-details
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Gestión detalles producto, container: selector de tipo y lista, control: tipo de detalle, gesture: clic, reveal: elegir el tipo antes de su lista, next_state: lista del detalle seleccionado}]
+- id: catalog-configure-sale-prices
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de productos, container: fila del producto, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: formulario Editar producto}]
+- id: catalog-manage-lots
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lotes, container: lista de lotes, control: acción de alta o fila, gesture: clic, reveal: usar el control visible de la pantalla, next_state: formulario de lote}]
+- id: catalog-manage-series
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Series, container: lista de series, control: fila de serie, gesture: clic, reveal: no requiere revelación, next_state: detalle de serie}]
+- id: inventory-register-product-conversion
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Conversión, container: formulario de conversión, control: Registrar, gesture: clic, reveal: completar origen y destino, next_state: confirmación de conversión}]
+- id: catalog-review-utility-and-export
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Utilidad de productos, container: tabla de utilidad, control: filtros de tabla, gesture: clic, reveal: aplicar filtros disponibles, next_state: resultados filtrados}]
+- id: inventory-check-stock-by-warehouse
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Inventario, container: tabla de stock, control: filtros de tabla, gesture: clic, reveal: aplicar filtros disponibles, next_state: stock filtrado}]
+- id: inventory-review-movements-and-kardex
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Ingresos y salidas, container: fila de movimientos, control: fila, gesture: clic, reveal: no requiere revelación, next_state: detalle de operación}]
+- id: manual-5-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear ingreso a almacen, container: formulario de ingreso, control: Registrar, gesture: clic, reveal: completar datos obligatorios, next_state: confirmación de ingreso}]
+- id: manual-5-4
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear salida de almacen, container: formulario de salida, control: Registrar, gesture: clic, reveal: completar datos obligatorios, next_state: confirmación de salida}]
+- id: inventory-transfer-between-warehouses
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear traslado interno, container: formulario de traslado, control: Registrar, gesture: clic, reveal: completar origen y destino, next_state: confirmación de traslado}]
+- id: inventory-register-adjustment
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Inventario, container: fila del producto, control: fila, gesture: clic, reveal: abrir el registro antes del ajuste, next_state: detalle de producto}]
+- id: inventory-manage-remission-guides
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear Guía Remisión, container: formulario de guía, control: Registrar, gesture: clic, reveal: completar datos de guía, next_state: confirmación de guía}]
+- id: budget-manage-periods
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Periodos, container: barra de acciones, control: Nuevo periodo, gesture: clic, reveal: no requiere revelación, next_state: formulario de período}]
+- id: budget-assign
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Asignaciones, container: barra de acciones, control: Nueva asignación, gesture: clic, reveal: no requiere revelación, next_state: formulario de asignación}]
+- id: budget-consult-allocations-consumption
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Consumos de asignaciones, container: tabla de consumos, control: filtros, gesture: clic, reveal: aplicar filtros disponibles, next_state: consumos filtrados}]
+- id: manual-11-1
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Registrar estancia, container: formulario de estancia, control: Registrar, gesture: clic, reveal: completar sujeto y datos requeridos, next_state: confirmación de estancia}]
+- id: manual-11-2
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Estancias del dia, container: fila de estancia, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de estancia}]
+- id: manual-11-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de sujetos, container: menú de la lista, control: Nuevo sujeto, gesture: clic, reveal: abrir el menú de acciones de la lista, next_state: cuadro de registro de sujeto}]
+- id: stay-manage-rates
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Tarifas de estadía, container: barra de acciones, control: Añadir Tarifa de estadía, gesture: clic, reveal: no requiere revelación, next_state: formulario de tarifa}]
+- id: stay-manage-relations
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Relacion, container: lista de relaciones, control: acción de alta, gesture: clic, reveal: usar el control visible de la pantalla, next_state: formulario de relación}]
+- id: stay-manage-discounts
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Descuentos, container: barra de acciones, control: Nuevo descuento, gesture: clic, reveal: no requiere revelación, next_state: formulario de descuento}]
+- id: stay-consult-report
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Reporte de estancias, container: filtros del reporte, control: filtros, gesture: clic, reveal: completar criterios disponibles, next_state: reporte filtrado}]
+- id: manual-11-5
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de estancias, container: fila de estancia, control: fila, gesture: doble clic, reveal: abrir el detalle antes de sus acciones, next_state: detalle de estancia}]
+- id: manual-11-6
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de estancias, container: fila de estancia, control: fila, gesture: doble clic, reveal: abrir el detalle antes de sus acciones, next_state: detalle de estancia}]
+- id: internado-manage-service-units
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de unidades, container: encabezado de la lista, control: Agregar unidad, gesture: clic, reveal: abrir el menú desplegable del icono de tres puntos verticales, next_state: formulario Agregar unidad}]
+- id: internado-manage-service-items
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de servicios, container: encabezado de la lista, control: Agregar servicio, gesture: clic, reveal: abrir el menú desplegable del icono de tres puntos verticales, next_state: formulario Agregar servicio}]
+- id: manual-10-2
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Agregar internado, container: formulario de internado, control: Registrar, gesture: clic, reveal: completar datos requeridos, next_state: confirmación de internado}]
+- id: manual-10-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Internados, container: fila del internado, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de internado}]
+- id: manual-10-4
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Internados, container: fila del internado, control: fila, gesture: doble clic, reveal: abrir el detalle antes de sus acciones, next_state: detalle de internado}]
+- id: manual-10-5
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Internados, container: fila del internado, control: fila, gesture: doble clic, reveal: abrir el detalle antes de sus acciones, next_state: detalle de internado}]
+- id: internado-configure-parameters
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Configuraciones, container: tabla de parámetros, control: Agregar, gesture: clic, reveal: no requiere revelación, next_state: formulario de parámetro}]
+- id: sales-register-cash-sale
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear venta, container: formulario de venta, control: Registrar, gesture: clic, reveal: completar líneas y pago, next_state: confirmación observable de registro}]
+- id: sales-register-sale-with-pending-balance
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear venta, container: diálogo de detalle de pago, control: medio de pago, gesture: clic, reveal: abrir el diálogo desde el formulario, next_state: pago pendiente configurado}]
+- id: sales-collect-later-and-check-balance
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de venta, container: menú de acciones del detalle, control: Registrar pago, gesture: clic, reveal: abrir el menú del detalle, next_state: pantalla Pagos / Agregar}]
+- id: sales-manage-quotations
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear cotización, container: formulario de cotización, control: Registrar, gesture: clic, reveal: completar líneas requeridas, next_state: confirmación observable de cotización}]
+- id: manual-2-5
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de cotizaciones, container: fila de cotización, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de cotización}]
+- id: sales-search-filter-and-review-sales
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de ventas, container: fila de venta, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de venta}]
+- id: sales-void-sale
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de venta, container: menú de acciones del detalle, control: Anular, gesture: clic, reveal: abrir el menú del detalle y comprobar que la acción está habilitada, next_state: diálogo de anulación}]
+- id: sales-credit-notes-and-exchange
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de notas de crédito, container: fila de nota, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de nota de crédito}]
+- id: manual-2-9
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de venta, container: menú de acciones del detalle, control: Canjear, gesture: clic, reveal: abrir el menú del detalle y comprobar que la acción está habilitada, next_state: diálogo Canjear de nota de venta}]
+- id: reports-consult-sales-payments-and-debts
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Tablero pagos, container: filtros del tablero, control: filtros de consulta, gesture: clic, reveal: completar criterios disponibles, next_state: tablero actualizado}]
+- id: sales-view-payment-table
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de pagos, container: barra de exportación, control: exportar, gesture: clic, reveal: no requiere revelación, next_state: exportación preparada}]
+- id: specialist-reports-sales-commissions
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Comisiones de ventas, container: filtros del reporte, control: filtros, gesture: clic, reveal: completar criterios disponibles, next_state: reporte filtrado}]
+- id: sales-review-cash-movements
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Ingreso egreso dinero, container: filtros de movimientos, control: filtros, gesture: clic, reveal: completar criterios disponibles, next_state: movimientos actualizados}]
+- id: sales-register-opening-cash-balance
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Ingreso egreso dinero, container: controles de operación manual, control: Registrar saldo inicial, gesture: clic, reveal: no requiere revelación, next_state: formulario de saldo inicial}]
+- id: sales-register-manual-cash-operation
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Ingreso egreso dinero, container: controles de operación manual, control: Registrar inyección o Registrar ajuste, gesture: clic, reveal: elegir la variante antes de abrir el formulario, next_state: formulario de operación manual}]
+- id: purchases-create-request
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear Pedido, container: formulario de pedido, control: Registrar, gesture: clic, reveal: completar líneas requeridas, next_state: confirmación observable de pedido}]
+- id: purchases-manage-requests
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de pedidos, container: fila de pedido, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de pedido}]
+- id: manual-6-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de pedido, container: menú de acciones del detalle, control: Anular, gesture: clic, reveal: abrir el menú y comprobar que Anular está habilitado, next_state: diálogo de anulación}]
+- id: purchases-register-order
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear Compra, container: formulario de compra, control: Guardar, gesture: clic, reveal: completar líneas requeridas, next_state: confirmación de guardado}]
+- id: purchases-create-order-from-request
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de pedido, container: menú de acciones del detalle, control: crear compra desde pedido, gesture: clic, reveal: abrir el menú del detalle, next_state: formulario de compra relacionado}]
+- id: purchases-manage-orders
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de compras, container: fila de compra, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de compra}]
+- id: purchases-change-or-void-state
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de compra, container: menú de acciones del detalle, control: cambio de estado, gesture: clic, reveal: abrir el menú del detalle, next_state: formulario de estado}]
+- id: manual-6-8
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de compra, container: menú de acciones del detalle, control: Anular, gesture: clic, reveal: abrir el menú y comprobar que Anular está habilitado, next_state: formulario ANULAR}]
+- id: purchases-register-payments-and-balances
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de compra, container: menú de acciones del detalle, control: Registrar pago, gesture: clic, reveal: abrir el menú del detalle, next_state: pantalla Pagos / Agregar}]
+- id: purchases-manage-supplier-documents
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de compra, container: pestaña de documentos, control: documentos relacionados, gesture: clic, reveal: abrir la pestaña correspondiente, next_state: lista de documentos de compra}]
+- id: expenses-register-expense
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Crear Gasto, container: formulario de gasto, control: Guardar, gesture: clic, reveal: completar campos obligatorios, next_state: confirmación de guardado}]
+- id: expenses-manage-expenses
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de gastos, container: fila de gasto, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de gasto}]
+- id: manual-7-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de gasto, container: menú de acciones del detalle, control: Aprobar, gesture: clic, reveal: abrir el menú y comprobar el estado habilitado, next_state: confirmación de aprobación}]
+- id: manual-7-4
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de gasto, container: menú de acciones del detalle, control: Anular, gesture: clic, reveal: abrir el menú y comprobar que Anular está habilitado, next_state: confirmación de anulación}]
+- id: foundation-sign-in
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Pantalla de inicio de sesión, container: formulario de acceso, control: Ingresar, gesture: clic, reveal: completar credenciales, next_state: panel autenticado}]
+- id: manual-12-1
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Campaña de descuento / Agregar, container: formulario de campaña, control: Registrar, gesture: clic, reveal: completar datos requeridos, next_state: campaña creada para asociar productos}]
+- id: manual-9-1
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Orden de carga / Agregar, container: formulario de orden, control: Registrar, gesture: clic, reveal: completar datos y líneas requeridas, next_state: confirmación observable de orden}]
+- id: manual-9-2
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de ordenes de carga, container: fila de orden, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de orden de carga}]
+- id: manual-9-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de orden de carga, container: menú superior de acciones, control: Confirmar, gesture: clic, reveal: abrir el menú y comprobar que la condición de confirmación se cumple, next_state: confirmación de orden}]
+- id: manual-9-4
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de orden de carga, container: menú superior de acciones, control: Recargar orden de carga, gesture: clic, reveal: abrir el menú y comprobar que la acción está disponible, next_state: formulario de recarga}]
+- id: manual-9-5
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de orden de carga, container: menú superior de acciones, control: Cerrar, gesture: clic, reveal: abrir el menú y comprobar que la condición de cierre se cumple, next_state: confirmación de cierre}]
+- id: manual-9-6
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de orden de carga, container: menú superior de acciones, control: Generar orden de descarga, gesture: clic, reveal: abrir el menú y comprobar que la acción está disponible, next_state: formulario de orden de descarga}]
+- id: distribution-consult-print-unload-order
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de ordenes de descarga, container: fila de orden confirmada, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de orden de descarga}]
+- id: manual-9-8
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de orden de carga, container: menú superior de acciones, control: Liquidar, gesture: clic, reveal: abrir el menú y comprobar que la condición de liquidación se cumple, next_state: formulario de liquidación}]
+- id: contacts-manage-customers
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de clientes, container: control de alta de la lista, control: Añadir cliente, gesture: clic, reveal: no requiere revelación, next_state: modal de cliente}]
+- id: contacts-manage-suppliers-and-bank-accounts
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de proveedores, container: fila de proveedor, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: modal de proveedor y cuentas bancarias}]
+- id: contacts-manage-carriers
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de transportistas, container: control de alta de la lista, control: Agregar transportista, gesture: clic, reveal: no requiere revelación, next_state: diálogo Agregar transportista}]
+- id: contacts-manage-financial-entities
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Entidades Financieras, container: acciones de la lista, control: acción de alta, gesture: clic, reveal: usar el control visible de la pantalla, next_state: formulario de entidad}]
+- id: members-manage-contributions
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Gestión de Socios, container: control de alta de socios, control: Añadir Socio, gesture: clic, reveal: no requiere revelación, next_state: formulario de socio}]
+- id: members-consult-report
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Informe de socios, container: selectores del informe, control: Mes y Año, gesture: selección, reveal: elegir ambos períodos, next_state: informe actualizado}]
+- id: presale-list-and-edit
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Lista de preventas, container: fila de preventa, control: fila, gesture: doble clic, reveal: no requiere revelación, next_state: detalle de preventa}]
+- id: manual-8-3
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de preventa, container: menú de acciones del detalle, control: Confirmar preventa, gesture: clic, reveal: abrir el menú y comprobar que el estado borrador la habilita, next_state: confirmación de preventa}]
+- id: manual-8-4
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de preventa, container: menú de acciones del detalle, control: Anular preventa, gesture: clic, reveal: abrir el menú y comprobar que el estado borrador la habilita, next_state: confirmación de anulación}]
+- id: manual-8-5
+  evidence: {kind: source, revision: 330857197e5e01c24147d03452f7c59909abc968}
+  current_action_owner: source
+  transitions: [{screen: Detalle de preventa, container: menú de acciones del detalle, control: Convertir venta, gesture: clic, reveal: abrir el menú y comprobar que el estado borrador la habilita, next_state: formulario de venta derivada}]

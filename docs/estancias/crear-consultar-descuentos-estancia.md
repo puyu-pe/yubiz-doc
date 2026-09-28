@@ -9,7 +9,7 @@ Registre un descuento de estancia y localícelo después en la lista de descuent
 
 ## Pasos
 
-1. Abra el menú de acciones de tres puntos de la lista y seleccione **Nuevo descuento**.
+1. En el encabezado de la lista de descuentos, abra el menú de acciones de tres puntos y seleccione **Nuevo descuento**. Se abrirá **Registro de descuento**.
 2. En **Registro de descuento**, complete **Descripcion del item**, **Codigo**, **Tipo de descuento**, **Aplicar sobre**, **Tipo de valor en descuento**, **Valor del descuento** y **Estado** según corresponda.
 3. El formulario muestra campos adicionales según el tipo elegido: **Cantidad de asistencias** o **Dia** y **Mes**. Para un descuento manual, el monto se ingresa al aplicarlo en la estancia.
 4. Revise el tipo de descuento y el valor antes de seleccionar **Guardar**.

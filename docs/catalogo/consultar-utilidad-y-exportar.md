@@ -30,7 +30,7 @@ Consulte productos y su utilidad mediante filtros, columnas y exportaciones disp
 
 1. Aplique filtros y revise las columnas de producto, cantidad, costo, venta y utilidad.
 2. Ajuste las columnas si necesita otra vista y compruebe los resultados.
-3. Seleccione **PDF** o **Excel** para exportar cuando corresponda.
+3. En la lista de utilidad, abra el menú de acciones de tres puntos y seleccione **Generar EXCEL** para preparar la exportación cuando corresponda.
 4. Si el resultado supera 10 000 registros, reduzca los filtros antes de volver a exportar.
 
 ## Compruebe el resultado

@@ -1,0 +1,184 @@
+schema_version: 2
+catalog_kind: source_first_ui_requirements
+source_revision: 330857197e5e01c24147d03452f7c59909abc968
+coverage:
+  inspected_guides: 83
+  pending_guides: 0
+  runtime_execution: not_claimed
+# proof_ref is an opaque reference to the private source inspection record.
+# Requirements are independent from reader prose and access-audit.yml.
+requirements:
+- guide_id: internado-manage-service-units
+  facts:
+  - {id: unit-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'Lista de unidades header menu', control: 'Agregar unidad', gesture: clic, reveal: 'open header ellipsis', dependencies: 'none', next_state: 'unit form', visible: [['Lista de unidades'], ['tres puntos verticales'], ['Agregar unidad'], ['formulario']]}
+  - {id: unit-edit, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'unit grid row', control: 'unit row', gesture: 'doble clic', reveal: 'select existing row', dependencies: 'existing record', next_state: 'Editar unidad', visible: [['doble clic'], ['fila'], ['Editar unidad']]}
+- guide_id: internado-manage-service-items
+  facts:
+  - {id: service-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'Lista de servicios header menu', control: 'Agregar servicio', gesture: clic, reveal: 'open header ellipsis', dependencies: 'none', next_state: 'service form', visible: [['Lista de servicios'], ['tres puntos verticales'], ['Agregar servicio'], ['formulario']]}
+  - {id: service-edit, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'service grid row', control: 'service row', gesture: 'doble clic', reveal: 'select existing row', dependencies: 'existing record', next_state: 'Editar servicio', visible: [['doble clic'], ['fila'], ['Editar servicio']]}
+- guide_id: manual-10-2
+  facts: [{id: internado-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'service creation form', control: Registrar, gesture: clic, reveal: 'complete required details', dependencies: 'valid client and items', next_state: 'saved service', visible: [['Registrar']]}]
+- guide_id: manual-10-3
+  facts: [{id: procedure-add, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'procedure detail', control: '+ Añadir', gesture: clic, reveal: 'open internado detail', dependencies: 'active internado', next_state: 'procedure form', visible: [['+ Añadir'], ['Registrar']]}]
+- guide_id: manual-10-4
+  facts: [{id: internado-convert, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'internado detail', control: Registrar, gesture: clic, reveal: 'complete payment detail', dependencies: 'valid payment', next_state: 'payment detail', visible: [['Registrar'], ['pago']]}]
+- guide_id: manual-10-5
+  facts: [{id: internado-void, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'action menu', control: Anular, gesture: clic, reveal: 'open action menu', dependencies: 'no pending procedures', next_state: 'void confirmation', visible: [['menú de acciones'], ['Anular']]}]
+- guide_id: internado-configure-parameters
+  facts: [{id: parameter-add, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'parameter table', control: Agregar, gesture: clic, reveal: 'open corresponding table', dependencies: 'none', next_state: 'parameter row', visible: [['Agregar'], ['tabla']]}]
+- guide_id: catalog-manage-products
+  facts:
+  - {id: product-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'Lista de productos header menu', control: 'Nuevo producto', gesture: clic, reveal: 'open header ellipsis', dependencies: 'none', next_state: 'Agregar producto', visible: [['Lista de productos'], ['tres puntos verticales'], ['Nuevo producto'], ['Agregar producto']]}
+  - {id: product-edit, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'product grid row', control: 'product row', gesture: 'doble clic', reveal: 'select existing row', dependencies: 'existing record', next_state: 'Editar producto', visible: [['doble clic'], ['fila'], ['Editar producto']]}
+- guide_id: manual-4-2
+  facts: [{id: product-delete, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'Editar producto modal header menu', control: Eliminar, gesture: clic, reveal: 'open modal header ellipsis', dependencies: 'existing product', next_state: 'product removed', visible: [['doble clic'], ['Editar producto'], ['encabezado del modal'], ['tres puntos verticales'], ['Eliminar']]}]
+- guide_id: catalog-manage-product-details
+  facts: [{id: detail-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'detail management list', control: Guardar, gesture: clic, reveal: 'complete detail form', dependencies: 'required description', next_state: 'detail listed', visible: [['Guardar']]}]
+- guide_id: catalog-configure-sale-prices
+  facts: [{id: sale-price, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'product price form', control: Guardar, gesture: clic, reveal: 'open product edit', dependencies: 'valid price', next_state: 'updated price', visible: [['precio'], ['Guardar']]}]
+- guide_id: catalog-manage-lots
+  facts: [{id: lot-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'lot form', control: Guardar, gesture: clic, reveal: 'open lot action', dependencies: 'valid lot fields', next_state: 'lot listed', visible: [['Guardar']]}]
+- guide_id: catalog-manage-series
+  facts: [{id: series-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'series form', control: Guardar, gesture: clic, reveal: 'open series action', dependencies: 'valid series fields', next_state: 'series listed', visible: [['Guardar']]}]
+- guide_id: inventory-register-product-conversion
+  facts: [{id: conversion-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'conversion form', control: Registrar, gesture: clic, reveal: 'complete source and target', dependencies: 'different products', next_state: 'conversion recorded', visible: [['Registrar']]}]
+- guide_id: catalog-review-utility-and-export
+  facts: [{id: utility-export, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'utility list action menu', control: 'Generar EXCEL', gesture: clic, reveal: 'open list action menu', dependencies: 'filtered result', next_state: 'export generated', visible: [{dimension: owner, alternatives: ['lista de utilidad', 'resultado actual']}, {dimension: reveal, alternatives: ['menú de acciones', 'tres puntos']}, {dimension: control, alternatives: ['Generar EXCEL']}, {dimension: next_state, alternatives: ['exportación', 'exportar']}]}]
+- guide_id: inventory-check-stock-by-warehouse
+  facts: [{id: stock-filter, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'stock filters', control: Almacén, gesture: selección, reveal: 'open filter selector', dependencies: 'selected product', next_state: 'stock result', visible: [['Almacén']]}]
+- guide_id: inventory-review-movements-and-kardex
+  facts: [{id: kardex-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'movement row', control: 'movement detail', gesture: clic, reveal: 'select row', dependencies: 'filtered movement', next_state: 'operation detail', visible: [['detalle'], ['fila']]}]
+- guide_id: manual-5-3
+  facts: [{id: warehouse-entry, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'warehouse entry form', control: Registrar, gesture: clic, reveal: 'complete entry', dependencies: 'valid items', next_state: 'entry recorded', visible: [{dimension: scope, alternatives: ['movimiento']}, {dimension: control, alternatives: ['Registrar']}]}]
+- guide_id: manual-5-4
+  facts: [{id: warehouse-exit, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'warehouse exit form', control: Registrar, gesture: clic, reveal: 'complete exit', dependencies: 'sufficient stock', next_state: 'exit recorded', visible: [{dimension: scope, alternatives: ['movimiento']}, {dimension: control, alternatives: ['Registrar']}]}]
+- guide_id: inventory-transfer-between-warehouses
+  facts: [{id: warehouse-transfer, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'transfer form', control: Registrar, gesture: clic, reveal: 'complete origin and destination', dependencies: 'available stock', next_state: 'transfer recorded', visible: [['Registrar']]}]
+- guide_id: inventory-register-adjustment
+  facts: [{id: inventory-adjustment, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'adjustment form', control: Registrar, gesture: clic, reveal: 'select adjustment direction', dependencies: 'valid quantity', next_state: 'adjustment recorded', visible: [['Registrar']]}]
+- guide_id: inventory-manage-remission-guides
+  facts: [{id: remission-guide, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'remission guide form', control: Registrar, gesture: clic, reveal: 'complete guide', dependencies: 'valid origin and destination', next_state: 'guide listed', visible: [['Registrar']]}]
+- guide_id: budget-manage-periods
+  facts: [{id: period-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'Periodos header menu', control: 'Nuevo periodo', gesture: clic, reveal: 'open header ellipsis', dependencies: 'none', next_state: 'period form or no transition', visible: [['Periodos'], ['tres puntos verticales'], ['Nuevo periodo']]}]
+- guide_id: budget-assign
+  facts: [{id: allocation-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'allocation header menu', control: 'Nueva asignación', gesture: clic, reveal: 'open header ellipsis', dependencies: 'none', next_state: 'allocation form', visible: [['lista de asignaciones'], ['tres puntos'], ['Nueva asignación'], ['formulario']] }]
+- guide_id: budget-consult-allocations-consumption
+  facts: [{id: allocation-export, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'allocation list action menu', control: 'Generar EXCEL', gesture: clic, reveal: 'open action menu', dependencies: 'current result', next_state: 'export generated', visible: [['menú de acciones'], ['Generar EXCEL']]}]
+- guide_id: manual-11-1
+  facts: [{id: stay-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'stay form', control: Registrar, gesture: clic, reveal: 'complete stay details', dependencies: 'valid tariff and payment', next_state: 'payment dialog', visible: [['Registrar'], ['Confirmar']]}]
+- guide_id: manual-11-2
+  facts: [{id: stay-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'stay detail', control: 'Guardar detalles', gesture: clic, reveal: 'open detail items', dependencies: 'changed detail', next_state: 'details saved', visible: [['Detalle / Items'], ['Guardar detalles']]}]
+- guide_id: manual-11-3
+  facts: [{id: subject-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'subject list more-options menu', control: 'Nuevo sujeto', gesture: clic, reveal: 'open list ellipsis', dependencies: 'none', next_state: 'subject dialog', visible: [['Lista de sujetos'], ['más opciones'], ['Nuevo sujeto']]}]
+- guide_id: stay-manage-rates
+  facts: [{id: rate-edit, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'rate list', control: Editar, gesture: clic, reveal: 'locate rate', dependencies: 'existing rate', next_state: 'rate form', visible: [['Editar'], ['guardado']]}]
+- guide_id: stay-manage-relations
+  facts: [{id: relation-edit, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'relation list', control: Editar, gesture: clic, reveal: 'locate relation', dependencies: 'existing relation', next_state: 'relation form', visible: [['Editar'], ['guardado']]}]
+- guide_id: stay-manage-discounts
+  facts: [{id: discount-create, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'discount list header menu', control: 'Nuevo descuento', gesture: clic, reveal: 'open header ellipsis', dependencies: 'none', next_state: 'Registro de descuento', visible: [['lista de descuentos'], ['tres puntos'], ['Nuevo descuento'], ['Registro de descuento']]}]
+- guide_id: stay-consult-report
+  facts: [{id: stay-report, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'report filters', control: Buscar, gesture: clic, reveal: 'complete report filters', dependencies: 'selected date range', next_state: 'report result', visible: [['Buscar']]}]
+- guide_id: manual-11-5
+  facts: [{id: stay-convert, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'stay detail action menu', control: 'Convertir en venta', gesture: clic, reveal: 'open detail and menu', dependencies: 'convertible stay', next_state: 'sale dialog', visible: [{dimension: owner, alternatives: ['detalle']}, {dimension: reveal, alternatives: ['menú de más opciones', 'menú de acciones']}, {dimension: control, alternatives: ['Convertir en venta']}, {dimension: next_state, alternatives: ['venta']}]}]
+- guide_id: manual-11-6
+  facts: [{id: stay-void, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'stay detail action menu', control: 'Anular operación', gesture: clic, reveal: 'open detail and menu', dependencies: 'voidable stay', next_state: 'void confirmation', visible: [{dimension: owner, alternatives: ['detalle']}, {dimension: reveal, alternatives: ['menú de más opciones', 'menú de acciones']}, {dimension: control, alternatives: ['Anular operación']}, {dimension: next_state, alternatives: ['confirmación', 'confirmar']}]}]
+- guide_id: sales-register-cash-sale
+  facts: [{id: sale-register, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale form payment panel', control: Registrar, gesture: clic, reveal: 'complete sale and payment details', dependencies: 'valid sale lines', next_state: 'registered sale', visible: [['Registrar'], ['pago']]}]
+- guide_id: sales-register-sale-with-pending-balance
+  facts: [{id: sale-pending-balance, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale form payment panel', control: Confirmar, gesture: clic, reveal: 'leave valid pending balance', dependencies: 'valid sale lines', next_state: 'registered sale with debt', visible: [['Confirmar'], ['Deuda']]}]
+- guide_id: sales-collect-later-and-check-balance
+  facts: [{id: sale-payment-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale detail header dropdown', control: 'Registrar pago', gesture: clic, reveal: 'double-click sale row then open detail menu', dependencies: 'payment action enabled', next_state: 'Pagos / Agregar', visible: [['doble clic'], ['fila'], ['menú de acciones del detalle'], ['Registrar pago'], ['Pagos / Agregar']]}]
+- guide_id: sales-manage-quotations
+  facts: [{id: quotation-create, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'quotation form', control: Registrar, gesture: clic, reveal: 'complete quotation details', dependencies: 'valid quotation lines', next_state: 'registered quotation', visible: [['cotización'], ['Registrar']]}]
+- guide_id: manual-2-5
+  facts: [{id: quotation-convert, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'quotation detail header dropdown', control: 'Convertir venta', gesture: clic, reveal: 'open quotation detail menu', dependencies: 'quotation has detail', next_state: 'new sale form', visible: [{dimension: owner, alternatives: ['detalle de la cotización']}, {dimension: reveal, alternatives: ['tres puntos verticales', 'menú de acciones']}, {dimension: control, alternatives: ['Convertir venta']}, {dimension: next_state, alternatives: ['formulario de venta']}]}]
+- guide_id: sales-search-filter-and-review-sales
+  facts: [{id: sale-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale grid row', control: 'sale row', gesture: 'doble clic', reveal: 'select sale row', dependencies: 'existing sale', next_state: 'sale detail', visible: [{dimension: gesture, alternatives: ['doble clic']}, {dimension: row, alternatives: ['fila de la venta', 'fila seleccionada']}, {dimension: next_state, alternatives: ['detalle']}] }]
+- guide_id: sales-void-sale
+  facts: [{id: sale-void, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale detail header dropdown', control: Anular, gesture: clic, reveal: 'open detail menu and check enabled state', dependencies: 'override action enabled', next_state: 'void confirmation', visible: [['menú de acciones del detalle'], ['Anular']]}]
+- guide_id: sales-credit-notes-and-exchange
+  facts: [{id: credit-note, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale detail header dropdown', control: 'Nota de crédito', gesture: clic, reveal: 'open eligible sale detail action', dependencies: 'eligible sale document', next_state: 'Nota de crédito / Agregar', visible: [['detalle'], ['Nota de crédito']]}]
+- guide_id: manual-2-9
+  facts: [{id: sale-document-exchange, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'sale detail header dropdown', control: Canjear, gesture: clic, reveal: 'double-click sale row then open detail menu', dependencies: 'exchange action enabled', next_state: 'sale note exchange form', visible: [['doble clic'], ['menú de acciones del detalle'], ['Canjear']]}]
+- guide_id: reports-consult-sales-payments-and-debts
+  facts: [{id: sales-payment-report, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'payment report filters', control: Buscar, gesture: clic, reveal: 'complete filters', dependencies: 'selected report range', next_state: 'payment and debt result', visible: [['filtros']]}]
+- guide_id: sales-view-payment-table
+  facts: [{id: payment-table-export, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'payment table header menu', control: 'Generar EXCEL', gesture: clic, reveal: 'open header menu', dependencies: 'current table result', next_state: 'export generated', visible: [{dimension: owner, alternatives: ['Tabla pagos']}, {dimension: reveal, alternatives: ['menú de acciones', 'tres puntos']}, {dimension: control, alternatives: ['Generar EXCEL']}, {dimension: next_state, alternatives: ['exportación', 'exportar']}]}]
+- guide_id: specialist-reports-sales-commissions
+  facts: [{id: commission-report, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'commission grid filters', control: Buscar, gesture: clic, reveal: 'set report filters', dependencies: 'current filter selection', next_state: 'commission result', visible: [['filtros']]}]
+- guide_id: sales-review-cash-movements
+  facts: [{id: cash-movements, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'cash report filters', control: Buscar, gesture: clic, reveal: 'complete report filters', dependencies: 'current range', next_state: 'cash movement result', visible: [['Buscar']]}]
+- guide_id: sales-register-opening-cash-balance
+  facts: [{id: opening-cash, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'cash report action panel', control: 'saldo inicial', gesture: clic, reveal: 'open cash operation action', dependencies: 'none', next_state: 'opening balance form', visible: [['saldo inicial']]}]
+- guide_id: sales-register-manual-cash-operation
+  facts: [{id: manual-cash, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'cash report action panel', control: Registrar, gesture: clic, reveal: 'open cash operation action', dependencies: 'valid operation values', next_state: 'cash operation form', visible: [['Registrar']]}]
+- guide_id: purchases-create-request
+  facts: [{id: purchase-request-create, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase request form', control: Registrar, gesture: clic, reveal: 'complete request lines', dependencies: 'valid products', next_state: 'registered request', visible: [{dimension: scope, alternatives: ['pedido']}, {dimension: control, alternatives: ['Registrar']}]}]
+- guide_id: purchases-manage-requests
+  facts: [{id: purchase-request-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'request grid row', control: 'request row', gesture: clic, reveal: 'select request', dependencies: 'existing request', next_state: 'request detail', visible: [['pedido']]}]
+- guide_id: manual-6-3
+  facts: [{id: purchase-request-void, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'request detail action menu', control: Anular, gesture: clic, reveal: 'open request detail menu', dependencies: 'request not purchased or voided', next_state: 'void confirmation', visible: [['Anular']]}]
+- guide_id: purchases-register-order
+  facts: [{id: purchase-create, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase form', control: Guardar, gesture: clic, reveal: 'complete purchase lines', dependencies: 'valid supplier and items', next_state: 'registered purchase', visible: [['Guarde']]}]
+- guide_id: purchases-create-order-from-request
+  facts: [{id: request-to-purchase, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'request detail action', control: 'Crear compra', gesture: clic, reveal: 'open request detail', dependencies: 'eligible request', next_state: 'purchase form', visible: [['compra']]}]
+- guide_id: purchases-manage-orders
+  facts: [{id: purchase-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase grid row', control: 'purchase row', gesture: 'doble clic', reveal: 'select purchase row', dependencies: 'existing purchase', next_state: 'purchase detail', visible: [['compra']]}]
+- guide_id: purchases-change-or-void-state
+  facts: [{id: purchase-state, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase detail state button', control: Estado, gesture: clic, reveal: 'open purchase detail', dependencies: 'available state transition', next_state: 'state selection', visible: [['estado']]}]
+- guide_id: manual-6-8
+  facts: [{id: purchase-void, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase detail header dropdown', control: Anular, gesture: clic, reveal: 'double-click purchase row then open detail menu', dependencies: 'purchase state is not EOC0', next_state: 'ANULAR form', visible: [['doble clic'], ['menú de acciones del detalle'], ['Anular'], ['ANULAR']]}]
+- guide_id: purchases-register-payments-and-balances
+  facts: [{id: purchase-payment-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase detail header dropdown', control: 'Registrar pago', gesture: clic, reveal: 'double-click purchase row then open detail menu', dependencies: 'existing purchase', next_state: 'Pagos / Agregar', visible: [['doble clic'], ['fila'], ['menú de acciones del detalle'], ['Registrar pago'], ['Pagos / Agregar']]}]
+- guide_id: purchases-manage-supplier-documents
+  facts: [{id: supplier-documents, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'purchase detail documents tab', control: 'Documentos del proveedor', gesture: clic, reveal: 'open purchase detail tab', dependencies: 'existing purchase', next_state: 'supplier document list', visible: [['documentos']]}]
+- guide_id: expenses-register-expense
+  facts: [{id: expense-create, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense form', control: Guardar, gesture: clic, reveal: 'complete expense details', dependencies: 'valid expense lines', next_state: 'registered expense', visible: [['Guarde']]}]
+- guide_id: expenses-manage-expenses
+  facts: [{id: expense-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense grid row', control: 'expense row', gesture: 'doble clic', reveal: 'select expense row', dependencies: 'existing expense', next_state: 'expense detail', visible: [['gasto']]}]
+- guide_id: manual-7-3
+  facts: [{id: expense-approve, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense detail header dropdown', control: Aprobar, gesture: clic, reveal: 'open detail menu and check pending state', dependencies: 'expense status pendiente', next_state: 'approval confirmation', visible: [['Aprobar']]}]
+- guide_id: manual-7-4
+  facts: [{id: expense-void, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense detail header dropdown', control: Anular, gesture: clic, reveal: 'double-click expense row then open detail menu', dependencies: 'expense not rejected or voided', next_state: 'void confirmation', visible: [['doble clic'], ['menú de acciones'], ['Anular']]}]
+- guide_id: foundation-sign-in
+  facts: [{id: session-start, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'login form', control: Ingresar, gesture: clic, reveal: 'complete credentials before authenticated navigation', dependencies: 'valid session credentials', next_state: 'authenticated panel', visible: [['inicio de sesión']]}]
+- guide_id: manual-12-1
+  facts: [{id: campaign-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'campaign form', control: Guardar, gesture: clic, reveal: 'complete campaign data', dependencies: 'valid campaign fields', next_state: 'campaign detail', visible: [['guarde']]}]
+
+- guide_id: manual-9-1
+  facts: [{id: load-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load order form', control: Registrar, gesture: clic, reveal: 'complete load details', dependencies: 'valid load items', next_state: 'load order detail', visible: [['Registrar']]}]
+- guide_id: manual-9-2
+  facts: [{id: load-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load order grid row', control: 'load row', gesture: 'doble clic', reveal: 'select row', dependencies: 'existing load order', next_state: 'load detail', visible: [['doble clic'], ['detalle']]}]
+- guide_id: manual-9-3
+  facts: [{id: load-confirm, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: Confirmar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'confirmable load state', next_state: 'confirmation result', visible: [['doble clic'], ['menú'], ['Confirmar']]}]
+- guide_id: manual-9-4
+  facts: [{id: load-recharge, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: 'Recargar orden de carga', gesture: clic, reveal: 'open detail ellipsis', dependencies: 'action available', next_state: 'recharge form', visible: [['menú'], ['Recargar']]}]
+- guide_id: manual-9-5
+  facts: [{id: load-close, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: Cerrar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'closable load state', next_state: 'close confirmation', visible: [['menú'], ['Cerrar']]}]
+- guide_id: manual-9-6
+  facts: [{id: download-generate, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: 'Generar orden de descarga', gesture: clic, reveal: 'open load detail ellipsis', dependencies: 'eligible load order', next_state: 'Orden de descarga / Agregar', visible: [['menú'], ['Generar orden de descarga']]}]
+- guide_id: distribution-consult-print-unload-order
+  facts: [{id: download-print, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'download detail header dropdown', control: Imprimir, gesture: clic, reveal: 'double-click download row then open detail menu', dependencies: 'existing download order', next_state: 'print document', visible: [['doble clic'], ['Imprimir']]}]
+- guide_id: manual-9-8
+  facts: [{id: load-settle, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: Liquidar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'liquidatable load state', next_state: 'settlement form', visible: [['menú'], ['Liquidar']]}]
+- guide_id: contacts-manage-customers
+  facts: [{id: customer-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'customer list direct action', control: 'Añadir cliente', gesture: clic, reveal: 'use direct list action', dependencies: 'none', next_state: 'customer modal', visible: [['Añadir cliente']]}]
+- guide_id: contacts-manage-suppliers-and-bank-accounts
+  facts: [{id: supplier-bank-account, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'supplier modal bank-account action', control: 'cuentas bancarias', gesture: clic, reveal: 'open supplier record', dependencies: 'existing supplier', next_state: 'bank account modal', visible: [['cuenta'], ['proveedor']]}]
+- guide_id: contacts-manage-carriers
+  facts: [{id: carrier-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'carrier list direct action', control: 'Agregar transportista', gesture: clic, reveal: 'use direct list action', dependencies: 'none', next_state: 'Agregar transportista dialog', visible: [['Agregar'], ['transportista']]}]
+- guide_id: contacts-manage-financial-entities
+  facts: [{id: financial-entity-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'financial entity direct action', control: Agregar, gesture: clic, reveal: 'use entity action', dependencies: 'none', next_state: 'entity form', visible: [['Agregar']]}]
+- guide_id: members-manage-contributions
+  facts: [{id: member-add, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'member panel direct action', control: 'Añadir Socio', gesture: clic, reveal: 'use direct add action', dependencies: 'none', next_state: 'member form', visible: [['Añadir'], ['Socio']]}]
+- guide_id: members-consult-report
+  facts: [{id: member-report-print, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'member chart report panel', control: Imprimir, gesture: clic, reveal: 'select month and year', dependencies: 'selected period', next_state: 'print report', visible: [['Mes'], ['Año'], ['Imprimir']]}]
+- guide_id: presale-list-and-edit
+  facts: [{id: presale-edit, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'pre-sale detail dropdown', control: Editar, gesture: clic, reveal: 'double-click pre-sale row then open record dropdown', dependencies: 'draft pre-sale', next_state: 'Preventa / Editar', visible: [['doble clic'], ['Editar']]}]
+- guide_id: manual-8-3
+  facts: [{id: presale-confirm, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'pre-sale detail dropdown', control: 'Confirmar preventa', gesture: clic, reveal: 'open record dropdown', dependencies: 'draft pre-sale', next_state: 'confirmation result', visible: [['Confirmar preventa']]}]
+- guide_id: manual-8-4
+  facts: [{id: presale-void, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'pre-sale detail dropdown', control: 'Anular preventa', gesture: clic, reveal: 'open record dropdown', dependencies: 'draft pre-sale', next_state: 'void result', visible: [['Anular preventa']]}]
+- guide_id: manual-8-5
+  facts: [{id: presale-convert, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'pre-sale detail dropdown', control: 'Convertir a venta', gesture: clic, reveal: 'open record dropdown', dependencies: 'draft or confirmed pre-sale', next_state: 'sale conversion form', visible: [['Convertir a venta']]}]
+pending_guides: []

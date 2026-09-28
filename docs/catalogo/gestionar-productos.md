@@ -21,7 +21,8 @@ Registre la ficha de un producto o actualícela con sus datos comerciales, de co
 
 1. En la barra lateral, abra **Inventario**.
 2. Seleccione **Catálogo**.
-3. Para crear un producto, seleccione **Nuevo producto**; para editarlo, ábralo con doble clic.
+3. Para crear un producto, en el encabezado de **Lista de productos** abra el icono de tres puntos verticales situado en el extremo derecho y seleccione **Nuevo producto** en el menú desplegable. Se abrirá el formulario **Agregar producto**.
+4. Para editar un producto existente, localice su fila en la lista y haga doble clic en ella. Se abrirá el formulario **Editar producto**.
 
 ## Antes de empezar
 
@@ -30,11 +31,11 @@ Registre la ficha de un producto o actualícela con sus datos comerciales, de co
 ## Pasos
 
 1. Revise la lista para evitar un producto, código interno o código de barras duplicado.
-2. Seleccione **Nuevo producto** o abra el producto con doble clic.
+2. Siga la variante de creación o edición indicada en el acceso hasta abrir el formulario correspondiente.
 3. Complete nombre, categoría, marca, medida, precio de venta, costo, seguimiento, stock mínimo y peso. Indique compra o venta cuando la ficha lo muestre.
 4. Agregue proveedor y datos de compra, e imágenes que identifiquen el producto, en los apartados disponibles.
 5. Revise códigos y precios antes de guardar. Si cambia el seguimiento, confirme primero que el producto tiene stock en cero.
-6. Guarde y vuelva a abrir la ficha para actualizar sus datos cuando sea necesario.
+6. Seleccione **Guardar** en el formulario y espere el cierre o la actualización de la lista antes de volver a abrir la ficha.
 
 ## Compruebe el resultado
 

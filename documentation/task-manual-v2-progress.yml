@@ -19,6 +19,27 @@ source_basis:
   scope: guide_specific_source_support_and_observed_demo_controls
   limitation: Does not change the global source checkpoint, capability dispositions,
     runtime verification, deployed parity, or access-audit states.
+precision_audit:
+  inspected_count: 83
+  pending_count: 0
+  fact_catalog: source-fact-catalog.yml
+  fact_binding_count: 83
+  independent_fact_reference_count: 83
+  binding_coverage: every active guide resolves to one opaque source-fact reference
+  inspected_groups: [Panel principal, Ventas, Internado, Campañas de descuento, Inventario, Distribución, Compras, Contactos, Socios, Presupuesto, Estancia, Preventa]
+  evidence_kind: source_control_relations
+  interpretation: Structural source-backed coverage; it does not verify runtime execution, permissions, or deployment parity.
+  runtime_walk: partial_read_only
+  runtime_observations:
+  - guide: catalog-manage-products
+    result: observed_create_and_edit_dialogs
+    scope: Read-only create-menu and edit-row opening; dialogs were closed without saving.
+  - guide: internado-manage-service-units
+    result: observed_create_dialog
+    scope: Read-only create-menu opening; no edit test because the list had no records.
+  - guide: budget-manage-periods
+    result: observed_no_transition
+    scope: Nuevo periodo was visible; its click showed no dialog, navigation, network request, or console error. Cause is unknown.
 guides:
 - title: Consultar la tabla de pagos
   path: reportes/consultar-tabla-pagos.md

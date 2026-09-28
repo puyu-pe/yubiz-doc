@@ -40,6 +40,16 @@ Load when creating or refreshing a Yubiz source-backed operational ficha.
 6. Run the portable validator, fixture regression, and strict local documentation
    build.
 
+## Control Precision
+
+- For every significant UI transition, name the current screen and control container,
+  the visible label or plain-language icon description, required gesture, any reveal
+  prerequisite, and the expected next state.
+- Model source-derived controls separately from reader prose. Static control evidence
+  proves structure only; a read-only UI walk is separate runtime evidence.
+- Do not generalize overflow menus across list headers, rows, or detail views. When an
+  icon has no accessible label, describe its icon and container together.
+
 ## Manual Sync
 
 1. Resolve `YUBIZ_SOURCE_DIR` before source work; its read-only default is `../yubiz`. Read `documentation/source-checkpoint.yml`, its existing owner exclusions, and the current catalog before assessing the range.

@@ -29,11 +29,12 @@ mayor que cero.
 
 1. En la barra lateral, abra **Ventas**.
 2. Seleccione **Ventas**.
-3. Localice la venta y ábrala para continuar con el cobro.
+3. Localice la venta y haga doble clic en su fila para abrir el detalle.
+4. En el menú de acciones del detalle, seleccione **Registrar pago**. Se abrirá **Pagos / Agregar**.
 
 ## Pasos
 
-1. Abra la venta y revise su documento, cliente, **TOTAL**, **PAGADO** y **DEUDA**.
+1. En **Pagos / Agregar**, revise el documento, cliente, **TOTAL**, **PAGADO** y **DEUDA** de la venta.
 2. Revise las filas de pagos ya registrados, si existen.
 3. Si aparece la fila de nuevo pago, complete **Fecha**, **Método pago** y
    **Monto**; agregue una observación cuando corresponda.

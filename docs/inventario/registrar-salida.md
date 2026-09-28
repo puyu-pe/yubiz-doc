@@ -21,7 +21,7 @@ Registre la salida de productos desde un almacén y compruebe que el movimiento 
 3. Revise la cantidad disponible y asigne las series solicitadas, si corresponde.
 4. Complete la observación solo cuando sea necesaria para identificar la salida.
 5. **Antes de confirmar,** deténgase si el producto, la cantidad o el almacén no coinciden con la salida que realizará.
-6. Guarde el movimiento.
+6. Seleccione **Registrar** para guardar el movimiento.
 
 ## Compruebe el resultado
 

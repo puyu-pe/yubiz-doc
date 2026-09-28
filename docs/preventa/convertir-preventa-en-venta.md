@@ -8,7 +8,7 @@ Convierta una preventa en una venta y complete el registro de pago que correspon
 
 1. En la barra lateral, abra **Preventa**.
 2. Seleccione **Preventas**.
-3. Seleccione la preventa para abrirla antes de convertirla.
+3. Haga doble clic en la fila de la preventa para abrir su detalle. En el menú de acciones del registro, seleccione **Convertir a venta** solo si está habilitado.
 
 ## Antes de empezar
 

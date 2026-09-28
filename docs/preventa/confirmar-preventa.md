@@ -8,7 +8,7 @@ Confirme una preventa revisada para registrar su estado de confirmación.
 
 1. En la barra lateral, abra **Preventa**.
 2. Seleccione **Preventas**.
-3. Seleccione la preventa para abrirla antes de confirmarla.
+3. Haga doble clic en la fila de la preventa para abrir su detalle. En el menú de acciones del registro, seleccione **Confirmar preventa** solo si está habilitado.
 
 ## Pasos
 

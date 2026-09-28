@@ -19,7 +19,8 @@ Registre un pago de una compra y revise la deuda y los pagos asociados.
 
 1. En la barra lateral, abra **Compras**.
 2. Seleccione **Compras**.
-3. Seleccione la compra para abrir su detalle y los pagos.
+3. Localice la compra y haga doble clic en su fila para abrir el detalle.
+4. En el menú de acciones del detalle, seleccione **Registrar pago**. Se abrirá **Pagos / Agregar**.
 
 ## Antes de empezar
 
@@ -27,10 +28,10 @@ Registre un pago de una compra y revise la deuda y los pagos asociados.
 
 ## Pasos
 
-1. Revise total pagado y deuda mostrados para la compra.
+1. En **Pagos / Agregar**, revise total pagado y deuda mostrados para la compra.
 2. Agregue el pago con fecha, monto y observación.
 3. **Antes de guardar,** deténgase si el monto o la compra no coinciden con el pago que registrará.
-4. Guarde y revise la lista de pagos.
+4. Seleccione **Registrar** y revise la lista de pagos.
 
 ## Compruebe el resultado
 

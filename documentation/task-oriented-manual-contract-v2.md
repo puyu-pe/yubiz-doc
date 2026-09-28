@@ -328,12 +328,15 @@ No se infiere inexistencia de una función porque no se observó. Tampoco se ele
 ## Criterios de aceptación de la implementación
 
 - Cada guía V2 debe iniciar desde el módulo lateral y la pantalla exactos indicados en este contrato.
+- Cada transición significativa debe indicar la pantalla actual, el contenedor del control, su etiqueta o descripción visible, el gesto requerido, la revelación previa cuando exista y el estado esperado al terminar. Un icono sin etiqueta se describe junto con su contenedor; no se infiere que todos los menús de tres puntos tengan las mismas acciones.
 - Cada guía de formulario debe usar los nombres de campos y botones observados, sin completar huecos con campos o resultados inventados.
 - Las operaciones sensibles deben advertir antes de guardar, confirmar, anular o eliminar; la advertencia no sustituye evidencia de ejecución.
 - Las acciones deshabilitadas deben documentar las condiciones de estado respaldadas por evidencia. Ante un `403`, se requiere resolver el acceso autorizado antes de completar la verificación del recorrido; no se inferirá su causa ni se propondrá eludirlo.
 - La comprobación final debe ser de extremo a extremo cuando esa operación se pueda ejecutar de forma autorizada. Las verificaciones pendientes se registrarán en metadatos de mantenimiento, no como avisos de revisión en las fichas públicas; no se presentará un procedimiento incompleto como terminado.
 - Se revisará el recorrido en pantalla pequeña cuando el módulo tenga controles laterales, tablas o formularios que puedan cambiar de disposición.
 - La implementación debe actualizar en conjunto el contrato activo, el registro de migración, la navegación, inventario, auditoría de acceso, disposiciones, pruebas y validador. Los estados globales siguen siendo independientes de esta integración.
+
+La evidencia de controles estáticos y una caminata de interfaz de solo lectura son pruebas distintas. La primera aporta cobertura de precisión respaldada por fuente y permite comprobar que una guía no omite una revelación o confunde contenedores; no prueba que el control esté disponible para todos los usuarios ni que una escritura se haya ejecutado. La segunda requiere una revisión independiente autorizada; una cobertura de 83 guías no equivale a 83 recorridos verificados en ejecución.
 
 ## Relación con V1
 

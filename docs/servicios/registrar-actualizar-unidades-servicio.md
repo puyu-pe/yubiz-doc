@@ -9,7 +9,7 @@ Mantenga las unidades que se usan en el módulo internado.
 
 ## Pasos
 
-1. Para crear una unidad, seleccione **Agregar unidad**.
+1. En el encabezado de **Lista de unidades**, abra el icono de tres puntos verticales y seleccione **Agregar unidad** en el menú desplegable. Se abrirá el formulario de registro.
 2. En el formulario, seleccione **Cliente** e indique **Código**, **Descripción** y **Estado**. Puede registrar una **Observación** si corresponde.
 3. Revise que el cliente, el código y la descripción identifiquen la unidad correcta y seleccione **Guardar**.
 4. Para actualizar una unidad, haga doble clic en su fila de la lista; se abrirá el formulario **Editar unidad** con los valores actuales.

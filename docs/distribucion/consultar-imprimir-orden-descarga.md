@@ -12,7 +12,7 @@ Abra una orden de descarga confirmada y solicite su impresión desde el detalle 
 
 1. Revise **Datos generales** y **Detalles** de la orden abierta.
 2. Abra **Detalle imprimir** para contrastar la información que se enviará a impresión.
-3. Seleccione **Imprimir** en el menú de más opciones.
+3. En el detalle, abra el menú superior de acciones y seleccione **Imprimir**.
 
 ## Compruebe el resultado
 

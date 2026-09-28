@@ -9,7 +9,7 @@ Registre una asignación presupuestaria y exporte su consulta cuando corresponda
 
 ## Pasos
 
-1. Abra el menú de acciones de tres puntos de la lista y seleccione **Nueva asignación**.
+1. En el encabezado de la lista de asignaciones, abra el menú de acciones de tres puntos y seleccione **Nueva asignación**. Se abrirá el formulario de asignación.
 2. Complete los campos obligatorios: **Documento**, **Serie**, **Fecha de registro**, **Periodo presupuestario**, **Usuario a asignar**, **Monto**, **Moneda** y **Politica de uso**.
 3. Revise en particular el período, la persona asignada, el monto y la moneda antes de registrar una asignación.
 4. Seleccione **Registrar**.

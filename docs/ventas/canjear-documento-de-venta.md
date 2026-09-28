@@ -8,7 +8,8 @@ Genere el documento de canje desde una venta identificada y compruebe la relaci�
 
 1. En la barra lateral, abra **Ventas**.
 2. Seleccione **Ventas**.
-3. Seleccione la venta para abrir su detalle.
+3. Localice la venta y haga doble clic en su fila para abrir el detalle.
+4. En el menú de acciones del detalle, seleccione **Canjear** solo si está habilitado. Se abrirá el formulario de canje de la nota de venta.
 
 ## Antes de empezar
 
@@ -18,7 +19,7 @@ Genere el documento de canje desde una venta identificada y compruebe la relaci�
 ## Pasos
 
 1. Revise documento, serie, correlativo, cliente, ítems y total de la venta fuente.
-2. Seleccione la opción de canje. Elija el documento y la serie solicitados por el formulario.
+2. Elija el documento y la serie solicitados por el formulario. No use **Canjear cupón de descuento** del formulario de venta: corresponde a otro flujo.
 3. Revise la fecha de emisión propuesta y complete el detalle u observación solo si el formulario lo requiere.
 4. **Antes de confirmar,** deténgase si no puede relacionar con claridad el nuevo documento con la venta fuente; no continúe con una serie, fecha o importe inciertos.
 5. Confirme el registro y vuelva al detalle para revisar el documento generado y la relación mostrada.

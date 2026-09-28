@@ -8,7 +8,7 @@ Convierta una cotización revisada en una venta y complete el cobro antes de dar
 
 1. En la barra lateral, abra **Ventas**.
 2. Seleccione **Cotizaciones**.
-3. Seleccione la cotización y use Convertir venta para abrir la venta de origen.
+3. Abra el detalle de la cotización con doble clic en su fila. En el encabezado del detalle, abra el menú de tres puntos verticales y seleccione **Convertir venta** para abrir el formulario de venta de origen.
 
 ## Antes de empezar
 
@@ -17,7 +17,7 @@ Convierta una cotización revisada en una venta y complete el cobro antes de dar
 
 ## Pasos
 
-1. Desde el detalle de la cotización, seleccione **Convertir venta**. Se abre el formulario de venta con el origen y las líneas de la cotización.
+1. Desde el detalle de la cotización, abra el menú de tres puntos verticales y seleccione **Convertir venta**. Se abre el formulario de venta con el origen y las líneas de la cotización.
 2. Revise el cliente, el documento, la serie, la fecha y el almacén mostrados. Corrija solo los datos que deban cambiar para esta venta.
 3. Revise cada fila de productos: cantidad, precio unitario e importe. Ajuste una fila antes de continuar si ya no coincide con lo acordado.
 4. Seleccione **Registrar**. En el detalle de pago, ingrese el monto y el medio de pago que corresponda.

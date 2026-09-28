@@ -29,7 +29,7 @@ En el menú de acciones del detalle de una venta elegible.
 
 1. En la barra lateral, abra **Ventas**.
 2. Seleccione **Ventas**.
-3. Seleccione la venta para abrir su detalle.
+3. Haga doble clic en la fila de la venta para abrir su detalle. En el menú de acciones del detalle, revise si **Anular** está habilitado.
 
 ## Pasos
 1. Confirme documento, serie, correlativo, cliente, ítems y montos antes de abrir la acción.

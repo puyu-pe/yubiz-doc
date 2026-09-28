@@ -194,9 +194,9 @@ def validate_progress(root: Path, active: list[object], diagnostics: list[str]) 
 
 def validate_access_audit(root: Path, docs_root: Path, active: list[object], diagnostics: list[str]) -> None:
     audit = load(root / "documentation/access-audit.yml", diagnostics)
-    records = audit.get("records") if isinstance(audit, dict) and audit.get("schema_version") == 1 else None
+    records = audit.get("records") if isinstance(audit, dict) and audit.get("schema_version") == 2 else None
     if not isinstance(records, list):
-        diagnostics.append("access-audit-shape: schema_version 1 records are required")
+        diagnostics.append("access-audit-shape: schema_version 2 records are required")
         return
     expected = {entry["doc_id"]: entry for entry in active if isinstance(entry, dict) and isinstance(entry.get("doc_id"), str)}
     found: set[str] = set()
@@ -245,6 +245,203 @@ def validate_access_audit(root: Path, docs_root: Path, active: list[object], dia
             diagnostics.append("access-audit-classification: unsupported classification")
     if found != set(expected) or len(records) != len(expected):
         diagnostics.append("access-audit-coverage: every active guide requires exactly one access record")
+    validate_control_catalog(root, expected, docs_root, diagnostics)
+
+
+def validate_action_profiles(
+    audit: dict[str, object], expected: dict[str, object], docs_root: Path, diagnostics: list[str]
+) -> None:
+    """Validate frozen source relations separately from editable access prose."""
+    profiles = audit.get("action_profiles")
+    if not isinstance(profiles, list):
+        diagnostics.append("action-profile-shape: source-derived action profiles are required")
+        return
+    batch_ids = {
+        entry["doc_id"] for entry in expected.values()
+        if isinstance(entry, dict)
+    }
+    found: set[str] = set()
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            diagnostics.append("action-profile-record")
+            continue
+        doc_id, evidence, owner, transitions = (
+            profile.get("id"), profile.get("evidence"), profile.get("current_action_owner"), profile.get("transitions")
+        )
+        if not isinstance(doc_id, str) or doc_id not in batch_ids or doc_id in found:
+            diagnostics.append("action-profile-record")
+            continue
+        found.add(doc_id)
+        if evidence != {"kind": "source", "revision": "330857197e5e01c24147d03452f7c59909abc968"} or owner != "source" or not isinstance(transitions, list) or not transitions:
+            diagnostics.append("action-profile-evidence")
+            continue
+        for transition in transitions:
+            required = {"screen", "container", "control", "gesture", "reveal", "next_state"}
+            if not isinstance(transition, dict) or set(transition) != required or not all(isinstance(value, str) and value for value in transition.values()):
+                diagnostics.append("action-profile-transition")
+    if found != batch_ids or len(profiles) != len(batch_ids):
+        diagnostics.append("action-profile-coverage: every reviewed batch guide requires one source profile")
+    validate_control_catalog(audit, expected, docs_root, diagnostics)
+
+
+def validate_control_catalog(root: Path, expected: dict[str, object], docs_root: Path, diagnostics: list[str]) -> None:
+    """Check source-first requirements without treating editable audit prose as evidence."""
+    catalog = load(root / "documentation/source-fact-catalog.yml", diagnostics)
+    if not isinstance(catalog, dict) or catalog.get("schema_version") != 2:
+        diagnostics.append("source-fact-catalog-schema: schema_version 2 is required")
+        return
+    if catalog.get("source_revision") != "330857197e5e01c24147d03452f7c59909abc968":
+        diagnostics.append("source-fact-catalog-revision: immutable source revision is required")
+        return
+    requirements, pending = catalog.get("requirements"), catalog.get("pending_guides")
+    if not isinstance(requirements, list) or not isinstance(pending, list):
+        diagnostics.append("source-fact-catalog-shape: requirements and pending_guides are required")
+        return
+    covered: set[str] = set()
+    required_fact_keys = {"id", "source_fact_kind", "proof_ref", "container", "control", "gesture", "reveal", "dependencies", "next_state", "visible"}
+    for requirement in requirements:
+        if not isinstance(requirement, dict) or set(requirement) != {"guide_id", "facts"}:
+            diagnostics.append("source-fact-requirement")
+            continue
+        doc_id, facts = requirement["guide_id"], requirement["facts"]
+        if not isinstance(doc_id, str) or doc_id not in expected or doc_id in covered or not isinstance(facts, list) or not facts:
+            diagnostics.append("source-fact-requirement")
+            continue
+        covered.add(doc_id)
+        entry = expected[doc_id]
+        if not isinstance(entry, dict):
+            diagnostics.append("source-fact-requirement")
+            continue
+        text = visible_control_procedure_text((docs_root / entry["target"]).read_text(encoding="utf-8"))
+        for fact in facts:
+            if not isinstance(fact, dict) or set(fact) != required_fact_keys:
+                diagnostics.append("source-fact-shape")
+                continue
+            values = [fact[key] for key in required_fact_keys - {"visible"}]
+            variants = fact["visible"]
+            if not all(isinstance(value, str) and value for value in values) or not isinstance(variants, list) or not variants:
+                diagnostics.append("source-fact-shape")
+                continue
+            if all(isinstance(check, dict) for check in variants):
+                validate_typed_visible_checks(entry["target"], fact, text, diagnostics)
+                continue
+            positions: list[int] = []
+            for alternatives in variants:
+                if not isinstance(alternatives, list) or not alternatives or not all(isinstance(value, str) and value for value in alternatives):
+                    diagnostics.append("source-fact-shape")
+                    break
+                position = next((visible_phrase_position(text, value) for value in alternatives if visible_phrase_position(text, value) >= 0), -1)
+                positions.append(position)
+            else:
+                if any(position < 0 for position in positions):
+                    diagnostics.append(f"source-fact-visible-coverage: {entry['target']} lacks {fact['id']}")
+                elif list_visible_route_requires_order(fact):
+                    ordered_positions = [
+                        next((visible_exact_phrase_position(text, value) for value in alternatives if visible_exact_phrase_position(text, value) >= 0), position)
+                        for alternatives, position in zip(variants, positions)
+                    ]
+                    steps = visible_step_positions(text, ordered_positions)
+                    if steps != sorted(steps):
+                        diagnostics.append(f"source-fact-visible-order: {entry['target']} lacks {fact['id']}")
+    pending_ids = {item for item in pending if isinstance(item, str)}
+    if len(pending_ids) != len(pending) or covered | pending_ids != set(expected) or covered & pending_ids:
+        diagnostics.append("source-fact-coverage: every active guide must be inspected or explicitly pending")
+    elif pending_ids:
+        diagnostics.append("source-fact-incomplete: all active guides require source-first requirements")
+
+
+def control_procedure_text(text: str) -> str:
+    """Limit token checks to the access and action flow, not incidental guide prose."""
+    sections = []
+    for heading in ("Cómo acceder", "Pasos"):
+        match = re.search(rf"## {re.escape(heading)}\n\n(.*?)(?=\n## |\Z)", text, re.S)
+        if match:
+            sections.append(match.group(1))
+    return "\n".join(sections)
+
+
+def visible_control_procedure_text(text: str) -> str:
+    """Exclude comments and HTML-only aliases before checking reader-visible instructions."""
+    return re.sub(r"<[^>]+>", "", re.sub(r"<!--.*?-->", "", control_procedure_text(text), flags=re.S))
+
+
+def visible_phrase_position(text: str, phrase: str) -> int:
+    position = text.casefold().find(phrase.casefold())
+    if position >= 0:
+        return position
+    # Localized inflections such as "guarde" and "guardado" are the same UI action,
+    # but labels and multiword controls still require their complete visible phrase.
+    if " " not in phrase and len(phrase) >= 5:
+        return text.casefold().find(phrase.casefold()[:5])
+    return -1
+
+
+def visible_exact_phrase_position(text: str, phrase: str) -> int:
+    match = re.search(rf"(?<!\w){re.escape(phrase)}(?!\w)", text, re.I)
+    return match.start() if match else -1
+
+
+def list_visible_route_requires_order(fact: dict[str, object]) -> bool:
+    """Order record-detail menu routes without parsing word order in one action sentence."""
+    route = f"{fact['container']} {fact['reveal']}".casefold()
+    variants = fact["visible"]
+    visible_reveal = any(
+        any(marker in alternative.casefold() for marker in ("menú", "menu", "opciones", "puntos"))
+        for alternatives in variants
+        for alternative in alternatives
+    )
+    visible_record_open = any(
+        any(marker in alternative.casefold() for marker in ("doble clic", "fila"))
+        for alternatives in variants
+        for alternative in alternatives
+    )
+    return visible_reveal and visible_record_open and any(marker in route for marker in ("menu", "dropdown", "ellipsis"))
+
+
+def visible_step_positions(text: str, positions: list[int]) -> list[int]:
+    """Compare interaction steps, not incidental word order within one instruction."""
+    starts = [match.start() for match in re.finditer(r"^\d+\. ", text, re.M)]
+    return [sum(start <= position for start in starts) for position in positions]
+
+
+def validate_typed_visible_checks(target: str, fact: dict[str, object], text: str, diagnostics: list[str]) -> None:
+    """Require the reader-visible route for source-owned, multi-step UI actions."""
+    checks = fact["visible"]
+    kind = typed_ui_kind(fact)
+    required_dimensions = {
+        "dropdown_action": ("owner", "reveal", "control", "next_state"),
+        "row_open": ("gesture", "row", "next_state"),
+        "direct_form": ("scope", "control"),
+    }
+    expected = required_dimensions.get(kind)
+    if expected is None or len(checks) != len(expected):
+        diagnostics.append(f"source-fact-typed-shape: {target} lacks {fact['id']}")
+        return
+    position = -1
+    for check, dimension in zip(checks, expected):
+        if set(check) != {"dimension", "alternatives"} or check["dimension"] != dimension:
+            diagnostics.append(f"source-fact-typed-shape: {target} lacks {fact['id']}")
+            return
+        alternatives = check["alternatives"]
+        if not isinstance(alternatives, list) or not alternatives or not all(isinstance(value, str) and value for value in alternatives):
+            diagnostics.append(f"source-fact-typed-shape: {target} lacks {fact['id']}")
+            return
+        matches = [visible_phrase_position(text, value) for value in alternatives]
+        next_position = next((value for value in matches if value > position), -1)
+        if next_position < 0:
+            diagnostics.append(f"source-fact-visible-coverage: {target} lacks {fact['id']} {dimension}")
+            return
+        position = next_position
+
+
+def typed_ui_kind(fact: dict[str, object]) -> str:
+    container = str(fact["container"]).casefold()
+    gesture = str(fact["gesture"]).casefold()
+    if "menu" in container or "dropdown" in container:
+        return "dropdown_action"
+    if "row" in container or "doble clic" in gesture:
+        return "row_open"
+    return "direct_form"
 
 
 def intro_after_h1(text: str) -> bool:

@@ -26,8 +26,9 @@ En el detalle de una venta donde la opción correspondiente esté habilitada.
 
 ## Cómo acceder
 
-1. En la barra lateral, abra **Ventas**.
-2. Seleccione **Notas de crédito**.
+1. En la barra lateral, abra **Ventas** y seleccione **Ventas**.
+2. Haga doble clic en la fila de la venta para abrir su detalle.
+3. En el menú de acciones del detalle, seleccione **Nota de crédito** solo si la opción está habilitada. Se abrirá **Nota de crédito / Agregar**.
 
 ## Pasos
 1. Confirme que la venta fuente, el cliente, los ítems y los montos son correctos.

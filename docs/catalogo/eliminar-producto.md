@@ -8,7 +8,7 @@ Retire un producto del catálogo solo después de confirmar que el registro y su
 
 1. En la barra lateral, abra **Inventario**.
 2. Seleccione **Catálogo**.
-3. Seleccione el producto para abrir su edición antes de eliminarlo.
+3. Haga doble clic en la fila del producto para abrir **Editar producto**. En el encabezado del modal, abra el menú de tres puntos verticales y seleccione **Eliminar**.
 
 ## Antes de empezar
 
@@ -16,8 +16,8 @@ Retire un producto del catálogo solo después de confirmar que el registro y su
 
 ## Pasos
 
-1. En la lista, seleccione el producto que desea retirar y compruebe que la descripción y el código coinciden.
-2. Seleccione **Eliminar**.
+1. En la lista, haga doble clic en el producto que desea retirar y compruebe en **Editar producto** que la descripción y el código coinciden.
+2. En el menú de tres puntos verticales del encabezado del modal, seleccione **Eliminar**.
 3. **Antes de confirmar,** deténgase si el producto puede confundirse con otro registro o si necesita conservarlo para una operación pendiente.
 4. Confirme la acción indicada por la pantalla.
 

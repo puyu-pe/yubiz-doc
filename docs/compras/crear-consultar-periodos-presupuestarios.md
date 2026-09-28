@@ -9,7 +9,7 @@ Registre un período presupuestario y localícelo después en la lista de perío
 
 ## Pasos
 
-1. Abra el menú de acciones de tres puntos de la lista y seleccione **Nuevo periodo**.
+1. En el encabezado de la lista de **Periodos**, abra el menú de acciones de tres puntos verticales y seleccione **Nuevo periodo**. Se abrirá el formulario del período.
 2. Complete los campos obligatorios: **Nombre del periodo**, **Fecha de inicio**, **Fecha de cierre** y **Establecimiento**. El establecimiento de la sesión aparece seleccionado cuando está disponible.
 3. Compruebe que las fechas delimitan el período que desea registrar y que el establecimiento es el correcto.
 4. Seleccione **Registrar**.
@@ -18,3 +18,7 @@ Registre un período presupuestario y localícelo después en la lista de perío
 ## Compruebe el resultado
 
 La lista de **Periodos** muestra el período registrado para su consulta.
+
+## Situaciones frecuentes
+
+- Si al seleccionar **Nuevo periodo** no se abre el formulario, detenga el registro y solicite una revisión antes de intentar continuar.

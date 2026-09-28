@@ -28,7 +28,7 @@ la sesión, módulo y configuración disponible.
 
 1. En la barra lateral, abra **Ventas**.
 2. Seleccione **Ventas**.
-3. Seleccione la venta para abrir su detalle.
+3. Haga doble clic en la fila de la venta para abrir su detalle.
 
 ## Pasos
 
@@ -38,7 +38,7 @@ la sesión, módulo y configuración disponible.
    cliente, establecimiento o vendedor.
 3. Si necesita reiniciar la búsqueda, use **Limpiar filtros** o
    **Restablecer columnas** cuando esas opciones estén visibles.
-4. Abra el detalle de la venta seleccionada para revisar datos del cliente, datos
+4. Abra el detalle con doble clic en la fila de la venta seleccionada para revisar datos del cliente, datos
    generales, ítems y pagos mostrados.
 5. Use **Imprimir** o la opción de comunicación que esté disponible solo después de confirmar que la fila corresponde a la operación que busca.
 6. Revise el resultado visible de esa acción junto con el documento abierto; no use el intento de imprimir o comunicar como comprobación de que la venta fue registrada.

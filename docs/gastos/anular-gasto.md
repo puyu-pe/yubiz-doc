@@ -8,7 +8,8 @@ Anule un gasto identificado cuando no deba seguir vigente.
 
 1. En la barra lateral, abra **Compras**.
 2. Seleccione **Gastos**.
-3. Seleccione el gasto para abrirlo antes de anularlo.
+3. Localice el gasto y haga doble clic en su fila para abrir el detalle.
+4. En el menú de acciones del detalle, seleccione **Anular** solo si está habilitado.
 
 ## Pasos
 

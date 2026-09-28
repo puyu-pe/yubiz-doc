@@ -164,6 +164,120 @@ class ValidateManualTests(unittest.TestCase):
         self.assertEqual("quickstart", next(record for record in audit["records"] if record["guide"] == "1.1")["classification"])
         self.assertEqual([], [record["guide"] for record in audit["records"] if record["classification"] == "technical-gap"])
 
+    def test_source_facts_reject_missing_product_reveal_with_markers_intact(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/catalogo/gestionar-productos.md"
+        text = guide.read_text(encoding="utf-8")
+        mutated, mutations = re.subn(
+            r"(?m)^(\d+\.\s+Para crear un producto, en el encabezado de \*\*Lista de productos\*\*)\s+abra el icono de tres puntos verticales\b[^\n]*?\s+y seleccione\s+(\*\*Nuevo producto\*\*\s+en el menú desplegable\.\s+Se abrirá el formulario\s+\*\*Agregar producto\*\*\.)$",
+            r"\1 seleccione \2",
+            text,
+            count=1,
+        )
+        self.assertEqual(1, mutations)
+        self.assertNotEqual(text, mutated)
+        guide.write_text(mutated, encoding="utf-8")
+        self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_source_facts_reject_joint_product_edit_omission(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/catalogo/gestionar-productos.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("haga doble clic en ella. Se abrirá el formulario **Editar producto**.", "abra el producto.", 1), encoding="utf-8")
+        self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_source_facts_reject_wrong_product_delete_container(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/catalogo/eliminar-producto.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("encabezado del modal", "lista de productos"), encoding="utf-8")
+        self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_source_facts_reject_budget_header_omission(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/compras/crear-consultar-periodos-presupuestarios.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("menú de acciones de tres puntos verticales y seleccione **Nuevo periodo**", "acción de la lista", 1), encoding="utf-8")
+        self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_source_facts_reject_joint_sale_payment_omission(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/registrar-cobro-posterior-y-consultar-saldo.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("3. Localice la venta y haga doble clic en su fila para abrir el detalle.\n4. En el menú de acciones del detalle, seleccione **Registrar pago**. Se abrirá **Pagos / Agregar**.\n", ""), encoding="utf-8")
+        audit = self.metadata(root, "access-audit.yml")
+        record = next(record for record in audit["records"] if record["id"] == "sales-collect-later-and-check-balance")
+        record["access_steps"] = record["access_steps"][:2]
+        self.write_metadata(root, "access-audit.yml", audit)
+        self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_source_facts_reject_reversed_hidden_action_order(self) -> None:
+        cases = (
+            (
+                "manual-9-3",
+                "docs/distribucion/confirmar-orden-de-carga.md",
+                "En la lista, abra el detalle con doble clic en la fila y, en el menú de más opciones, seleccione **Confirmar**.",
+                "En la lista, seleccione **Confirmar**.\n4. Abra el detalle con doble clic en la fila y el menú de más opciones.",
+                "load-confirm",
+            ),
+            (
+                "manual-2-9",
+                "docs/ventas/canjear-documento-de-venta.md",
+                "3. Localice la venta y haga doble clic en su fila para abrir el detalle.\n4. En el menú de acciones del detalle, seleccione **Canjear** solo si está habilitado. Se abrirá el formulario de canje de la nota de venta.",
+                "3. Seleccione **Canjear** solo si está habilitado.\n4. Localice la venta, haga doble clic en su fila y abra el menú de acciones del detalle.",
+                "sale-document-exchange",
+            ),
+            (
+                "purchases-register-payments-and-balances",
+                "docs/compras/registrar-pagos-y-saldos.md",
+                "3. Localice la compra y haga doble clic en su fila para abrir el detalle.\n4. En el menú de acciones del detalle, seleccione **Registrar pago**. Se abrirá **Pagos / Agregar**.",
+                "3. Seleccione **Registrar pago**.\n4. Localice la compra, haga doble clic en su fila y abra el menú de acciones del detalle.",
+                "purchase-payment-detail",
+            ),
+        )
+        for guide_id, relative_path, original, reversed_order, fact_id in cases:
+            with self.subTest(guide_id=guide_id):
+                root = self.copy_manual()
+                guide = root / relative_path
+                guide.write_text(guide.read_text(encoding="utf-8").replace(original, reversed_order, 1), encoding="utf-8")
+                audit = self.metadata(root, "access-audit.yml")
+                record = next(record for record in audit["records"] if record["id"] == guide_id)
+                record["access_steps"][-2:] = [reversed_order]
+                self.write_metadata(root, "access-audit.yml", audit)
+                diagnostics = validate_manual(root).diagnostics
+                self.assertIn(f"source-fact-visible-order: {relative_path.removeprefix('docs/')} lacks {fact_id}", diagnostics)
+
+        self.assertTrue(validate_manual(self.copy_manual()).is_valid)
+
+    def test_typed_source_facts_reject_joint_hidden_action_omissions(self) -> None:
+        cases = (
+            ("docs/reportes/consultar-tabla-pagos.md", "menú de acciones de tres puntos", "Generar EXCEL"),
+            ("docs/ventas/convertir-cotizacion-en-venta.md", "menú de tres puntos verticales", "Convertir venta"),
+        )
+        for relative_path, reveal, control in cases:
+            with self.subTest(path=relative_path):
+                root = self.copy_manual()
+                guide = root / relative_path
+                guide.write_text(guide.read_text(encoding="utf-8").replace(reveal + " y seleccione **" + control + "**", "seleccione **" + control + "**", 1), encoding="utf-8")
+                audit = self.metadata(root, "access-audit.yml")
+                for record in audit["records"]:
+                    if record["path"] == relative_path.removeprefix("docs/"):
+                        record["access_steps"] = [step.replace(reveal + " y seleccione **" + control + "**", "seleccione **" + control + "**") for step in record["access_steps"]]
+                self.write_metadata(root, "access-audit.yml", audit)
+                self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+    def test_typed_source_facts_reject_wrong_row_gesture_and_keep_direct_form_valid(self) -> None:
+        root = self.copy_manual()
+        guide = root / "docs/ventas/consultar-ventas.md"
+        guide.write_text(guide.read_text(encoding="utf-8").replace("Haga doble clic", "Seleccione", 1), encoding="utf-8")
+        self.assertTrue(any("source-fact-visible-coverage" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        self.assertTrue(validate_manual(root).is_valid)
+
+    def test_source_facts_require_a_final_batch_guide(self) -> None:
+        root = self.copy_manual()
+        catalog = self.metadata(root, "source-fact-catalog.yml")
+        catalog["requirements"] = [item for item in catalog["requirements"] if item["guide_id"] != "manual-8-5"]
+        self.write_metadata(root, "source-fact-catalog.yml", catalog)
+        self.assertTrue(any("source-fact-coverage" in item for item in validate_manual(root).diagnostics))
+
     def test_duplicate_or_missing_contract_entry_fails(self) -> None:
         root = self.copy_manual()
         migration = self.migration(root)

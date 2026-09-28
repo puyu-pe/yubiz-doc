@@ -9,7 +9,7 @@ Mantenga los ítems de servicio que se pueden utilizar en el módulo internado.
 
 ## Pasos
 
-1. Para crear un ítem, seleccione **Agregar servicio**.
+1. En el encabezado de **Lista de servicios**, abra el icono de tres puntos verticales y seleccione **Agregar servicio** en el menú desplegable. Se abrirá el formulario de registro.
 2. Indique **Descripción**, **Categoría** y **Precio**, que son los datos validados al guardar. El formulario también muestra **Código**, **Dificultad**, **Afec. IGV**, **Valor unitario** y **Observación**.
 3. Verifique la categoría y el precio. **Valor unitario** se muestra como solo lectura y, al crear un servicio, **Dificultad** queda inicialmente en **Normal**.
 4. Seleccione **Guardar**.

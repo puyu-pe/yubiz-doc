@@ -8,7 +8,7 @@ Anule una preventa que no debe continuar.
 
 1. En la barra lateral, abra **Preventa**.
 2. Seleccione **Preventas**.
-3. Seleccione la preventa para abrirla antes de anularla.
+3. Haga doble clic en la fila de la preventa para abrir su detalle. En el menú de acciones del registro, seleccione **Anular preventa** solo si está habilitado.
 
 ## Pasos
 

@@ -19,11 +19,12 @@ Consulte una preventa y actualice sus datos mientras el estado permita editarla.
 
 1. En la barra lateral, abra **Preventa**.
 2. Seleccione **Preventas**.
-3. Seleccione la preventa para abrirla.
+3. Use el menú de tres puntos del encabezado solo para **Editar columnas**; no abre una preventa.
+4. Para abrir una preventa, haga doble clic en su fila. Se abrirá el detalle de ese registro.
 
 ## Pasos
 
-1. Filtre por cliente, fecha, documento o estado y abra la preventa.
+1. Filtre por cliente, fecha, documento o estado y abra la preventa con doble clic en su fila.
 2. Revise productos, cantidades y total antes de modificarla.
 3. Actualice los datos necesarios y guarde.
 4. Vuelva a la lista y use los filtros para confirmar el registro actualizado.
