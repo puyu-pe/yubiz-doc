@@ -1,4 +1,4 @@
-"""Fail-closed publication planning and optional isolated static upload."""
+"""Fail-closed publication planning and optional direct static upload."""
 
 from __future__ import annotations
 
@@ -54,7 +54,7 @@ def load_target(path: Path) -> dict[str, str]:
         raise GuardError("deployment target cannot be read") from error
     if not isinstance(target, dict):
         raise GuardError("deployment target must be a mapping")
-    required = ("activation", "verification_state", "site_url", "base_path", "host", "user", "port", "target_root", "marker", "marker_value", "known_hosts_secret", "key_secret")
+    required = ("activation", "verification_state", "site_url", "base_path", "host_variable", "user_variable", "port", "target_root", "public_link", "known_hosts_secret", "key_secret")
     if any(not isinstance(target.get(key), str) or not target[key] for key in required):
         raise GuardError("deployment target has missing required configuration")
     if target["activation"] != "verified" or target["verification_state"] != "verified":
@@ -64,14 +64,21 @@ def load_target(path: Path) -> dict[str, str]:
         raise GuardError("site URL must end with the configured base path")
     if not target["port"].isdigit() or not 1 <= int(target["port"]) <= 65535:
         raise GuardError("port must be in the SSH range")
-    if not SAFE_HOST.fullmatch(target["host"]) or not SAFE_NAME.fullmatch(target["user"]):
-        raise GuardError("host or user is unsafe")
     target["target_root"] = canonical_target_root(target["target_root"])
-    if not SAFE_NAME.fullmatch(target["marker"]) or target["marker_value"] != "manual-publication-root/v1":
-        raise GuardError("target root or marker is unsafe")
-    if not all(SAFE_NAME.fullmatch(target[key]) for key in ("known_hosts_secret", "key_secret")):
-        raise GuardError("secret names are unsafe")
+    target["public_link"] = canonical_target_root(target["public_link"])
+    forbidden = {"/", "/home", "/var", "/var/www", "/var/www/vhosts", "/var/www/vhosts/yubiz.puyu.pe/httpdocs", "/var/www/vhosts/yubiz.puyu.pe/httpdocs/public"}
+    if target["target_root"] in forbidden or not target["target_root"].endswith("/manual") or not target["public_link"].endswith("/manual"):
+        raise GuardError("target root or public link is unsafe")
+    if not all(SAFE_NAME.fullmatch(target[key]) for key in ("host_variable", "user_variable", "known_hosts_secret", "key_secret")):
+        raise GuardError("environment or secret names are unsafe")
     return target
+
+
+def resolved_target(target: dict[str, str]) -> dict[str, str]:
+    host, user = os.environ.get(target["host_variable"]), os.environ.get(target["user_variable"])
+    if not host or not user or not SAFE_HOST.fullmatch(host) or not SAFE_NAME.fullmatch(user):
+        raise GuardError("deployment host or user is unavailable or unsafe")
+    return {**target, "host": host, "user": user}
 
 
 def checked_sha(value: str) -> str:
@@ -133,23 +140,27 @@ def checked_artifact(directory: Path, sha: str, target: dict[str, str]) -> dict[
     return {"archive": archive_path, "manifest_sha256": digest(manifest_path), "archive_sha256": digest(archive_path)}
 
 
-def remote_check_command(target: dict[str, str], sha: str) -> str:
-    root, marker = target["target_root"], target["marker"]
-    release = f"{root}/releases/{sha}"
-    return " && ".join((f"test -d {shlex.quote(root)}", f"test ! -L {shlex.quote(root)}", f"test -d {shlex.quote(root + '/releases')}", f"test ! -L {shlex.quote(root + '/releases')}", f"test -f {shlex.quote(root + '/' + marker)}", f"test \"$(cat -- {shlex.quote(root + '/' + marker)})\" = {shlex.quote(target['marker_value'])}", f"test ! -e {shlex.quote(release)}"))
+def remote_check_command(target: dict[str, str]) -> str:
+    root, link = target["target_root"], target["public_link"]
+    return " && ".join((
+        f"test -d {shlex.quote(str(Path(root).parent))}",
+        f"test ! -L {shlex.quote(root)}",
+        f"if test -e {shlex.quote(root)}; then test -d {shlex.quote(root)}; else mkdir -- {shlex.quote(root)}; fi",
+        f"if test -e {shlex.quote(link)} || test -L {shlex.quote(link)}; then test -L {shlex.quote(link)} && test \"$(readlink -- {shlex.quote(link)})\" = {shlex.quote(root)}; else ln -s -- {shlex.quote(root)} {shlex.quote(link)}; fi",
+    ))
 
 
 def plan(root: Path, target_path: Path, artifact_dir: Path, sha: str) -> dict[str, str]:
     sha = checked_sha(sha)
-    target = load_target(target_path)
+    target = resolved_target(load_target(target_path))
     artifact = checked_artifact(artifact_dir.resolve(), sha, target)
     checked_reviewed_main(root.resolve(), sha)
-    return {"release": f"{target['target_root']}/releases/{sha}", "remote_check": remote_check_command(target, sha), "manifest_sha256": str(artifact["manifest_sha256"]), "archive_sha256": str(artifact["archive_sha256"])}
+    return {"target_root": target["target_root"], "public_link": target["public_link"], "remote_check": remote_check_command(target), "manifest_sha256": str(artifact["manifest_sha256"]), "archive_sha256": str(artifact["archive_sha256"])}
 
 
 def upload(root: Path, target_path: Path, artifact_dir: Path, sha: str) -> dict[str, str]:
     release_plan = plan(root, target_path, artifact_dir, sha)
-    target = load_target(target_path)
+    target = resolved_target(load_target(target_path))
     known_hosts, key = os.environ.get(target["known_hosts_secret"]), os.environ.get(target["key_secret"])
     if not known_hosts or not key:
         raise GuardError("required SSH secret values are unavailable")
@@ -158,9 +169,9 @@ def upload(root: Path, target_path: Path, artifact_dir: Path, sha: str) -> dict[
         known = directory / "known_hosts"; known.write_text(known_hosts, encoding="utf-8"); known.chmod(0o600)
         private = directory / "key"; private.write_text(key, encoding="utf-8"); private.chmod(0o600)
         ssh = ["ssh", "-i", str(private), "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=yes", "-o", f"UserKnownHostsFile={known}", "-p", target["port"], f"{target['user']}@{target['host']}"]
-        subprocess.run([*ssh, release_plan["remote_check"] + f" && mkdir {shlex.quote(release_plan['release'])}"], check=True)
+        subprocess.run([*ssh, release_plan["remote_check"]], check=True)
         transport = shlex.join(ssh[:-1])
-        subprocess.run(["rsync", "-a", "-e", transport, "--chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r", "--", str(artifact_dir / "site") + "/", f"{target['user']}@{target['host']}:{release_plan['release']}/"], check=True)
+        subprocess.run(["rsync", "-a", "--delete", "-e", transport, "--chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r", "--", str(artifact_dir / "site") + "/", f"{target['user']}@{target['host']}:{release_plan['target_root']}/"], check=True)
     return release_plan
 
 

@@ -1,6 +1,9 @@
 name: publish-manual
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       sha:
@@ -22,16 +25,16 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.sha }}
+          ref: ${{ inputs.sha || github.sha }}
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14"
       - name: Install locked build dependencies
-        run: python -m pip install --require-hashes --only-binary=:all: -r requirements.txt
+        run: "python -m pip install --require-hashes --only-binary=:all: -r requirements.txt"
       - name: Recheck reviewed source and build a bound artifact
         env:
-          PUBLISH_SHA: ${{ inputs.sha }}
+          PUBLISH_SHA: ${{ inputs.sha || github.sha }}
         run: |
           git fetch --no-tags origin main
           python -m unittest discover -s tests -p 'test_*.py'
@@ -39,7 +42,9 @@ jobs:
           python scripts/build_manual.py --root . --deployment-target documentation/deployment-target.yml --output .build/publish --source-date-epoch 1700000000 --source-commit "$PUBLISH_SHA"
       - name: Upload only after the guard approves the configured target
         env:
-          PUBLISH_SHA: ${{ inputs.sha }}
-          PUBLISH_KNOWN_HOSTS: ${{ secrets.PUBLISH_KNOWN_HOSTS }}
-          PUBLISH_SSH_PRIVATE_KEY: ${{ secrets.PUBLISH_SSH_PRIVATE_KEY }}
+          PUBLISH_SHA: ${{ inputs.sha || github.sha }}
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          DEPLOY_SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
         run: python scripts/publish_manual.py --root . --artifact-dir .build/publish --sha "$PUBLISH_SHA" --upload

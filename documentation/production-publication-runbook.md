@@ -1,38 +1,45 @@
-# Publication activation runbook
+# Runbook de publicación en producción
 
-Publication is **blocked by default**. Local proof and CI configuration do not
-publish the manual or prove a live website.
+La publicación se ejecuta al enviar cambios a `main` o manualmente para un SHA completo y revisado de `main`.
+La configuración y las pruebas locales no publican el manual ni prueban el sitio
+en producción.
 
-## Operator path
+## Preparación
 
-1. Verify the HTTPS site URL, base path, host, SSH user and port, canonical
-   marker-owned target root, and explicit activation mechanism with the hosting owner.
-2. Put only verified values in `documentation/deployment-target.yml`; set both
-   `activation` and `verification_state` to `verified` in the reviewed change.
-3. Configure the protected GitHub `production` environment with
-   `PUBLISH_KNOWN_HOSTS` and `PUBLISH_SSH_PRIVATE_KEY`. These names are generic;
-   do not commit values, keys, hosts, or known-host entries.
-4. Dispatch **publish-manual** with a full reviewed `main` SHA. It repeats tests,
-   validates the manual, binds the artifact to that SHA, verified site URL, and base path, and rejects an unborn,
-   foreign, or non-ancestor ref before remote activity.
+1. Configure el entorno GitHub `production` con las variables `DEPLOY_HOST` y
+   `DEPLOY_USER`, y los secretos `DEPLOY_KNOWN_HOSTS` y
+   `DEPLOY_SSH_PRIVATE_KEY`.
+2. Envíe el cambio revisado a `main` para publicar el SHA del evento, o despache
+   **publish-manual** con un SHA completo, revisado y perteneciente a `main`.
+3. El flujo ejecuta las pruebas, valida el manual y vincula el artefacto al SHA,
+   la URL `https://yubiz.puyu.pe/manual/` y la base `/manual/` antes de actividad
+   remota.
 
-## Gates and limits
+## Alcance y límites
 
-The upload creates only a new isolated `releases/<sha>` directory after the
-remote marker and root checks pass. It never uses `rsync --delete`, removes no
-release, and does not switch a current-release pointer. Server activation is not
-implemented here; an operator must use the verified host-specific mechanism.
+La sincronización reemplaza directamente solo
+`/var/www/vhosts/yubiz.puyu.pe/httpdocs/manual`. `rsync --delete` elimina
+archivos obsoletos únicamente dentro de esa carpeta. Antes de sincronizar, el
+flujo crea la carpeta aislada si falta y verifica o crea el enlace absoluto desde
+`app-prod/current/public/manual`; rechaza un archivo, directorio o enlace que
+apunte a otro destino en esa ruta.
 
-## Live acceptance checklist
+La carga no es atómica: durante una sincronización puede haber una versión
+parcialmente actualizada. Si una futura publicación de la aplicación reemplaza
+`current`, su despliegue debe recrear el enlace `current/public/manual` hacia la
+carpeta absoluta del manual. El flujo del manual vuelve a verificarlo sin
+reemplazar `current` ni `public`.
+
+## Verificación posterior
 
 - [ ] HTTPS site and configured base path serve the expected manual.
 - [ ] Internal assets, canonical URLs, search, and unknown-route 404 behave correctly.
 - [ ] Cache behavior is checked after publication and after any activation switch.
 - [ ] The result is recorded as runtime/deployed evidence only after observation.
 
-## Recovery
+## Recuperación
 
-Rebuild or republish a previously reviewed SHA and its validated artifact only when its site URL and base path match the verified target, into a
-new isolated release directory. Preserve old release directories. Because rsync
-is non-atomic, do not claim an atomic upload; perform any activation or rollback
-only through the verified server mechanism after confirming the prior artifact.
+Vuelva a despachar un SHA previamente revisado solo si el artefacto conserva la
+misma URL y base verificadas. Si necesita restaurar contenido, publique el SHA
+anterior revisado; confirme el resultado observado antes de registrarlo como
+evidencia de producción.

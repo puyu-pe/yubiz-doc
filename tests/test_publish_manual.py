@@ -2,21 +2,27 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import tarfile
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.publish_manual import GuardError, checked_artifact, checked_sha, load_target, plan
+from scripts.publish_manual import GuardError, checked_artifact, checked_sha, load_target, plan, upload
 
 
 SHA = "a" * 40
 
 
 class PublishManualTests(unittest.TestCase):
+    def setUp(self) -> None:
+        environment = patch.dict(os.environ, {"DEPLOY_HOST": "docs.example.test", "DEPLOY_USER": "publisher"})
+        environment.start()
+        self.addCleanup(environment.stop)
+
     def target(self, directory: Path, **changes: str) -> Path:
-        values = {"activation": "verified", "verification_state": "verified", "site_url": "https://docs.example.test/manual/", "base_path": "/manual/", "host": "docs.example.test", "user": "publisher", "port": "22", "target_root": "/srv/manual", "marker": ".manual-root", "marker_value": "manual-publication-root/v1", "known_hosts_secret": "PUBLISH_KNOWN_HOSTS", "key_secret": "PUBLISH_SSH_PRIVATE_KEY"}
+        values = {"activation": "verified", "verification_state": "verified", "site_url": "https://docs.example.test/manual/", "base_path": "/manual/", "host_variable": "DEPLOY_HOST", "user_variable": "DEPLOY_USER", "port": "22", "target_root": "/srv/manual", "public_link": "/srv/public/manual", "known_hosts_secret": "DEPLOY_KNOWN_HOSTS", "key_secret": "DEPLOY_SSH_PRIVATE_KEY"}
         values.update(changes)
         path = directory / "target.yml"
         path.write_text(__import__("yaml").safe_dump(values), encoding="utf-8")
@@ -46,8 +52,8 @@ class PublishManualTests(unittest.TestCase):
             target = self.target(Path(temporary), target_root="/srv/manual;rm")
             with self.assertRaisesRegex(GuardError, "unsafe"):
                 load_target(target)
-            target = self.target(Path(temporary), host="docs.example.test;rm")
-            with self.assertRaisesRegex(GuardError, "host or user"):
+            target = self.target(Path(temporary), host_variable="DEPLOY_HOST;rm")
+            with self.assertRaisesRegex(GuardError, "environment or secret"):
                 load_target(target)
         with self.assertRaisesRegex(GuardError, "40-character"):
             checked_sha("$(whoami)")
@@ -71,10 +77,10 @@ class PublishManualTests(unittest.TestCase):
                     run.assert_not_called()
             self.assertEqual("/srv/manual", load_target(self.target(directory))["target_root"])
 
-    def test_rejects_wrong_marker_and_never_accepts_secret_values_as_output(self) -> None:
+    def test_rejects_unsafe_public_link_and_never_accepts_secret_values_as_output(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
-            target = self.target(Path(temporary), marker_value="wrong")
-            with self.assertRaisesRegex(GuardError, "target root or marker"):
+            target = self.target(Path(temporary), public_link="/srv/public")
+            with self.assertRaisesRegex(GuardError, "target root or public link"):
                 load_target(target)
             with self.assertRaisesRegex(GuardError, "cannot be read") as error:
                 load_target(Path(temporary) / "absent.yml")
@@ -98,11 +104,12 @@ class PublishManualTests(unittest.TestCase):
             with patch("scripts.publish_manual.checked_reviewed_main") as reviewed:
                 result = plan(directory, target, artifact, SHA)
             reviewed.assert_called_once()
-            self.assertIn("releases/" + SHA, result["release"])
-            self.assertNotIn("--delete", result["remote_check"])
-            self.assertIn("manual-publication-root/v1", result["remote_check"])
+            self.assertEqual("/srv/manual", result["target_root"])
+            self.assertEqual("/srv/public/manual", result["public_link"])
+            self.assertIn("readlink -- /srv/public/manual", result["remote_check"])
+            self.assertIn("ln -s -- /srv/manual /srv/public/manual", result["remote_check"])
 
-    def test_prior_release_recovery_rechecks_artifact_and_reviewed_ref_without_activation(self) -> None:
+    def test_direct_plan_rechecks_artifact_and_reviewed_ref_without_remote_activity(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             (directory / ".git").mkdir()
@@ -118,11 +125,38 @@ class PublishManualTests(unittest.TestCase):
                 ),
             ) as run:
                 recovery = plan(directory, target, artifact, SHA)
-            self.assertEqual(f"/srv/manual/releases/{SHA}", recovery["release"])
+            self.assertEqual("/srv/manual", recovery["target_root"])
             self.assertEqual(3, run.call_count)
             self.assertTrue(all(call.args[0][0] == "git" for call in run.call_args_list))
-            self.assertNotIn("--delete", recovery["remote_check"])
-            self.assertNotIn("activate", recovery["remote_check"])
+            self.assertIn("readlink", recovery["remote_check"])
+
+    def test_upload_deletes_only_inside_manual_and_uses_strict_ssh(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            artifact = self.artifact(directory)
+            target = self.target(directory)
+            with patch.dict(os.environ, {"DEPLOY_KNOWN_HOSTS": "trusted", "DEPLOY_SSH_PRIVATE_KEY": "private"}):
+                with patch("scripts.publish_manual.checked_reviewed_main"):
+                    with patch("scripts.publish_manual.subprocess.run") as run:
+                        upload(directory, target, artifact, SHA)
+            remote, rsync = run.call_args_list
+            self.assertIn("StrictHostKeyChecking=yes", remote.args[0])
+            self.assertIn("readlink -- /srv/public/manual", remote.args[0][-1])
+            self.assertEqual("rsync", rsync.args[0][0])
+            self.assertIn("--delete", rsync.args[0])
+            self.assertEqual("publisher@docs.example.test:/srv/manual/", rsync.args[0][-1])
+
+    def test_rejects_root_and_public_link_collisions_before_git(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            artifact = self.artifact(directory)
+            for target_root, public_link in (("/var/www/vhosts/yubiz.puyu.pe/httpdocs", "/srv/public/manual"), ("/srv/manual", "/srv/public")):
+                with self.subTest(target_root=target_root, public_link=public_link):
+                    target = self.target(directory, target_root=target_root, public_link=public_link)
+                    with patch("scripts.publish_manual.subprocess.run") as run:
+                        with self.assertRaisesRegex(GuardError, "target root or public link"):
+                            plan(directory, target, artifact, SHA)
+                    run.assert_not_called()
 
     def test_prior_release_recovery_refuses_mismatched_artifact_before_git(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
