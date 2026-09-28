@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.publish_manual import GuardError, checked_artifact, checked_sha, load_target, plan, upload
+from scripts.publish_manual import GuardError, checked_artifact, checked_reviewed_main, checked_sha, load_target, plan, upload
 
 
 SHA = "a" * 40
@@ -129,6 +129,44 @@ class PublishManualTests(unittest.TestCase):
             self.assertEqual(3, run.call_count)
             self.assertTrue(all(call.args[0][0] == "git" for call in run.call_args_list))
             self.assertIn("readlink", recovery["remote_check"])
+
+    def test_reviewed_origin_accepts_actions_checkout_https_url(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            (directory / ".git").mkdir()
+            completed = __import__("subprocess").CompletedProcess
+            with patch(
+                "scripts.publish_manual.subprocess.run",
+                side_effect=(
+                    completed(["git"], 0, "https://github.com/puyu-pe/yubiz-doc\n", ""),
+                    completed(["git"], 0, "", ""),
+                    completed(["git"], 0, "", ""),
+                ),
+            ) as run:
+                checked_reviewed_main(directory, SHA)
+            self.assertEqual(3, run.call_count)
+
+    def test_reviewed_origin_rejects_wrong_or_confusing_remotes(self) -> None:
+        rejected = (
+            "https://github.com/puyu-pe/other.git",
+            "https://github.com/other/yubiz-doc.git",
+            "https://github.example/puyu-pe/yubiz-doc.git",
+            "https://github.com@github.example/puyu-pe/yubiz-doc.git",
+            "https://github.com/puyu-pe/yubiz-doc.git?ref=main",
+        )
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            (directory / ".git").mkdir()
+            completed = __import__("subprocess").CompletedProcess
+            for origin in rejected:
+                with self.subTest(origin=origin):
+                    with patch(
+                        "scripts.publish_manual.subprocess.run",
+                        return_value=completed(["git"], 0, origin + "\n", ""),
+                    ) as run:
+                        with self.assertRaisesRegex(GuardError, "origin does not match"):
+                            checked_reviewed_main(directory, SHA)
+                    self.assertEqual(1, run.call_count)
 
     def test_upload_deletes_only_inside_manual_and_uses_strict_ssh(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

@@ -21,6 +21,11 @@ SHA = re.compile(r"^[0-9a-f]{40}$")
 SAFE_REMOTE = re.compile(r"^/[A-Za-z0-9._/-]+$")
 SAFE_NAME = re.compile(r"^[A-Za-z0-9._-]+$")
 SAFE_HOST = re.compile(r"^[A-Za-z0-9.-]+$")
+REVIEWED_ORIGINS = frozenset((
+    "git@github.com:puyu-pe/yubiz-doc.git",
+    "https://github.com/puyu-pe/yubiz-doc",
+    "https://github.com/puyu-pe/yubiz-doc.git",
+))
 
 
 class GuardError(ValueError):
@@ -90,13 +95,12 @@ def checked_sha(value: str) -> str:
 def checked_reviewed_main(root: Path, sha: str) -> None:
     if not (root / ".git").exists():
         raise GuardError("local repository identity is unavailable")
-    expected_origin = "git@github.com:puyu-pe/yubiz-doc.git"
     commands = (["git", "-C", str(root), "remote", "get-url", "origin"], ["git", "-C", str(root), "rev-parse", "--verify", f"{sha}^{{commit}}"], ["git", "-C", str(root), "merge-base", "--is-ancestor", sha, "origin/main"])
     for command in commands:
         result = subprocess.run(command, capture_output=True, text=True, check=False)
         if result.returncode:
             raise GuardError("reviewed origin/main cannot be verified locally; an unborn or incomplete repository cannot activate publication")
-        if command[3:5] == ["remote", "get-url"] and result.stdout.strip() != expected_origin:
+        if command[3:5] == ["remote", "get-url"] and result.stdout.strip() not in REVIEWED_ORIGINS:
             raise GuardError("repository origin does not match the reviewed publication identity")
 
 
