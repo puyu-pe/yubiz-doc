@@ -17,7 +17,7 @@ Confirme una orden programada cuando el vehículo, distribuidor y cantidades ya 
 ## Pasos
 
 1. Revise en **Datos generales** el **Almacén** y el **Vehículo**, y en **Detalles** la **Fecha salida** y el estado.
-2. En **Productos**, contraste las cantidades de cada producto con la carga física prevista y revise las ventas vinculadas cuando existan.
+2. En **Productos**, contraste **Ingresos**, **Egresos** y **Total** de cada producto con la carga física prevista. Use la flecha del producto para revisar sus movimientos antes de confirmar.
 3. **Antes de confirmar**, deténgase si el vehículo, el almacén, la fecha o alguna cantidad no corresponde. La confirmación cambia el ciclo de la orden.
 4. Seleccione **Confirmar** en el menú de acciones.
 5. Acepte el cuadro de confirmación que presenta la interfaz. Espere el mensaje de orden confirmada antes de cerrar el detalle.

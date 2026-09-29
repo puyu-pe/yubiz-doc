@@ -287,11 +287,19 @@ def validate_action_profiles(
 def validate_control_catalog(root: Path, expected: dict[str, object], docs_root: Path, diagnostics: list[str]) -> None:
     """Check source-first requirements without treating editable audit prose as evidence."""
     catalog = load(root / "documentation/source-fact-catalog.yml", diagnostics)
-    if not isinstance(catalog, dict) or catalog.get("schema_version") != 2:
-        diagnostics.append("source-fact-catalog-schema: schema_version 2 is required")
+    if not isinstance(catalog, dict) or catalog.get("schema_version") != 3:
+        diagnostics.append("source-fact-catalog-schema: schema_version 3 is required")
         return
-    if catalog.get("source_revision") != "330857197e5e01c24147d03452f7c59909abc968":
-        diagnostics.append("source-fact-catalog-revision: immutable source revision is required")
+    checkpoint = load(root / "documentation/source-checkpoint.yml", diagnostics)
+    sync = checkpoint.get("source_sync") if isinstance(checkpoint, dict) else None
+    revisions = sync.get("evidence_revisions") if isinstance(sync, dict) else None
+    approved_revisions = {
+        item.get("source_commit") for item in revisions
+        if isinstance(item, dict) and isinstance(item.get("source_commit"), str) and SHA_PATTERN.fullmatch(item["source_commit"])
+    } if isinstance(revisions, list) else set()
+    default_revision = catalog.get("default_reviewed_revision")
+    if not isinstance(default_revision, str) or default_revision not in approved_revisions:
+        diagnostics.append("source-fact-catalog-revision: approved default source revision is required")
         return
     requirements, pending = catalog.get("requirements"), catalog.get("pending_guides")
     if not isinstance(requirements, list) or not isinstance(pending, list):
@@ -300,7 +308,7 @@ def validate_control_catalog(root: Path, expected: dict[str, object], docs_root:
     covered: set[str] = set()
     required_fact_keys = {"id", "source_fact_kind", "proof_ref", "container", "control", "gesture", "reveal", "dependencies", "next_state", "visible"}
     for requirement in requirements:
-        if not isinstance(requirement, dict) or set(requirement) != {"guide_id", "facts"}:
+        if not isinstance(requirement, dict) or not {"guide_id", "facts"} <= set(requirement) or set(requirement) - {"guide_id", "facts", "reviewed_revision"}:
             diagnostics.append("source-fact-requirement")
             continue
         doc_id, facts = requirement["guide_id"], requirement["facts"]
@@ -308,14 +316,21 @@ def validate_control_catalog(root: Path, expected: dict[str, object], docs_root:
             diagnostics.append("source-fact-requirement")
             continue
         covered.add(doc_id)
+        reviewed_revision = requirement.get("reviewed_revision", default_revision)
+        if not isinstance(reviewed_revision, str) or reviewed_revision not in approved_revisions:
+            diagnostics.append("source-fact-revision: guide revision is not approved")
+            continue
         entry = expected[doc_id]
         if not isinstance(entry, dict):
             diagnostics.append("source-fact-requirement")
             continue
         text = visible_control_procedure_text((docs_root / entry["target"]).read_text(encoding="utf-8"))
         for fact in facts:
-            if not isinstance(fact, dict) or set(fact) != required_fact_keys:
+            if not isinstance(fact, dict) or not required_fact_keys <= set(fact) or set(fact) - (required_fact_keys | {"reviewed_revision"}):
                 diagnostics.append("source-fact-shape")
+                continue
+            if fact.get("reviewed_revision", reviewed_revision) != reviewed_revision:
+                diagnostics.append("source-fact-revision: fact revision differs from guide revision")
                 continue
             values = [fact[key] for key in required_fact_keys - {"visible"}]
             variants = fact["visible"]

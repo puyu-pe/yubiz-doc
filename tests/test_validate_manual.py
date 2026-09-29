@@ -85,6 +85,49 @@ class ValidateManualTests(unittest.TestCase):
         self.write_metadata(root, "inventory.yml", inventory)
         self.assertTrue(any("invalid-procedure-evidence" in item for item in validate_manual(root).diagnostics))
 
+    def test_source_fact_revisions_allow_scoped_mixed_evidence_and_preserve_default_evidence(self) -> None:
+        root = self.copy_manual()
+        catalog = self.metadata(root, "source-fact-catalog.yml")
+        requirements = {item["guide_id"]: item for item in catalog["requirements"]}
+
+        self.assertEqual("330857197e5e01c24147d03452f7c59909abc968", catalog["default_reviewed_revision"])
+        self.assertNotIn("reviewed_revision", requirements["sales-register-cash-sale"])
+        self.assertEqual("500a335498a2206b2d3361bb9958095366207e99", requirements["catalog-manage-series"]["reviewed_revision"])
+        self.assertTrue(validate_manual(root).is_valid)
+
+    def test_source_fact_revisions_reject_unknown_invalid_and_mismatched_pins(self) -> None:
+        root = self.copy_manual()
+        catalog = self.metadata(root, "source-fact-catalog.yml")
+        requirement = next(item for item in catalog["requirements"] if item["guide_id"] == "catalog-manage-series")
+        requirement["reviewed_revision"] = "f" * 40
+        self.write_metadata(root, "source-fact-catalog.yml", catalog)
+        self.assertTrue(any("source-fact-revision: guide revision is not approved" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        catalog = self.metadata(root, "source-fact-catalog.yml")
+        requirement = next(item for item in catalog["requirements"] if item["guide_id"] == "catalog-manage-series")
+        requirement["reviewed_revision"] = "500a335"
+        self.write_metadata(root, "source-fact-catalog.yml", catalog)
+        self.assertTrue(any("source-fact-revision: guide revision is not approved" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        catalog = self.metadata(root, "source-fact-catalog.yml")
+        requirement = next(item for item in catalog["requirements"] if item["guide_id"] == "catalog-manage-series")
+        requirement["facts"][1]["reviewed_revision"] = "330857197e5e01c24147d03452f7c59909abc968"
+        self.write_metadata(root, "source-fact-catalog.yml", catalog)
+        self.assertTrue(any("source-fact-revision: fact revision differs from guide revision" in item for item in validate_manual(root).diagnostics))
+
+    def test_scoped_source_facts_require_visible_direct_and_indirect_controls(self) -> None:
+        root = self.copy_manual()
+        series = root / "docs/catalogo/gestionar-series.md"
+        series.write_text(series.read_text(encoding="utf-8").replace("**Reclasificar serie**", "**Reclasificar**", 1), encoding="utf-8")
+        self.assertTrue(any("series-reclassify" in item for item in validate_manual(root).diagnostics))
+
+        root = self.copy_manual()
+        load = root / "docs/distribucion/consultar-orden-de-carga.md"
+        load.write_text(load.read_text(encoding="utf-8").replace("**Imprimir productos**", "**Imprimir**", 1), encoding="utf-8")
+        self.assertTrue(any("load-product-summary" in item for item in validate_manual(root).diagnostics))
+
     def test_rendered_search_excludes_declared_compatibility_only_pages(self) -> None:
         root = self.copy_manual()
         site = root / ".build" / "search-exclusion"

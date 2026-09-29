@@ -17,7 +17,7 @@ Liquide una orden descargada cuando su descarga, resultados de entrega y saldos 
 ## Pasos
 
 1. Revise en **Detalles** el estado y el documento de la **Orden descarga**.
-2. En **Productos**, contraste por producto los ingresos, salidas y saldo. Revise **Recargas** y **Descargas parciales** si existen.
+2. En **Productos**, contraste por producto **Ingresos**, **Egresos** y **Total**; use la flecha del producto para revisar sus movimientos. Revise **Recargas** y **Descargas parciales** si existen.
 3. En **Ventas**, compruebe el estado de entrega de cada venta; en **Pagos**, revise deuda, pagado y total antes de liquidar.
 4. **Antes de liquidar**, deténgase si falta registrar una entrega, una recarga, una descarga o si los saldos y pagos no son los que desea cerrar. La liquidación cambia el estado de la orden.
 5. Seleccione **Liquidar** y acepte el cuadro de confirmación.

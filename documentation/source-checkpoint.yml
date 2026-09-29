@@ -13,6 +13,11 @@ source_sync:
     source_version: 3.104.28
     source_commit: 330857197e5e01c24147d03452f7c59909abc968
     checked_at: '2026-09-22'
+  evidence_revisions:
+    - source_version: 3.104.28
+      source_commit: 330857197e5e01c24147d03452f7c59909abc968
+    - source_version: 3.106.0
+      source_commit: 500a335498a2206b2d3361bb9958095366207e99
   bootstrap:
     base_commit: ebdfa162d9a53a030fbd4143a5dec7976dad3e53
     base_version: 3.103.5

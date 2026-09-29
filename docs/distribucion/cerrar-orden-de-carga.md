@@ -18,7 +18,7 @@ Cierre una orden confirmada cuando sus productos, ventas, recargas y compromisos
 ## Pasos
 
 1. Revise **Datos generales**: documento, **Almacén** y **Vehículo**; luego confirme la **Fecha salida** y el estado en **Detalles**.
-2. En **Productos**, contraste los ingresos, salidas y saldo de cada producto. Revise **Recargas**, **Ventas** y **Pagos** cuando existan registros asociados.
+2. En **Productos**, contraste **Ingresos**, **Egresos** y **Total** de cada producto; use la flecha del producto para revisar sus movimientos. Revise **Recargas**, **Ventas** y **Pagos** cuando existan registros asociados.
 3. Consulte **Descargas parciales** solo para verificar el historial; esta pestaña no sustituye la generación de una orden de descarga.
 4. **Antes de cerrar**, deténgase si el aviso indica compromisos no atendidos, si hay déficit de reposición o si el saldo de productos no representa el corte que desea realizar. El cierre no debe usarse para corregir cantidades pendientes.
 5. Seleccione **Cerrar** en el menú de acciones y acepte el cuadro de confirmación.

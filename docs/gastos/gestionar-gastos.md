@@ -25,11 +25,13 @@ Consulte gastos mediante filtros y exporte el conjunto que necesita revisar.
 
 1. Aplique filtros de fecha, estado, categoría u otro criterio disponible.
 2. Revise los gastos y totales mostrados antes de exportar.
-3. Seleccione la acción de exportación disponible y compruebe que corresponde al filtro aplicado.
+3. En **Lista de gastos**, abra el menú de tres puntos verticales y seleccione **Generar Excel**. La exportación toma los filtros, el orden y las columnas visibles de la lista.
+4. No confunda **Generar Excel** con **Generar PDF detallado**, que inicia una salida distinta.
+5. Si el resultado supera el límite de filas de la exportación, reduzca los filtros y genere el archivo nuevamente.
 
 ## Compruebe el resultado
 
-Compruebe que la lista y la exportación muestran los gastos del criterio seleccionado.
+Compruebe que la lista y el archivo de Excel muestran los gastos del criterio seleccionado.
 
 <a id="consultar-aprobar-y-exportar-gastos"></a>
 <a id="estado"></a>

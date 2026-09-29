@@ -1,6 +1,6 @@
-schema_version: 2
+schema_version: 3
 catalog_kind: source_first_ui_requirements
-source_revision: 330857197e5e01c24147d03452f7c59909abc968
+default_reviewed_revision: 330857197e5e01c24147d03452f7c59909abc968
 coverage:
   inspected_guides: 83
   pending_guides: 0
@@ -39,7 +39,10 @@ requirements:
 - guide_id: catalog-manage-lots
   facts: [{id: lot-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'lot form', control: Guardar, gesture: clic, reveal: 'open lot action', dependencies: 'valid lot fields', next_state: 'lot listed', visible: [['Guardar']]}]
 - guide_id: catalog-manage-series
-  facts: [{id: series-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'series form', control: Guardar, gesture: clic, reveal: 'open series action', dependencies: 'valid series fields', next_state: 'series listed', visible: [['Guardar']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts:
+  - {id: series-register, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'series form', control: Guardar, gesture: clic, reveal: 'open series action', dependencies: 'valid series fields', next_state: 'series listed', visible: [['Guardar']]}
+  - {id: series-reclassify, reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'Editar serie action menu', control: 'Reclasificar serie', gesture: clic, reveal: 'open series options', dependencies: 'active, available operational series in an ordinary active warehouse', next_state: 'reclassification completed', visible: [['Editar serie'], ['tres puntos verticales'], ['Reclasificar serie'], ['Producto del lote destino'], ['Lote destino'], ['reclasificada']]}
 - guide_id: inventory-register-product-conversion
   facts: [{id: conversion-register, source_fact_kind: ui_transition, proof_ref: engram:obs-51008dbca384c1e5, container: 'conversion form', control: Registrar, gesture: clic, reveal: 'complete source and target', dependencies: 'different products', next_state: 'conversion recorded', visible: [['Registrar']]}]
 - guide_id: catalog-review-utility-and-export
@@ -135,7 +138,10 @@ requirements:
 - guide_id: expenses-register-expense
   facts: [{id: expense-create, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense form', control: Guardar, gesture: clic, reveal: 'complete expense details', dependencies: 'valid expense lines', next_state: 'registered expense', visible: [['Guarde']]}]
 - guide_id: expenses-manage-expenses
-  facts: [{id: expense-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense grid row', control: 'expense row', gesture: 'doble clic', reveal: 'select expense row', dependencies: 'existing expense', next_state: 'expense detail', visible: [['gasto']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts:
+  - {id: expense-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'expense grid row', control: 'expense row', gesture: 'doble clic', reveal: 'select expense row', dependencies: 'existing expense', next_state: 'expense detail', visible: [['gasto']]}
+  - {id: expense-export-excel, reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'Lista de gastos action menu', control: 'Generar Excel', gesture: clic, reveal: 'open list ellipsis', dependencies: 'current filters and visible columns', next_state: 'Excel export generated', visible: [['Lista de gastos'], ['tres puntos verticales'], ['Generar Excel'], ['filtros'], ['columnas visibles'], ['Excel']]}
 - guide_id: manual-7-3
   facts: [{id: expense-approve, source_fact_kind: ui_transition, proof_ref: engram:obs-35aa7d4dada758ce, container: 'expense detail header dropdown', control: Aprobar, gesture: clic, reveal: 'open detail menu and check pending state', dependencies: 'expense status pendiente', next_state: 'approval confirmation', visible: [['Aprobar']]}]
 - guide_id: manual-7-4
@@ -148,19 +154,27 @@ requirements:
 - guide_id: manual-9-1
   facts: [{id: load-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load order form', control: Registrar, gesture: clic, reveal: 'complete load details', dependencies: 'valid load items', next_state: 'load order detail', visible: [['Registrar']]}]
 - guide_id: manual-9-2
-  facts: [{id: load-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load order grid row', control: 'load row', gesture: 'doble clic', reveal: 'select row', dependencies: 'existing load order', next_state: 'load detail', visible: [['doble clic'], ['detalle']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts:
+  - {id: load-detail, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'load order grid row', control: 'load row', gesture: 'doble clic', reveal: 'select row', dependencies: 'existing load order', next_state: 'load detail', visible: [['doble clic'], ['detalle']]}
+  - {id: load-product-summary, reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'Productos summary row', control: 'product row and product column menu', gesture: clic, reveal: 'expand product row or open product column menu', dependencies: 'open load order detail', next_state: 'product movements or selected column view', visible: [['Productos'], ['Ingresos'], ['Egresos'], ['Total'], ['flecha'], ['Mostrar todas las columnas'], ['Mostrar preventas y entregas'], ['Mostrar notas salida'], ['Imprimir productos']]}
 - guide_id: manual-9-3
-  facts: [{id: load-confirm, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: Confirmar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'confirmable load state', next_state: 'confirmation result', visible: [['doble clic'], ['menú'], ['Confirmar']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts: [{id: load-confirm, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'load detail header dropdown', control: Confirmar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'confirmable load state', next_state: 'confirmation result', visible: [['doble clic'], ['menú'], ['Confirmar']]}]
 - guide_id: manual-9-4
   facts: [{id: load-recharge, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: 'Recargar orden de carga', gesture: clic, reveal: 'open detail ellipsis', dependencies: 'action available', next_state: 'recharge form', visible: [['menú'], ['Recargar']]}]
 - guide_id: manual-9-5
-  facts: [{id: load-close, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: Cerrar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'closable load state', next_state: 'close confirmation', visible: [['menú'], ['Cerrar']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts: [{id: load-close, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'load detail header dropdown', control: Cerrar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'closable load state', next_state: 'close confirmation', visible: [['menú'], ['Cerrar']]}]
 - guide_id: manual-9-6
-  facts: [{id: download-generate, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: 'Generar orden de descarga', gesture: clic, reveal: 'open load detail ellipsis', dependencies: 'eligible load order', next_state: 'Orden de descarga / Agregar', visible: [['menú'], ['Generar orden de descarga']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts: [{id: download-generate, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'load detail header dropdown', control: 'Generar orden de descarga', gesture: clic, reveal: 'open load detail ellipsis', dependencies: 'eligible load order', next_state: 'Orden de descarga / Agregar', visible: [['menú'], ['Generar orden de descarga']]}]
 - guide_id: distribution-consult-print-unload-order
-  facts: [{id: download-print, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'download detail header dropdown', control: Imprimir, gesture: clic, reveal: 'double-click download row then open detail menu', dependencies: 'existing download order', next_state: 'print document', visible: [['doble clic'], ['Imprimir']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts: [{id: download-print, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'download detail header dropdown', control: Imprimir, gesture: clic, reveal: 'double-click download row then open detail menu', dependencies: 'existing download order', next_state: 'print document', visible: [['doble clic'], ['Imprimir']]}]
 - guide_id: manual-9-8
-  facts: [{id: load-settle, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'load detail header dropdown', control: Liquidar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'liquidatable load state', next_state: 'settlement form', visible: [['menú'], ['Liquidar']]}]
+  reviewed_revision: 500a335498a2206b2d3361bb9958095366207e99
+  facts: [{id: load-settle, source_fact_kind: ui_transition, proof_ref: engram:obs-93182e993f1156ad, container: 'load detail header dropdown', control: Liquidar, gesture: clic, reveal: 'open detail ellipsis', dependencies: 'liquidatable load state', next_state: 'settlement form', visible: [['menú'], ['Liquidar']]}]
 - guide_id: contacts-manage-customers
   facts: [{id: customer-create, source_fact_kind: ui_transition, proof_ref: engram:obs-da682ddc8fc48f34, container: 'customer list direct action', control: 'Añadir cliente', gesture: clic, reveal: 'use direct list action', dependencies: 'none', next_state: 'customer modal', visible: [['Añadir cliente']]}]
 - guide_id: contacts-manage-suppliers-and-bank-accounts

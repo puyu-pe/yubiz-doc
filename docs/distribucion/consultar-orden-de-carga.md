@@ -14,11 +14,13 @@ Localice una orden de carga y revise su avance, productos, recargas, descargas y
 
 1. Use los filtros de la lista para acotar por documento, fecha de salida, almacén, vehículo, distribuidor o estado.
 2. Abra la orden y revise el encabezado: documento, **Almacén**, **Vehículo**, **Fecha salida**, usuario, orden de descarga y la etiqueta de **Estado**.
-3. En **Productos**, compare por producto las cantidades de ingreso, salida y total. Revise especialmente la columna **C. Residual** y el saldo final.
-4. Abra **Recargas** para revisar fecha, usuario, observación, producto, cantidades e importe de cada recarga registrada.
-5. Abra **Ventas** para comprobar documento, estado de entrega, deuda, pagado y total; use **Pagos** si necesita contrastar el resumen y el detalle de pagos.
-6. Si hay compromisos pendientes, revise el aviso de cobertura y déficit antes de cerrar o descargar la orden.
-7. Consulte **Descargas parciales** solo como historial: muestra vehículo de origen, almacén destino, observación y cantidades descargadas; no registra una nueva descarga desde esta pestaña.
+3. En **Productos**, compare por producto **Ingresos**, **Egresos** y **Total**. Seleccione la flecha de un producto para desplegar el detalle de movimientos.
+4. En el menú de columnas de **Productos**, use **Mostrar todas las columnas**, **Mostrar preventas y entregas** o **Mostrar notas salida** según la revisión que necesita. Si cambia la vista, el resumen puede indicar que hay movimientos ocultos.
+5. Desde ese mismo menú, seleccione **Imprimir productos** si necesita el resumen de productos para imprimir.
+6. Abra **Recargas** para revisar fecha, usuario, observación, producto, cantidades e importe de cada recarga registrada.
+7. Abra **Ventas** para comprobar documento, estado de entrega, deuda, pagado y total; use **Pagos** si necesita contrastar el resumen y el detalle de pagos.
+8. Si hay compromisos pendientes, revise el aviso de cobertura y déficit antes de cerrar o descargar la orden.
+9. Consulte **Descargas parciales** solo como historial: muestra vehículo de origen, almacén destino, observación y cantidades descargadas; no registra una nueva descarga desde esta pestaña.
 
 ## Compruebe el resultado
 
